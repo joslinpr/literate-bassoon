@@ -1,0 +1,106 @@
+{
+    "document": {
+        "indent": 2,
+        "color": "2",
+        "block_prefix": "\n",
+        "block_suffix": "\n"
+    },
+    "paragraph": {
+        "margin": 4,
+        "color": "5",
+        "background_color": "235"
+    },
+    "heading": {
+        "color": "5",
+        "background_color": "1"
+    },
+    "h1": {
+        "prefix": "=> ",
+        "color": "3"
+    },
+    "h2": {
+        "prefix": "==> ",
+        "color": "3"
+    },
+    "h3": {
+        "prefix": "===> ",
+        "color": "3"
+    },
+    "h4": {
+        "prefix": "====> ",
+        "color": "3"
+    },
+    "h5": {
+        "prefix": "=====> ",
+        "color": "3"
+    },
+    "h6": {
+        "prefix": "======> ",
+        "color": "3"
+    },
+    "block_quote": {
+        "color": "200",
+        "indent": 1,
+        "indent_token": "=> "
+    },
+    "list": {
+        "color": "15",
+        "background_color": "52",
+        "level_indent": 4
+    },
+    "code_block": {
+        "color": "200",
+        "theme": "solarized-dark"
+    },
+    "table": {
+        "margin": 4
+    },
+    "text": {
+        "bold": true,
+        "color": "15",
+        "background_color": "57"
+    },
+    "item": {
+        "block_prefix": "• "
+    },
+    "enumeration": {
+        "block_prefix": ". "
+    },
+    "task": {
+        "ticked": "✓ ",
+        "unticked": "✗ "
+    },
+    "link": {
+        "color": "123",
+        "underline": true,
+        "block_prefix": "(",
+        "block_suffix": ")"
+    },
+    "link_text": {
+        "color": "123",
+        "bold": true
+    },
+    "image": {
+        "color": "123",
+        "block_prefix": "[Image: ",
+        "block_suffix": "]"
+    },
+    "image_text": {
+        "color": "8"
+    },
+    "code": {
+        "color": "200"
+    },
+    "emph": {
+        "italic": true
+    },
+    "strong": {
+        "bold": true
+    },
+    "strikethrough": {
+        "crossed_out": true
+    },
+    "hr": {
+        "block_prefix": "---"
+    }
+}

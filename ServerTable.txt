@@ -1,0 +1,72 @@
+
+# Book of Knowledge
+
+## DHL Utility Servers
+
+### AAA Gateways
+
+AAA GATEWAYS
+─────────────────────────
+cbjmgt.apis.dhl.com
+phxmgt.phx-dc.dhl.com
+prgmgt.prg-dc.dhl.com
+
+### Firewall Jump Servers
+
+FIREWALL JUMP SERVERS
+──────────────────────────────
+mykulws1922.kul-dc.dhl.com
+usqasws0670.phx-dc.dhl.com
+czchows6715.prg-dc.dhl.com
+
+### Ansible / Automation Gateways
+
+RHEL8 NEW          │         RHEL6 OLD
+─────────────────────────────┼─────────────────────────────
+czcholsint2588             │ czcholstc000594
+czchols5004.prg-dc.dhl.com │ czchols018.prg-dc.dhl.com
+mykulls2337.apis.dhl.com   │ mykulls1494.apis.dhl.com
+usqasls0282.phx-dc.dhl.com │ usqasls0014.phx-dc.dhl.com
+
+### Automic
+
+AUTOMIC
+───────────────
+czchols4538
+czchols4539
+
+
+### Sandbox Servers
+
+SANDBOX SERVERS
+───────────────────
+czcholsint1543
+czcholstc000549
+czcholstc000878
+usqaslstc000163
+
+### Rescue Media
+
+RESCUE MEDIA:
+HTTP://SERVER/RESCUE
+──────────────────────────────────
+czchols018.prg-dc.dhl.com
+troy1.apis.dhl.com
+usqasls0014.phx-dc.dhl.com
+
+### Operations Bridge Manager & (OpenView)
+
+OPERATIONS BRIDGE MANAGER │           (OPENVIEW)
+────────────────────────────┼─────────────────────────────────
+PRG                       │ https://prgomiprod-users
+CBJ                       │ https://cbjomiprod-user
+QAS                       │ https://phxomiprod-user
+Test                      │ http://omitest-users-dev:9662/
+OvoWeb                    │ [http
+
+### Veritas Operations Manager
+
+VERITAS OPERATIONS MANAGER
+──────────────────────────────
+https://vom-prg:14161/
+

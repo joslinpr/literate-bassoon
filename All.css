@@ -1,0 +1,30 @@
+<style>
+a { color: blue; border: 1px solid rgba(0, 0, 0, 0.8); background-color: rgb(230 230 240 / 50%); } blockquote { color: blue; }
+body { background-color: #f5f5f5; color: black; }
+code { background-color: white; color: blue; }
+div { color: blue; }
+em { color: blue; }
+h1 { color: blue;  background-color: #e5effb;}
+h2 { color: blue;  background-color: #e5effb;}
+h3 { color: blue;  background-color: #e5effb;}
+h4 { color: blue;  background-color: #e5effb;}
+h5 { color: blue;  background-color: #e5effb;}
+h6 { color: blue;  background-color: #e5effb;}
+head { color: blue;  background-color: #e5effb;}
+hr { color: blue; }
+img { color: blue; }
+li { color: blue; }
+ol { color: blue; }
+p { color: blue; }
+pre { color: blue; }
+span { color: blue; }
+strong { color: blue; }
+style { color: blue; }
+table { color: blue; }
+tbody { color: blue; }
+td { color: blue; }
+th { color: blue; }
+thead { color: blue; }
+tr { color: blue; }
+ul { color: blue; }
+</style>
