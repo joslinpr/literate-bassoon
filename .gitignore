@@ -1,3 +1,5 @@
 .cfg
 # Ignore vim undo files
 .*.un~
+# Ignore sentinal file used by Make
+.uptodate
