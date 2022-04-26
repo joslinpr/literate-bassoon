@@ -3,8 +3,7 @@
 
 ## Markdown
 
-A markdown example shows how to write a markdown file. This document
-integrates core syntax and extensions (GMF).
+A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).
 
 • Block Elements
 • Paragraphs and Line Breaks
@@ -33,8 +32,7 @@ integrates core syntax and extensions (GMF).
 
 HTML Tag: `<p>`
 
-One or more blank lines. (A blank line is a line containing nothing but
-**spaces** or **tabs** is considered blank.)
+One or more blank lines. (A blank line is a line containing nothing but **spaces** or **tabs** is considered blank.)
 
 Code:
 
@@ -80,8 +78,7 @@ Markdown supports two styles of headers, Setext and atx.
 
 HTML Tags: `<h1>`, `<h2>`
 
-“Underlined” using **equal signs (=)** as `<h1>` and **dashes (-)** as `<h2>`
-in any number.
+“Underlined” using **equal signs (=)** as `<h1>` and **dashes (-)** as `<h2>` in any number.
 
 Code:
 
@@ -104,8 +101,7 @@ Preview:
 
 HTML Tags: `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`
 
-Uses 1-6 **hash characters (#)** at the start of the line, corresponding to
-`<h1>` - `<h6>`.
+Uses 1-6 **hash characters (#)** at the start of the line, corresponding to `<h1>` - `<h6>`.
 
 Code:
 
@@ -125,8 +121,8 @@ Preview:
 
 --------
 
-Optionally, you may “close” atx-style headers. The closing hashes **don’t
-need to match** the number of hashes used to open the header.
+Optionally, you may “close” atx-style headers. The closing hashes **don’t need to match** the number of hashes used
+to open the header.
 
 Code:
 
@@ -150,8 +146,8 @@ Preview:
 
 HTML Tag: `<blockquote>`
 
-Markdown uses email-style **>** characters for blockquoting. It looks best if
-you hard wrap the text and put a > before every line.
+Markdown uses email-style **>** characters for blockquoting. It looks best if you hard wrap the text and put a >
+before every line.
 
 Code:
 
@@ -168,15 +164,14 @@ Preview:
 
 │ This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
 │ consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-│ Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae,
-risus.Donec
-│ sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+│ Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.Donec sit amet nisl. Aliquam semper ipsum
+sit
+│ amet velit. Suspendisse
 │ id sem consectetuer libero luctus adipiscing.
 
 --------
 
-Markdown allows you to be lazy and only put the > before the first line of a
-hard-wrapped paragraph.
+Markdown allows you to be lazy and only put the > before the first line of a hard-wrapped paragraph.
 
 Code:
 
@@ -200,8 +195,7 @@ Preview:
 
 --------
 
-Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding
-additional levels of >.
+Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of >.
 
 Code:
 
@@ -215,13 +209,11 @@ Preview:
 
 --------
 
-│ This is the first level of quoting.This is nested blockquote.Back to the
-│ first level.
+│ This is the first level of quoting.This is nested blockquote.Back to the first level.
 
 --------
 
-Blockquotes can contain other Markdown elements, including headers, lists,
-and code blocks.
+Blockquotes can contain other Markdown elements, including headers, lists, and code blocks.
 
 Code:
 
@@ -307,8 +299,7 @@ Preview:
 
 --------
 
-It’s possible to trigger an ordered list by accident, by writing something
-like this:
+It’s possible to trigger an ordered list by accident, by writing something like this:
 
 Code:
 
@@ -340,8 +331,7 @@ Preview:
 
 ###### Blockquote
 
-To put a blockquote within a list item, the blockquote’s > delimiters need
-to be indented:
+To put a blockquote within a list item, the blockquote’s > delimiters need to be indented:
 
 Code:
 
@@ -363,8 +353,7 @@ Preview:
 
 ###### Code Block
 
-To put a code block within a list item, the code block needs to be indented
-twice — **8 spaces** or **two tabs**:
+To put a code block within a list item, the code block needs to be indented twice — **8 spaces** or **two tabs**:
 
 Code:
 
@@ -426,11 +415,10 @@ This is a code block.
 
 --------
 
-A code block continues until it reaches a line that is not indented (or the
-end of the article).
+A code block continues until it reaches a line that is not indented (or the end of the article).
 
-Within a code block, *ampersands (&)* and angle **brackets (< and >)** are
-automatically converted into HTML entities.
+Within a code block, *ampersands (&)* and angle **brackets (< and >)** are automatically converted into HTML
+entities.
 
 Code:
 
@@ -448,13 +436,12 @@ Preview:
 
 --------
 
-Following sections Fenced Code Blocks and Syntax Highlighting are
-extensions, you can use the other way to write the code block.
+Following sections Fenced Code Blocks and Syntax Highlighting are extensions, you can use the other way to write the
+code block.
 
 ##### Fenced Code Blocks
 
-Just wrap your code in ````` (as shown below) and you won't need to indent
-it by four spaces.
+Just wrap your code in ````` (as shown below) and you won't need to indent it by four spaces.
 
 Code:
 
@@ -480,9 +467,8 @@ console.log("notice the blank line before this function?");
 
 ##### Syntax Highlighting
 
-In your fenced block, add an optional language identifier and we'll run it
-through syntax highlighting (Support Languages
-https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
+In your fenced block, add an optional language identifier and we'll run it through syntax highlighting (Support
+Languages https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
 
 Code:
 
@@ -504,9 +490,8 @@ puts markdown.to_html
 
 #### Horizontal Rules
 
-HTML Tag: `<hr />` Places **three or more hyphens (-), asterisks (*), or
-underscores (_)** on a line by themselves. You may use spaces between the
-hyphens or asterisks.
+HTML Tag: `<hr />` Places **three or more hyphens (-), asterisks (*), or underscores (_)** on a line by themselves.
+You may use spaces between the hyphens or asterisks.
 
 Code:
 
@@ -541,11 +526,10 @@ HTML Tag: `<table>`
 
 It's an extension.
 
-Separates column by **pipe (|)** and header by **dashes (-)**, and uses
-**colon (:)** for alignment.
+Separates column by **pipe (|)** and header by **dashes (-)**, and uses **colon (:)** for alignment.
 
-The outer **pipes (|)** and alignment are optional. There are **3
-delimiters** each cell at least for separating header.
+The outer **pipes (|)** and alignment are optional. There are **3 delimiters** each cell at least for separating
+header.
 
 Code:
 
@@ -612,8 +596,7 @@ This link http://example.net/ has no title attribute.
 
 --------
 
-If you’re referring to a local resource on the same server, you can use
-relative paths:
+If you’re referring to a local resource on the same server, you can use relative paths:
 
 Code:
 
@@ -631,8 +614,7 @@ See my About /home/pjoslin/Projects/BoK/about/ page for details.
 
 You could predefine link references. Format like this: `[id]: URL "Title"`
 
-Title is also optional. And the you refer the link, format like this: `[Link
-Text][id]`
+Title is also optional. And the you refer the link, format like this: `[Link Text][id]`
 
 Code:
 
@@ -649,14 +631,14 @@ This is an example http://example.com/ reference-style link.
 
 That is:
 
-• Square brackets containing the link identifier (**not case sensitive**,
-optionally indented from the left margin using up to three spaces);
+• Square brackets containing the link identifier (**not case sensitive**, optionally indented from the left margin
+using up to three spaces);
 • followed by a colon;
 • followed by one or more spaces (or tabs);
 • followed by the URL for the link;
 • The link URL may, optionally, be surrounded by angle brackets.
-• optionally followed by a title attribute for the link, enclosed in double
-or single quotes, or enclosed in parentheses.
+• optionally followed by a title attribute for the link, enclosed in double or single quotes, or enclosed in
+parentheses.
 
 The following three link definitions are equivalent:
 
@@ -667,8 +649,7 @@ Code:
 [foo]: http://example.com/  (Optional Title Here)
 [foo]: <http://example.com/>  "Optional Title Here"
 
-Uses an empty set of square brackets, the link text itself is used as the
-name.
+Uses an empty set of square brackets, the link text itself is used as the name.
 
 Code:
 
@@ -687,9 +668,8 @@ Google http://google.com/
 
 HTML Tags: `<em>`, `<strong>`
 
-Markdown treats **asterisks (*)** and **underscores (_)** as indicators of
-emphasis. **One delimiter** will be  `<em>`; **double delimiters* will be
-`<strong>`.
+Markdown treats **asterisks (*)** and **underscores (_)** as indicators of emphasis. **One delimiter** will be
+`<em>`; **double delimiters* will be `<strong>`.
 
 Code:
 
@@ -715,8 +695,7 @@ Preview:
 
 --------
 
-But if you surround an * or _ with spaces, it’ll be treated as a literal
-asterisk or underscore.
+But if you surround an * or _ with spaces, it’ll be treated as a literal asterisk or underscore.
 
 You can backslash escape it:
 
@@ -750,8 +729,8 @@ Use the `printf()` function.
 
 --------
 
-To include a literal backtick character within a code span, you can use
-**multiple backticks** as the opening and closing delimiters:
+To include a literal backtick character within a code span, you can use **multiple backticks** as the opening and
+closing delimiters:
 
 Code:
 
@@ -765,9 +744,8 @@ Preview:
 
 --------
 
-The backtick delimiters surrounding a code span may include spaces — one
-after the opening, one before the closing. This allows you to place literal
-backtick characters at the beginning or end of a code span:
+The backtick delimiters surrounding a code span may include spaces — one after the opening, one before the closing.
+This allows you to place literal backtick characters at the beginning or end of a code span:
 
 Code:
 
@@ -789,8 +767,8 @@ A backtick-delimited string in a code span: ``foo``
 
 HTML Tag: `<img />`
 
-Markdown uses an image syntax that is intended to resemble the syntax for
-links, allowing for two styles: inline and reference.
+Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: inline and
+reference.
 
 ##### Inline
 
@@ -817,10 +795,9 @@ Image: Alt text → /home/pjoslin/Projects/BoK/path/to/img.jpg
 That is:
 
 • An exclamation mark: !;
-• followed by a set of square brackets, containing the alt attribute text
-for the image;
-• followed by a set of parentheses, containing the URL or path to the image,
-and an optional title attribute enclosed in double or single quotes.
+• followed by a set of square brackets, containing the alt attribute text for the image;
+• followed by a set of parentheses, containing the URL or path to the image, and an optional title attribute
+enclosed in double or single quotes.
 
 ##### Reference
 
@@ -863,9 +840,8 @@ Preview:
 
 #### Automatic Links
 
-Markdown supports a shortcut style for creating “automatic” links for URLs
-and email addresses: simply surround the URL or email address with angle
-brackets.
+Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses: simply surround the
+URL or email address with angle brackets.
 
 Code:
 
@@ -899,8 +875,8 @@ https://github.com/emn178/markdown
 
 #### Backslash Escapes
 
-Markdown allows you to use backslash escapes to generate literal characters
-which would otherwise have special meaning in Markdown’s formatting syntax.
+Markdown allows you to use backslash escapes to generate literal characters which would otherwise have special
+meaning in Markdown’s formatting syntax.
 
 Code:
 
@@ -933,9 +909,8 @@ _   underscore
 
 ### Inline HTML
 
-For any markup that is not covered by Markdown’s syntax, you simply use HTML
-itself. There’s no need to preface it or delimit it to indicate that you’re
-switching from Markdown to HTML; you just use the tags.
+For any markup that is not covered by Markdown’s syntax, you simply use HTML itself. There’s no need to preface it
+or delimit it to indicate that you’re switching from Markdown to HTML; you just use the tags.
 
 Code:
 
@@ -960,11 +935,9 @@ This is another regular paragraph.
 
 --------
 
-Note that Markdown formatting syntax is **not processed within block-level
-HTML tags**.
+Note that Markdown formatting syntax is **not processed within block-level HTML tags**.
 
-Unlike block-level HTML tags, Markdown syntax is **processed within span-level
-tags**.
+Unlike block-level HTML tags, Markdown syntax is **processed within span-level tags**.
 
 Code:
 

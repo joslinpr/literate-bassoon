@@ -10,7 +10,7 @@ MAKEFLAGS += "-j 4"
 
 # Programs and their Options
 GLOW := /usr/local/bin/glow
-GLOWARGS := -w 80
+GLOWARGS := -w 120
 RSYNC := /usr/bin/rsync
 SHELL := /usr/bin/bash
 MD := /usr/local/bin/markdown_py

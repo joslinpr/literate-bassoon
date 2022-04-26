@@ -20,8 +20,7 @@ lsscsi -g # (Optional by installing the lsscsi rpm package)
 
 • To identify and to locate the WWPN numbers of the installed fibre cards:
 
-for n in `ls -lrt /sys/class/fc_host/host[0-9]*/port_name|awk '{print
-$9}'|cut -d/ -f5`;
+for n in `ls -lrt /sys/class/fc_host/host[0-9]*/port_name|awk '{print $9}'|cut -d/ -f5`;
 do
 p=`cat /sys/class/fc_host/$n/port_name`; printf "$n - $p\n";
 done
@@ -40,7 +39,6 @@ systool -c scsi_host -v |egrep -i 'fw_state|link'
 
 should contain this line:
 
-install qla2xxx { /sbin/modprobe hpsa; } ; /sbin/modprobe --first-time --ignore-
-install qla2xxx options qla2xxx ql2xmaxqdepth=64 qlport_down_retry=64
-ql2xloginretrycount=16 ql2xextended_error_logging=1
+install qla2xxx { /sbin/modprobe hpsa; } ; /sbin/modprobe --first-time --ignore-install qla2xxx options qla2xxx
+ql2xmaxqdepth=64 qlport_down_retry=64 ql2xloginretrycount=16 ql2xextended_error_logging=1
 

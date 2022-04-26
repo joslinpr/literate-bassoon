@@ -7,9 +7,8 @@
 
 URL https://github.com/charmbracelet/glow
 
-Glow can be downloaded from the Releases page
-https://github.com/charmbracelet/glow/releases, or built if Go 1.13+ is
-installed:
+Glow can be downloaded from the Releases page https://github.com/charmbracelet/glow/releases, or built if Go 1.13+
+is installed:
 
 git clone https://github.com/charmbracelet/glow.git
 cd glow

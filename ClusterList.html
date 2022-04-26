@@ -39,7 +39,9 @@ ul { color: blue; }
 </head>
 <body> <!-- vim: set ai si nu :-->
 <div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#example">Example:</a></li>
+</ul>
 </div>
 <table>
 <thead>
@@ -47,23 +49,60 @@ ul { color: blue; }
 <th>Cluster</th>
 <th>Node</th>
 <th>Use</th>
+<th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>czstlocp001.dhl.com</td>
+<td>czchoocp001</td>
+<td>czcholspc004404</td>
+<td>PRG Prod v4</td>
+<td><a href="https://console.apps.czchoocp001.dhl.com">https://console.apps.czchoocp001.dhl.com</a></td>
+</tr>
+<tr>
+<td>czstlocp001</td>
 <td>czstllspc005226</td>
-<td>PRG DR Prod</td>
+<td>PRG DR Prod v4</td>
+<td><a href="https://console.apps.czstlocp001.dhl.com">https://console.apps.czstlocp001.dhl.com</a></td>
 </tr>
 <tr>
-<td>usmegocp001.dhl.com</td>
-<td></td>
-<td>US Prod DR</td>
+<td>mykulocp001</td>
+<td>mykullspc005304</td>
+<td>CBJ Prod v4</td>
+<td><a href="https://console.apps.mykulocp001.dhl.com">https://console.apps.mykulocp001.dhl.com</a></td>
 </tr>
 <tr>
-<td>usqasocp001.dhl.com</td>
+<td>mytpmocp001</td>
+<td>mytpmlspc005204</td>
+<td>CBJ DR v4</td>
+<td><a href="https://console.apps.mytpmocp001.dhl.com">https://console.apps.mytpmocp001.dhl.com</a></td>
+</tr>
+<tr>
+<td>usmegocp001</td>
+<td>usmeglspc005204</td>
+<td>US Prod DR V4</td>
+<td><a href="https://console.apps.usmegocp001.dhl.com">https://console.apps.usmegocp001.dhl.com</a></td>
+</tr>
+<tr>
+<td>usqasocp001</td>
 <td>usqaslspc005001</td>
-<td>US Prod</td>
+<td>US Prod V4</td>
+<td><a href="https://console.apps.usqasocp001.dhl.com">https://console.apps.usqasocp001.dhl.com</a></td>
+</tr>
+<tr>
+<td>czchooct001</td>
+<td>czcholstc005204</td>
+<td>PRG Proof of Concept 4</td>
+<td><a href="https://console.apps.czchooct001.dhl.com">https://console.apps.czchooct001.dhl.com</a></td>
+</tr>
+<tr>
+<td>czchooct002</td>
+<td>czcholstc005204</td>
+<td>PRG Test v4</td>
+<td><a href="https://console.apps.czchooct002.dhl.com">https://console.apps.czchooct002.dhl.com</a></td>
 </tr>
 </tbody>
-</table></body> </html> <!-- vim: set ai si nu :-->
+</table>
+<h2 id="example">Example:</h2>
+<pre><code>oc login --token=sha256~qYB9ZtYrp0sqYUMNL_M4cjnA_35_uDy02ZYeMGnt02w --server=https://api.czchooct001:6443
+</code></pre></body> </html> <!-- vim: set ai si nu :-->

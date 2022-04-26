@@ -16,8 +16,7 @@
 
 ## "code":
 
-This is inline `"code": { "color": "1", "margin": 4 }`.  This follows inline
-code.
+This is inline `"code": { "color": "1", "margin": 4 }`.  This follows inline code.
 
 ## "document":
 
@@ -88,8 +87,7 @@ Image: Image → https://charm.sh/logo.png.
 
 ## "link": &   "link_text":
 
-"link": { "color": "123", "underline": true, "block_prefix": "(",
-"block_suffix": ")" }
+"link": { "color": "123", "underline": true, "block_prefix": "(", "block_suffix": ")" }
 
 "link_text": { "color": "123", "bold": true }
 
@@ -103,26 +101,20 @@ GitHub http://github.com
 
 ## "paragraph":
 
-"paragraph": { "margin": 4, "color": "5" } Lorem ipsum dolor sit amet,
-consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Enim praesent elementum facilisis leo vel. Orci dapibus
-ultrices in iaculis nunc sed augue lacus viverra. Felis donec et odio
-pellentesque. Mauris in aliquam sem fringilla ut morbi tincidunt. Mollis
-aliquam ut porttitor leo a diam. At erat pellentesque adipiscing commodo
-elit at imperdiet. Aliquam faucibus purus in massa. Leo vel fringilla est
-ullamcorper eget nulla. Eros donec ac odio tempor orci dapibus. Volutpat sed
-cras ornare arcu dui vivamus arcu felis. Dolor purus non enim praesent
-elementum facilisis leo vel.
+"paragraph": { "margin": 4, "color": "5" } Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Enim praesent elementum facilisis leo vel. Orci dapibus ultrices
+in iaculis nunc sed augue lacus viverra. Felis donec et odio pellentesque. Mauris in aliquam sem fringilla ut morbi
+tincidunt. Mollis aliquam ut porttitor leo a diam. At erat pellentesque adipiscing commodo elit at imperdiet.
+Aliquam faucibus purus in massa. Leo vel fringilla est ullamcorper eget nulla. Eros donec ac odio tempor orci
+dapibus. Volutpat sed cras ornare arcu dui vivamus arcu felis. Dolor purus non enim praesent elementum facilisis leo
+vel.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Enim praesent elementum
-facilisis leo vel. Orci dapibus ultrices in iaculis nunc sed augue lacus
-viverra. Felis donec et odio pellentesque. Mauris in aliquam sem fringilla
-ut morbi tincidunt. Mollis aliquam ut porttitor leo a diam. At erat
-pellentesque adipiscing commodo elit at imperdiet. Aliquam faucibus purus in
-massa. Leo vel fringilla est ullamcorper eget nulla. Eros donec ac odio
-tempor orci dapibus. Volutpat sed cras ornare arcu dui vivamus arcu felis.
-Dolor purus non enim praesent elementum facilisis leo vel.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Enim praesent elementum facilisis leo vel. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra.
+Felis donec et odio pellentesque. Mauris in aliquam sem fringilla ut morbi tincidunt. Mollis aliquam ut porttitor
+leo a diam. At erat pellentesque adipiscing commodo elit at imperdiet. Aliquam faucibus purus in massa. Leo vel
+fringilla est ullamcorper eget nulla. Eros donec ac odio tempor orci dapibus. Volutpat sed cras ornare arcu dui
+vivamus arcu felis. Dolor purus non enim praesent elementum facilisis leo vel.
 
 ## "strikethrough":
 
@@ -150,7 +142,6 @@ Three │ Four
 
 "text": { "color": "2" }
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Enim praesent elementum
-facilisis
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Enim praesent elementum facilisis
 

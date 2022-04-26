@@ -16,6 +16,5 @@ CTRL-X - decrement number under cursor
 ### Bouncing
 
 Matchit - use g% to find next/previous match
-use % to find match to construct under cursor (if, (, ), {, }
-etc.
+use % to find match to construct under cursor (if, (, ), {, } etc.
 

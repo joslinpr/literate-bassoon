@@ -34,8 +34,8 @@ Have we given 5-star service today? ✰✰✰✰✰
 
 ### Resolving a Ticket
 
-• This message is an important part of a ticket cycle. A closing canned
-response should have these three aspects by default
+• This message is an important part of a ticket cycle. A closing canned response should have these three aspects by
+default
 • give a recap of the request,
 • add a thanks note, and
 • ask if they would like more assistance.
