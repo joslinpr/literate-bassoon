@@ -40,20 +40,33 @@ ul { color: blue; }
 <body> <!-- vim: set ai si nu :-->
 <div class="toc">
 <ul>
-<li><a href="#my-book-of-knowledge">My Book of Knowledge</a></li>
+<li><a href="#my-book-of-knowledge">My Book of Knowledge</a><ul>
 <li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
-<li><a href="#saved-at-literate-bassoon-httpsgithubcomjoslinprliterate-bassoonblobmainreadmemd">Saved at literate-bassoon https://github.com/joslinpr/literate-bassoon/blob/main/README.md</a></li>
+<li><a href="#viewing">Viewing</a></li>
+<li><a href="#conversion">Conversion</a></li>
+<li><a href="#source">Source</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
-<h2 id="my-book-of-knowledge">My Book of Knowledge</h2>
+<h1 id="my-book-of-knowledge">My Book of Knowledge</h1>
 <p>Things I need to document.</p>
-<h1 id="book-of-knowledge">Book of Knowledge</h1>
+<h2 id="book-of-knowledge">Book of Knowledge</h2>
 <p>This is the Book of Knowledge, an unstructed store of miscellaneous things I
 need to remember.</p>
-<p>Files without an extension probably need conversion to markdown.  Use <em>glow</em>
-to view them, or review the .txt versions.</p>
-<pre><code>$ glow -s PRJ.json -w $COLUMNS
+<h3 id="viewing">Viewing</h3>
+<p>Use <em>glow</em> to view the Markdown versions, or view the .txt versions.</p>
+<pre><code>$ glow -s PRJ.json -w $COLUMNS README.md
 </code></pre>
-<h3 id="saved-at-literate-bassoon-httpsgithubcomjoslinprliterate-bassoonblobmainreadmemd">Saved at literate-bassoon https://github.com/joslinpr/literate-bassoon/blob/main/README.md</h3></body> </html> <!-- vim: set ai si nu :-->
+<h3 id="conversion">Conversion</h3>
+<p>Files without an extension probably need conversion to markdown.</p>
+<pre><code>$ make -n
+$ make
+$ make install
+</code></pre>
+<h3 id="source">Source</h3>
+<p>Saved at literate-bassoon:
+*  https://github.com/joslinpr/literate-bassoon
+*  https://git.dhl.com/pjoslin/literate-bassoon</p></body> </html> <!-- vim: set ai si nu :-->

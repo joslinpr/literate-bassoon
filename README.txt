@@ -1,16 +1,30 @@
 
-## My Book of Knowledge
+# My Book of Knowledge
 
 Things I need to document.
 
-# Book of Knowledge
+## Book of Knowledge
 
 This is the Book of Knowledge, an unstructed store of miscellaneous things I need to remember.
 
-Files without an extension probably need conversion to markdown.  Use *glow* to view them, or review the .txt
-versions.
+### Viewing
 
-$ glow -s PRJ.json -w $COLUMNS
+Use *glow* to view the Markdown versions, or view the .txt versions.
 
-### Saved at literate-bassoon https://github.com/joslinpr/literate-bassoon/blob/main/README.md
+$ glow -s PRJ.json -w $COLUMNS README.md
+
+### Conversion
+
+Files without an extension probably need conversion to markdown.
+
+$ make -n
+$ make
+$ make install
+
+### Source
+
+Saved at literate-bassoon:
+
+• https://github.com/joslinpr/literate-bassoon
+• https://git.dhl.com/pjoslin/literate-bassoon
 
