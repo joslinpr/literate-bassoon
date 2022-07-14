@@ -41,6 +41,7 @@ ul { color: blue; }
 <div class="toc">
 <ul>
 <li><a href="#example">Example:</a></li>
+<li><a href="#utility-nodes">Utility Nodes</a></li>
 </ul>
 </div>
 <table>
@@ -56,25 +57,25 @@ ul { color: blue; }
 <tr>
 <td>czchoocp001</td>
 <td>czcholspc004404</td>
-<td>PRG Prod v4</td>
+<td>PRG Prod V4</td>
 <td><a href="https://console.apps.czchoocp001.dhl.com">https://console.apps.czchoocp001.dhl.com</a></td>
 </tr>
 <tr>
 <td>czstlocp001</td>
 <td>czstllspc005226</td>
-<td>PRG DR Prod v4</td>
+<td>PRG DR Prod V4</td>
 <td><a href="https://console.apps.czstlocp001.dhl.com">https://console.apps.czstlocp001.dhl.com</a></td>
 </tr>
 <tr>
 <td>mykulocp001</td>
 <td>mykullspc005304</td>
-<td>CBJ Prod v4</td>
+<td>CBJ Prod V4</td>
 <td><a href="https://console.apps.mykulocp001.dhl.com">https://console.apps.mykulocp001.dhl.com</a></td>
 </tr>
 <tr>
 <td>mytpmocp001</td>
 <td>mytpmlspc005204</td>
-<td>CBJ DR v4</td>
+<td>CBJ DR V4</td>
 <td><a href="https://console.apps.mytpmocp001.dhl.com">https://console.apps.mytpmocp001.dhl.com</a></td>
 </tr>
 <tr>
@@ -92,17 +93,98 @@ ul { color: blue; }
 <tr>
 <td>czchooct001</td>
 <td>czcholstc005204</td>
-<td>PRG Proof of Concept 4</td>
+<td>PRG Proof of Concept V4</td>
 <td><a href="https://console.apps.czchooct001.dhl.com">https://console.apps.czchooct001.dhl.com</a></td>
 </tr>
 <tr>
 <td>czchooct002</td>
 <td>czcholstc005204</td>
-<td>PRG Test v4</td>
+<td>PRG Test V4</td>
 <td><a href="https://console.apps.czchooct002.dhl.com">https://console.apps.czchooct002.dhl.com</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">Use</th>
+<th align="left">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">PRG/PROD</td>
+<td align="left"><a href="https://prod1-ocp.prg-dc.dhl.com">https://prod1-ocp.prg-dc.dhl.com </a></td>
+</tr>
+<tr>
+<td align="left">CBJ/PROD</td>
+<td align="left"><a href="https://prod2-ocp.kul-dc.dhl.com">https://prod2-ocp.kul-dc.dhl.com </a></td>
+</tr>
+<tr>
+<td align="left">US/PROD</td>
+<td align="left"><a href="https://prod3-ocp.phx-dc.dhl.com">https://prod3-ocp.phx-dc.dhl.com </a></td>
+</tr>
+<tr>
+<td align="left">PRG/DR</td>
+<td align="left"><a href="https://proddr1-ocp.prg-dc.dhl.com">https://proddr1-ocp.prg-dc.dhl.com </a></td>
+</tr>
+<tr>
+<td align="left">CBJ/DR</td>
+<td align="left"><a href="https://proddr2-ocp.kul-dc.dhl.com">https://proddr2-ocp.kul-dc.dhl.com </a></td>
+</tr>
+<tr>
+<td align="left">PRG-test V4</td>
+<td align="left"><a href="https://api.czchooct002.dhl.com:6443">https://api.czchooct002.dhl.com:6443 </a></td>
+</tr>
+<tr>
+<td align="left">CBJ V4</td>
+<td align="left"><a href="https://api.mykulocp001.dhl.com:6443">https://api.mykulocp001.dhl.com:6443 </a></td>
+</tr>
+<tr>
+<td align="left">PRG-prod V4</td>
+<td align="left"><a href="https://api.czchoocp001.dhl.com:6443">https://api.czchoocp001.dhl.com:6443 </a></td>
+</tr>
+<tr>
+<td align="left">US V4</td>
+<td align="left"><a href="https://api.usqasocp001.dhl.com:6443">https://api.usqasocp001.dhl.com:6443 </a></td>
+</tr>
+<tr>
+<td align="left">PRG-dr V4</td>
+<td align="left"><a href="https://api.czstlocp001.dhl.com:6443">https://api.czstlocp001.dhl.com:6443 </a></td>
+</tr>
+<tr>
+<td align="left">US-dr V4</td>
+<td align="left"><a href="https://api.usmegocp001.dhl.com:6443">https://api.usmegocp001.dhl.com:6443 </a></td>
+</tr>
+<tr>
+<td align="left">CBJ-dr V4</td>
+<td align="left"><a href="https://api.mytpmocp001.dhl.com:6443">https://api.mytpmocp001.dhl.com:6443 </a></td>
+</tr>
+<tr>
+<td align="left">Crash &amp; Burn V4</td>
+<td align="left"><a href="https://api.czchooct999.dhl.com:6443">https://api.czchooct999.dhl.com:6443 </a></td>
+</tr>
+<tr>
+<td align="left">Crash &amp; Burn V3</td>
+<td align="left"><a href="https://prod1-ocp-cb.prg-dc.dhl.com/console">https://prod1-ocp-cb.prg-dc.dhl.com/console </a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="example">Example:</h2>
 <pre><code>oc login --token=sha256~qYB9ZtYrp0sqYUMNL_M4cjnA_35_uDy02ZYeMGnt02w --server=https://api.czchooct001:6443
-</code></pre></body> </html> <!-- vim: set ai si nu :-->
+</code></pre>
+<h2 id="utility-nodes">Utility Nodes</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">czcholspc002815</td>
+<td align="left">Kafka Support, podman</td>
+</tr>
+</tbody>
+</table></body> </html> <!-- vim: set ai si nu :-->

@@ -20,4 +20,11 @@ Matchit - use g% to find next/previous match
           use % to find match to construct under cursor (if, (, ), {, } etc.
 ```
 
+### Checking Variables
+```
+:verbose set variable?
+OR
+:echo "Variable:" &variable
+```
+
 [//]: <> (vim: set ai et nu  cindent softtabstop=4 shiftwidth=4 tabstop=4 textwidth=78 filetype=markdown :)

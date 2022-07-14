@@ -1,16 +1,37 @@
 |Cluster | Node | Use | Link |
 |---|---|---|---|
-| czchoocp001 |  czcholspc004404 | PRG Prod v4    | [https://console.apps.czchoocp001.dhl.com](https://console.apps.czchoocp001.dhl.com) |
-| czstlocp001 |  czstllspc005226 | PRG DR Prod v4 | [https://console.apps.czstlocp001.dhl.com](https://console.apps.czstlocp001.dhl.com) |
-| mykulocp001 |  mykullspc005304 | CBJ Prod v4    | [https://console.apps.mykulocp001.dhl.com](https://console.apps.mykulocp001.dhl.com) |
-| mytpmocp001 |  mytpmlspc005204 | CBJ DR v4      | [https://console.apps.mytpmocp001.dhl.com](https://console.apps.mytpmocp001.dhl.com) |
+| czchoocp001 |  czcholspc004404 | PRG Prod V4    | [https://console.apps.czchoocp001.dhl.com](https://console.apps.czchoocp001.dhl.com) |
+| czstlocp001 |  czstllspc005226 | PRG DR Prod V4 | [https://console.apps.czstlocp001.dhl.com](https://console.apps.czstlocp001.dhl.com) |
+| mykulocp001 |  mykullspc005304 | CBJ Prod V4    | [https://console.apps.mykulocp001.dhl.com](https://console.apps.mykulocp001.dhl.com) |
+| mytpmocp001 |  mytpmlspc005204 | CBJ DR V4      | [https://console.apps.mytpmocp001.dhl.com](https://console.apps.mytpmocp001.dhl.com) |
 | usmegocp001 |  usmeglspc005204 | US Prod DR V4  | [https://console.apps.usmegocp001.dhl.com](https://console.apps.usmegocp001.dhl.com) |
 | usqasocp001 |  usqaslspc005001 | US Prod V4     | [https://console.apps.usqasocp001.dhl.com](https://console.apps.usqasocp001.dhl.com) |
-| czchooct001 |  czcholstc005204 | PRG Proof of Concept 4 | [https://console.apps.czchooct001.dhl.com](https://console.apps.czchooct001.dhl.com) |
-| czchooct002 |  czcholstc005204 | PRG Test v4    | [https://console.apps.czchooct002.dhl.com](https://console.apps.czchooct002.dhl.com) |
+| czchooct001 |  czcholstc005204 | PRG Proof of Concept V4 | [https://console.apps.czchooct001.dhl.com](https://console.apps.czchooct001.dhl.com) |
+| czchooct002 |  czcholstc005204 | PRG Test V4    | [https://console.apps.czchooct002.dhl.com](https://console.apps.czchooct002.dhl.com) |
 
+| Use  | Link |
+|:--|:--|
+| PRG/PROD    | [https://prod1-ocp.prg-dc.dhl.com ](https://prod1-ocp.prg-dc.dhl.com )|
+| CBJ/PROD    | [https://prod2-ocp.kul-dc.dhl.com ](https://prod2-ocp.kul-dc.dhl.com )|
+| US/PROD     | [https://prod3-ocp.phx-dc.dhl.com ](https://prod3-ocp.phx-dc.dhl.com )|
+| PRG/DR      | [https://proddr1-ocp.prg-dc.dhl.com ](https://proddr1-ocp.prg-dc.dhl.com )|
+| CBJ/DR      | [https://proddr2-ocp.kul-dc.dhl.com ](https://proddr2-ocp.kul-dc.dhl.com )|
+| PRG-test V4 | [https://api.czchooct002.dhl.com:6443 ](https://api.czchooct002.dhl.com:6443 )|
+| CBJ V4      | [https://api.mykulocp001.dhl.com:6443 ](https://api.mykulocp001.dhl.com:6443 )|
+| PRG-prod V4 | [https://api.czchoocp001.dhl.com:6443 ](https://api.czchoocp001.dhl.com:6443 )|
+| US V4       | [https://api.usqasocp001.dhl.com:6443 ](https://api.usqasocp001.dhl.com:6443 )|
+| PRG-dr V4   | [https://api.czstlocp001.dhl.com:6443 ](https://api.czstlocp001.dhl.com:6443 )|
+| US-dr V4    | [https://api.usmegocp001.dhl.com:6443 ](https://api.usmegocp001.dhl.com:6443 )|
+| CBJ-dr V4   | [https://api.mytpmocp001.dhl.com:6443 ](https://api.mytpmocp001.dhl.com:6443 )|
+| Crash & Burn V4 | [https://api.czchooct999.dhl.com:6443 ](https://api.czchooct999.dhl.com:6443 )|
+| Crash & Burn V3 | [https://prod1-ocp-cb.prg-dc.dhl.com/console ](https://prod1-ocp-cb.prg-dc.dhl.com/console )|
 
 ## Example:
 ```
 oc login --token=sha256~qYB9ZtYrp0sqYUMNL_M4cjnA_35_uDy02ZYeMGnt02w --server=https://api.czchooct001:6443
 ```
+
+## Utility Nodes
+| Name | Use |
+|:--|:--|
+| czcholspc002815 | Kafka Support, podman |

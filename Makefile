@@ -19,10 +19,10 @@ MDOPTS := -x extra -x smarty -x sane_lists -x toc
 
 #################### Targets
 SENTINAL  := .uptodate
-TXTFILES  = $(patsubst %.md,%.txt,$(wildcard *.md))
-HTMLFILES = $(patsubst %.md,%.html,$(wildcard *.md))
+SRCS      = $(sort $(wildcard *.md))
+TXTFILES  = $(patsubst %.md,%.txt,$(SRCS))
+HTMLFILES = $(patsubst %.md,%.html,$(SRCS))
 FILES     = $(sort $(TXTFILES) $(HTMLFILES))
-SRCS      = $(wildcard *.md)
 TOC       = .TOC.header
 HEADER    = .header.html
 FOOTER    = .footer.html
