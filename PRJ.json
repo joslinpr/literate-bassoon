@@ -1,61 +1,64 @@
 {
     "document": {
+        "indent": 2,
         "color": "2",
         "block_prefix": "\n",
         "block_suffix": "\n"
     },
-    "block_quote": {
-        "color": "200",
-        "indent": 1,
-        "indent_token": "| "
-    },
     "paragraph": {
+        "margin": 4,
+        "color": "5",
+        "background_color": "235"
     },
     "heading": {
         "color": "5",
-        "bold": true
+        "background_color": "1"
     },
     "h1": {
-        "suffix": " <== 1",
-        "prefix": "1 ==> ",
+        "prefix": "=> ",
         "color": "3"
     },
     "h2": {
-        "suffix": " <== 2",
-        "prefix": "2 ==> ",
+        "prefix": "==> ",
         "color": "3"
     },
     "h3": {
-        "suffix": " <== 3",
-        "prefix": "3 ==> ",
+        "prefix": "===> ",
         "color": "3"
     },
     "h4": {
-        "suffix": " <== 4",
-        "prefix": "4 ==> ",
+        "prefix": "====> ",
         "color": "3"
     },
     "h5": {
-        "suffix": " <== 5",
-        "prefix": "5 ==> ",
+        "prefix": "=====> ",
         "color": "3"
     },
     "h6": {
-        "suffix": " <== 6",
-        "prefix": "6 ==> ",
+        "prefix": "======> ",
         "color": "3"
     },
-    "text": { },
-    "strikethrough": {
-        "crossed_out": true
+    "block_quote": {
+        "color": "200",
+        "indent": 1,
+        "indent_token": "=> "
     },
-    "emph": {
-        "color": "3",
-        "italic": true
+    "list": {
+        "color": "15",
+        "background_color": "52",
+        "level_indent": 4
     },
-    "hr": {
-        "color": "240",
-        "format": "-----------------------------"
+    "code_block": {
+        "color": "200",
+        "theme": "solarized-dark"
+    },
+    "table": {
+        "margin": 4
+    },
+    "text": {
+        "bold": true,
+        "color": "15",
+        "background_color": "57"
     },
     "item": {
         "block_prefix": "• "
@@ -64,8 +67,8 @@
         "block_prefix": ". "
     },
     "task": {
-        "unticked": "__ ",
-        "ticked": "✗  "
+        "ticked": "✓ ",
+        "unticked": "✗ "
     },
     "link": {
         "color": "123",
@@ -74,7 +77,7 @@
         "block_suffix": ")"
     },
     "link_text": {
-        "color": "35",
+        "color": "123",
         "bold": true
     },
     "image": {
@@ -83,50 +86,21 @@
         "block_suffix": "]"
     },
     "image_text": {
-        "color": "8" ,
-        "format": "Image: {{.text}} -->"
+        "color": "8"
     },
     "code": {
-        "color": "1",
-        "background_color": "0",
-        "margin": 4 ,
-        "prefix": " ",
-        "suffix": " "
+        "color": "200"
     },
-    "table": {
-        "margin": 4,
-        "center_separator": "┼",
-        "column_separator": "│",
-        "row_separator": "─"
-    },
-    "code_block": {
-        "color": "1",
-        "background_color": "0",
-        "margin" : 4
-    },
-    "enumeration": {
-        "block_prefix": ". "
-    },
-    "list": {
-        "color": "15",
-        "level_indent": 4
+    "emph": {
+        "italic": true
     },
     "strong": {
         "bold": true
     },
-    "task": {
-        "unticked": "__ ",
-        "ticked": "✗  "
+    "strikethrough": {
+        "crossed_out": true
     },
-    "definition_list": {
-    },
-    "definition_term": {
-    },
-    "definition_description": {
-        "block_prefix": "\n🠶 "
-    },
-    "html_block": {
-    },
-    "html_span": {
+    "hr": {
+        "block_prefix": "---"
     }
 }
