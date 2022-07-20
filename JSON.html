@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US" style="scroll-behavior: auto; "> <head>
+<meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<style>
+a { color: blue;  background-color: rgb(230 230 240 / 50%); }
+a:visited { color: green;  background-color: rgb(230 230 240 / 50%); }
+blockquote { background-color:  rgb(230 230 240 / 50%); color: blue; }
+body { background-color: #fdfdfd; color: black; }
+code { background-color:  #f5f5f5; color: black; }
+div { color: blue; }
+em { color: blue; }
+h1 { color: blue; border: 1px solid rgba(0, 0, 0, 0.8); background-color: #e5effb;}
+h2 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+h3 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+h4 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+h5 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+h6 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+head { color: blue;  background-color: #e5effb;}
+hr { color: blue; }
+img { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
+li { color: blue; }
+ol { color: blue; }
+p { color: blue; }
+pre { background-color:  #f5f5f5; color: black; }
+span { color: blue; }
+strong { color: blue; }
+style { color: blue; }
+table { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
+tbody { color: blue; }
+td { color: blue; }
+th { color: blue; }
+thead { color: blue; }
+tr { color: blue; }
+ul { color: blue; }
+.toc { background-color: wheat; border: brown 1px solid;}
+</style>
+</head>
+<body> <!-- vim: set ai si nu :-->
+<div class="toc">
+<ul>
+<li><a href="#working-with-json">Working with JSON</a><ul>
+<li><a href="#converting-json-to-yaml">Converting json to yaml</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="working-with-json">Working with JSON</h1>
+<h3 id="converting-json-to-yaml">Converting json to yaml</h3>
+<p><code># jq -f toYaml &lt; Data.json</code></p>
+<p>or</p>
+<p><code># cmd | jq -f toYaml &gt; Data.yaml</code></p>
+<p>Where toYaml is:</p>
+<pre><code># From: https://stackoverflow.com/questions/53315791/how-to-convert-a-json-response-into-yaml-in-bash#53330236
+# purpose: converts Json to Yaml
+# remarks:
+#   You can use 'yq -y' to convert json to yaml, but ...
+#     * this function can be used several times within a single jq program
+#     * this function may be faster than using yq
+#     * maybe yq is not available in your environment
+#
+# input: any Json
+# output: json converted to yaml
+def toYaml:
+   def handleMultilineString($level):
+      reduce ([match(&quot;\n+&quot;; &quot;g&quot;)]                       # find groups of '\n'
+              | sort_by(-.offset))[] as $match
+             (.; .[0:$match.offset + $match.length] +
+                 &quot;\n\(&quot;    &quot; * $level)&quot; +               # add one extra '\n' for every group of '\n's. Add indention for each new line
+                 .[$match.offset + $match.length:]);
+
+   def toYamlString($level):
+      if type == &quot;string&quot;
+      then handleMultilineString($level)
+           | sub(&quot;'&quot;; &quot;''&quot;; &quot;g&quot;)           # escape single quotes
+           | &quot;'\(.)'&quot;                      # wrap in single quotes
+      else .
+      end;
+
+   def _toYaml($level):
+      (objects | to_entries[] |
+          if (.value | type) == &quot;array&quot; then
+              &quot;\(.key):&quot;, (.value | _toYaml($level))
+          elif (.value | type) == &quot;object&quot; then
+              &quot;\(.key):&quot;, &quot;\(&quot;    &quot;)\(.value | _toYaml($level))&quot;
+          else
+              &quot;\(.key): \(.value | toYamlString($level))&quot;
+          end
+      )
+      // (arrays | select(length &gt; 0)[] | [_toYaml($level)] |
+          &quot;  - \(.[0])&quot;, &quot;\(&quot;    &quot;)\(.[1:][])&quot;
+      )
+      // .;
+
+   _toYaml(1);
+</code></pre></body> </html> <!-- vim: set ai si nu :-->

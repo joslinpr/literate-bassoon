@@ -43,7 +43,7 @@ ul { color: blue; }
 <li><a href="#miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</a><ul>
 <li><a href="#get-memory-usage-for-a-pod">Get memory usage for a pod</a></li>
 <li><a href="#get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</a></li>
-<li><a href="#get-various-info-from-registry-via-cli">Get Various Info from Registry via CLI:</a><ul>
+<li><a href="#get-various-info-via-cli">Get Various Info via CLI:</a><ul>
 <li><a href="#pod">POD:</a></li>
 <li><a href="#deployment">deployment:</a></li>
 <li><a href="#statefullset">Statefullset:</a></li>
@@ -52,38 +52,56 @@ ul { color: blue; }
 <li><a href="#imagestream">ImageStream:</a></li>
 </ul>
 </li>
+<li><a href="#role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</a><ul>
+<li><a href="#describe-all-role-based-access-controls">Describe all Role-Based Access Controls</a></li>
+<li><a href="#get-clusterrolebindings-crb-for-userserviceaccount-cluster-admins">Get Clusterrolebindings (CRB) for user/serviceaccount cluster-admins</a></li>
+<li><a href="#clusterroles-cr-for-userserviceaccount-cluster-admins">Clusterroles (CR) for user/serviceaccount cluster-admins</a><ul>
+<li><a href="#converting-json-to-yaml">Converting json to yaml</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 <h1 id="miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</h1>
-<h3 id="get-memory-usage-for-a-pod">Get memory usage for a pod</h3>
+<h2 id="get-memory-usage-for-a-pod">Get memory usage for a pod</h2>
 <pre><code>$ oc project ecs-am-ramp-sit-cvg
 $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
 </code></pre>
-<h3 id="get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</h3>
+<h2 id="get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</h2>
 <pre><code>$ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 </code></pre>
 <ul>
 <li>-i: interactive</li>
 <li>-t: create a TTY</li>
 </ul>
-<h3 id="get-various-info-from-registry-via-cli">Get Various Info from Registry via CLI:</h3>
-<h4 id="pod">POD:</h4>
+<h2 id="get-various-info-via-cli">Get Various Info via CLI:</h2>
+<h3 id="pod">POD:</h3>
 <pre><code>oc get po '-o=jsonpath={range .items[*]}{&quot;PROG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.containers[].image}{&quot;\n&quot;}' -A |grep redhat
 </code></pre>
-<h4 id="deployment">deployment:</h4>
+<h3 id="deployment">deployment:</h3>
 <pre><code>oc get deployment '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.spec.template.spec.containers[].name}{&quot;,&quot;}{.spec.template.spec.containers[].image}{&quot;\n&quot;}' -A|grep redhat
 </code></pre>
-<h4 id="statefullset">Statefullset:</h4>
+<h3 id="statefullset">Statefullset:</h3>
 <pre><code>oc get sts '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.spec.template.spec.containers[].name}{&quot;,&quot;}{.spec.template.spec.containers[].image}{&quot;\n&quot;}' -A|grep redhat
 </code></pre>
-<h4 id="deploymentconfig">deploymentConfig:</h4>
+<h3 id="deploymentconfig">deploymentConfig:</h3>
 <pre><code>oc get dc '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.spec.template.spec.containers[].name}{&quot;,&quot;}{.spec.template.spec.containers[].image}{&quot;\n&quot;}' -A|grep redhat
 </code></pre>
-<h4 id="buidconfig">BuidConfig:</h4>
+<h3 id="buidconfig">BuidConfig:</h3>
 <pre><code>oc get bc '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.triggers[].imageChange.lastTriggeredImageID}{&quot;\n&quot;}{end}' -A|grep redhat
 </code></pre>
-<h4 id="imagestream">ImageStream:</h4>
+<h3 id="imagestream">ImageStream:</h3>
 <pre><code>oc get is '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.tags[].from.name}{&quot;\n&quot;}{end}' -A|grep redhat
-</code></pre></body> </html> <!-- vim: set ai si nu :-->
+</code></pre>
+<h2 id="role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</h2>
+<h3 id="describe-all-role-based-access-controls">Describe all Role-Based Access Controls</h3>
+<p><code>oc describe clusterrole.rbac</code></p>
+<h3 id="get-clusterrolebindings-crb-for-userserviceaccount-cluster-admins">Get Clusterrolebindings (CRB) for user/serviceaccount cluster-admins</h3>
+<p><code>oc get clusterrolebindings -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'</code></p>
+<h3 id="clusterroles-cr-for-userserviceaccount-cluster-admins">Clusterroles (CR) for user/serviceaccount cluster-admins</h3>
+<p><code>oc get clusterroles -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'</code></p>
+<h4 id="converting-json-to-yaml">Converting json to yaml</h4>
+<p><a href="./JSON.md">Converting json to yaml</a></p></body> </html> <!-- vim: set ai si nu :-->
