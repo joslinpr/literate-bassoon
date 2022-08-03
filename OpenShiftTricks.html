@@ -44,6 +44,7 @@ ul { color: blue; }
 <li><a href="#get-memory-usage-for-a-pod">Get memory usage for a pod</a></li>
 <li><a href="#get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</a></li>
 <li><a href="#get-various-info-via-cli">Get Various Info via CLI:</a><ul>
+<li><a href="#get-auth-token">Get Auth Token:</a></li>
 <li><a href="#pod">POD:</a></li>
 <li><a href="#deployment">deployment:</a></li>
 <li><a href="#statefullset">Statefullset:</a></li>
@@ -78,6 +79,10 @@ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_byte
 <li>-t: create a TTY</li>
 </ul>
 <h2 id="get-various-info-via-cli">Get Various Info via CLI:</h2>
+<h3 id="get-auth-token">Get Auth Token:</h3>
+<p>You must already be logged in.</p>
+<pre><code>TOKEN=$(oc whomai --show-token)
+</code></pre>
 <h3 id="pod">POD:</h3>
 <pre><code>oc get po '-o=jsonpath={range .items[*]}{&quot;PROG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.containers[].image}{&quot;\n&quot;}' -A |grep redhat
 </code></pre>
