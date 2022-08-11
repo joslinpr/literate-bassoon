@@ -16,6 +16,12 @@ $ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 
 ## Get Various Info via CLI:
 
+### Get Auth Token:
+You must already be logged in.
+```
+TOKEN=$(oc whomai --show-token)
+```
+
 ### POD:
 ```
 oc get po '-o=jsonpath={range .items[*]}{"PROG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.containers[].image}{"\n"}' -A |grep redhat
