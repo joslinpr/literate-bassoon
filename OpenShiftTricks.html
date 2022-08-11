@@ -54,8 +54,10 @@ ul { color: blue; }
 </li>
 <li><a href="#role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</a><ul>
 <li><a href="#describe-all-role-based-access-controls">Describe all Role-Based Access Controls</a></li>
-<li><a href="#get-clusterrolebindings-crb-for-userserviceaccount-cluster-admins">Get Clusterrolebindings (CRB) for user/serviceaccount cluster-admins</a></li>
-<li><a href="#clusterroles-cr-for-userserviceaccount-cluster-admins">Clusterroles (CR) for user/serviceaccount cluster-admins</a><ul>
+<li><a href="#get-clusterrolebindings-crb-for-userserviceaccount-prometheus-server">Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server</a></li>
+<li><a href="#clusterroles-cr-for-userserviceaccount-prometheus-server">Clusterroles (CR) for user/serviceaccount prometheus-server</a></li>
+<li><a href="#local-role-binding-operations">Local Role Binding Operations</a></li>
+<li><a href="#cluster-role-binding-operations">Cluster role binding operations</a><ul>
 <li><a href="#converting-json-to-yaml">Converting json to yaml</a></li>
 </ul>
 </li>
@@ -97,11 +99,25 @@ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_byte
 <pre><code>oc get is '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.tags[].from.name}{&quot;\n&quot;}{end}' -A|grep redhat
 </code></pre>
 <h2 id="role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</h2>
+<p><a href="https://docs.openshift.com/container-platform/4.8/authentication/using-rbac.html">RBAC References</a></p>
 <h3 id="describe-all-role-based-access-controls">Describe all Role-Based Access Controls</h3>
 <p><code>oc describe clusterrole.rbac</code></p>
-<h3 id="get-clusterrolebindings-crb-for-userserviceaccount-cluster-admins">Get Clusterrolebindings (CRB) for user/serviceaccount cluster-admins</h3>
+<h3 id="get-clusterrolebindings-crb-for-userserviceaccount-prometheus-server">Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server</h3>
 <p><code>oc get clusterrolebindings -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'</code></p>
-<h3 id="clusterroles-cr-for-userserviceaccount-cluster-admins">Clusterroles (CR) for user/serviceaccount cluster-admins</h3>
+<h3 id="clusterroles-cr-for-userserviceaccount-prometheus-server">Clusterroles (CR) for user/serviceaccount prometheus-server</h3>
 <p><code>oc get clusterroles -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'</code></p>
+<h3 id="local-role-binding-operations">Local Role Binding Operations</h3>
+<p><code>$ oc adm policy who-can &lt;verb&gt; &lt;resource&gt;</code> Indicates which users can perform an action on a resource.</p>
+<p><code>$ oc adm policy add-role-to-user &lt;role&gt; &lt;username&gt;</code> Binds a specified role to specified users in the current project.</p>
+<p><code>$ oc adm policy remove-role-from-user &lt;role&gt; &lt;username&gt;</code> Removes a given role from specified users in the current project.</p>
+<p><code>$ oc adm policy remove-user &lt;username&gt;</code> Removes specified users and all of their roles in the current project.</p>
+<p><code>$ oc adm policy add-role-to-group &lt;role&gt; &lt;groupname&gt;</code> Binds a given role to specified groups in the current project.</p>
+<p><code>$ oc adm policy remove-role-from-group &lt;role&gt; &lt;groupname&gt;</code> Removes a given role from specified groups in the current project.</p>
+<p><code>$ oc adm policy remove-group &lt;groupname&gt;</code> Removes specified groups and all of their roles in the current project.</p>
+<h3 id="cluster-role-binding-operations">Cluster role binding operations</h3>
+<p><code>$ oc adm policy add-cluster-role-to-user &lt;role&gt; &lt;username&gt;</code> Binds a given role to specified users for all projects in the cluster.</p>
+<p><code>$ oc adm policy remove-cluster-role-from-user &lt;role&gt; &lt;username&gt;</code> Removes a given role from specified users for all projects in the cluster.</p>
+<p><code>$ oc adm policy add-cluster-role-to-group &lt;role&gt; &lt;groupname&gt;</code> Binds a given role to specified groups for all projects in the cluster.</p>
+<p><code>$ oc adm policy remove-cluster-role-from-group &lt;role&gt; &lt;groupname&gt;</code> Removes a given role from specified groups for all projects in the cluster.</p>
 <h4 id="converting-json-to-yaml">Converting json to yaml</h4>
 <p><a href="./JSON.md">Converting json to yaml</a></p></body> </html> <!-- vim: set ai si nu :-->
