@@ -59,17 +59,51 @@ redhat
 
 ## Role-Based Access Controls (RBAC)
 
+RBAC References https://docs.openshift.com/container-platform/4.8/authentication/using-rbac.html
+
 ### Describe all Role-Based Access Controls
 
 `oc describe clusterrole.rbac`
 
-### Get Clusterrolebindings (CRB) for user/serviceaccount cluster-admins
+### Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server
 
 `oc get clusterrolebindings -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'`
 
-### Clusterroles (CR) for user/serviceaccount cluster-admins
+### Clusterroles (CR) for user/serviceaccount prometheus-server
 
 `oc get clusterroles -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'`
+
+### Local Role Binding Operations
+
+`$ oc adm policy who-can <verb> <resource>` Indicates which users can perform an action on a resource.
+
+`$ oc adm policy add-role-to-user <role> <username>` Binds a specified role to specified users in the current project.
+
+`$ oc adm policy remove-role-from-user <role> <username>` Removes a given role from specified users in the current
+project.
+
+`$ oc adm policy remove-user <username>` Removes specified users and all of their roles in the current project.
+
+`$ oc adm policy add-role-to-group <role> <groupname>` Binds a given role to specified groups in the current project.
+
+`$ oc adm policy remove-role-from-group <role> <groupname>` Removes a given role from specified groups in the current
+project.
+
+`$ oc adm policy remove-group <groupname>` Removes specified groups and all of their roles in the current project.
+
+### Cluster role binding operations
+
+`$ oc adm policy add-cluster-role-to-user <role> <username>` Binds a given role to specified users for all projects in
+the cluster.
+
+`$ oc adm policy remove-cluster-role-from-user <role> <username>` Removes a given role from specified users for all
+projects in the cluster.
+
+`$ oc adm policy add-cluster-role-to-group <role> <groupname>` Binds a given role to specified groups for all projects
+in the cluster.
+
+`$ oc adm policy remove-cluster-role-from-group <role> <groupname>` Removes a given role from specified groups for all
+projects in the cluster.
 
 #### Converting json to yaml
 
