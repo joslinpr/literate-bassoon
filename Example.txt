@@ -606,7 +606,7 @@ Preview:
 
 --------
 
-See my About /home/pjoslin/Projects/BoK/about/ page for details.
+See my About /home/pjoslin/Projects/literate-bassoon/about/ page for details.
 
 --------
 
@@ -786,9 +786,9 @@ Preview:
 
 --------
 
-Image: Alt text → /home/pjoslin/Projects/BoK/path/to/img.jpg
+Image: Alt text → /home/pjoslin/Projects/literate-bassoon/path/to/img.jpg
 
-Image: Alt text → /home/pjoslin/Projects/BoK/path/to/img.jpg
+Image: Alt text → /home/pjoslin/Projects/literate-bassoon/path/to/img.jpg
 
 --------
 
@@ -812,7 +812,7 @@ Preview:
 
 --------
 
-Image: Alt text → /home/pjoslin/Projects/BoK/url/to/image
+Image: Alt text → /home/pjoslin/Projects/literate-bassoon/url/to/image
 
 --------
 

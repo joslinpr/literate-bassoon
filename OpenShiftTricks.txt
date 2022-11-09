@@ -107,5 +107,9 @@ projects in the cluster.
 
 #### Converting json to yaml
 
-Converting json to yaml /home/pjoslin/Projects/BoK/JSON.md
+Converting json to yaml /home/pjoslin/Projects/literate-bassoon/JSON.md
+
+## Who's using kafka?
+
+$ oc get kafka --all-namespaces
 

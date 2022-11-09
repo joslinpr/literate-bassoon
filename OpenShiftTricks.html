@@ -64,6 +64,7 @@ ul { color: blue; }
 </li>
 </ul>
 </li>
+<li><a href="#whos-using-kafka">Who&rsquo;s using kafka?</a></li>
 </ul>
 </li>
 </ul>
@@ -125,4 +126,7 @@ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_byte
 <p><code>$ oc adm policy add-cluster-role-to-group &lt;role&gt; &lt;groupname&gt;</code> Binds a given role to specified groups for all projects in the cluster.</p>
 <p><code>$ oc adm policy remove-cluster-role-from-group &lt;role&gt; &lt;groupname&gt;</code> Removes a given role from specified groups for all projects in the cluster.</p>
 <h4 id="converting-json-to-yaml">Converting json to yaml</h4>
-<p><a href="./JSON.md">Converting json to yaml</a></p></body> </html> <!-- vim: set ai si nu :-->
+<p><a href="./JSON.md">Converting json to yaml</a></p>
+<h2 id="whos-using-kafka">Who&rsquo;s using kafka?</h2>
+<pre><code>$ oc get kafka --all-namespaces
+</code></pre></body> </html> <!-- vim: set ai si nu :-->
