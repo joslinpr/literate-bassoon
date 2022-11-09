@@ -93,4 +93,8 @@ oc get is '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{
 
 [Converting json to yaml](./JSON.md)
 
+## Who's using kafka?
+```
+$ oc get kafka --all-namespaces
+```
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
