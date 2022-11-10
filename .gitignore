@@ -3,3 +3,4 @@
 .*.un~
 # Ignore sentinal file used by Make
 .uptodate
+Up.svg
