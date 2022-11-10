@@ -1,0 +1,13 @@
+#   How to Create a Repo from a Directory
+
+- Create Repository in github.com
+- Go into the directory containing the project.
+```
+  git init
+  git add . # to add all of the relevant files.
+  git commit
+  git remote add origin git@github.com:joslinpr/repo-name>
+  git config --global push.default simple
+  git push --set-upstream origin master
+  git push
+```

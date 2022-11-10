@@ -1,0 +1,8 @@
+# DevSecOps Tips and Tricks
+
+## Artifactory & Docker
+```
+$ docker login dhlecsam-docker-dev-fd.artifactory-us.dhl.com -u USERNAME
+$ docker tag NAME:VERSION dhlecsam-docker-dev-fd.artifactory-us.dhl.com/devops/NAME:VERSION
+$ docker push dhlecsam-docker-dev-fd.artifactory-us.dhl.com/devops/NAME:VERSION
+```
