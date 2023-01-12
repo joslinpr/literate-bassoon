@@ -1,19 +1,23 @@
 
-# Miscellaneous OpenShift / Kubernetes Tricks
+# Book of Knowledge
 
-## Get memory usage for a pod
+## OpenShiftTricks.md
+
+## Miscellaneous OpenShift / Kubernetes Tricks
+
+### Get memory usage for a pod
 
 $ oc project ecs-am-ramp-sit-cvg
 $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
 
-## Get an interactive shell in a pod
+### Get an interactive shell in a pod
 
 $ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 
 • -i: interactive
 • -t: create a TTY
 
-## Get Various Info via CLI:
+### Get Various Info via CLI:
 
 ### Get Auth Token:
 
@@ -57,7 +61,7 @@ oc get is '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.tags[].from.name}{"\n"}{end}' -A|grep
 redhat
 
-## Role-Based Access Controls (RBAC)
+### Role-Based Access Controls (RBAC)
 
 RBAC References https://docs.openshift.com/container-platform/4.8/authentication/using-rbac.html
 
@@ -109,7 +113,7 @@ projects in the cluster.
 
 Converting json to yaml /home/pjoslin/Projects/literate-bassoon/JSON.md
 
-## Who's using kafka?
+### Who's using kafka?
 
 $ oc get kafka --all-namespaces
 

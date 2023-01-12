@@ -1,8 +1,6 @@
-#      Book of Knowledge
-
-
-## Fibre Channel Troubleshooting
-
+#	Book of Knowledge
+##	FC_Troubleshooting.md
+##	Fibre Channel Troubleshooting
 
 *  Check the existence and status of the fibre cards: lspci | grep -i qlogic
 
@@ -23,7 +21,7 @@ egrep -i "link|run" /sys/class/scsi_host/host?/state
 *  Check if the number of LUNs is the same in all fibre card links:
 
 ```
-lsscsi -g # (Optional by installing the lsscsi rpm package)
+lsscsi -g #	(Optional by installing the lsscsi rpm package)
 ```
 
 *  To identify and to locate the WWPN numbers of the installed fibre cards:
@@ -58,3 +56,4 @@ should contain this line:
 ```
 install qla2xxx { /sbin/modprobe hpsa; } ; /sbin/modprobe --first-time --ignore-install qla2xxx options qla2xxx ql2xmaxqdepth=64 qlport_down_retry=64 ql2xloginretrycount=16 ql2xextended_error_logging=1
 ```
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

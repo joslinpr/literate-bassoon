@@ -41,13 +41,14 @@ ul { color: blue; }
 <div class="toc">
 <ul>
 <li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
+<li><a href="#dotfilesmd">Dotfiles.md</a></li>
 <li><a href="#linuxdotfiles-dotfiles-for-linuxunix-accounts">LinuxDotfiles - DotFiles For Linux/Unix Accounts</a><ul>
 <li><a href="#directory-structure">Directory Structure</a></li>
 <li><a href="#installing-on-a-new-server">Installing On A New Server</a><ul>
 <li><a href="#requires-git-sshid_github">Requires Git, .ssh/id_github</a></li>
 </ul>
 </li>
-<li><a href="#code">code</a></li>
+<li><a href="#how-to">How To:</a></li>
 <li><a href="#tools-to-install">tools to install</a></li>
 </ul>
 </li>
@@ -56,6 +57,7 @@ ul { color: blue; }
 </ul>
 </div>
 <h1 id="book-of-knowledge">Book of Knowledge</h1>
+<h2 id="dotfilesmd">Dotfiles.md</h2>
 <h2 id="linuxdotfiles-dotfiles-for-linuxunix-accounts">LinuxDotfiles - DotFiles For Linux/Unix Accounts</h2>
 <h3 id="directory-structure">Directory Structure</h3>
 <ul>
@@ -73,31 +75,32 @@ ul { color: blue; }
 <p>Create a bare git repository in $HOME/.cfg. A bare repo stores its files
 in its base directory, not its subdirectory .git. You&rsquo;ll tell git to
 ignore that directory. You&rsquo;ll need your ssh key for the repo to clone it.</p>
-<h3 id="code">code</h3>
+<h3 id="how-to">How To:</h3>
 <pre><code>REPO=$HOME/.cfg
 [ -d $REPO ] || mkdir $REPO
-echo ".cfg" &gt;&gt; .gitignore
+echo &quot;.cfg&quot; &gt;&gt; .gitignore
 </code></pre>
 <p>Now clone the dotfiles into your repo</p>
 <pre><code>git clone --bare git@github.com:joslinpr/LinuxDotfiles.git $REPO
+git clone --bare git@git.dhl.com:pjoslin/PPRJLinuxDotfiles.git $REPO
 </code></pre>
 <p>Use the &ldquo;config&rdquo; command when you&rsquo;re changing your local files. this is
 so you can still use &ldquo;git&rdquo; on your other projects. this alias is in the
 ~/.alias file, but we don&rsquo;t have that yet.</p>
-<pre><code> alias config='/usr/bin/git --git-dir=$REPO/ --work-tree=$HOME'
+<pre><code>     alias config='/usr/bin/git --git-dir=$REPO/ --work-tree=$HOME'
 </code></pre>
 <p>Don&rsquo;t clutter up your status messages with files you don&rsquo;t care about. see
 email and name.</p>
-<pre><code> config config --local status.showUntrackedFiles no
- config config --global user.email "Paul.Joslin@weirdness.com"
- config config --global user.name  "Paul R. joslin"
- config config --global pull.rebase false  # merge (the default strategy)
+<pre><code>config config --global status.showUntrackedFiles no
+config config --global user.email &quot;Paul.Joslin@weirdness.com&quot;
+config config --global user.name  &quot;Paul R. joslin&quot;
+config config --global pull.rebase false  # merge (the default strategy)
 </code></pre>
 <p>Create a branch for this host and checkout.  The checkout copies the
 files from the repo into their proper place.</p>
-<pre><code> TS=$(date +%Y%m%d)
- export tS=$(hostname -s).$TS
- config checkout -b $TS
+<pre><code>TS=$(date +%Y%m%d)
+export tS=$(hostname -s).$TS
+config checkout -b $TS
 </code></pre>
 <p><a href="https://www.atlassian.com/git/tutorials/dotfiles">Tutorial</a></p>
 <p><a href="./PersonalTools/GitInstall">Source</a></p>

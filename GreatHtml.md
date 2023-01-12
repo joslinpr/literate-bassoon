@@ -1,8 +1,7 @@
-#      Book of Knowledge
-
-## 100 Bytes of CSS to look great everywhere
-
-https://www.swyx.io/css-100-bytes/
+#	Book of Knowledge
+##	GreatHtml.md
+###	100 Bytes of CSS to look great everywhere
+[Source](https://www.swyx.io/css-100-bytes/)
 
 ```
 html {
@@ -14,7 +13,7 @@ html {
 }
 ```
 
-## and 100 more bytes:
+###	and 100 more bytes:
 
 ```
 h1,h2,h3,h4,h5,h6 {
@@ -29,7 +28,7 @@ p,ul,ol {
 }
 ```
 
-## Responsive Grid
+###	Responsive Grid
 
 The following code gives us a responsive grid where the number of columns
 is determined by the amount of available space, based on a minimum item
@@ -43,9 +42,9 @@ will be stacked vertically):
 }
 ```
 
-## Responsive Flexbox
+###	Responsive Flexbox
 When you want a component to be flexible; to grow and shrink.
 However, You only want the items to take up either 33% or 100% of
 the container/parent element's width. The easy part is ensuring the
-elements never take up less than 33% or more than 100%.  Holy Albatross
-at https://codepen.io/heydon/pen/JwwZaX
+elements never take up less than 33% or more than 100%.  [Holy Albatross](https://codepen.io/heydon/pen/JwwZaX)
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

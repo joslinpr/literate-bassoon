@@ -1,30 +1,30 @@
-#      Book of Knowledge
+#	Book of Knowledge
+##	VimTricks.md
+##	Vim Tips and Tricks
 
-## Vim Tips and Tricks
-
-### Using Vim as a  Pipe:
+###	Using Vim as a Pipe:
 ```
 vim - -es +'g/foo/p' +'qa!' --not-a-term
 vim < /dev/tty <(cat)
 ```
 
-### Simple Math
+###	Simple Math
 ```
 CTRL-A - increment number under cursor
 CTRL-X - decrement number under cursor
 ```
 
-### Bouncing
+###	Bouncing
 ```
 Matchit - use g% to find next/previous match
           use % to find match to construct under cursor (if, (, ), {, } etc.
 ```
 
-### Checking Variables
+###	Checking Variables
 ```
 :verbose set variable?
 OR
 :echo "Variable:" &variable
 ```
 
-[//]: <> (vim: set ai et nu  cindent softtabstop=4 shiftwidth=4 tabstop=4 textwidth=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

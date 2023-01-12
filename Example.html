@@ -41,6 +41,7 @@ ul { color: blue; }
 <div class="toc">
 <ul>
 <li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
+<li><a href="#examplemd">Example.md</a></li>
 <li><a href="#markdown">Markdown</a><ul>
 <li><a href="#block-elements">Block Elements</a><ul>
 <li><a href="#paragraphs-and-line-breaks">Paragraphs and Line Breaks</a><ul>
@@ -70,12 +71,8 @@ ul { color: blue; }
 </li>
 </ul>
 </li>
-<li><a href="#this-is-an-h1_2">This is an H1</a><ul>
-<li><a href="#this-is-an-h2_2">This is an H2</a><ul>
-<li><a href="#this-is-an-h3">This is an H3</a></li>
+<li><a href="#this-is-an-h1-this-is-an-h2-this-is-an-h3">This is an H1 # ### This is an H2 ##    ####    This is an H3 ######    ***</a><ul>
 <li><a href="#blockquotes">Blockquotes</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a href="#this-is-a-header">This is a header.</a><ul>
@@ -125,6 +122,7 @@ ul { color: blue; }
 </ul>
 </div>
 <h1 id="book-of-knowledge">Book of Knowledge</h1>
+<h2 id="examplemd">Example.md</h2>
 <h2 id="markdown">Markdown</h2>
 <p>A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).</p>
 <ul>
@@ -196,9 +194,9 @@ This is an H2
 <p>HTML Tags: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code></p>
 <p>Uses 1-6 <strong>hash characters (#)</strong> at the start of the line, corresponding to <code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>.</p>
 <p>Code:</p>
-<pre><code># This is an H1
-## This is an H2
-###### This is an H6
+<pre><code>#   This is an H1
+##  This is an H2
+######  This is an H6
 </code></pre>
 <p>Preview:</p>
 <hr />
@@ -208,16 +206,10 @@ This is an H2
 <hr />
 <p>Optionally, you may “close” atx-style headers. The closing hashes <strong>don’t need to match</strong> the number of hashes used to open the header.</p>
 <p>Code:</p>
-<pre><code># This is an H1 #
-## This is an H2 ##
-### This is an H3 ######
+<pre><code>#   This is an H1 #     ##  This is an H2 ##        ### This is an H3 ######    Preview:
 </code></pre>
-<p>Preview:</p>
 <hr />
-<h2 id="this-is-an-h1_2">This is an H1</h2>
-<h3 id="this-is-an-h2_2">This is an H2</h3>
-<h4 id="this-is-an-h3">This is an H3</h4>
-<hr />
+<h2 id="this-is-an-h1-this-is-an-h2-this-is-an-h3">This is an H1 # ### This is an H2 ##    ####    This is an H3 ######    ***</h2>
 <h4 id="blockquotes">Blockquotes</h4>
 <p>HTML Tag: <code>&lt;blockquote&gt;</code></p>
 <p>Markdown uses email-style <strong>&gt;</strong> characters for blockquoting. It looks best if you hard wrap the text and put a &gt; before every line.</p>
@@ -278,7 +270,7 @@ id sem consectetuer libero luctus adipiscing.</p>
 <hr />
 <p>Blockquotes can contain other Markdown elements, including headers, lists, and code blocks.</p>
 <p>Code:</p>
-<pre><code>&gt; ## This is a header.
+<pre><code>&gt; ##    This is a header.
 &gt;
 &gt; 1.   This is the first list item.
 &gt; 2.   This is the second list item.
@@ -579,7 +571,7 @@ A |B
 <td></td>
 </tr>
 <tr>
-<td>#### Links</td>
+<td>####    Links</td>
 <td></td>
 </tr>
 <tr>

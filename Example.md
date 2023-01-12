@@ -1,6 +1,7 @@
-#      Book of Knowledge
+#	Book of Knowledge
+##	Example.md
 
-## Markdown
+##	Markdown
 A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).
 
 * [Block Elements](#block-elements)
@@ -22,9 +23,9 @@ A markdown example shows how to write a markdown file. This document integrates 
   * [Backslash Escapes](#backslash-escapes)
 * [Inline HTML](#inline-html)
 
-### Block Elements
-#### Paragraphs and Line Breaks
-##### Paragraphs
+###	Block Elements
+####	Paragraphs and Line Breaks
+#####	Paragraphs
 HTML Tag: `<p>`
 
 One or more blank lines. (A blank line is a line containing nothing but **spaces** or **tabs** is considered blank.)
@@ -42,7 +43,7 @@ inline.
 
 This is second paragraph.
 ***
-##### Line Breaks
+#####	Line Breaks
 HTML Tag: `<br />`
 
 End a line with **two or more spaces**.
@@ -57,9 +58,9 @@ This will be not
 inline.
 ***
 
-#### Headers
+####	Headers
 Markdown supports two styles of headers, Setext and atx.
-##### Setext
+#####	Setext
 HTML Tags: `<h1>`, `<h2>`
 
 “Underlined” using **equal signs (=)** as `<h1>` and **dashes (-)** as `<h2>` in any number.
@@ -78,37 +79,31 @@ This is an H1
 This is an H2
 -------------
 ***
-##### atx
+#####	atx
 HTML Tags: `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`
 
 Uses 1-6 **hash characters (#)** at the start of the line, corresponding to `<h1>` - `<h6>`.
 
 Code:
 
-    # This is an H1
-    ## This is an H2
-    ###### This is an H6
+    #	This is an H1
+    ##	This is an H2
+    ######	This is an H6
 Preview:
 ***
-## This is an H1
-### This is an H2
-####### This is an H6
+##	This is an H1
+###	This is an H2
+#######	This is an H6
 ***
 Optionally, you may “close” atx-style headers. The closing hashes **don’t need to match** the number of hashes used to open the header.
 
 Code:
 
-    # This is an H1 #
-    ## This is an H2 ##
-    ### This is an H3 ######
-Preview:
+    #	This is an H1 #	    ##	This is an H2 ##	    ###	This is an H3 ######	Preview:
 ***
-## This is an H1 #
-### This is an H2 ##
-#### This is an H3 ######
-***
+##	This is an H1 #	###	This is an H2 ##	####	This is an H3 ######	***
 
-#### Blockquotes
+####	Blockquotes
 HTML Tag: `<blockquote>`
 
 Markdown uses email-style **>** characters for blockquoting. It looks best if you hard wrap the text and put a > before every line.
@@ -173,7 +168,7 @@ Blockquotes can contain other Markdown elements, including headers, lists, and c
 
 Code:
 
-    > ## This is a header.
+    > ##	This is a header.
     >
     > 1.   This is the first list item.
     > 2.   This is the second list item.
@@ -183,7 +178,7 @@ Code:
     >     return shell_exec("echo $input | $markdown_script");
 Preview:
 ***
-> ## This is a header.
+> ##	This is a header.
 >
 > 1.   This is the first list item.
 > 2.   This is the second list item.
@@ -194,9 +189,9 @@ Preview:
 
 ***
 
-#### Lists
+####	Lists
 Markdown supports ordered (numbered) and unordered (bulleted) lists.
-##### Unordered
+#####	Unordered
 HTML Tag: `<ul>`
 
 Unordered lists use **asterisks (*)**, **pluses (+)**, and **hyphens (-)**.
@@ -227,7 +222,7 @@ Code:
     -   Red
     -   Green
     -   Blue
-##### Ordered
+#####	Ordered
 HTML Tag: `<ol>`
 
 Ordered lists use numbers followed by periods:
@@ -264,9 +259,9 @@ Preview:
 1986\. What a great season.
 
 ***
-##### Indented
+#####	Indented
 
-###### Blockquote
+######	Blockquote
 To put a blockquote within a list item, the blockquote’s > delimiters need to be indented:
 
 Code:
@@ -283,7 +278,7 @@ Preview:
     > inside a list item.
 
 ***
-###### Code Block
+######	Code Block
 To put a code block within a list item, the code block needs to be indented twice — **8 spaces** or **two tabs**:
 
 Code:
@@ -298,7 +293,7 @@ Preview:
         <code goes here>
 
 ***
-###### Nested List
+######	Nested List
 Code:
 
     * A
@@ -315,7 +310,7 @@ Preview:
 * C
 
 ***
-#### Code Blocks
+####	Code Blocks
 HTML Tag: `<pre>`
 
 Indent every line of the block by at least **4 spaces** or **1 tab**.
@@ -347,7 +342,7 @@ Preview:
     </div>
 ***
 Following sections Fenced Code Blocks and Syntax Highlighting are extensions, you can use the other way to write the code block.
-##### Fenced Code Blocks
+#####	Fenced Code Blocks
 Just wrap your code in ```` ``` ```` (as shown below) and you won't need to indent it by four spaces.
 
 Code:
@@ -369,7 +364,7 @@ function test() {
 }
 ```
 ***
-##### Syntax Highlighting
+#####	Syntax Highlighting
 In your fenced block, add an optional language identifier and we'll run it through syntax highlighting ([Support Languages](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)).
 
 Code:
@@ -387,7 +382,7 @@ markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
 ***
-#### Horizontal Rules
+####	Horizontal Rules
 HTML Tag: `<hr />`
 Places **three or more hyphens (-), asterisks (*), or underscores (_)** on a line by themselves. You may use spaces between the hyphens or asterisks.
 
@@ -408,7 +403,7 @@ Preview:
 ---------------------------------------
 ___
 ***
-#### Table
+####	Table
 HTML Tag: `<table>`
 
 It's an extension.
@@ -448,13 +443,13 @@ A |B
 --|--
 12|45
 ***
-### Span Elements
-#### Links
+###	Span Elements
+####	Links
 HTML Tag: `<a>`
 
 Markdown supports two style of links: inline and reference.
 
-##### Inline
+#####	Inline
 Inline link format like this: `[Link Text](URL "Title")`
 
 Title is optional.
@@ -479,7 +474,7 @@ Preview:
 ***
 See my [About](/about/) page for details.
 ***
-##### Reference
+#####	Reference
 You could predefine link references. Format like this: `[id]: URL "Title"`
 
 Title is also optional. And the you refer the link, format like this: `[Link Text][id]`
@@ -521,7 +516,7 @@ Preview:
 [Google]: http://google.com/
 [Google][]
 ***
-#### Emphasis
+####	Emphasis
 HTML Tags: `<em>`, `<strong>`
 
 Markdown treats **asterisks (*)** and **underscores (_)** as indicators of emphasis. **One delimiter** will be  `<em>`; **double delimiters* will be `<strong>`.
@@ -556,7 +551,7 @@ Preview:
 ***
 \*this text is surrounded by literal asterisks\*
 ***
-#### Code
+####	Code
 HTML Tag: `<code>`
 
 Wraps it with **backtick quotes (`)**.
@@ -590,11 +585,11 @@ A single backtick in a code span: `` ` ``
 
 A backtick-delimited string in a code span: `` `foo` ``
 ***
-#### Images
+####	Images
 HTML Tag: `<img />`
 
 Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: inline and reference.
-##### Inline
+#####	Inline
 
 Inline image syntax looks like this: `![Alt text](URL "Title")`
 
@@ -617,7 +612,7 @@ That is:
 * followed by a set of square brackets, containing the alt attribute text for the image;
 * followed by a set of parentheses, containing the URL or path to the image, and an optional title attribute enclosed in double or single quotes.
 
-##### Reference
+#####	Reference
 Reference-style image syntax looks like this: `![Alt text][id]`
 
 Code:
@@ -629,7 +624,7 @@ Preview:
 [img id]: url/to/image  "Optional title attribute"
 ![Alt text][img id]
 ***
-#### Strikethrough
+####	Strikethrough
 HTML Tag: `<del>`
 
 It's an extension.
@@ -644,8 +639,8 @@ Preview:
 ***
 ~~Mistaken text.~~
 ***
-### Miscellaneous
-#### Automatic Links
+###	Miscellaneous
+####	Automatic Links
 Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses: simply surround the URL or email address with angle brackets.
 
 Code:
@@ -670,7 +665,7 @@ Preview:
 https://github.com/emn178/markdown
 ***
 
-#### Backslash Escapes
+####	Backslash Escapes
 Markdown allows you to use backslash escapes to generate literal characters which would otherwise have special meaning in Markdown’s formatting syntax.
 
 Code:
@@ -691,13 +686,13 @@ Code:
     {}  curly braces
     []  square brackets
     ()  parentheses
-    #   hash mark
+    #	hash mark
     +   plus sign
     -   minus sign (hyphen)
     .   dot
     !   exclamation mark
 
-### Inline HTML
+###	Inline HTML
 For any markup that is not covered by Markdown’s syntax, you simply use HTML itself. There’s no need to preface it or delimit it to indicate that you’re switching from Markdown to HTML; you just use the tags.
 
 Code:
@@ -742,4 +737,4 @@ Preview:
   **No Work**
 </div>
 ***
-[//]: <> (vim: set ai et nu  cindent softtabstop=4 shiftwidth=4 tabstop=4 textwidth=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

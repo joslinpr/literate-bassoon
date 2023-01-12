@@ -1,9 +1,10 @@
-#      Book of Knowledge
-##     Book of Knowledge
-###    Book of Knowledge
-####   Book of Knowledge
-#####  Book of Knowledge
-###### Book of Knowledge
+#	Book of Knowledge
+##  Filename of this file
+##	Subject of this file
+###	Sections in this file
+####	Subsection
+#####	Subsection
+######	Subsection
 
 This is the Book of Knowledge, an unstructed store of miscellaneous things I
 need to remember.
@@ -15,3 +16,4 @@ to view them, or review the .txt versions.
 ```
     $ glow -s PRJ.json -w $COLUMNS
 ```
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

@@ -41,6 +41,7 @@ ul { color: blue; }
 <div class="toc">
 <ul>
 <li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
+<li><a href="#oraclemd">Oracle.md</a></li>
 <li><a href="#oracle-tips-and-tricks">Oracle Tips and Tricks</a><ul>
 <li><a href="#checking-crs">Checking CRS</a></li>
 </ul>
@@ -50,12 +51,13 @@ ul { color: blue; }
 </ul>
 </div>
 <h1 id="book-of-knowledge">Book of Knowledge</h1>
+<h2 id="oraclemd">Oracle.md</h2>
 <h2 id="oracle-tips-and-tricks">Oracle Tips and Tricks</h2>
 <h3 id="checking-crs">Checking CRS</h3>
-<pre><code>## su - oracle              # choose any DB
-$ ps -fu oracle            # Check for DBs
-$ crsctl check crs         # CRS daemons
+<pre><code>#   su - oracle              #  choose any DB
+$ ps -fu oracle            #    Check for DBs
+$ crsctl check crs         #    CRS daemons
 $ crsctl check cluster
-$ crsctl check css         # cluster sync status
-$ crsctl check evm         # event manager
+$ crsctl check css         #    cluster sync status
+$ crsctl check evm         #    event manager
 </code></pre></body> </html> <!-- vim: set ai si nu :-->

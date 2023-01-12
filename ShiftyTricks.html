@@ -40,14 +40,16 @@ ul { color: blue; }
 <body> <!-- vim: set ai si nu :-->
 <div class="toc">
 <ul>
+<li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
+<li><a href="#shiftytricksmd">ShiftyTricks.md</a></li>
 <li><a href="#miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</a><ul>
 <li><a href="#get-memory-usage-for-a-pod">Get memory usage for a pod</a></li>
 <li><a href="#get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</a></li>
 <li><a href="#get-various-info-from-registry-via-cli">Get Various Info from Registry via CLI:</a><ul>
 <li><a href="#pod">POD:</a></li>
-<li><a href="#deployment">deployment:</a></li>
+<li><a href="#deployment">Deployment:</a></li>
 <li><a href="#statefullset">Statefullset:</a></li>
-<li><a href="#deploymentconfig">deploymentConfig:</a></li>
+<li><a href="#deploymentconfig">DeploymentConfig:</a></li>
 <li><a href="#buidconfig">BuidConfig:</a></li>
 <li><a href="#imagestream">ImageStream:</a></li>
 </ul>
@@ -55,8 +57,12 @@ ul { color: blue; }
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
-<h1 id="miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</h1>
+<h1 id="book-of-knowledge">Book of Knowledge</h1>
+<h2 id="shiftytricksmd">ShiftyTricks.md</h2>
+<h2 id="miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</h2>
 <h3 id="get-memory-usage-for-a-pod">Get memory usage for a pod</h3>
 <pre><code>$ oc project ecs-am-ramp-sit-cvg
 $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
@@ -72,13 +78,13 @@ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_byte
 <h4 id="pod">POD:</h4>
 <pre><code>oc get po '-o=jsonpath={range .items[*]}{&quot;PROG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.containers[].image}{&quot;\n&quot;}' -A |grep redhat
 </code></pre>
-<h4 id="deployment">deployment:</h4>
+<h4 id="deployment">Deployment:</h4>
 <pre><code>oc get deployment '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.spec.template.spec.containers[].name}{&quot;,&quot;}{.spec.template.spec.containers[].image}{&quot;\n&quot;}' -A|grep redhat
 </code></pre>
 <h4 id="statefullset">Statefullset:</h4>
 <pre><code>oc get sts '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.spec.template.spec.containers[].name}{&quot;,&quot;}{.spec.template.spec.containers[].image}{&quot;\n&quot;}' -A|grep redhat
 </code></pre>
-<h4 id="deploymentconfig">deploymentConfig:</h4>
+<h4 id="deploymentconfig">DeploymentConfig:</h4>
 <pre><code>oc get dc '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.spec.template.spec.containers[].name}{&quot;,&quot;}{.spec.template.spec.containers[].image}{&quot;\n&quot;}' -A|grep redhat
 </code></pre>
 <h4 id="buidconfig">BuidConfig:</h4>

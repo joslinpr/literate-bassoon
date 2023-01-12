@@ -1,7 +1,7 @@
-#      Book of Knowledge
+#	Book of Knowledge
+##	StyleTest.md
 
-##      Book of Knowledge\n\n
-##    "block_quote":
+###	"block_quote":
 
   > "block_quote": { "color": "200", "indent": 2, "indent_token": " > "
   } incididunt ut labore et dolore magna aliqua. Enim praesent elementum
@@ -9,24 +9,24 @@
   viverra. Felis
 
 
-##    "code_block":
+###	"code_block":
 
 ```
 "code_block": { "color": "10", "theme": "solarized-dark", "margin" : 4 }
 ```
 
-##    "code":
+###	"code":
 
 This is inline `"code": { "color": "1", "margin": 4 }`.  This follows inline
 code.
 
-##    "document":
+###	"document":
 "document": { "color": "2", "block_prefix": "\n", "block_suffix": "\n" }
 
-##    "emph":
+###	"emph":
 "emph": { "color": "3", "italic": true }
 
-##    "enumeration":
+###	"enumeration":
 "enumeration": { "block_prefix": ". " }
 
 1. "item": { "block_prefix": "• " }
@@ -34,47 +34,47 @@ code.
 1. "item": { "block_prefix": "• " }
   1. "item": { "block_prefix": "• " }
 
-##    "h1":
+###	"h1":
 "h1": { "prefix": "==> 1 ", "color": "3" }
 
-###    "h2":
+###	"h2":
 "h2": { "prefix": "==> 2 ", "color": "3" }
 
-####    "h3":
+####	"h3":
 "h3": { "prefix": "==> 3 ", "color": "3" }
 
-#####    "h4":
+#####	"h4":
 "h4": { "prefix": "==> 4 ", "color": "3" }
 
-######    "h5":
+######	"h5":
 "h5": { "prefix": "==> 5 ", "color": "3" }
 
-#######    "h6":
+#######	"h6":
 "h6": { "prefix": "==> 6 ", "color": "3" }
 
-##    "heading":
+###	"heading":
 "heading": { "color": "5" }
 
-##    "hr":
+###	"hr":
 "hr": { "block_prefix": "---------" }
 
 ---
 
-##    "image":
+###	"image":
 "image": { "color": "123", "block_prefix": "[Image: ", "block_suffix": "]" }
 
 ![Image](https://charm.sh/logo.png).
 
-##    "image_text":
+###	"image_text":
 "image_text": { "color": "8" }
 
-##    "item":
+###	"item":
 * "item": { "block_prefix": "• " }
   * "item": { "block_prefix": "• " }
 * "item": { "block_prefix": "• " }
   * "item": { "block_prefix": "• " }
 
-##    "link": &   "link_text":
+###	"link": &   "link_text":
 "link": { "color": "123", "underline": true, "block_prefix": "(", "block_suffix": ")" }
 
 "link_text": { "color": "123", "bold": true }
@@ -83,10 +83,10 @@ http://github.com - automatic!
 
 [GitHub](http://github.com)
 
-##    "list":
+###	"list":
 "list": { "color": "15",  "level_indent": 4 }
 
-##    "paragraph":
+###	"paragraph":
 "paragraph": { "margin": 4, "color": "5" }
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Enim praesent elementum facilisis
@@ -108,15 +108,15 @@ fringilla est ullamcorper eget nulla. Eros donec ac odio tempor orci dapibus.
 Volutpat sed cras ornare arcu dui vivamus arcu felis. Dolor purus non enim
 praesent elementum facilisis leo vel.
 
-##    "strikethrough":
+###	"strikethrough":
 
 ~~"strikethrough": { "crossed_out": true }~~
 
-##    "strong":
+###	"strong":
 
 **"strong": { "bold": true }**
 
-##    "table":
+###	"table":
 "table": { "margin": 4 }
 
 Col1 | Col2
@@ -124,17 +124,15 @@ Col1 | Col2
 One | Two
 Three | Four
 
-##    "task":
+###	"task":
 
 - [ ] "task": { "unticked": "__ ", "ticked": "✗  " }
 - [x] "task": { "unticked": "__ ", "ticked": "✗  " }
 
 
-##    "text":
+###	"text":
 "text": { "color": "2" }
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Enim praesent elementum facilisis
-
-
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

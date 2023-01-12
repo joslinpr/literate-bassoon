@@ -1,17 +1,7 @@
 
 # Book of Knowledge
 
-## Filename of this file
-
-## Subject of this file
-
-### Sections in this file
-
-#### Subsection
-
-##### Subsection
-
-###### Subsection
+## Readme.md
 
 This is the Book of Knowledge, an unstructed store of miscellaneous things I need to remember.
 

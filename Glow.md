@@ -1,7 +1,8 @@
-#      Book of Knowledge
+#	Book of Knowledge
+##	Glow.md
+##	Installing Glow (charmbracelet/glow)
 
-##      Installing Glow (charmbracelet/glow)
-###     TUI Markdown Reader and Directory Navigator
+###	TUI Markdown Reader and Directory Navigator
 
 [URL](https://github.com/charmbracelet/glow)
 
@@ -12,3 +13,4 @@ git clone https://github.com/charmbracelet/glow.git
 cd glow
 go build
 ```
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

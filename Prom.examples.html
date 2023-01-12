@@ -41,11 +41,13 @@ ul { color: blue; }
 <div class="toc">
 <ul>
 <li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
-<li><a href="#unicodemd">Unicode.md</a></li>
-<li><a href="#tips-for-unicode">Tips for Unicode</a><ul>
-<li><a href="#iconv-convert-between-encodings">iconv: convert between encodings</a></li>
-<li><a href="#bash-convert-escaped-text-to-unicode">Bash: convert escaped text to unicode</a></li>
-<li><a href="#convert-unicode-to-escaped-text">Convert unicode to escaped text</a></li>
+<li><a href="#promexamplesmd">Prom.examples.md</a></li>
+<li><a href="#prometheus-query-examples">Prometheus Query Examples</a><ul>
+<li><a href="#infra-nodes">Infra Nodes</a></li>
+<li><a href="#number-of-containers-by-cluster-and-namespace-without-cpu-limits">Number of containers by cluster and namespace without CPU limits</a></li>
+<li><a href="#count-of-pods-per-cluster-and-namespace">Count of pods per cluster and namespace</a></li>
+<li><a href="#cpu-usage-per-namespace">CPU USage per namespace</a></li>
+<li><a href="#cpu-overcommit">CPU overcommit</a></li>
 </ul>
 </li>
 </ul>
@@ -53,31 +55,21 @@ ul { color: blue; }
 </ul>
 </div>
 <h1 id="book-of-knowledge">Book of Knowledge</h1>
-<h2 id="unicodemd">Unicode.md</h2>
-<h2 id="tips-for-unicode">Tips for Unicode</h2>
-<h3 id="iconv-convert-between-encodings">iconv: convert between encodings</h3>
-<p>Use the <code>file</code> command to determine the current encoding.  Then use the <code>iconv</code> command to set a new encoding.</p>
-<pre><code>$  file GroupList
-GroupList: Little-endian UTF-16 Unicode text, with CRLF, CR line terminators
-$ iconv  -f utf-16 -t utf-8 GroupList -o GroupList.txt
-$  file GroupList.txt
-GroupList.txt: UTF-8 Unicode (with BOM) text, with CRLF line terminators)
+<h2 id="promexamplesmd">Prom.examples.md</h2>
+<h2 id="prometheus-query-examples">Prometheus Query Examples</h2>
+<h3 id="infra-nodes">Infra Nodes</h3>
+<pre><code>sort_desc(sum by (cpu,id,pod_name,container_name) (rate(container_cpu_usage_seconds_total{type=&quot;infra&quot;}[5m])))
 </code></pre>
-<h3 id="bash-convert-escaped-text-to-unicode">Bash: convert escaped text to unicode</h3>
-<pre><code>$ printf &quot;%b\n&quot;  &quot;\u00e1&quot;
-á
-$ printf &quot;It is %s%bF\n&quot; 72 &quot;\u00b0&quot;
-It is 72°F
-#For an entire file:
-$ printf '%b\n' &quot;$(&lt;data)&quot;
-This is a test
-It is 72°F
-  ¡ ¢ £ ¤ ¥ ¦ § ¨ ©
+<h3 id="number-of-containers-by-cluster-and-namespace-without-cpu-limits">Number of containers by cluster and namespace without CPU limits</h3>
+<pre><code>count by (namespace)(sum by (namespace,pod,container)(kube_pod_container_info{container!=&quot;&quot;}) unless sum by (namespace,pod,container)(kube_pod_container_resource_limits{resource=&quot;cpu&quot;})
 </code></pre>
-<h3 id="convert-unicode-to-escaped-text">Convert unicode to escaped text</h3>
-<pre><code>$:     echo ãçé |
-&gt;        while read -n 1 u
-&gt;        do [[ -n &quot;$u&quot; ]] &amp;&amp; printf '\\u%04x' &quot;'$u&quot;
-&gt;        done
-\u00e3\u00e7\u00e9
+<h3 id="count-of-pods-per-cluster-and-namespace">Count of pods per cluster and namespace</h3>
+<pre><code>sum by (namespace) (kube_pod_info)))
+</code></pre>
+<h3 id="cpu-usage-per-namespace">CPU USage per namespace</h3>
+<pre><code>sort_desc(sum by (namespace) (rate(container_cpu_usage_seconds_total[5m])))
+</code></pre>
+<h3 id="cpu-overcommit">CPU overcommit</h3>
+<p>CPU limits over the capacity of the cluster is a scenario you need to avoid. Otherwise, you’ll end up with CPU throttling issues. You can detect CPU overcommit with the following query.</p>
+<pre><code>sum(kube_pod_container_resource_limits{resource=&quot;cpu&quot;}) - sum(kube_node_status_capacity_cpu_cores)
 </code></pre></body> </html> <!-- vim: set ai si nu :-->

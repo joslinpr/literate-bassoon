@@ -1,6 +1,8 @@
 
 # Book of Knowledge
 
+## Strategies.md
+
 ## Strategies for Solving Problems
 
 ### Book of Knowledge
@@ -27,5 +29,6 @@ https://teams.microsoft.com/l/channel/19%3A81e2664d4bba40f8908dc2f2b0747a20%40th
 dT3Zm8cwxeurYrfibtchrQkwqKxZbBpyE1%40thread.tacv2/tab%3A%3A2d85dffc-e22f-4cb9-92a3-64b7ff03c5c8?groupId=90c81e70-da9d-
 4679-ab7d-8f62f0345afb&tenantId=cd99fef8-1cd3-4a2a-9bdf-15531181d65e
 Empty at the moment.
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
 
 

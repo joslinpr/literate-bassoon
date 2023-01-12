@@ -1,6 +1,8 @@
 
 # Book of Knowledge
 
+## Canned.md
+
 ## Best Canned Response Templates for Customer Support Emails
 
 ### Acknowledge Receipt of Customer Email

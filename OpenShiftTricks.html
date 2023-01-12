@@ -40,10 +40,12 @@ ul { color: blue; }
 <body> <!-- vim: set ai si nu :-->
 <div class="toc">
 <ul>
+<li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
+<li><a href="#openshifttricksmd">OpenShiftTricks.md</a></li>
 <li><a href="#miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</a><ul>
 <li><a href="#get-memory-usage-for-a-pod">Get memory usage for a pod</a></li>
 <li><a href="#get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</a></li>
-<li><a href="#get-various-info-via-cli">Get Various Info via CLI:</a><ul>
+<li><a href="#get-various-info-via-cli">Get Various Info via CLI:</a></li>
 <li><a href="#get-auth-token">Get Auth Token:</a></li>
 <li><a href="#pod">POD:</a></li>
 <li><a href="#deployment">deployment:</a></li>
@@ -51,9 +53,7 @@ ul { color: blue; }
 <li><a href="#deploymentconfig">deploymentConfig:</a></li>
 <li><a href="#buidconfig">BuidConfig:</a></li>
 <li><a href="#imagestream">ImageStream:</a></li>
-</ul>
-</li>
-<li><a href="#role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</a><ul>
+<li><a href="#role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</a></li>
 <li><a href="#describe-all-role-based-access-controls">Describe all Role-Based Access Controls</a></li>
 <li><a href="#get-clusterrolebindings-crb-for-userserviceaccount-prometheus-server">Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server</a></li>
 <li><a href="#clusterroles-cr-for-userserviceaccount-prometheus-server">Clusterroles (CR) for user/serviceaccount prometheus-server</a></li>
@@ -62,26 +62,28 @@ ul { color: blue; }
 <li><a href="#converting-json-to-yaml">Converting json to yaml</a></li>
 </ul>
 </li>
-</ul>
-</li>
 <li><a href="#whos-using-kafka">Who&rsquo;s using kafka?</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
-<h1 id="miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</h1>
-<h2 id="get-memory-usage-for-a-pod">Get memory usage for a pod</h2>
+<h1 id="book-of-knowledge">Book of Knowledge</h1>
+<h2 id="openshifttricksmd">OpenShiftTricks.md</h2>
+<h2 id="miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</h2>
+<h3 id="get-memory-usage-for-a-pod">Get memory usage for a pod</h3>
 <pre><code>$ oc project ecs-am-ramp-sit-cvg
 $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
 </code></pre>
-<h2 id="get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</h2>
+<h3 id="get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</h3>
 <pre><code>$ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 </code></pre>
 <ul>
 <li>-i: interactive</li>
 <li>-t: create a TTY</li>
 </ul>
-<h2 id="get-various-info-via-cli">Get Various Info via CLI:</h2>
+<h3 id="get-various-info-via-cli">Get Various Info via CLI:</h3>
 <h3 id="get-auth-token">Get Auth Token:</h3>
 <p>You must already be logged in.</p>
 <pre><code>TOKEN=$(oc whomai --show-token)
@@ -104,7 +106,7 @@ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_byte
 <h3 id="imagestream">ImageStream:</h3>
 <pre><code>oc get is '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.tags[].from.name}{&quot;\n&quot;}{end}' -A|grep redhat
 </code></pre>
-<h2 id="role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</h2>
+<h3 id="role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</h3>
 <p><a href="https://docs.openshift.com/container-platform/4.8/authentication/using-rbac.html">RBAC References</a></p>
 <h3 id="describe-all-role-based-access-controls">Describe all Role-Based Access Controls</h3>
 <p><code>oc describe clusterrole.rbac</code></p>
@@ -127,6 +129,6 @@ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_byte
 <p><code>$ oc adm policy remove-cluster-role-from-group &lt;role&gt; &lt;groupname&gt;</code> Removes a given role from specified groups for all projects in the cluster.</p>
 <h4 id="converting-json-to-yaml">Converting json to yaml</h4>
 <p><a href="./JSON.md">Converting json to yaml</a></p>
-<h2 id="whos-using-kafka">Who&rsquo;s using kafka?</h2>
+<h3 id="whos-using-kafka">Who&rsquo;s using kafka?</h3>
 <pre><code>$ oc get kafka --all-namespaces
 </code></pre></body> </html> <!-- vim: set ai si nu :-->

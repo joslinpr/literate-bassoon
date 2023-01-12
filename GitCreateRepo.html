@@ -40,19 +40,25 @@ ul { color: blue; }
 <body> <!-- vim: set ai si nu :-->
 <div class="toc">
 <ul>
+<li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
+<li><a href="#gitcreaterepomd">GitCreateRepo.md</a></li>
 <li><a href="#how-to-create-a-repo-from-a-directory">How to Create a Repo from a Directory</a></li>
 </ul>
+</li>
+</ul>
 </div>
-<h1 id="how-to-create-a-repo-from-a-directory">How to Create a Repo from a Directory</h1>
+<h1 id="book-of-knowledge">Book of Knowledge</h1>
+<h2 id="gitcreaterepomd">GitCreateRepo.md</h2>
+<h2 id="how-to-create-a-repo-from-a-directory">How to Create a Repo from a Directory</h2>
 <ul>
 <li>Create Repository in github.com</li>
 <li>Go into the directory containing the project.</li>
 </ul>
-<pre><code>  git init
-  git add . # to add all of the relevant files.
-  git commit
-  git remote add origin git@git.dhl.com:pjoslin/&lt;repo-name&gt;
-  git config --global push.default simple
-  git push --set-upstream origin master
-  git push
+<pre><code>git init
+git add . # to add all of the relevant files.
+git commit
+git remote add origin git@git.dhl.com:pjoslin/&lt;repo-name&gt;
+git config --global push.default simple
+git push --set-upstream origin master
+git push
 </code></pre></body> </html> <!-- vim: set ai si nu :-->
