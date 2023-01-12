@@ -1,5 +1,9 @@
 
-# Miscellaneous OpenShift / Kubernetes Tricks
+# Book of Knowledge
+
+## ShiftyTricks.md
+
+## Miscellaneous OpenShift / Kubernetes Tricks
 
 ### Get memory usage for a pod
 
@@ -15,37 +19,37 @@ $ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 
 ### Get Various Info from Registry via CLI:
 
-####POD:
+#### POD:
 
 oc get po '-o=jsonpath={range
 .items[*]}{"PROG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.containers[].image}{"\n"}' -A |grep
 redhat
 
-####deployment:
+#### Deployment:
 
 oc get deployment '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -
 A|grep redhat
 
-####Statefullset:
+#### Statefullset:
 
 oc get sts '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -
 A|grep redhat
 
-####deploymentConfig:
+#### DeploymentConfig:
 
 oc get dc '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -
 A|grep redhat
 
-####BuidConfig:
+#### BuidConfig:
 
 oc get bc '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.triggers[].imageChange.lastTriggeredImageID}{"\n"}{end}' -
 A|grep redhat
 
-####ImageStream:
+#### ImageStream:
 
 oc get is '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.tags[].from.name}{"\n"}{end}' -A|grep

@@ -1,9 +1,10 @@
-
-# How to Write A Git Commit Message
+#	Book of Knowledge
+##	GitCommitMessage.md
+##	How to Write A Git Commit Message
 
 [source](https://cbea.ms/git-commit/)
 
-## The seven rules of a great Git commit message
+###	The seven rules of a great Git commit message
 
 Keep in mind: This has all been said before.
 
@@ -15,7 +16,7 @@ Keep in mind: This has all been said before.
 1.  Wrap the body at 72 characters
 1.  Use the body to explain what and why vs. how
 
-## Example:
+###	Example:
 ```
 Summarize changes in around 50 characters or less
 
@@ -45,18 +46,19 @@ like this:
 Resolves: #123
 See also: #456, #789
 ```
-## How to Install:
+###	How to Install:
 ```
-# For Dotfiles:
-# Copy template to .git config directory
+#	For Dotfiles:
+#	Copy template to .git config directory
 $ cp commit-template.txt ~/.cfg/
-# Tell git to use it
+#	Tell git to use it
 $ config config --local commit.template ~/.cfg/commit-template.txt
 
-# For Repos:
+#	For Repos:
 $ cd REPO
-# Copy template to .git config directory
+#	Copy template to .git config directory
 $ cp commit-template.txt .git/
-# Tell git to use it
+#	Tell git to use it
 $ config config --local commit.template .git/commit-template.txt
 ```
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

@@ -40,6 +40,8 @@ ul { color: blue; }
 <body> <!-- vim: set ai si nu :-->
 <div class="toc">
 <ul>
+<li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
+<li><a href="#gitcommitmessagemd">GitCommitMessage.md</a></li>
 <li><a href="#how-to-write-a-git-commit-message">How to Write A Git Commit Message</a><ul>
 <li><a href="#the-seven-rules-of-a-great-git-commit-message">The seven rules of a great Git commit message</a></li>
 <li><a href="#example">Example:</a></li>
@@ -47,10 +49,14 @@ ul { color: blue; }
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
-<h1 id="how-to-write-a-git-commit-message">How to Write A Git Commit Message</h1>
+<h1 id="book-of-knowledge">Book of Knowledge</h1>
+<h2 id="gitcommitmessagemd">GitCommitMessage.md</h2>
+<h2 id="how-to-write-a-git-commit-message">How to Write A Git Commit Message</h2>
 <p><a href="https://cbea.ms/git-commit/">source</a></p>
-<h2 id="the-seven-rules-of-a-great-git-commit-message">The seven rules of a great Git commit message</h2>
+<h3 id="the-seven-rules-of-a-great-git-commit-message">The seven rules of a great Git commit message</h3>
 <p>Keep in mind: This has all been said before.</p>
 <ol>
 <li>Separate subject from body with a blank line</li>
@@ -61,7 +67,7 @@ ul { color: blue; }
 <li>Wrap the body at 72 characters</li>
 <li>Use the body to explain what and why vs. how</li>
 </ol>
-<h2 id="example">Example:</h2>
+<h3 id="example">Example:</h3>
 <pre><code>Summarize changes in around 50 characters or less
 
 More detailed explanatory text, if necessary. Wrap it to about 72
@@ -90,17 +96,17 @@ like this:
 Resolves: #123
 See also: #456, #789
 </code></pre>
-<h2 id="how-to-install">How to Install:</h2>
-<pre><code># For Dotfiles:
-# Copy template to .git config directory
+<h3 id="how-to-install">How to Install:</h3>
+<pre><code>#   For Dotfiles:
+#   Copy template to .git config directory
 $ cp commit-template.txt ~/.cfg/
-# Tell git to use it
+#   Tell git to use it
 $ config config --local commit.template ~/.cfg/commit-template.txt
 
-# For Repos:
+#   For Repos:
 $ cd REPO
-# Copy template to .git config directory
+#   Copy template to .git config directory
 $ cp commit-template.txt .git/
-# Tell git to use it
+#   Tell git to use it
 $ config config --local commit.template .git/commit-template.txt
 </code></pre></body> </html> <!-- vim: set ai si nu :-->

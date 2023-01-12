@@ -1,6 +1,8 @@
 
 # Book of Knowledge
 
+## Readme.md
+
 This is the Book of Knowledge, an unstructed store of miscellaneous things I need to remember.
 
 Files without an extension probably need conversion to markdown.  Use *glow* to view them, or review the .txt

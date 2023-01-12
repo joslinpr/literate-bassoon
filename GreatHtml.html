@@ -41,6 +41,7 @@ ul { color: blue; }
 <div class="toc">
 <ul>
 <li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
+<li><a href="#greathtmlmd">GreatHtml.md</a><ul>
 <li><a href="#100-bytes-of-css-to-look-great-everywhere">100 Bytes of CSS to look great everywhere</a></li>
 <li><a href="#and-100-more-bytes">and 100 more bytes:</a></li>
 <li><a href="#responsive-grid">Responsive Grid</a></li>
@@ -48,10 +49,13 @@ ul { color: blue; }
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
 <h1 id="book-of-knowledge">Book of Knowledge</h1>
-<h2 id="100-bytes-of-css-to-look-great-everywhere">100 Bytes of CSS to look great everywhere</h2>
-<p>https://www.swyx.io/css-100-bytes/</p>
+<h2 id="greathtmlmd">GreatHtml.md</h2>
+<h3 id="100-bytes-of-css-to-look-great-everywhere">100 Bytes of CSS to look great everywhere</h3>
+<p><a href="https://www.swyx.io/css-100-bytes/">Source</a></p>
 <pre><code>html {
     max-width: 70ch;
     padding: 3em 1em;
@@ -60,7 +64,7 @@ ul { color: blue; }
     font-size: 1.25rem;
 }
 </code></pre>
-<h2 id="and-100-more-bytes">and 100 more bytes:</h2>
+<h3 id="and-100-more-bytes">and 100 more bytes:</h3>
 <pre><code>h1,h2,h3,h4,h5,h6 {
     margin-bottom: 1em;
     margin-top: 3em;
@@ -72,7 +76,7 @@ p,ul,ol {
     font-family: sans-serif;
 }
 </code></pre>
-<h2 id="responsive-grid">Responsive Grid</h2>
+<h3 id="responsive-grid">Responsive Grid</h3>
 <p>The following code gives us a responsive grid where the number of columns
 is determined by the amount of available space, based on a minimum item
 width which is either 350px or 100%, whichever is smaller (using the
@@ -82,9 +86,8 @@ will be stacked vertically):</p>
   grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
 }
 </code></pre>
-<h2 id="responsive-flexbox">Responsive Flexbox</h2>
+<h3 id="responsive-flexbox">Responsive Flexbox</h3>
 <p>When you want a component to be flexible; to grow and shrink.
 However, You only want the items to take up either 33% or 100% of
 the container/parent element&rsquo;s width. The easy part is ensuring the
-elements never take up less than 33% or more than 100%.  Holy Albatross
-at https://codepen.io/heydon/pen/JwwZaX</p></body> </html> <!-- vim: set ai si nu :-->
+elements never take up less than 33% or more than 100%.  <a href="https://codepen.io/heydon/pen/JwwZaX">Holy Albatross</a></p></body> </html> <!-- vim: set ai si nu :-->

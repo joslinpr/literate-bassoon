@@ -1,9 +1,11 @@
 
 # Book of Knowledge
 
+## VimTricks.md
+
 ## Vim Tips and Tricks
 
-### Using Vim as a  Pipe:
+### Using Vim as a Pipe:
 
 vim - -es +'g/foo/p' +'qa!' --not-a-term
 vim < /dev/tty <(cat)

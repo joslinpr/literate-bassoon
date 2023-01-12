@@ -1,6 +1,8 @@
 
 # Book of Knowledge
 
+## ServerTablePersonal.md
+
 ## Personal Utility Servers
 
 NAME          │     ADDRESS

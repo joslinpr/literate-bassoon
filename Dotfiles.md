@@ -1,8 +1,8 @@
-# Book of Knowledge
+#	Book of Knowledge
+##	Dotfiles.md
+##	LinuxDotfiles - DotFiles For Linux/Unix Accounts
 
-## LinuxDotfiles - DotFiles For Linux/Unix Accounts
-
-### Directory Structure
+###	Directory Structure
 
 * Bin/ - Tools
 * PerfBin/ - Performance Tools
@@ -13,50 +13,51 @@
 * .ssh - SSH Public Keys
 * .vim - Vim Customization
 
-### Installing On A New Server
+###	Installing On A New Server
 
-#### Requires Git, .ssh/id_github
+####	Requires Git, .ssh/id_github
 
 Create a bare git repository in $HOME/.cfg. A bare repo stores its files
 in its base directory, not its subdirectory .git. You'll tell git to
 ignore that directory. You'll need your ssh key for the repo to clone it.
 
-### code
-
-    REPO=$HOME/.cfg
-    [ -d $REPO ] || mkdir $REPO
-    echo ".cfg" >> .gitignore
-
+###	How To:
+```
+REPO=$HOME/.cfg
+[ -d $REPO ] || mkdir $REPO
+echo ".cfg" >> .gitignore
+```
 Now clone the dotfiles into your repo
-
-    git clone --bare git@github.com:joslinpr/LinuxDotfiles.git $REPO
-
+```
+git clone --bare git@github.com:joslinpr/LinuxDotfiles.git $REPO
+git clone --bare git@git.dhl.com:pjoslin/PPRJLinuxDotfiles.git $REPO
+```
 Use the "config" command when you're changing your local files. this is
 so you can still use "git" on your other projects. this alias is in the
 ~/.alias file, but we don't have that yet.
-
+```
      alias config='/usr/bin/git --git-dir=$REPO/ --work-tree=$HOME'
-
+```
 Don't clutter up your status messages with files you don't care about. see
 email and name.
-
-     config config --local status.showUntrackedFiles no
-     config config --global user.email "Paul.Joslin@weirdness.com"
-     config config --global user.name  "Paul R. joslin"
-     config config --global pull.rebase false  # merge (the default strategy)
-
+```
+config config --global status.showUntrackedFiles no
+config config --global user.email "Paul.Joslin@weirdness.com"
+config config --global user.name  "Paul R. joslin"
+config config --global pull.rebase false  #	merge (the default strategy)
+```
 Create a branch for this host and checkout.  The checkout copies the
 files from the repo into their proper place.
-
-     TS=$(date +%Y%m%d)
-     export tS=$(hostname -s).$TS
-     config checkout -b $TS
-
+```
+TS=$(date +%Y%m%d)
+export tS=$(hostname -s).$TS
+config checkout -b $TS
+```
 [Tutorial](https://www.atlassian.com/git/tutorials/dotfiles)
 
 [Source](./PersonalTools/GitInstall)
 
-### tools to install
+###	tools to install
 
 * fdupes - remove duplicate files
 * git - configuration control
@@ -67,3 +68,4 @@ files from the repo into their proper place.
 * shellCheck - analyze shell scripts.
 
 [Source](PersonalTools/Tools.md)
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

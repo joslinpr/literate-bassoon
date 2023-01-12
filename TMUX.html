@@ -41,9 +41,10 @@ ul { color: blue; }
 <div class="toc">
 <ul>
 <li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
-<li><a href="#devopsmd">DevOps.md</a></li>
-<li><a href="#devsecops-tips-and-tricks">DevSecOps Tips and Tricks</a><ul>
-<li><a href="#artifactory-docker">Artifactory &amp; Docker</a></li>
+<li><a href="#tmuxmd">tmux.md</a></li>
+<li><a href="#tmux-quick-reference">Tmux Quick Reference</a><ul>
+<li><a href="#named-session">Named Session</a></li>
+<li><a href="#attaching">Attaching</a></li>
 </ul>
 </li>
 </ul>
@@ -51,10 +52,17 @@ ul { color: blue; }
 </ul>
 </div>
 <h1 id="book-of-knowledge">Book of Knowledge</h1>
-<h2 id="devopsmd">DevOps.md</h2>
-<h2 id="devsecops-tips-and-tricks">DevSecOps Tips and Tricks</h2>
-<h3 id="artifactory-docker">Artifactory &amp; Docker</h3>
-<pre><code>$ docker login dhlecsam-docker-dev-fd.artifactory-us.dhl.com -u USERNAME
-$ docker tag NAME:VERSION dhlecsam-docker-dev-fd.artifactory-us.dhl.com/devops/NAME:VERSION
-$ docker push dhlecsam-docker-dev-fd.artifactory-us.dhl.com/devops/NAME:VERSION
-</code></pre></body> </html> <!-- vim: set ai si nu :-->
+<h2 id="tmuxmd">tmux.md</h2>
+<h2 id="tmux-quick-reference">Tmux Quick Reference</h2>
+<h3 id="named-session">Named Session</h3>
+<pre><code>tmux new -s TMUX_TEST
+</code></pre>
+<h3 id="attaching">Attaching</h3>
+<ul>
+<li>
+<p>tmux 2.X: <code>tmux attach || tmux</code></p>
+</li>
+<li>
+<p>tmux 3.X: <code>tmux -A</code></p>
+</li>
+</ul></body> </html> <!-- vim: set ai si nu :-->

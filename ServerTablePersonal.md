@@ -1,10 +1,10 @@
-#      Book of Knowledge
-
-## Personal Utility Servers
+#	Book of Knowledge
+##	ServerTablePersonal.md
+##	Personal Utility Servers
 
 | Name | Address
 |--|--
 | computeone.pjoslin.com  |  193.122.144.194
 | computetwo.pjoslin.com  |  158.101.113.14
 
-[//]: # (vim: set ai et nu  cindent softtabstop=4 shiftwidth=4 tabstop=4 textwidth=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

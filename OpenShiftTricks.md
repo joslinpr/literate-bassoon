@@ -1,12 +1,14 @@
-#      Miscellaneous OpenShift / Kubernetes Tricks
+#	Book of Knowledge
+##	OpenShiftTricks.md
+##	Miscellaneous OpenShift / Kubernetes Tricks
 
-## Get memory usage for a pod
+###	Get memory usage for a pod
 ```
 $ oc project ecs-am-ramp-sit-cvg
 $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
 ```
 
-## Get an interactive shell in a pod
+###	Get an interactive shell in a pod
 ```
 $ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 ```
@@ -14,57 +16,57 @@ $ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 * -i: interactive
 * -t: create a TTY
 
-## Get Various Info via CLI:
+###	Get Various Info via CLI:
 
-### Get Auth Token:
+###	Get Auth Token:
 You must already be logged in.
 ```
 TOKEN=$(oc whomai --show-token)
 ```
 
-### POD:
+###	POD:
 ```
 oc get po '-o=jsonpath={range .items[*]}{"PROG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.containers[].image}{"\n"}' -A |grep redhat
 ```
 
-### deployment:
+###	deployment:
 ```
 oc get deployment '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -A|grep redhat
 ```
 
-### Statefullset:
+###	Statefullset:
 ```
 oc get sts '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -A|grep redhat
 ```
 
-### deploymentConfig:
+###	deploymentConfig:
 ```
 oc get dc '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -A|grep redhat
 ```
 
-### BuidConfig:
+###	BuidConfig:
 ```
 oc get bc '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.triggers[].imageChange.lastTriggeredImageID}{"\n"}{end}' -A|grep redhat
 ```
 
-### ImageStream:
+###	ImageStream:
 ```
 oc get is '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.tags[].from.name}{"\n"}{end}' -A|grep redhat
 ```
 
-##     Role-Based Access Controls (RBAC)
+###	Role-Based Access Controls (RBAC)
 [RBAC References](https://docs.openshift.com/container-platform/4.8/authentication/using-rbac.html)
 
-###     Describe all Role-Based Access Controls
+###	Describe all Role-Based Access Controls
 ` oc describe clusterrole.rbac `
 
-###     Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server
+###	Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server
 ` oc get clusterrolebindings -o json | jq '.items[] | select(.metadata.name=="prometheus-server")' `
 
-###     Clusterroles (CR) for user/serviceaccount prometheus-server
+###	Clusterroles (CR) for user/serviceaccount prometheus-server
 ` oc get clusterroles -o json | jq '.items[] | select(.metadata.name=="prometheus-server")' `
 
-###     Local Role Binding Operations
+###	Local Role Binding Operations
 `$ oc adm policy who-can <verb> <resource>` Indicates which users can perform an action on a resource.
 
 `$ oc adm policy add-role-to-user <role> <username>` Binds a specified role to specified users in the current project.
@@ -79,7 +81,7 @@ oc get is '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{
 
 `$ oc adm policy remove-group <groupname>` Removes specified groups and all of their roles in the current project.
 
-###     Cluster role binding operations
+###	Cluster role binding operations
 `$ oc adm policy add-cluster-role-to-user <role> <username>` Binds a given role to specified users for all projects in the cluster.
 
 `$ oc adm policy remove-cluster-role-from-user <role> <username>` Removes a given role from specified users for all projects in the cluster.
@@ -89,11 +91,11 @@ oc get is '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{
 `$ oc adm policy remove-cluster-role-from-group <role> <groupname>` Removes a given role from specified groups for all projects in the cluster.
 
 
-#### Converting json to yaml
+####	Converting json to yaml
 
 [Converting json to yaml](./JSON.md)
 
-## Who's using kafka?
+###	Who's using kafka?
 ```
 $ oc get kafka --all-namespaces
 ```

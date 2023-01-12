@@ -1,15 +1,17 @@
 
 # Book of Knowledge
 
-## Book of Knowledge
+## Filename of this file
 
-### Book of Knowledge
+## Subject of this file
 
-#### Book of Knowledge
+### Sections in this file
 
-##### Book of Knowledge
+#### Subsection
 
-###### Book of Knowledge
+##### Subsection
+
+###### Subsection
 
 This is the Book of Knowledge, an unstructed store of miscellaneous things I need to remember.
 

@@ -1,9 +1,11 @@
 
 # Book of Knowledge
 
-[TOC]
+## TableTest.md
 
-# This is a test of tables
+## Testing Tables
+
+### This is a test of tables
 
 FIRST HEADER │ SECOND HEADER
 ───────────────┼────────────────
@@ -20,7 +22,7 @@ ONLY HEADER  │    &NBSP;
 Content Cell │ Content Cell
 Content Cell │ Content Cell
 
-# Ansible / Automation Gateways
+### Ansible / Automation Gateways
 
 RHEL8 NEW          │         RHEL6 OLD
 ─────────────────────────────┼─────────────────────────────

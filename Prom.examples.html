@@ -40,31 +40,36 @@ ul { color: blue; }
 <body> <!-- vim: set ai si nu :-->
 <div class="toc">
 <ul>
-<li><a href="#_1">?</a><ul>
+<li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
+<li><a href="#promexamplesmd">Prom.examples.md</a></li>
+<li><a href="#prometheus-query-examples">Prometheus Query Examples</a><ul>
+<li><a href="#infra-nodes">Infra Nodes</a></li>
 <li><a href="#number-of-containers-by-cluster-and-namespace-without-cpu-limits">Number of containers by cluster and namespace without CPU limits</a></li>
 <li><a href="#count-of-pods-per-cluster-and-namespace">Count of pods per cluster and namespace</a></li>
-</ul>
-</li>
 <li><a href="#cpu-usage-per-namespace">CPU USage per namespace</a></li>
 <li><a href="#cpu-overcommit">CPU overcommit</a></li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
-<h1 id="_1">?</h1>
+<h1 id="book-of-knowledge">Book of Knowledge</h1>
+<h2 id="promexamplesmd">Prom.examples.md</h2>
+<h2 id="prometheus-query-examples">Prometheus Query Examples</h2>
+<h3 id="infra-nodes">Infra Nodes</h3>
 <pre><code>sort_desc(sum by (cpu,id,pod_name,container_name) (rate(container_cpu_usage_seconds_total{type=&quot;infra&quot;}[5m])))
 </code></pre>
-<h2 id="number-of-containers-by-cluster-and-namespace-without-cpu-limits">Number of containers by cluster and namespace without CPU limits</h2>
+<h3 id="number-of-containers-by-cluster-and-namespace-without-cpu-limits">Number of containers by cluster and namespace without CPU limits</h3>
 <pre><code>count by (namespace)(sum by (namespace,pod,container)(kube_pod_container_info{container!=&quot;&quot;}) unless sum by (namespace,pod,container)(kube_pod_container_resource_limits{resource=&quot;cpu&quot;})
 </code></pre>
-<h2 id="count-of-pods-per-cluster-and-namespace">Count of pods per cluster and namespace</h2>
+<h3 id="count-of-pods-per-cluster-and-namespace">Count of pods per cluster and namespace</h3>
 <pre><code>sum by (namespace) (kube_pod_info)))
 </code></pre>
-<h1 id="cpu-usage-per-namespace">CPU USage per namespace</h1>
+<h3 id="cpu-usage-per-namespace">CPU USage per namespace</h3>
 <pre><code>sort_desc(sum by (namespace) (rate(container_cpu_usage_seconds_total[5m])))
 </code></pre>
-<h1 id="cpu-overcommit">CPU overcommit</h1>
+<h3 id="cpu-overcommit">CPU overcommit</h3>
 <p>CPU limits over the capacity of the cluster is a scenario you need to avoid. Otherwise, you’ll end up with CPU throttling issues. You can detect CPU overcommit with the following query.</p>
 <pre><code>sum(kube_pod_container_resource_limits{resource=&quot;cpu&quot;}) - sum(kube_node_status_capacity_cpu_cores)
-</code></pre>
-<blockquote>
-<p>vim: set ai et nu cin sts=4 sw=4 ts=4 tw=78 filetype=markdown :</p>
-</blockquote></body> </html> <!-- vim: set ai si nu :-->
+</code></pre></body> </html> <!-- vim: set ai si nu :-->

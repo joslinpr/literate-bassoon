@@ -1,8 +1,8 @@
-#      Book of Knowledge
+#	Book of Knowledge
+##	TableTest.md
+##	Testing Tables
 
-[TOC]
-
-# This is a test of tables
+###	This is a test of tables
 
 First Header  | Second Header
 ------------- | -------------
@@ -19,7 +19,7 @@ Only Header |  &nbsp;
 Content Cell  | Content Cell
 Content Cell  | Content Cell
 
-# Ansible / Automation Gateways
+###	Ansible / Automation Gateways
  RHEL8 New | RHEL6 Old
 ------ | --------
  CZCHOLSINT2588 | CZCHOLSTC000594
@@ -33,4 +33,4 @@ Content Cell  | Content Cell
 | czchols4539
 |
 
-[//]: <> (vim: set ai et nu  cindent softtabstop=4 shiftwidth=4 tabstop=4 textwidth=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

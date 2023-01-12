@@ -1,6 +1,8 @@
 
 # Book of Knowledge
 
+## ServerTable.md
+
 ## DHL Utility Servers
 
 ### AAA Gateways
@@ -67,6 +69,9 @@ OvoWeb                    │ [http
 ### Veritas Operations Manager
 
 VERITAS OPERATIONS MANAGER
-──────────────────────────────
+──────────────────────────────────
 https://vom-prg:14161/
+[//]: # ( vim: set ai noet
+nu sts=4 sw=4 ts=4 tw=78
+filetype=markdown :)
 

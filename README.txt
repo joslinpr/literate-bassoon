@@ -1,9 +1,9 @@
 
-# My Book of Knowledge
+# Book of Knowledge
 
-Things I need to document.
+## README.md
 
-## Book of Knowledge
+### My Book of Knowledge
 
 This is the Book of Knowledge, an unstructed store of miscellaneous things I need to remember.
 
@@ -27,4 +27,5 @@ Saved at literate-bassoon:
 
 • https://github.com/joslinpr/literate-bassoon
 • https://git.dhl.com/pjoslin/literate-bassoon
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
 

@@ -1,6 +1,8 @@
 
 # Book of Knowledge
 
+## Example.md
+
 ## Markdown
 
 A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).
@@ -105,9 +107,9 @@ Uses 1-6 **hash characters (#)** at the start of the line, corresponding to `<h1
 
 Code:
 
-# This is an H1
-## This is an H2
-###### This is an H6
+#	This is an H1
+##	This is an H2
+######	This is an H6
 
 Preview:
 
@@ -117,7 +119,7 @@ Preview:
 
 ### This is an H2
 
-####### This is an H6
+#######	This is an H6
 
 --------
 
@@ -126,21 +128,11 @@ to open the header.
 
 Code:
 
-# This is an H1 #
-## This is an H2 ##
-### This is an H3 ######
-
-Preview:
+#	This is an H1 #	    ##	This is an H2 ##	    ###	This is an H3 ######	Preview:
 
 --------
 
-## This is an H1
-
-### This is an H2
-
-#### This is an H3
-
---------
+## This is an H1 #	###	This is an H2 ##	####	This is an H3 ######	***
 
 #### Blockquotes
 
@@ -217,7 +209,7 @@ Blockquotes can contain other Markdown elements, including headers, lists, and c
 
 Code:
 
-> ## This is a header.
+> ##	This is a header.
 >
 > 1.   This is the first list item.
 > 2.   This is the second list item.
@@ -901,7 +893,7 @@ _   underscore
 {}  curly braces
 []  square brackets
 ()  parentheses
-#   hash mark
+#	hash mark
 +   plus sign
 -   minus sign (hyphen)
 .   dot

@@ -1,8 +1,8 @@
-#      Book of Knowledge
+#	Book of Knowledge
+##	Canned.md
+##	Best Canned Response Templates for Customer Support Emails
 
-## Best Canned Response Templates for Customer Support Emails
-
-### Acknowledge Receipt of Customer Email
+###	Acknowledge Receipt of Customer Email
 
 ```
 
@@ -20,7 +20,7 @@ Have we given 5-star service today? ✰✰✰✰✰
 ```
 
 
-### Updating the Ticket Progress
+###	Updating the Ticket Progress
 
 ```
 
@@ -37,7 +37,7 @@ Have we given 5-star service today? ✰✰✰✰✰
 ```
 
 
-### Resolving a Ticket
+###	Resolving a Ticket
 
 * This message is an important part of a ticket cycle. A closing canned response should have these three aspects by default
    * give a recap of the request,
@@ -61,7 +61,7 @@ Have we given 5-star service today? ✰✰✰✰✰
 ```
 
 
-### Encouraging Self-service
+###	Encouraging Self-service
 
 ```
 
@@ -81,7 +81,7 @@ Have we given 5-star service today? ✰✰✰✰✰
 ```
 
 
-### Asking for More Information
+###	Asking for More Information
 
 ```
 
@@ -103,7 +103,7 @@ Have we given 5-star service today? ✰✰✰✰✰
 ```
 
 
-### Writing an Apology
+###	Writing an Apology
 
 ```
 
@@ -123,7 +123,7 @@ Have we given 5-star service today? ✰✰✰✰✰
 ```
 
 
-### Asking for Feedback
+###	Asking for Feedback
 
 ```
 
@@ -148,7 +148,7 @@ Have we given 5-star service today? ✰✰✰✰✰
 ```
 
 
-### Follow-up on Positive Feedback
+###	Follow-up on Positive Feedback
 
 ```
 
@@ -173,7 +173,7 @@ Have we given 5-star service today? ✰✰✰✰✰
 ```
 
 
-### Follow-up on Negative Feedback
+###	Follow-up on Negative Feedback
 
 ```
 
@@ -190,3 +190,4 @@ IT Services, Global Business Services (GBS)
 Have we given 5-star service today? ✰✰✰✰✰
 
 ```
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
