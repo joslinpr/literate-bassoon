@@ -52,18 +52,15 @@ different form of authentication.
 
 ### Utility Nodes
 
-CLUSTER             │      NAME       │           USE
-─────────────────────────────────┼─────────────────┼──────────────────────────
-None                           │ czcholspc002815 │ Kafka Support, podman
-czchoocp001                    │ czcholspc004404 │ PRG Prod V4
-czstlocp001                    │ czstllspc005226 │ PRG DR Prod V4
-mykulocp001                    │ mykullspc005304 │ CBJ Prod V4
-mytpmocp001                    │ mytpmlspc005204 │ CBJ DR V4
-usmegocp001                    │ usmeglspc005204 │ US Prod DR V4
-usqasocp001                    │ usqaslspc005001 │ US Prod V4
-czchooct001                    │ czcholstc005204 │ PRG Proof of Concept V4
-czchooct002                    │ czcholstc005204 │ PRG Test V4
-[//]: # ( vim: set ai noet     │                 │
-nu sts=4 sw=4 ts=4 tw=78       │                 │
-filetype=markdown :)           │                 │
+CLUSTER   │      NAME       │           USE
+──────────────┼─────────────────┼──────────────────────────
+None        │ czcholspc002815 │ Kafka Support, podman
+czchoocp001 │ czcholspc004404 │ PRG Prod V4
+czstlocp001 │ czstllspc005226 │ PRG DR Prod V4
+mykulocp001 │ mykullspc005304 │ CBJ Prod V4
+mytpmocp001 │ mytpmlspc005204 │ CBJ DR V4
+usmegocp001 │ usmeglspc005204 │ US Prod DR V4
+usqasocp001 │ usqaslspc005001 │ US Prod V4
+czchooct001 │ czcholstc005204 │ PRG Proof of Concept V4
+czchooct002 │ czcholstc005204 │ PRG Test V4
 
