@@ -63,6 +63,7 @@ ul { color: blue; }
 </ul>
 </li>
 <li><a href="#whos-using-kafka">Who&rsquo;s using kafka?</a></li>
+<li><a href="#enabledisable-cronjobs">Enable/Disable Cronjobs</a></li>
 </ul>
 </li>
 </ul>
@@ -107,7 +108,7 @@ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_byte
 <pre><code>oc get is '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.tags[].from.name}{&quot;\n&quot;}{end}' -A|grep redhat
 </code></pre>
 <h3 id="role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</h3>
-<p><a href="https://docs.openshift.com/container-platform/4.8/authentication/using-rbac.html">RBAC References</a></p>
+<p><a href="https://docs.openshift.com/container-platform/4.9/authentication/using-rbac.html">RBAC References</a></p>
 <h3 id="describe-all-role-based-access-controls">Describe all Role-Based Access Controls</h3>
 <p><code>oc describe clusterrole.rbac</code></p>
 <h3 id="get-clusterrolebindings-crb-for-userserviceaccount-prometheus-server">Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server</h3>
@@ -131,4 +132,8 @@ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_byte
 <p><a href="./JSON.md">Converting json to yaml</a></p>
 <h3 id="whos-using-kafka">Who&rsquo;s using kafka?</h3>
 <pre><code>$ oc get kafka --all-namespaces
+</code></pre>
+<h3 id="enabledisable-cronjobs">Enable/Disable Cronjobs</h3>
+<pre><code>$ oc patch cronjobs &lt;job-name&gt; -p '{&quot;spec&quot; : {&quot;suspend&quot; : true }}' -n &lt;namespace&gt;
+$ oc patch cronjobs &lt;job-name&gt; -p '{&quot;spec&quot; : {&quot;suspend&quot; : false }}' -n &lt;namespace&gt;
 </code></pre></body> </html> <!-- vim: set ai si nu :-->

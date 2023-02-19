@@ -55,7 +55,7 @@ oc get is '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{
 ```
 
 ###	Role-Based Access Controls (RBAC)
-[RBAC References](https://docs.openshift.com/container-platform/4.8/authentication/using-rbac.html)
+[RBAC References](https://docs.openshift.com/container-platform/4.9/authentication/using-rbac.html)
 
 ###	Describe all Role-Based Access Controls
 ` oc describe clusterrole.rbac `
@@ -98,5 +98,11 @@ oc get is '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{
 ###	Who's using kafka?
 ```
 $ oc get kafka --all-namespaces
+```
+
+### Enable/Disable Cronjobs
+```
+$ oc patch cronjobs <job-name> -p '{"spec" : {"suspend" : true }}' -n <namespace>
+$ oc patch cronjobs <job-name> -p '{"spec" : {"suspend" : false }}' -n <namespace>
 ```
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
