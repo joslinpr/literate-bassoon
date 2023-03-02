@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-US" style="scroll-behavior: auto; "> <head>
+<meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<style>
+a { color: blue;  background-color: rgb(230 230 240 / 50%); }
+a:visited { color: green;  background-color: rgb(230 230 240 / 50%); }
+blockquote { background-color:  rgb(230 230 240 / 50%); color: blue; }
+body { background-color: #fdfdfd; color: black; }
+code { background-color:  #f5f5f5; color: black; }
+div { color: blue; }
+em { color: blue; }
+h1 { color: blue; border: 1px solid rgba(0, 0, 0, 0.8); background-color: #e5effb;}
+h2 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+h3 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+h4 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+h5 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+h6 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+head { color: blue;  background-color: #e5effb;}
+hr { color: blue; }
+img { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
+li { color: blue; }
+ol { color: blue; }
+p { color: blue; }
+pre { background-color:  #f5f5f5; color: black; }
+span { color: blue; }
+strong { color: blue; }
+style { color: blue; }
+table { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
+tbody { color: blue; }
+td { color: blue; }
+th { color: blue; }
+thead { color: blue; }
+tr { color: blue; }
+ul { color: blue; }
+.toc { background-color: wheat; border: brown 1px solid;}
+</style>
+</head>
+<body> <!-- vim: set ai si nu :-->
+<div class="toc">
+<ul>
+<li><a href="#using-the-red-hat-support-tool-rhst-rest-api">Using the Red Hat Support Tool (RHST) REST API</a></li>
+<li><a href="#pre-requisites">Pre-Requisites</a></li>
+<li><a href="#the-commands">The Commands</a><ul>
+<li><a href="#1-listproducts-command-to-list-products">1. listproducts - command to list products</a><ul>
+<li><a href="#example-listproducts">Example: listproducts</a></li>
+</ul>
+</li>
+<li><a href="#2-listversions-command-to-list-versions-of-a-product">2. listversions - command to list versions of a product</a><ul>
+<li><a href="#example-listversions">Example: listversions</a></li>
+</ul>
+</li>
+<li><a href="#3-listattachments-command-to-list-attachments-for-the-specified-support">3. listattachments - command to list attachments for the specified support</a><ul>
+<li><a href="#example-listattachments">Example: listattachments</a></li>
+</ul>
+</li>
+<li><a href="#4-listentitlements-command-to-list-your-current-entitlements">4. listentitlements - command to list your current entitlements</a><ul>
+<li><a href="#example-listentitlements">Example: listentitlements</a></li>
+</ul>
+</li>
+<li><a href="#5-listcasegroups-command-to-list-case-groups">5. listcasegroups - command to list case groups</a><ul>
+<li><a href="#example-listcasegroups">Example: listcasegroups</a></li>
+</ul>
+</li>
+<li><a href="#6-listcases-command-to-list-your-open-support-cases">6. listcases - command to list your open support cases.</a><ul>
+<li><a href="#note-1-filter-the-response">Note 1. Filter the Response</a></li>
+<li><a href="#example-note-1">Example: Note 1</a></li>
+<li><a href="#note-2-filter-by-casegroup">Note 2. Filter by casegroup</a></li>
+<li><a href="#example-note-2">Example: Note 2</a></li>
+<li><a href="#example-1-default-rhst-behaviour">Example 1. Default RHST behaviour</a></li>
+<li><a href="#example-2-for-filtering-by-case-groupnumber">Example 2. For filtering by case groupNumber</a></li>
+<li><a href="#example-3-for-filtering-by-multiple-case-groupnumbers">Example 3. For filtering by multiple case groupNumbers</a></li>
+</ul>
+</li>
+<li><a href="#7-getcase-command-to-find-a-specific-case-by-number">7.  getcase - command to find a specific case by number.</a><ul>
+<li><a href="#example-getcase">Example: getcase</a></li>
+</ul>
+</li>
+<li><a href="#8-addattachment-command-to-add-an-attachment-to-a-case">8.  addattachment - command to add an attachment to a case.</a><ul>
+<li><a href="#example-addattachment">Example: addattachment</a></li>
+</ul>
+</li>
+<li><a href="#9-getattachment-command-to-find-a-specific-attachment-by-uuid">9.  getattachment - command to find a specific attachment by uuid.</a><ul>
+<li><a href="#example-getattachment">Example: getattachment</a></li>
+</ul>
+</li>
+<li><a href="#10-modifycase">10. modifycase</a><ul>
+<li><a href="#modify-severity">Modify severity</a></li>
+<li><a href="#modify-the-case-type">Modify the Case type</a></li>
+<li><a href="#modify-status">Modify Status</a></li>
+<li><a href="#modify-alternate-id">Modify alternate id.</a></li>
+<li><a href="#modify-product">Modify product</a></li>
+<li><a href="#modify-version">Modify version</a></li>
+</ul>
+</li>
+<li><a href="#11-opencase-command-to-open-a-new-support-case">11. opencase - command to open a new support case.</a><ul>
+<li><a href="#to-see-the-recommendations-before-opening-the-case">To see the recommendations before opening the case.</a></li>
+<li><a href="#example-opencase">Example: opencase</a><ul>
+<li><a href="#to-open-a-support-case">To open a support case.</a></li>
+</ul>
+</li>
+<li><a href="#example-1-opening-a-case">Example 1. Opening A Case</a></li>
+<li><a href="#example-2-opening-a-case-with-a-casegroup-example-74975">Example 2. Opening A Case with a Casegroup (Example: 74975)</a></li>
+</ul>
+</li>
+<li><a href="#12-addcomment-command-to-add-a-comment-to-a-case">12. addcomment - command to add a comment to a case.</a><ul>
+<li><a href="#example-addcomment">Example: addcomment</a></li>
+</ul>
+</li>
+<li><a href="#13-kb-command-to-find-a-knowledge-base-solution-by-id">13. kb - command to find a knowledge base solution by ID</a><ul>
+<li><a href="#check-for-solutions">Check for solutions</a></li>
+<li><a href="#example-check-for-solutions">Example: Check for solutions</a></li>
+<li><a href="#check-for-articles">Check for articles</a></li>
+<li><a href="#example-check-for-articles">Example - Check for articles</a></li>
+</ul>
+</li>
+<li><a href="#14-search-command-to-search-the-entire-knowledge-base-for-solutions">14. search - command to search the entire knowledge base for solutions</a><ul>
+<li><a href="#example-search">Example: search</a></li>
+</ul>
+</li>
+<li><a href="#15-diagnose-command-to-send-text-to-red-hat-for-analysis">15. diagnose - command to send text to Red Hat for analysis.</a><ul>
+<li><a href="#example-diagnose">Example: diagnose</a></li>
+<li><a href="#using-proxy-configuration-in-the-curls">Using Proxy configuration in the curls</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#general-note">General Note</a></li>
+</ul>
+</div>
+<!-- TOC start -->
+<ul>
+<li><a href="#using-the-red-hat-support-tool-rhst-rest-api">Using the Red Hat Support Tool (RHST) REST API</a></li>
+<li><a href="#pre-requisites">Pre-Requisites</a></li>
+<li><a href="#the-commands">The Commands</a></li>
+<li><a href="#1-listproducts---command-to-list-products">1. listproducts - command to list products</a><ul>
+<li><a href="#example-listproducts">Example: listproducts</a></li>
+</ul>
+</li>
+<li><a href="#2-listversions---command-to-list-versions-of-a-product">2. listversions - command to list versions of a product</a><ul>
+<li><a href="#example-listversions">Example: listversions</a></li>
+</ul>
+</li>
+<li><a href="#3-listattachments---command-to-list-attachments-for-the-specified-support">3. listattachments - command to list attachments for the specified support</a><ul>
+<li><a href="#example-listattachments">Example: listattachments</a></li>
+</ul>
+</li>
+<li><a href="#4-listentitlements---command-to-list-your-current-entitlements">4. listentitlements - command to list your current entitlements</a><ul>
+<li><a href="#example-listentitlements">Example: listentitlements</a></li>
+</ul>
+</li>
+<li><a href="#5-listcasegroups---command-to-list-case-groups">5. listcasegroups - command to list case groups</a><ul>
+<li><a href="#example-listcasegroups">Example: listcasegroups</a></li>
+</ul>
+</li>
+<li><a href="#6-listcases---command-to-list-your-open-support-cases">6. listcases - command to list your open support cases.</a><ul>
+<li><a href="#note-1-filter-the-response">Note 1. Filter the Response</a></li>
+<li><a href="#example-note-1">Example: Note 1</a></li>
+<li><a href="#note-2-filter-by-casegroup">Note 2. Filter by casegroup</a></li>
+<li><a href="#example-note-2">Example: Note 2</a></li>
+<li><a href="#example-1-default-rhst-behaviour">Example 1. Default RHST behaviour</a></li>
+<li><a href="#example-2-for-filtering-by-case-groupnumber">Example 2. For filtering by case groupNumber</a></li>
+<li><a href="#example-3-for-filtering-by-multiple-case-groupnumbers">Example 3. For filtering by multiple case groupNumbers</a></li>
+</ul>
+</li>
+<li><a href="#7--getcase---command-to-find-a-specific-case-by-number">7.  getcase - command to find a specific case by number.</a><ul>
+<li><a href="#example-getcase">Example: getcase</a></li>
+</ul>
+</li>
+<li><a href="#8--addattachment---command-to-add-an-attachment-to-a-case">8.  addattachment - command to add an attachment to a case.</a><ul>
+<li><a href="#example-addattachment">Example: addattachment</a></li>
+</ul>
+</li>
+<li><a href="#9--getattachment---command-to-find-a-specific-attachment-by-uuid">9.  getattachment - command to find a specific attachment by uuid.</a><ul>
+<li><a href="#example-getattachment">Example: getattachment</a></li>
+</ul>
+</li>
+<li><a href="#10-modifycase">10. modifycase</a><ul>
+<li><a href="#modify-severity">Modify severity</a></li>
+<li><a href="#modify-the-case-type">Modify the Case type</a></li>
+<li><a href="#modify-status">Modify Status</a></li>
+<li><a href="#modify-alternate-id">Modify alternate id.</a></li>
+<li><a href="#modify-product">Modify product</a></li>
+<li><a href="#modify-version">Modify version</a></li>
+</ul>
+</li>
+<li><a href="#11-opencase---command-to-open-a-new-support-case">11. opencase - command to open a new support case.</a><ul>
+<li><a href="#to-see-the-recommendations-before-opening-the-case">To see the recommendations before opening the case.</a></li>
+<li><a href="#example-opencase">Example: opencase</a></li>
+<li><a href="#to-open-a-support-case">To open a support case.</a></li>
+<li><a href="#example-1-opening-a-case">Example 1. Opening A Case</a></li>
+<li><a href="#example-2-opening-a-case-with-a-casegroup-example-74975">Example 2. Opening A Case with a Casegroup (Example: 74975)</a></li>
+</ul>
+</li>
+<li><a href="#12-addcomment---command-to-add-a-comment-to-a-case">12. addcomment - command to add a comment to a case.</a><ul>
+<li><a href="#example-addcomment">Example: addcomment</a></li>
+</ul>
+</li>
+<li><a href="#13-kb---command-to-find-a-knowledge-base-solution-by-id">13. kb - command to find a knowledge base solution by ID</a><ul>
+<li><a href="#check-for-solutions">Check for solutions</a></li>
+<li><a href="#example-check-for-solutions">Example: Check for solutions</a></li>
+<li><a href="#check-for-articles">Check for articles</a></li>
+<li><a href="#example---check-for-articles">Example - Check for articles</a></li>
+</ul>
+</li>
+<li><a href="#14-search---command-to-search-the-entire-knowledge-base-for-solutions">14. search - command to search the entire knowledge base for solutions</a><ul>
+<li><a href="#example-search">Example: search</a></li>
+</ul>
+</li>
+<li><a href="#15-diagnose---command-to-send-text-to-red-hat-for-analysis">15. diagnose - command to send text to Red Hat for analysis.</a><ul>
+<li><a href="#example-diagnose">Example: diagnose</a></li>
+<li><a href="#using-proxy-configuration-in-the-curls">Using Proxy configuration in the curls</a></li>
+</ul>
+</li>
+<li><a href="#general-note">General Note</a></li>
+</ul>
+<!-- TOC end -->
+<h1 id="using-the-red-hat-support-tool-rhst-rest-api">Using the Red Hat Support Tool (RHST) REST API</h1>
+<p>The Red Hat Support Tool (RHST) is a command line utility shipped in RHEL
+6, 7 and 8, which allows users to interact with our Case Management APIs.
+One of its primary use-cases is the ability to programmatically upload
+attachments to support cases and Secure FTP.</p>
+<p>Owing to it&rsquo;s low usage, Red Hat Support Tool has been deprecated in RHEL
+8 and will not be shipped in RHEL 9 onwards. However, this doesn&rsquo;t affect
+the support and maintenance of the tool in RHEL 6/7/8, and we shall
+continue to maintain and push relevant updates / bug-fixes to the tool
+till the maintenance support phase.
+The article contains the curl command equivalent of the API based RHST
+commands.</p>
+<h1 id="pre-requisites">Pre-Requisites</h1>
+<ul>
+<li>Install <strong>jq</strong>, which is used to filter the curl response.</li>
+</ul>
+<h1 id="the-commands">The Commands</h1>
+<h2 id="1-listproducts-command-to-list-products">1. listproducts - command to list products</h2>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v2/products' | jq &quot;.[].name&quot;
+</code></pre>
+<h3 id="example-listproducts">Example: listproducts</h3>
+<pre><code>curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v2/products' | jq &quot;.[].name&quot;
+</code></pre>
+<h2 id="2-listversions-command-to-list-versions-of-a-product">2. listversions - command to list versions of a product</h2>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v2/products/&lt;urlencoded_product_name&gt;/versions' | jq &quot;.[].name&quot;
+</code></pre>
+<h3 id="example-listversions">Example: listversions</h3>
+<pre><code>Product: Red Hat Enterprise Linux
+curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v2/products/Red%20Hat%20Enterprise%20Linux/versions' | jq &quot;.[].name&quot;
+</code></pre>
+<h2 id="3-listattachments-command-to-list-attachments-for-the-specified-support">3. listattachments - command to list attachments for the specified support</h2>
+<p>case</p>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt;/attachments' | jq '. | [.| map(.) | .[] | {fileName: .fileName, uuid: .uuid, description: .description, size_in_bytes: .size}]'
+</code></pre>
+<h3 id="example-listattachments">Example: listattachments</h3>
+<pre><code>curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/cases/02290113/attachments' | jq '. | [.| map(.) | .[] | {fileName: .fileName, uuid: .uuid, description: .description, size_in_bytes: .size}]'
+</code></pre>
+<h2 id="4-listentitlements-command-to-list-your-current-entitlements">4. listentitlements - command to list your current entitlements</h2>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/entitlements?showAll=False'  | jq '. | [.| map(.) | .[] | {Name: .name, ServiceLevel: .serviceLevel, SLA: .slaProcessId, SupportLevel: .supportLevel, StartDate: .startDate, EndDate: .endDate}]'
+</code></pre>
+<h3 id="example-listentitlements">Example: listentitlements</h3>
+<pre><code>curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/entitlements?showAll=False'  | jq '. | [.| map(.) | .[] | {Name: .name, ServiceLevel: .serviceLevel, SLA: .slaProcessId, SupportLevel: .supportLevel, StartDate: .startDate, EndDate: .endDate}]'
+</code></pre>
+<h2 id="5-listcasegroups-command-to-list-case-groups">5. listcasegroups - command to list case groups</h2>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/accounts/casegroups' | jq &quot;.[].name&quot;
+</code></pre>
+<h3 id="example-listcasegroups">Example: listcasegroups</h3>
+<pre><code>curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/accounts/casegroups' | jq &quot;.[].name&quot;
+
+To get details of a particular case group
+
+curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/accounts/casegroups/&lt;case_group&gt;'
+curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/accounts/casegroups/74975'
+</code></pre>
+<h2 id="6-listcases-command-to-list-your-open-support-cases">6. listcases - command to list your open support cases.</h2>
+<p>The listcases command comes with various sub-options, which are available as the POST data to be sent in the request. They are as below -
+    * sortField - Sort cases by a particular field. Available fields to sort by are: caseNumber, createdDate, lastModifiedDate, severity, status.
+    * sortOrder - For sorting the result in a particular order. Available values - ASC, DESC.
+    * onlyUngrouped- true, for Including ungrouped cases in results else false.
+    * includeClosed - Show closed cases. Available values - true, false.
+    * groupNumber - Show the cases for a particular case group in your account.
+    * maxResults and offset are used to limit the results.</p>
+<h3 id="note-1-filter-the-response">Note 1. Filter the Response</h3>
+<pre><code>To filter the response, append the below given "jq" as in the curl as shown below.
+</code></pre>
+<pre><code>| jq '.cases | [.| map(.) | .[] | {Case_Number: .caseNumber, Summary: .summary, Severity: .severity, Status: .status, GroupName: .groupName, GroupNumber: .groupNumber}]'
+</code></pre>
+<h3 id="example-note-1">Example: Note 1</h3>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X POST https://api.access.redhat.com/support/v1/cases/filter -H 'accept: application/json' -H 'content-type: application/json'  -d '{&quot;maxResults&quot;: 50, &quot;offset&quot;: 0, &quot;sortField&quot;: &quot;&lt;sortField&gt;&quot;, &quot;sortOrder&quot;: &quot;&lt;sortOrder&gt;&quot;, &quot;onlyUngrouped&quot;: &lt;onlyUngrouped&gt;, &quot;includeClosed&quot;:&lt;includeClosed&gt;}' | jq '.cases | [.| map(.) | .[] | {Case_Number: .caseNumber, Summary: .summary, Severity: .severity, Status: .status, GroupName: .groupName, GroupNumber: .groupNumber}]'
+</code></pre>
+<h3 id="note-2-filter-by-casegroup">Note 2. Filter by casegroup</h3>
+<p>Cases can also be filtered by casegroups by passing the groupNumber in the filter request. Refer example 2, 3 below Use following curl to get the list of the case groups(their groupNumbes) in your account -</p>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/accounts/casegroups'
+</code></pre>
+<h3 id="example-note-2">Example: Note 2</h3>
+<pre><code>curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/accounts/casegroups'
+</code></pre>
+<h3 id="example-1-default-rhst-behaviour">Example 1. Default RHST behaviour</h3>
+<pre><code>curl -u jane.doe -X POST https://api.access.redhat.com/support/v1/cases/filter -H 'accept: application/json' -H 'content-type: application/json'  -d '{&quot;maxResults&quot;: 50, &quot;offset&quot;: 0, &quot;sortField&quot;: &quot;caseNumber&quot;, &quot;sortOrder&quot;: &quot;DESC&quot;, &quot;onlyUngrouped&quot;: false, &quot;includeClosed&quot;:false}'
+</code></pre>
+<h3 id="example-2-for-filtering-by-case-groupnumber">Example 2. For filtering by case groupNumber</h3>
+<pre><code>curl -u jane.doe -X POST https://api.access.redhat.com/support/v1/cases/filter -H 'accept: application/json'  -H 'content-type: application/json'  -d '{&quot;maxResults&quot;: 50, &quot;offset&quot;: 0, &quot;sortField&quot;: &quot;severity&quot;, &quot;sortOrder&quot;: &quot;DESC&quot;, &quot;onlyUngrouped&quot;: false, &quot;includeClosed&quot;:false, &quot;groupNumber&quot;: &quot;74975&quot;}'
+</code></pre>
+<h3 id="example-3-for-filtering-by-multiple-case-groupnumbers">Example 3. For filtering by multiple case groupNumbers</h3>
+<pre><code>curl -u jane.doe -X POST https://api.access.redhat.com/support/v1/cases/filter -H 'accept: application/json' -H 'content-type: application/json' -d '{&quot;includeClosed&quot;: false, &quot;maxResults&quot;: 50, &quot;offset&quot;: 0, &quot;sortField&quot;: &quot;caseNumber&quot;, &quot;sortOrder&quot;: &quot;DESC&quot;, &quot;groupNumbers&quot;: [&quot;74973&quot;, &quot;74975&quot;], &quot;onlyUngrouped&quot;: false}'
+</code></pre>
+<h2 id="7-getcase-command-to-find-a-specific-case-by-number">7.  getcase - command to find a specific case by number.</h2>
+<pre><code>* To get all case details.
+</code></pre>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt;' | jq '{Case_Number: .caseNumber, Case_Type: .caseType, Severity: .severity , Status: .status, Alternate_Id: .alternateId, Product: .product, Version: .version , Support_level: .entitlementSla, Owner: .contactName, Red_Hat_owner: .ownerId, Group: .groupNumber,Opened: .createdDate, Opened_by: .createdById, Last_updated_at: .lastModifiedDate, Last_updated_by: .lastModifiedById, Summary: .summary, Description: .description}'
+</code></pre>
+<h3 id="example-getcase">Example: getcase</h3>
+<pre><code>curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/cases/02290113' | jq '{Case_Number: .caseNumber, Case_Type: .caseType, Severity: .severity , Status: .status, Alternate_Id: .alternateId, Product: .product, Version: .version , Support_level: .entitlementSla, Owner: .contactName, Red_Hat_owner: .ownerId, Group: .groupNumber,Opened: .createdDate, Opened_by: .createdById, Last_updated_at: .lastModifiedDate, Last_updated_by: .lastModifiedById, Summary: .summary, Description: .description}'
+</code></pre>
+<ul>
+<li>To get case recommendations</li>
+</ul>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt;' | jq '.caseResourceLinks | [.| map(.) | .[] | {title: .title, link: .resourceViewURI}]'
+### Example
+curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/cases/02290113' | jq '.caseResourceLinks | [.| map(.) | .[] | {title: .title, link: .resourceViewURI}]'
+</code></pre>
+<ul>
+<li>Get case discussions (case comments)</li>
+</ul>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt;' | jq '.comments | [.| map(.) | .[] | {comment: .commentBody, Author: .lastModifiedById, Date: .lastModifiedDate}]'
+curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/cases/02290113' | jq '.comments | [.| map(.) | .[] | {comment: .commentBody, Author: .lastModifiedById, Date: .lastModifiedDate}]'
+</code></pre>
+<h2 id="8-addattachment-command-to-add-an-attachment-to-a-case">8.  addattachment - command to add an attachment to a case.</h2>
+<pre><code>* Refer to the Red Hat Secure FTP - User Guide . There is no upload size limit for SFTP.
+* For https uploads, refer to the following. Please note this has a size limit of 1GB.
+</code></pre>
+<pre><code>curl -u &lt;customer_portal_id&gt; -F &quot;file=@&lt;path_to_file&gt;&quot; -F &quot;description=&lt;description&gt;&quot; -X POST https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt;/attachments/ -D -
+</code></pre>
+<h3 id="example-addattachment">Example: addattachment</h3>
+<pre><code>curl -u jane.doe -F &quot;file=@/tmp/my_sosreport&quot; -F &quot;description=Sosreport for case&quot; -X POST https://api.access.redhat.com/support/v1/cases/02290113/attachments/ -D -
+</code></pre>
+<h2 id="9-getattachment-command-to-find-a-specific-attachment-by-uuid">9.  getattachment - command to find a specific attachment by uuid.</h2>
+<p>For downloading an attachment, there are two steps involved :-
+* Fetch the download link</p>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt;/attachments' | jq '.[]| select(.uuid==&quot;&lt;attachment_uuid&gt;&quot;)' | jq .link
+</code></pre>
+<p>Please note if there is any issue with the jq, then call the
+listattachments command curl and check the “link” field for your
+attachment uuid.
+* Download the attachment from that link. The file can be downloaded from any options as below -
+* Saves the file by uuid.</p>
+<pre><code>curl --fail -L -O -u &lt;customer_portal_id&gt; -X GET &lt;link_obtained_from_above_curl&gt;
+</code></pre>
+<ul>
+<li>Saves file by given filename and location in the -o</li>
+</ul>
+<pre><code>curl --fail -L -u &lt;customer_portal_id&gt; -X GET &lt;link_obtained_from_above_curl&gt; -o &lt;your_filename&gt;
+</code></pre>
+<ul>
+<li>Saves the file by the same name as uploaded on the case.</li>
+</ul>
+<pre><code>wget --content-disposition --user &lt;customer_portal_id&gt; --ask-password  &lt;link_obtained_from_above_curl&gt;
+</code></pre>
+<h3 id="example-getattachment">Example: getattachment</h3>
+<ul>
+<li>Fetch the download link as below</li>
+</ul>
+<pre><code>curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/cases/02290113/attachments' | jq '.[]| select(.uuid==&quot;6ec52168-f043-47d7-853a-65cf38d5bdc1&quot;)' | jq .link
+</code></pre>
+<ul>
+<li>Download the attachment with the link obtained from above curl using
+either of the below given curl/wget.</li>
+</ul>
+<pre><code>curl --fail -L -O -u jane.doe -X GET https://attachments.access.redhat.com/hydra/rest/cases/02290113/attachments/6ec52168-f043-47d7-853a-65cf38d5bdc1
+curl --fail -L -u jane.doe -X GET https://attachments.access.redhat.com/hydra/rest/cases/02290113/attachments/6ec52168-f043-47d7-853a-65cf38d5bdc1 -o /tmp/downloaded_file
+wget --content-disposition --user jane.doe --ask-password  https://attachments.access.redhat.com/hydra/rest/cases/02290113/attachments/6ec52168-f043-47d7-853a-65cf38d5bdc1
+</code></pre>
+<h2 id="10-modifycase">10. modifycase</h2>
+<p>For modifying a case, we have the following options in RHST.</p>
+<h3 id="modify-severity">Modify severity</h3>
+<p>a. Find the severities</p>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/cases/metadata/severities' | jq .items
+
+### Example
+
+curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/cases/metadata/severities' | jq .items
+</code></pre>
+<p>b. Now, modify the case</p>
+<pre><code>curl -u &lt;customer_portal_id&gt;  -X PUT https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt; -d '{&quot;severity&quot;: &quot;&lt;Severity_obtained_from_above_curl&gt;&quot;}'
+
+### Example
+
+curl -u jane.doe -X PUT https://api.access.redhat.com/support/v1/cases/02290113 -d '{&quot;severity&quot;: &quot;3 (Normal)&quot;}'
+</code></pre>
+<h3 id="modify-the-case-type">Modify the Case type</h3>
+<p>a. Find the case types</p>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/cases/metadata/types' | jq .items
+
+### Example
+
+curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/cases/metadata/types' | jq .items
+</code></pre>
+<p>b. Modify the case type</p>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X PUT https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt; -d '{&quot;caseType&quot;: &quot;&lt;Casetype_obtained_from_above_curl&gt;&quot;}'
+
+### Example
+
+curl -u jane.doe -X PUT https://api.access.redhat.com/support/v1/cases/02290113 -d '{&quot;caseType&quot;: &quot;Defect / Bug&quot;}'
+</code></pre>
+<h3 id="modify-status">Modify Status</h3>
+<p>a. Find the different statuses</p>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/cases/metadata/statuses' | jq .items
+
+### Example
+
+curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/cases/metadata/statuses' | jq .items
+</code></pre>
+<p>b. Now, modify the case status</p>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X PUT https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt; -d '{&quot;status&quot;: &quot;&lt;Status_obtained_from_above_curl&gt;&quot;}
+
+### Example
+
+curl -u jane.doe -X PUT https://api.access.redhat.com/support/v1/cases/02290113 -d '{&quot;status&quot;: &quot;Waiting on Red Hat&quot;}'
+</code></pre>
+<h3 id="modify-alternate-id">Modify alternate id.</h3>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X PUT https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt; -d '{&quot;alternateId&quot;: &quot;&lt;alternate_id&gt;&quot;}'
+
+### Example
+
+curl -u jane.doe -X PUT https://api.access.redhat.com/support/v1/cases/02290113 -d '{&quot;alternateId&quot;: &quot;1234&quot;}'
+</code></pre>
+<h3 id="modify-product">Modify product</h3>
+<p>Products can be found from listproducts command curl.</p>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X PUT https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt; -d '{&quot;product&quot;: &quot;&lt;product&gt;&quot;, &quot;version&quot;:&quot;&lt;version&gt;&quot;}'
+
+### Example
+
+curl -u jane.doe -X PUT https://api.access.redhat.com/support/v1/cases/02290113 -d '{&quot;product&quot;: &quot;Red Hat Enterprise Linux&quot;, &quot;version&quot;:&quot;8.0&quot;}'
+</code></pre>
+<h3 id="modify-version">Modify version</h3>
+<p>Versions for a specific product can be found from the listversions command curl.</p>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X PUT https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt; -d '{&quot;product&quot;:&quot;&lt;product&gt;&quot;,&quot;version&quot;:&quot;&lt;version&gt;&quot;}'
+
+### Example
+
+curl -u jane.doe -X PUT https://api.access.redhat.com/support/v1/cases/02290113 -d '{&quot;product&quot;:&quot;Red Hat Enterprise Linux&quot;,&quot;version&quot;:&quot;8.0&quot;}'
+</code></pre>
+<h2 id="11-opencase-command-to-open-a-new-support-case">11. opencase - command to open a new support case.</h2>
+<h4 id="to-see-the-recommendations-before-opening-the-case">To see the recommendations before opening the case.</h4>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X POST 'https://api.access.redhat.com/support/search/recommendations' --header 'Accept: application/json' --header 'Content-Type: application/json' -d '{ &quot;product&quot;:&quot;&lt;product&gt;&quot;, &quot;version&quot;:&quot;&lt;version&gt;&quot;, &quot;summary&quot;:&quot;&lt;summary_for_case&gt;&quot;}' | jq '.response.docs | [.| map(.) | .[] | {url: .view_uri, Title: .allTitle}]'
+</code></pre>
+<h3 id="example-opencase">Example: opencase</h3>
+<pre><code>curl -u jane.doe -X POST 'https://api.access.redhat.com/support/search/recommendations' --header 'Accept: application/json' --header 'Content-Type: application/json' -d '{ &quot;product&quot;:&quot;Red Hat Enterprise Linux&quot;, &quot;version&quot;:&quot;8.1&quot;, &quot;summary&quot;:&quot;Test summary&quot;}' | jq '.response.docs | [.| map(.) | .[] | {url: .view_uri, Title: .allTitle}]'
+</code></pre>
+<h4 id="to-open-a-support-case">To open a support case.</h4>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X POST https://api.access.redhat.com/support/v1/cases -H 'accept: application/json' -H 'content-type: application/json' -d '{&quot;summary&quot;: &quot;&lt;summary&quot;, &quot;description&quot;: &quot;&lt;description&gt;&quot;, &quot;product&quot;: &quot;&lt;product&gt;&quot;,&quot;version&quot;: &quot;&lt;version&gt;&quot;,&quot;caseType&quot;: &quot;&lt;caseType&quot;,&quot;severity&quot;: &quot;&lt;severity&gt;&quot;}'
+</code></pre>
+<h3 id="example-1-opening-a-case">Example 1. Opening A Case</h3>
+<pre><code>curl -u jane.doe -X POST https://api.access.redhat.com/support/v1/cases -H 'accept: application/json' -H 'content-type: application/json' -d '{&quot;summary&quot;: &quot;Test Summary&quot;, &quot;description&quot;: &quot;This is test description for new case created&quot;, &quot;product&quot;: &quot;Red Hat Enterprise Linux&quot;,&quot;version&quot;: &quot;7.9&quot;,&quot;caseType&quot;: &quot;Defect / Bug&quot;,&quot;severity&quot;: &quot;3 (Normal)&quot;}'
+</code></pre>
+<h3 id="example-2-opening-a-case-with-a-casegroup-example-74975">Example 2. Opening A Case with a Casegroup (Example: 74975)</h3>
+<pre><code>curl -u jane.doe -X POST https://api.access.redhat.com/support/v1/cases -H 'accept: application/json' -H 'content-type: application/json' -d '{&quot;summary&quot;: &quot;Test Summary&quot;, &quot;description&quot;: &quot;This is test description for new case created&quot;, &quot;product&quot;: &quot;Red Hat Enterprise Linux&quot;,&quot;version&quot;: &quot;7.9&quot;,&quot;caseType&quot;: &quot;Defect / Bug&quot;,&quot;severity&quot;: &quot;3 (Normal)&quot;, &quot;groupNumber&quot;: &quot;74975&quot;}'
+</code></pre>
+<h2 id="12-addcomment-command-to-add-a-comment-to-a-case">12. addcomment - command to add a comment to a case.</h2>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X POST https://api.access.redhat.com/support/v1/cases/&lt;case_number&gt;/comments -H 'accept: application/json' -H 'content-type: application/json'  -d '{&quot;caseNumber&quot;: &quot;&lt;case_number&gt;&quot;, &quot;commentBody&quot;: &quot;&lt;Comment_text&gt;&quot;}'
+</code></pre>
+<h3 id="example-addcomment">Example: addcomment</h3>
+<pre><code>curl -u jane.doe -X POST https://api.access.redhat.com/support/v1/cases/02290113/comments -H 'accept: application/json' -H 'content-type: application/json'  -d '{&quot;caseNumber&quot;: &quot;02290113&quot;, &quot;commentBody&quot;: &quot;This is my comment text&quot;}'
+</code></pre>
+<h2 id="13-kb-command-to-find-a-knowledge-base-solution-by-id">13. kb - command to find a knowledge base solution by ID</h2>
+<p>Please first check the /solutions endpoint. If the response from this is
+404, then check the /articles endpoint. Hence, both curls are given below.</p>
+<h3 id="check-for-solutions">Check for solutions</h3>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/solutions/&lt;solution_id&gt;' | jq -r '{Title: .title, Issue: .issue.text, Environment: .environment.text, Resolution: .resolution.text, Last_Modified_on: .lastModifiedDate}'
+</code></pre>
+<h3 id="example-check-for-solutions">Example: Check for solutions</h3>
+<pre><code>curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/solutions/61546' | jq -r '{Title: .title, Issue: .issue.text, Environment: .environment.text, Resolution: .resolution.text, Last_Modified_on: .lastModifiedDate}'
+</code></pre>
+<h3 id="check-for-articles">Check for articles</h3>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X GET 'https://api.access.redhat.com/support/v1/articles/&lt;article_id&gt;' | jq '{Title: .title, URL: .viewURI, Created_at: .createdDate, Last_Modified_Date: .lastModifiedDate, Body: .body.text}'
+</code></pre>
+<h3 id="example-check-for-articles">Example - Check for articles</h3>
+<pre><code>curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/articles/3724231' | jq '{Title: .title, URL: .viewURI, Created_at: .createdDate, Last_Modified_Date: .lastModifiedDate, Body: .body.text}'
+</code></pre>
+<h2 id="14-search-command-to-search-the-entire-knowledge-base-for-solutions">14. search - command to search the entire knowledge base for solutions</h2>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X POST --header 'Content-Type: application/json' --header 'Accept: application/json'  -d '{ &quot;start&quot;:0, &quot;rows&quot;:50, &quot;q&quot;:&quot;&lt;text_to_be_searched&gt;&quot;, &quot;expression&quot;:&quot;fq=documentKind%3A%22Solution%22&quot;}' 'https://api.access.redhat.com/support/search/v2/kcs' | jq '.response.docs | [.| map(.) | .[] | {url: .view_uri, Title: .allTitle, Abstract: .abstract}]'
+</code></pre>
+<h3 id="example-search">Example: search</h3>
+<p>Search term - “<em>libvirt error code: 1, message: internal error HTTP response code 404</em>&ldquo;</p>
+<pre><code>curl -u jane.doe -X POST --header 'Content-Type: application/json' --header 'Accept: application/json'  -d '{ &quot;start&quot;:0, &quot;rows&quot;:50, &quot;q&quot;:&quot;libvirt error code: 1, message: internal error HTTP response code 404&quot;, &quot;expression&quot;:&quot;fq=documentKind%3A%22Solution%22&quot;}' 'https://api.access.redhat.com/support/search/v2/kcs' | jq '.response.docs | [.| map(.) | .[] | {url: .view_uri, Title: .allTitle, Abstract: .abstract}]'
+</code></pre>
+<h2 id="15-diagnose-command-to-send-text-to-red-hat-for-analysis">15. diagnose - command to send text to Red Hat for analysis.</h2>
+<pre><code>curl -u &lt;customer_portal_id&gt; -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ &quot;summary&quot;: &quot;&lt;plain_text_for_analysis&gt;&quot;}' https://api.access.redhat.com/support/search/recommendations | jq '.response.docs | [.| map(.) | .[] | {url: .view_uri, Title: .allTitle}]'
+</code></pre>
+<p>This gives top 10 recommendations.</p>
+<h3 id="example-diagnose">Example: diagnose</h3>
+<p>Text to be diagnosed - &ldquo;<em>libvirt error code: 1, message: internal error HTTP response code 404</em>&ldquo;</p>
+<pre><code>curl -u jane.doe -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ &quot;summary&quot;: &quot;libvirt error code: 1, message: internal error HTTP response code 404&quot;}' https://api.access.redhat.com/support/search/recommendations | jq '.response.docs | [.| map(.) | .[] | {url: .view_uri, Title: .allTitle}]'
+</code></pre>
+<h3 id="using-proxy-configuration-in-the-curls">Using Proxy configuration in the curls</h3>
+<p>If the user has a proxy configured, then the &ndash;proxy option can be used in the curl commands. Given below is a example with the addattachment command curl with authenticated and unauthenticated proxy.</p>
+<p>Proxy - <em>http://localhost:8080</em></p>
+<pre><code>curl -u jane.doe --proxy http://localhost:8080 -F &quot;file=@/home/jane/my_sosreport&quot; -X POST https://api.access.redhat.com/support/v1/cases/02290113/attachments/ -D -
+</code></pre>
+<p>If a user has a authenticated proxy(http://localhost:8080), specify it’s username(rstuser) and password(rstpassword) in as below</p>
+<pre><code>curl -u jane.doe --proxy rstuser:rstpassword@localhost:8080 -F &quot;file=@/home/jane/my_sosreport&quot; -X POST https://api.access.redhat.com/support/v1/cases/02290113/attachments/ -D -
+</code></pre>
+<h1 id="general-note">General Note</h1>
+<ol>
+<li>If you run into jq related errors for example as below, please run your curl without jq to check the curl response first .</li>
+</ol>
+<pre><code>jq: error (at &lt;stdin&gt;:0, ): Cannot iterate over null (null) OR q: error (at &lt;stdin&gt;:0): Cannot index array with string)
+</code></pre></body> </html> <!-- vim: set ai si nu :-->
