@@ -2,6 +2,10 @@
 ##	Unicode.md
 ##	Tips for Unicode
 
+## Composing Unicode
+* [The Official Character Code Charts](https://www.unicode.org/charts/)
+* [More Unicode than you knew existed](file:///usr/share/X11/locale/en_US.UTF-8/Compose)
+
 ### iconv: convert between encodings
 
 Use the ```file``` command to determine the current encoding.  Then use the ```iconv``` command to set a new encoding.
@@ -21,6 +25,10 @@ $ printf "%b\n"  "\u00e1"
 á
 $ printf "It is %s%bF\n" 72 "\u00b0"
 It is 72°F
+$ printf "%b\n" '\uFF30\uFF21\uFF35\uFF2C'
+ ＰＡＵＬ
+$ printf "%b\n" '\uFF30\uFF41\uFF55\uFF4C'
+ Ｐａｕｌ
 #For an entire file:
 $ printf '%b\n' "$(<data)"
 This is a test
