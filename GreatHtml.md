@@ -43,8 +43,27 @@ will be stacked vertically):
 ```
 
 ###	Responsive Flexbox
+[Holy Albatross](https://codepen.io/heydon/pen/JwwZaX)
+
 When you want a component to be flexible; to grow and shrink.
 However, You only want the items to take up either 33% or 100% of
 the container/parent element's width. The easy part is ensuring the
-elements never take up less than 33% or more than 100%.  [Holy Albatross](https://codepen.io/heydon/pen/JwwZaX)
+elements never take up less than 33% or more than 100%.
+
+### Tufte CSS
+[Tufte-css](https://edwardtufte.github.io/tufte-css/)
+
+## Getting Started
+
+To use Tufte CSS, copy tufte.css and the et-book directory of font
+files to your project directory, then add the following to your HTML
+document’s head block:
+
+```
+<link rel="stylesheet" href="tufte.css"/>
+```
+Now you just have to use the provided CSS rules, and the Tufte CSS
+conventions described in this document. For best results, View Source
+and Inspect Element frequently.
+
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
