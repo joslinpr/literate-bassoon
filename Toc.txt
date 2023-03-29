@@ -1,0 +1,45 @@
+
+# Book of Knowledge
+
+## OpenShiftTricks.md
+
+## Miscellaneous OpenShift / Kubernetes Tricks
+
+### Get memory usage for a pod
+
+### Get an interactive shell in a pod
+
+### Get Various Info via CLI:
+
+#### Get Auth Token:
+
+#### Pod:
+
+#### Deployment:
+
+#### Statefullset:
+
+#### DeploymentConfig:
+
+#### BuidConfig:
+
+#### ImageStream:
+
+### Role-Based Access Controls (RBAC)
+
+#### Describe all Role-Based Access Controls
+
+#### Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server
+
+#### Clusterroles (CR) for user/serviceaccount prometheus-server
+
+#### Local Role Binding Operations
+
+#### Cluster role binding operations
+
+#### Converting json to yaml
+
+### Who's using kafka?
+
+### Enable/Disable Cronjobs
+

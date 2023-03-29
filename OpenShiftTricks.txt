@@ -1,4 +1,30 @@
 
+
+• Book of Knowledge
+• OpenShiftTricks.md
+• Miscellaneous OpenShift / Kubernetes Tricks
+• Get memory usage for a pod
+• Get an interactive shell in a pod
+• Get Various Info via CLI:
+• Get Auth Token:
+• Pod:
+• Deployment:
+• Statefullset:
+• DeploymentConfig:
+• BuidConfig:
+• ImageStream:
+• Role-Based Access Controls (RBAC)
+• Describe all Role-Based Access Controls
+• Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server
+• Clusterroles (CR) for user/serviceaccount prometheus-server
+• Local Role Binding Operations
+• Cluster role binding operations
+• Converting json to yaml
+• Who's using kafka?
+• Enable/Disable Cronjobs
+
+
+
 # Book of Knowledge
 
 ## OpenShiftTricks.md
@@ -19,43 +45,43 @@ $ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 
 ### Get Various Info via CLI:
 
-### Get Auth Token:
+#### Get Auth Token:
 
 You must already be logged in.
 
 TOKEN=$(oc whomai --show-token)
 
-### POD:
+#### Pod:
 
 oc get po '-o=jsonpath={range
 .items[*]}{"PROG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.containers[].image}{"\n"}' -A |grep
 redhat
 
-### deployment:
+#### Deployment:
 
 oc get deployment '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -
 A|grep redhat
 
-### Statefullset:
+#### Statefullset:
 
 oc get sts '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -
 A|grep redhat
 
-### deploymentConfig:
+#### DeploymentConfig:
 
 oc get dc '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -
 A|grep redhat
 
-### BuidConfig:
+#### BuidConfig:
 
 oc get bc '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.triggers[].imageChange.lastTriggeredImageID}{"\n"}{end}' -
 A|grep redhat
 
-### ImageStream:
+#### ImageStream:
 
 oc get is '-o=jsonpath={range
 .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.tags[].from.name}{"\n"}{end}' -A|grep
@@ -65,19 +91,19 @@ redhat
 
 RBAC References https://docs.openshift.com/container-platform/4.9/authentication/using-rbac.html
 
-### Describe all Role-Based Access Controls
+#### Describe all Role-Based Access Controls
 
 `oc describe clusterrole.rbac`
 
-### Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server
+#### Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server
 
 `oc get clusterrolebindings -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'`
 
-### Clusterroles (CR) for user/serviceaccount prometheus-server
+#### Clusterroles (CR) for user/serviceaccount prometheus-server
 
 `oc get clusterroles -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'`
 
-### Local Role Binding Operations
+#### Local Role Binding Operations
 
 `$ oc adm policy who-can <verb> <resource>` Indicates which users can perform an action on a resource.
 
@@ -95,7 +121,7 @@ project.
 
 `$ oc adm policy remove-group <groupname>` Removes specified groups and all of their roles in the current project.
 
-### Cluster role binding operations
+#### Cluster role binding operations
 
 `$ oc adm policy add-cluster-role-to-user <role> <username>` Binds a given role to specified users for all projects in
 the cluster.
@@ -111,7 +137,7 @@ projects in the cluster.
 
 #### Converting json to yaml
 
-Converting json to yaml /home/pjoslin/Projects/literate-bassoon/JSON.md
+Converting json to yaml /JSON.md
 
 ### Who's using kafka?
 

@@ -5,7 +5,8 @@
 
 ### My Book of Knowledge
 
-This is the Book of Knowledge, an unstructed store of miscellaneous things I need to remember.
+This is the Book of Knowledge, an unstructed store of miscellaneous things I
+need to remember.
 
 ### Viewing
 

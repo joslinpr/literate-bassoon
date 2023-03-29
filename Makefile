@@ -35,7 +35,7 @@ all : $(SENTINAL)
 #################### MD2TXT
 define MD2TXT =
 @printf "\t$< --> $@\n"
-$(GLOW) $(GLOWARGS) $< > $@
+$(GLOW) $(GLOWARGS) < $< > $@
 chmod 744 $@ $<
 endef
 %.txt : %.md Makefile

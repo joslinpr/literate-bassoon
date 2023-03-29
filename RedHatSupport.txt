@@ -1,6 +1,5 @@
 
 
-
 • Using the Red Hat Support Tool (RHST) REST API
 • Pre-Requisites
 • The Commands
@@ -57,17 +56,20 @@
 
 • General Note
 
-
 # Using the Red Hat Support Tool (RHST) REST API
 
-The Red Hat Support Tool (RHST) is a command line utility shipped in RHEL 6, 7 and 8, which allows users to interact
-with our Case Management APIs. One of its primary use-cases is the ability to programmatically upload attachments to
-support cases and Secure FTP.
+The Red Hat Support Tool (RHST) is a command line utility shipped in RHEL
+6, 7 and 8, which allows users to interact with our Case Management APIs.
+One of its primary use-cases is the ability to programmatically upload
+attachments to support cases and Secure FTP.
 
-Owing to it's low usage, Red Hat Support Tool has been deprecated in RHEL 8 and will not be shipped in RHEL 9
-onwards. However, this doesn't affect the support and maintenance of the tool in RHEL 6/7/8, and we shall continue
-to maintain and push relevant updates / bug-fixes to the tool till the maintenance support phase. The article
-contains the curl command equivalent of the API based RHST commands.
+Owing to it's low usage, Red Hat Support Tool has been deprecated in RHEL
+8 and will not be shipped in RHEL 9 onwards. However, this doesn't affect
+the support and maintenance of the tool in RHEL 6/7/8, and we shall
+continue to maintain and push relevant updates / bug-fixes to the tool
+till the maintenance support phase.
+The article contains the curl command equivalent of the API based RHST
+commands.
 
 # Pre-Requisites
 
@@ -134,11 +136,14 @@ curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/accounts/caseg
 ## 6. listcases - command to list your open support cases.
 
 The listcases command comes with various sub-options, which are available as the POST data to be sent in the request.
-They are as below - * sortField - Sort cases by a particular field. Available fields to sort by are: caseNumber,
-createdDate, lastModifiedDate, severity, status. * sortOrder - For sorting the result in a particular order.
-Available values - ASC, DESC. * onlyUngrouped- true, for Including ungrouped cases in results else false. *
-includeClosed - Show closed cases. Available values - true, false. * groupNumber - Show the cases for a particular case
-group in your account. * maxResults and offset are used to limit the results.
+They are as below -
+* sortField - Sort cases by a particular field. Available fields to sort by are: caseNumber, createdDate,
+lastModifiedDate, severity, status.
+* sortOrder - For sorting the result in a particular order. Available values - ASC, DESC.
+* onlyUngrouped- true, for Including ungrouped cases in results else false.
+* includeClosed - Show closed cases. Available values - true, false.
+* groupNumber - Show the cases for a particular case group in your account.
+* maxResults and offset are used to limit the results.
 
 ### Note 1. Filter the Response
 
@@ -239,8 +244,9 @@ For downloading an attachment, there are two steps involved :-
 curl -u <customer_portal_id> -X GET 'https://api.access.redhat.com/support/v1/cases/<case_number>/attachments' | jq
 '.[]| select(.uuid=="<attachment_uuid>")' | jq .link
 
-Please note if there is any issue with the jq, then call the listattachments command curl and check the “link” field
-for your attachment uuid.
+Please note if there is any issue with the jq, then call the
+listattachments command curl and check the “link” field for your
+attachment uuid.
 
 • Download the attachment from that link. The file can be downloaded from any options as below -
 • Saves the file by uuid.
@@ -413,8 +419,8 @@ comment text"}'
 
 ## 13. kb - command to find a knowledge base solution by ID
 
-Please first check the /solutions endpoint. If the response from this is 404, then check the /articles endpoint.
-Hence, both curls are given below.
+Please first check the /solutions endpoint. If the response from this is
+404, then check the /articles endpoint. Hence, both curls are given below.
 
 ### Check for solutions
 
