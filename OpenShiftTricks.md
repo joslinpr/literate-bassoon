@@ -4,6 +4,7 @@
   * [Miscellaneous OpenShift / Kubernetes Tricks](#miscellaneous-openshift-kubernetes-tricks)
     + [Get memory usage for a pod](#get-memory-usage-for-a-pod)
     + [Get an interactive shell in a pod](#get-an-interactive-shell-in-a-pod)
+    + [Get an interactive shell on a node](#get-an-interactive-shell-on-a-node)
     + [Get Various Info via CLI:](#get-various-info-via-cli)
       - [Get Auth Token:](#get-auth-token)
       - [Pod:](#pod)
@@ -44,6 +45,15 @@ $ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 
 * -i: interactive
 * -t: create a TTY
+
+<!-- TOC --><a name="get-an-interactive-shell-on-a-node"></a>
+###  Get an interactive shell on a node
+```
+$ oc debug -n default debug/<nodename>
+```
+
+* Use "chroot /hosts" to access host instead of container
+* You must specify a namespace that does not have a quota.
 
 <!-- TOC --><a name="get-various-info-via-cli"></a>
 ###  Get Various Info via CLI:
