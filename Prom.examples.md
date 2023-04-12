@@ -33,4 +33,16 @@ CPU limits over the capacity of the cluster is a scenario you need to avoid. Oth
 ```
 sum(kube_pod_container_resource_limits{resource="cpu"}) - sum(kube_node_status_capacity_cpu_cores)
 ```
+
+### Kafka Disk Space Available
+```
+# data-kafka-copy-kafka-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-copy-k.*"}
+# data-kafka-copy-zookeeper-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-copy-z.*"}
+# data-kafka-kafka-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-k.*"}
+# data-kafka-zookeeper-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-z.*"}
+```
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

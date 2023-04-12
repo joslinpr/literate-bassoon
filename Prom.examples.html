@@ -48,6 +48,7 @@ ul { color: blue; }
 <li><a href="#count-of-pods-per-cluster-and-namespace">Count of pods per cluster and namespace</a></li>
 <li><a href="#cpu-usage-per-namespace">CPU USage per namespace</a></li>
 <li><a href="#cpu-overcommit">CPU overcommit</a></li>
+<li><a href="#kafka-disk-space-available">Kafka Disk Space Available</a></li>
 </ul>
 </li>
 </ul>
@@ -72,4 +73,14 @@ ul { color: blue; }
 <h3 id="cpu-overcommit">CPU overcommit</h3>
 <p>CPU limits over the capacity of the cluster is a scenario you need to avoid. Otherwise, you’ll end up with CPU throttling issues. You can detect CPU overcommit with the following query.</p>
 <pre><code>sum(kube_pod_container_resource_limits{resource=&quot;cpu&quot;}) - sum(kube_node_status_capacity_cpu_cores)
+</code></pre>
+<h3 id="kafka-disk-space-available">Kafka Disk Space Available</h3>
+<pre><code># data-kafka-copy-kafka-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-copy-k.*&quot;}
+# data-kafka-copy-zookeeper-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-copy-z.*&quot;}
+# data-kafka-kafka-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-k.*&quot;}
+# data-kafka-zookeeper-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-z.*&quot;}
 </code></pre></body> </html> <!-- vim: set ai si nu :-->

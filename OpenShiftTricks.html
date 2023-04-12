@@ -45,6 +45,7 @@ ul { color: blue; }
 <li><a href="#miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</a><ul>
 <li><a href="#get-memory-usage-for-a-pod">Get memory usage for a pod</a></li>
 <li><a href="#get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</a></li>
+<li><a href="#get-an-interactive-shell-on-a-node">Get an interactive shell on a node</a></li>
 <li><a href="#get-various-info-via-cli">Get Various Info via CLI:</a><ul>
 <li><a href="#get-auth-token">Get Auth Token:</a></li>
 <li><a href="#pod">Pod:</a></li>
@@ -79,6 +80,7 @@ ul { color: blue; }
 <li><a href="#miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</a><ul>
 <li><a href="#get-memory-usage-for-a-pod">Get memory usage for a pod</a></li>
 <li><a href="#get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</a></li>
+<li><a href="#get-an-interactive-shell-on-a-node">Get an interactive shell on a node</a></li>
 <li><a href="#get-various-info-via-cli">Get Various Info via CLI:</a></li>
 <li><a href="#get-auth-token">Get Auth Token:</a></li>
 <li><a href="#pod">Pod:</a></li>
@@ -123,6 +125,15 @@ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_byte
 <ul>
 <li>-i: interactive</li>
 <li>-t: create a TTY</li>
+</ul>
+<!-- TOC -->
+<p><a name="get-an-interactive-shell-on-a-node"></a></p>
+<h3 id="get-an-interactive-shell-on-a-node">Get an interactive shell on a node</h3>
+<pre><code>$ oc debug -n default debug/&lt;nodename&gt;
+</code></pre>
+<ul>
+<li>Use &ldquo;chroot /hosts&rdquo; to access host instead of container</li>
+<li>You must specify a namespace that does not have a quota.</li>
 </ul>
 <!-- TOC -->
 <p><a name="get-various-info-via-cli"></a></p>

@@ -5,6 +5,7 @@
 • Miscellaneous OpenShift / Kubernetes Tricks
 • Get memory usage for a pod
 • Get an interactive shell in a pod
+• Get an interactive shell on a node
 • Get Various Info via CLI:
 • Get Auth Token:
 • Pod:
@@ -42,6 +43,13 @@ $ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 
 • -i: interactive
 • -t: create a TTY
+
+### Get an interactive shell on a node
+
+$ oc debug -n default debug/<nodename>
+
+• Use "chroot /hosts" to access host instead of container
+• You must specify a namespace that does not have a quota.
 
 ### Get Various Info via CLI:
 
