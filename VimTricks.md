@@ -36,7 +36,7 @@ g<change><motion>
  *motion* = G end of Document, j Line Above, w Word
 ```
 
- Examples
+#### Examples
  Command | Effect
  ----------------|----------------
  ~     | Changes the case of current character
@@ -67,13 +67,13 @@ do the substitution:
 ### Spelling
 To turn on spelling:  `:setlocal spell spelllang=en_us`
 
-The words that are not recognized are highlighted with one of these:
-| Name | Description | Highlight |
-|---|---|---|
-| SpellBad | 	word not recognized		| hl-SpellBad|
-| SpellCap | 	word not capitalised	| hl-SpellCap|
-| SpellRare |  rare word				| hl-SpellRare|
-| SpellLocal	| wrong spelling for selected region	| hl-SpellLocal|
+#### Highlighting
+ Name | Description | Highlight 
+---|---|---
+ SpellBad | 	word not recognized		| hl-SpellBad
+ SpellCap | 	word not capitalised	| hl-SpellCap
+ SpellRare |  rare word				| hl-SpellRare
+ SpellLocal	| wrong spelling for selected region	| hl-SpellLocal
 
 #### Searching for Misspellings
  Command | Effect

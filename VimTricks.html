@@ -47,9 +47,13 @@ ul { color: blue; }
 <li><a href="#simple-math">Simple Math</a></li>
 <li><a href="#bouncing">Bouncing</a></li>
 <li><a href="#checking-variables">Checking Variables</a></li>
-<li><a href="#changing-case">Changing Case</a></li>
+<li><a href="#changing-case">Changing Case</a><ul>
+<li><a href="#examples">Examples</a></li>
+</ul>
+</li>
 <li><a href="#non-breaking-space">Non-breaking Space</a></li>
 <li><a href="#spelling">Spelling</a><ul>
+<li><a href="#highlighting">Highlighting</a></li>
 <li><a href="#searching-for-misspellings">Searching for Misspellings</a></li>
 <li><a href="#to-add-words-to-your-own-word-list">To add words to your own word list:</a></li>
 <li><a href="#finding-suggestions-for-bad-words">Finding suggestions for bad words:</a></li>
@@ -88,23 +92,73 @@ OR
  Doubled *change* means &quot;entire line&quot;
  *motion* = G end of Document, j Line Above, w Word
 </code></pre>
-<p>Examples
- Command | Effect
- ----------------|----------------
- ~     | Changes the case of current character
- guu   | Change current line from upper to lower.
- gUU   | Change current LINE from lower to upper.
- guw   | Change to end of current WORD from upper to lower.
- guaw  | Change all of current WORD to lower.
- gUw   | Change to end of current WORD from lower to upper.
- gUaw  | Change all of current WORD to upper.
- g~~   | Invert case to entire line
- g~w   | Invert case to current WORD
- guG   | Change to lowercase until the end of document.
- gU)   | Change until end of sentence to upper case
- gu}   | Change to end of paragraph to lower case
- gU5j  | Change 5 lines below to upper case
- gu3k  | Change 3 lines above to lower case</p>
+<h4 id="examples">Examples</h4>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~</td>
+<td>Changes the case of current character</td>
+</tr>
+<tr>
+<td>guu</td>
+<td>Change current line from upper to lower.</td>
+</tr>
+<tr>
+<td>gUU</td>
+<td>Change current LINE from lower to upper.</td>
+</tr>
+<tr>
+<td>guw</td>
+<td>Change to end of current WORD from upper to lower.</td>
+</tr>
+<tr>
+<td>guaw</td>
+<td>Change all of current WORD to lower.</td>
+</tr>
+<tr>
+<td>gUw</td>
+<td>Change to end of current WORD from lower to upper.</td>
+</tr>
+<tr>
+<td>gUaw</td>
+<td>Change all of current WORD to upper.</td>
+</tr>
+<tr>
+<td>g~~</td>
+<td>Invert case to entire line</td>
+</tr>
+<tr>
+<td>g~w</td>
+<td>Invert case to current WORD</td>
+</tr>
+<tr>
+<td>guG</td>
+<td>Change to lowercase until the end of document.</td>
+</tr>
+<tr>
+<td>gU)</td>
+<td>Change until end of sentence to upper case</td>
+</tr>
+<tr>
+<td>gu}</td>
+<td>Change to end of paragraph to lower case</td>
+</tr>
+<tr>
+<td>gU5j</td>
+<td>Change 5 lines below to upper case</td>
+</tr>
+<tr>
+<td>gu3k</td>
+<td>Change 3 lines above to lower case</td>
+</tr>
+</tbody>
+</table>
 <h3 id="non-breaking-space">Non-breaking Space</h3>
 <p>To find out the character code of the non-breaking space, place the
 cursor over it and type use the normal mode command <code>ga</code>. Vim will
@@ -115,13 +169,38 @@ do the substitution:</p>
 </code></pre>
 <h3 id="spelling">Spelling</h3>
 <p>To turn on spelling:  <code>:setlocal spell spelllang=en_us</code></p>
-<p>The words that are not recognized are highlighted with one of these:
-| Name | Description | Highlight |
-|&mdash;|&mdash;|&mdash;|
-| SpellBad |    word not recognized     | hl-SpellBad|
-| SpellCap |    word not capitalised    | hl-SpellCap|
-| SpellRare |  rare word                | hl-SpellRare|
-| SpellLocal    | wrong spelling for selected region    | hl-SpellLocal|</p>
+<h4 id="highlighting">Highlighting</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Highlight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SpellBad</td>
+<td>word not recognized</td>
+<td>hl-SpellBad</td>
+</tr>
+<tr>
+<td>SpellCap</td>
+<td>word not capitalised</td>
+<td>hl-SpellCap</td>
+</tr>
+<tr>
+<td>SpellRare</td>
+<td>rare word</td>
+<td>hl-SpellRare</td>
+</tr>
+<tr>
+<td>SpellLocal</td>
+<td>wrong spelling for selected region</td>
+<td>hl-SpellLocal</td>
+</tr>
+</tbody>
+</table>
 <h4 id="searching-for-misspellings">Searching for Misspellings</h4>
 <table>
 <thead>

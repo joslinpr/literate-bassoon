@@ -34,7 +34,7 @@ g = go
 Doubled *change* means "entire line"
 *motion* = G end of Document, j Line Above, w Word
 
-Examples
+#### Examples
 
 COMMAND │             EFFECT
 ──────────┼─────────────────────────────────
@@ -79,7 +79,7 @@ do the substitution:
 
 To turn on spelling:  `:setlocal spell spelllang=en_us`
 
-The words that are not recognized are highlighted with one of these:
+#### Highlighting
 
 NAME    │          DESCRIPTION           │   HIGHLIGHT
 ─────────────┼────────────────────────────────┼────────────────
