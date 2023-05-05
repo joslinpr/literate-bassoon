@@ -36,7 +36,7 @@ g<change><motion>
  *motion* = G end of Document, j Line Above, w Word
 ```
 
- Examples 
+ Examples
  Command | Effect
  ----------------|----------------
  ~     | Changes the case of current character
@@ -63,5 +63,37 @@ do the substitution:
 ```
 	:%s/\%u00a0/\~/g
 ```
+
+### Spelling
+To turn on spelling:  `:setlocal spell spelllang=en_us`
+
+The words that are not recognized are highlighted with one of these:
+| Name | Description | Highlight |
+|---|---|---|
+| SpellBad | 	word not recognized		| hl-SpellBad|
+| SpellCap | 	word not capitalised	| hl-SpellCap|
+| SpellRare |  rare word				| hl-SpellRare|
+| SpellLocal	| wrong spelling for selected region	| hl-SpellLocal|
+
+#### Searching for Misspellings
+ Command | Effect
+ ----------------|----------------
+*]s* | Move to next misspelled word after the cursor. A count before the command can be used to repeat. 'wrapscan' applies.
+*[s* | Like *]s* but search backwards, find the misspelled word before the cursor.  Doesn't recognize words split over two lines, thus may stop at words that are not highlighted as bad.  Does not stop at word with missing capital at the start of a line.
+*]S* | Like *]s* but only stop at bad words, not at rare words or words for another region.
+*[S* | Like *]S* but search backwards.
+
+#### To add words to your own word list:
+ Command | Effect
+ ----------------|----------------
+*zg* | Add word under the cursor as a good word to the first name in 'spellfile'.  A count may precede the command to indicate the entry in 'spellfile' to be used.  A count of two uses the second entry.
+*zw* | Like "zg" but mark the word as a wrong (bad) word. If the word already appears in 'spellfile' it is turned into a comment line.
+*zug* *zuw* | Undo *zw* and *zg*, remove the word from the entry in 'spellfile'.
+
+#### Finding suggestions for bad words:
+ Command | Effect
+ ----------------|------------------------------------
+*z=* | For the word under/after the cursor suggest correctly spelled words.  This also works to find alternatives for a word that is not highlighted as a bad word, e.g., when the word after it is bad. In Visual mode the highlighted text is taken as the word to be replaced. The results are sorted on similarity to the word being replaced. This may take a long time.  Hit CTRL-C when you get bored.
+*CTRL-Xs* | In Insert mode, when the cursor is after a badly spelled word, you can use CTRL-X s to find suggestions.  This works like Insert mode completion.  Use CTRL-N to use the next suggestion, CTRL-P to go back. 
 
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
