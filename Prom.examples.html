@@ -22,15 +22,16 @@ hr { color: blue; }
 img { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
 li { color: blue; }
 ol { color: blue; }
-p { color: blue; }
 pre { background-color:  #f5f5f5; color: black; }
 span { color: blue; }
 strong { color: blue; }
 style { color: blue; }
 table { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
 tbody { color: blue; }
-td { color: blue; }
-th { color: blue; }
+td { color: black; border-right: 1px solid; border-bottom: 1px solid; }
+th { color: black;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: #e5effb;}
 thead { color: blue; }
 tr { color: blue; }
 ul { color: blue; }
@@ -49,6 +50,7 @@ ul { color: blue; }
 <li><a href="#cpu-usage-per-namespace">CPU USage per namespace</a></li>
 <li><a href="#cpu-overcommit">CPU overcommit</a></li>
 <li><a href="#kafka-disk-space-available">Kafka Disk Space Available</a></li>
+<li><a href="#network-by-workload-pod-namespace-interface">Network by workload: pod, namespace, interface</a></li>
 </ul>
 </li>
 </ul>
@@ -83,4 +85,7 @@ kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-cop
 kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-k.*&quot;}
 # data-kafka-zookeeper-*
 kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-z.*&quot;}
+</code></pre>
+<h3 id="network-by-workload-pod-namespace-interface">Network by workload: pod, namespace, interface</h3>
+<pre><code>(sum(irate(container_network_receive_bytes_total{namespace='ecs-am-ramp-webapps-prd',pod=~'api-label.+'}[1m])) by (pod, namespace, interface)) + on(namespace,pod,interface) group_left(network_name) ( pod_network_name_info )
 </code></pre></body> </html> <!-- vim: set ai si nu :-->

@@ -22,15 +22,16 @@ hr { color: blue; }
 img { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
 li { color: blue; }
 ol { color: blue; }
-p { color: blue; }
 pre { background-color:  #f5f5f5; color: black; }
 span { color: blue; }
 strong { color: blue; }
 style { color: blue; }
 table { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
 tbody { color: blue; }
-td { color: blue; }
-th { color: blue; }
+td { color: black; border-right: 1px solid; border-bottom: 1px solid; }
+th { color: black;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: #e5effb;}
 thead { color: blue; }
 tr { color: blue; }
 ul { color: blue; }
@@ -43,10 +44,14 @@ ul { color: blue; }
 <li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
 <li><a href="#splunkmd">Splunk.md</a></li>
 <li><a href="#splunk-tricks">Splunk Tricks</a><ul>
+<li><a href="#roles">Roles</a></li>
 <li><a href="#list-indices">List Indices</a></li>
 <li><a href="#list-sourcetype-for-each-index">List Sourcetype for each Index</a></li>
 <li><a href="#count-all-pods-used-by-ecs-am">Count all pods used by ecs-am</a></li>
-<li><a href="#oldest-and-newest-records">Oldest and Newest Records</a></li>
+<li><a href="#oldest-and-newest-records">Oldest and Newest Records</a><ul>
+<li><a href="#same-for-each-sourcetype">Same, for each sourcetype</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -56,12 +61,20 @@ ul { color: blue; }
 <h1 id="book-of-knowledge">Book of Knowledge</h1>
 <h2 id="splunkmd">Splunk.md</h2>
 <h2 id="splunk-tricks">Splunk Tricks</h2>
+<h3 id="roles">Roles</h3>
+<p>What roles do I have?</p>
+<pre><code>| rest /services/authentication/current-context splunk_server=local | table title roles
+</code></pre>
 <h3 id="list-indices">List Indices</h3>
 <p>To omit internal indices, remove <code>index=_*</code>.</p>
 <pre><code>| eventcount summarize=false index=* index=_* | dedup index | fields index
 </code></pre>
 <h3 id="list-sourcetype-for-each-index">List Sourcetype for each Index</h3>
 <pre><code>| tstats count WHERE index=* OR sourcetype=* by index,sourcetype |
+  stats values(sourcetype) AS sourcetypes by index
+</code></pre>
+<p>if you only need it from one index, use</p>
+<pre><code>| tstats count WHERE index=ecs-am-webv4 AND sourcetype=* by index,sourcetype |
   stats values(sourcetype) AS sourcetypes by index
 </code></pre>
 <h3 id="count-all-pods-used-by-ecs-am">Count all pods used by ecs-am</h3>
@@ -90,5 +103,12 @@ stats distinct_count(openshift_pod_name) by openshift_namespace,pod_type
 <pre><code>index=&quot;gbs_its_pds_infra_openshift_outcold&quot;
 (sourcetype=openshift_stats_v2_cgroup) |
 stats earliest(_time) AS first, latest(_time) as last |
-eval myfirst=strftime(first,&quot;%Y-%m-%dT%H:%M:%S.%Q&quot;) | eval mylast=strftime(last,&quot;%m-%dT%H:%M:%S.%Q&quot;)
+eval myfirst=strftime(first,&quot;%Y-%m-%dT%H:%M:%S.%Q&quot;) |
+eval mylast=strftime(last,&quot;%m-%dT%H:%M:%S.%Q&quot;)
+</code></pre>
+<h4 id="same-for-each-sourcetype">Same, for each sourcetype</h4>
+<pre><code>index=gbs_its_openshift_ecs_am_viewpoint
+(sourcetype=*) |
+stats earliest(_time) AS first, latest(_time) as last by sourcetype |
+eval myfirst=strftime(first,&quot;%Y-%m-%dT%H:%M:%S.%Q&quot;), mylast=strftime(last,&quot;%m-%dT%H:%M:%S.%Q&quot;)`
 </code></pre></body> </html> <!-- vim: set ai si nu :-->

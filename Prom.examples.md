@@ -45,4 +45,8 @@ kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-k.*"}
 # data-kafka-zookeeper-*
 kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-z.*"}
 ```
+### Network by workload: pod, namespace, interface
+```
+(sum(irate(container_network_receive_bytes_total{namespace='ecs-am-ramp-webapps-prd',pod=~'api-label.+'}[1m])) by (pod, namespace, interface)) + on(namespace,pod,interface) group_left(network_name) ( pod_network_name_info )
+```
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
