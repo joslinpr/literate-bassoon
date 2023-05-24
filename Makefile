@@ -87,4 +87,7 @@ install: all
 testinstall: all
 	$(RSYNC) $(FILES) $(SRCS) $(AUXFILES) $(testdir)
 
+toc:
+	@printf "Use bitdowntoc_linux --max-level -1 -o Outfile.md  Infile.md\n"
+
 #  vim: set ai noet nu cindent sts=0 sw=8 tabstop=8 textwidth=78 filetype=make :
