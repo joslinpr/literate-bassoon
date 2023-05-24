@@ -29,6 +29,7 @@ FOOTER    = .footer.html
 AUXFILES  = $(TOC) $(HEADER) $(FOOTER) Makefile
 installdir=$(HOME)/BoK
 testdir=$(HOME)/Downloads
+AAAPHX=aaaphx.goc.dhl.com:~/BoK
 
 all : $(SENTINAL)
 
@@ -86,6 +87,9 @@ install: all
 
 testinstall: all
 	$(RSYNC) $(FILES) $(SRCS) $(AUXFILES) $(testdir)
+
+aaaphx: all
+	$(RSYNC) -ac $(FILES) $(SRCS) $(AUXFILES) $(AAAPHX)
 
 toc:
 	@printf "Use bitdowntoc_linux --max-level -1 -o Outfile.md  Infile.md\n"
