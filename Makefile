@@ -10,7 +10,9 @@ MAKEFLAGS += "-j 4"
 
 # Programs and their Options
 GLOW := /usr/local/bin/glow
+ELINKS := /usr/bin/elinks
 GLOWARGS := -w 120
+EARGS := -dump -dump-charset UTF-8 --no-references
 RSYNC := /usr/bin/rsync
 SHELL := /usr/bin/bash
 MD := /usr/local/bin/markdown_py
@@ -36,11 +38,20 @@ all : $(SENTINAL)
 #################### MD2TXT
 define MD2TXT =
 @printf "\t$< --> $@\n"
-$(GLOW) $(GLOWARGS) < $< > $@
+$(ELINKS) $(EARGS) < $< > $@
 chmod 744 $@ $<
 endef
-%.txt : %.md Makefile
+%.txt : %.html Makefile
 	$(MD2TXT)
+
+## OLD
+#define MD2TXT =
+#@printf "\t$< --> $@\n"
+#$(GLOW) $(GLOWARGS) < $< > $@
+#chmod 744 $@ $<
+#endef
+#%.txt : %.md Makefile
+#	$(MD2TXT)
 
 #################### MD2HTML
 define MD2HTML =

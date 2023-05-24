@@ -1,47 +1,58 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]Prom.examples.md
+          • [3]Prometheus Query Examples
 
-## Prom.examples.md
+               • [4]Infra Nodes
+               • [5]Number of containers by cluster and namespace without CPU
+                 limits
+               • [6]Count of pods per cluster and namespace
+               • [7]CPU USage per namespace
+               • [8]CPU overcommit
+               • [9]Kafka Disk Space Available
+               • [10]Network by workload: pod, namespace, interface
 
-## Prometheus Query Examples
+                               Book of Knowledge
 
-### Infra Nodes
+Prom.examples.md
 
-sort_desc(sum by (cpu,id,pod_name,container_name) (rate(container_cpu_usage_seconds_total{type="infra"}[5m])))
+Prometheus Query Examples
 
-### Number of containers by cluster and namespace without CPU limits
+  Infra Nodes
 
-count by (namespace)(sum by (namespace,pod,container)(kube_pod_container_info{container!=""}) unless sum by
-(namespace,pod,container)(kube_pod_container_resource_limits{resource="cpu"})
+ sort_desc(sum by (cpu,id,pod_name,container_name) (rate(container_cpu_usage_seconds_total{type="infra"}[5m])))
 
-### Count of pods per cluster and namespace
+  Number of containers by cluster and namespace without CPU limits
 
-sum by (namespace) (kube_pod_info)))
+ count by (namespace)(sum by (namespace,pod,container)(kube_pod_container_info{container!=""}) unless sum by (namespace,pod,container)(kube_pod_container_resource_limits{resource="cpu"})
 
-### CPU USage per namespace
+  Count of pods per cluster and namespace
 
-sort_desc(sum by (namespace) (rate(container_cpu_usage_seconds_total[5m])))
+ sum by (namespace) (kube_pod_info)))
 
-### CPU overcommit
+  CPU USage per namespace
 
-CPU limits over the capacity of the cluster is a scenario you need to avoid. Otherwise, you’ll end up with CPU
-throttling issues. You can detect CPU overcommit with the following query.
+ sort_desc(sum by (namespace) (rate(container_cpu_usage_seconds_total[5m])))
 
-sum(kube_pod_container_resource_limits{resource="cpu"}) - sum(kube_node_status_capacity_cpu_cores)
+  CPU overcommit
 
-### Kafka Disk Space Available
+   CPU limits over the capacity of the cluster is a scenario you need to
+   avoid. Otherwise, you’ll end up with CPU throttling issues. You can detect
+   CPU overcommit with the following query.
 
-# data-kafka-copy-kafka-*
-kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-copy-k.*"}
-# data-kafka-copy-zookeeper-*
-kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-copy-z.*"}
-# data-kafka-kafka-*
-kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-k.*"}
-# data-kafka-zookeeper-*
-kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-z.*"}
+ sum(kube_pod_container_resource_limits{resource="cpu"}) - sum(kube_node_status_capacity_cpu_cores)
 
-### Network by workload: pod, namespace, interface
+  Kafka Disk Space Available
 
-(sum(irate(container_network_receive_bytes_total{namespace='ecs-am-ramp-webapps-prd',pod=~'api-label.+'}[1m])) by (pod,
-namespace, interface)) + on(namespace,pod,interface) group_left(network_name) ( pod_network_name_info )
+ # data-kafka-copy-kafka-*
+ kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-copy-k.*"}
+ # data-kafka-copy-zookeeper-*
+ kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-copy-z.*"}
+ # data-kafka-kafka-*
+ kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-k.*"}
+ # data-kafka-zookeeper-*
+ kubelet_volume_stats_available_bytes{persistentvolumeclaim=~"data-kafka-z.*"}
 
+  Network by workload: pod, namespace, interface
+
+ (sum(irate(container_network_receive_bytes_total{namespace='ecs-am-ramp-webapps-prd',pod=~'api-label.+'}[1m])) by (pod, namespace, interface)) + on(namespace,pod,interface) group_left(network_name) ( pod_network_name_info )

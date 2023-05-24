@@ -1,46 +1,55 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]Unicode.md
+          • [3]Tips for Unicode
+          • [4]Composing Unicode
 
-## Unicode.md
+               • [5]iconv: convert between encodings
+               • [6]Bash: convert escaped text to unicode
+               • [7]Convert unicode to escaped text
 
-## Tips for Unicode
+                               Book of Knowledge
 
-## Composing Unicode
+Unicode.md
 
-• The Official Character Code Charts https://www.unicode.org/charts/
-• More Unicode than you knew existed file:///usr/share/X11/locale/en_US.UTF-8/Compose
+Tips for Unicode
 
-### iconv: convert between encodings
+Composing Unicode
 
-Use the `file` command to determine the current encoding.  Then use the `iconv` command to set a new encoding.
+     • [8]The Official Character Code Charts
+     • [9]More Unicode than you knew existed
 
-$  file GroupList
-GroupList: Little-endian UTF-16 Unicode text, with CRLF, CR line terminators
-$ iconv  -f utf-16 -t utf-8 GroupList -o GroupList.txt
-$  file GroupList.txt
-GroupList.txt: UTF-8 Unicode (with BOM) text, with CRLF line terminators)
+  iconv: convert between encodings
 
-### Bash: convert escaped text to unicode
+   Use the file command to determine the current encoding. Then use the iconv
+   command to set a new encoding.
 
-$ printf "%b\n"  "\u00e1"
-á
-$ printf "It is %s%bF\n" 72 "\u00b0"
-It is 72°F
-$ printf "%b\n" '\uFF30\uFF21\uFF35\uFF2C'
-ＰＡＵＬ
-$ printf "%b\n" '\uFF30\uFF41\uFF55\uFF4C'
-Ｐａｕｌ
-#For an entire file:
-$ printf '%b\n' "$(<data)"
-This is a test
-It is 72°F
-¡ ¢ £ ¤ ¥ ¦ § ¨ ©
+ $  file GroupList
+ GroupList: Little-endian UTF-16 Unicode text, with CRLF, CR line terminators
+ $ iconv  -f utf-16 -t utf-8 GroupList -o GroupList.txt
+ $  file GroupList.txt
+ GroupList.txt: UTF-8 Unicode (with BOM) text, with CRLF line terminators)
 
-### Convert unicode to escaped text
+  Bash: convert escaped text to unicode
 
-$:     echo ãçé |
->        while read -n 1 u
->        do [[ -n "$u" ]] && printf '\\u%04x' "'$u"
->        done
-\u00e3\u00e7\u00e9
+ $ printf "%b\n"  "\u00e1"
+ á
+ $ printf "It is %s%bF\n" 72 "\u00b0"
+ It is 72°F
+ $ printf "%b\n" '\uFF30\uFF21\uFF35\uFF2C'
+  ＰＡＵＬ
+ $ printf "%b\n" '\uFF30\uFF41\uFF55\uFF4C'
+  Ｐａｕｌ
+ #For an entire file:
+ $ printf '%b\n' "$(<data)"
+ This is a test
+ It is 72°F
+   ¡ ¢ £ ¤ ¥ ¦ § ¨ ©
 
+  Convert unicode to escaped text
+
+ $:     echo ãçé |
+ >        while read -n 1 u
+ >        do [[ -n "$u" ]] && printf '\\u%04x' "'$u"
+ >        done
+ \u00e3\u00e7\u00e9

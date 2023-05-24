@@ -1,13 +1,15 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]Readme.md
 
-## Readme.md
+                               Book of Knowledge
 
-This is the Book of Knowledge, an unstructed store of miscellaneous things I
-need to remember.
+Readme.md
 
-Files without an extension probably need conversion to markdown.  Use *glow*
-to view them, or review the .txt versions.
+   This is the Book of Knowledge, an unstructed store of miscellaneous things
+   I need to remember.
 
-$ glow -s PRJ.json -w $COLUMNS
+   Files without an extension probably need conversion to markdown. Use glow
+   to view them, or review the .txt versions.
 
+ $ glow -s PRJ.json -w $COLUMNS

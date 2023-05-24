@@ -1,23 +1,34 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]Filename of this file
+          • [3]Subject of this file
 
-## Filename of this file
+               • [4]Sections in this file
 
-## Subject of this file
+                    • [5]Subsection
 
-### Sections in this file
+                         • [6]Subsection
 
-#### Subsection
+                              • [7]Subsection
 
-##### Subsection
+                               Book of Knowledge
 
-###### Subsection
+Filename of this file
 
-This is the Book of Knowledge, an unstructed store of miscellaneous things I
-need to remember.
+Subject of this file
 
-Files without an extension probably need conversion to markdown.  Use *glow*
-to view them, or review the .txt versions.
+  Sections in this file
 
-$ glow -s PRJ.json -w $COLUMNS
+    Subsection
 
+      Subsection
+
+        Subsection
+
+   This is the Book of Knowledge, an unstructed store of miscellaneous things
+   I need to remember.
+
+   Files without an extension probably need conversion to markdown. Use glow
+   to view them, or review the .txt versions.
+
+     $ glow -s PRJ.json -w $COLUMNS

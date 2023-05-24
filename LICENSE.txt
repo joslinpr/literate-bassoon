@@ -1,12 +1,16 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]LICENSE.md
 
-## LICENSE.md
+               • [3]Creative Commons License
 
-### Creative Commons License
+                               Book of Knowledge
 
-Book Of Knowledge by Paul R. Joslin is licensed under a Creative Commons Attribution 4.0 International License.
+LICENSE.md
 
-Based on a work at https://github.com/joslinpr/literate-bassoon/.
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+  Creative Commons License
 
+   Book Of Knowledge by Paul R. Joslin is licensed under a Creative Commons
+   Attribution 4.0 International License.
+
+   Based on a work at https://github.com/joslinpr/literate-bassoon/.

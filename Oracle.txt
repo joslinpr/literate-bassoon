@@ -1,16 +1,21 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]Oracle.md
+          • [3]Oracle Tips and Tricks
 
-## Oracle.md
+               • [4]Checking CRS
 
-## Oracle Tips and Tricks
+                               Book of Knowledge
 
-### Checking CRS
+Oracle.md
 
-#	su - oracle              #	choose any DB
-$ ps -fu oracle            #	Check for DBs
-$ crsctl check crs         #	CRS daemons
-$ crsctl check cluster
-$ crsctl check css         #	cluster sync status
-$ crsctl check evm         #	event manager
+Oracle Tips and Tricks
 
+  Checking CRS
+
+ #   su - oracle              #  choose any DB
+ $ ps -fu oracle            #    Check for DBs
+ $ crsctl check crs         #    CRS daemons
+ $ crsctl check cluster
+ $ crsctl check css         #    cluster sync status
+ $ crsctl check evm         #    event manager

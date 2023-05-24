@@ -1,32 +1,36 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]README.md
 
-## README.md
+               • [3]My Book of Knowledge
+               • [4]Viewing
+               • [5]Conversion
+               • [6]Source
 
-### My Book of Knowledge
+                               Book of Knowledge
 
-This is the Book of Knowledge, an unstructed store of miscellaneous things I
-need to remember.
+README.md
 
-### Viewing
+  My Book of Knowledge
 
-Use *glow* to view the Markdown versions, or view the .txt versions.
+   This is the Book of Knowledge, an unstructed store of miscellaneous things
+   I need to remember.
 
-$ glow -s PRJ.json -w $COLUMNS README.md
+  Viewing
 
-### Conversion
+   Use glow to view the Markdown versions, or view the .txt versions.
 
-Files without an extension probably need conversion to markdown.
+ $ glow -s PRJ.json -w $COLUMNS README.md
 
-$ make -n
-$ make
-$ make install
+  Conversion
 
-### Source
+   Files without an extension probably need conversion to markdown.
 
-Saved at literate-bassoon:
+ $ make -n
+ $ make
+ $ make install
 
-• https://github.com/joslinpr/literate-bassoon
-• https://git.dhl.com/pjoslin/literate-bassoon
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+  Source
 
+   Saved at literate-bassoon: * https://github.com/joslinpr/literate-bassoon
+   * https://git.dhl.com/pjoslin/literate-bassoon

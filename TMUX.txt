@@ -1,16 +1,23 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]tmux.md
+          • [3]Tmux Quick Reference
 
-## tmux.md
+               • [4]Named Session
+               • [5]Attaching
 
-## Tmux Quick Reference
+                               Book of Knowledge
 
-### Named Session
+tmux.md
 
-tmux new -s TMUX_TEST
+Tmux Quick Reference
 
-### Attaching
+  Named Session
 
-• tmux 2.X: `tmux attach || tmux `
-• tmux 3.X: `tmux -A `
+ tmux new -s TMUX_TEST
 
+  Attaching
+
+     • tmux 2.X: tmux attach || tmux
+
+     • tmux 3.X: tmux -A

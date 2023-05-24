@@ -1,77 +1,76 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]ServerTable.md
+          • [3]DHL Utility Servers
 
-## ServerTable.md
+               • [4]AAA Gateways
+               • [5]Firewall Jump Servers
+               • [6]Ansible / Automation Gateways
+               • [7]Automic
+               • [8]Sandbox Servers
+               • [9]Rescue Media
+               • [10]Operations Bridge Manager & (OpenView)
+               • [11]Veritas Operations Manager
 
-## DHL Utility Servers
+                               Book of Knowledge
 
-### AAA Gateways
+ServerTable.md
 
-AAA GATEWAYS
-─────────────────────────
-cbjmgt.apis.dhl.com
-phxmgt.phx-dc.dhl.com
-prgmgt.prg-dc.dhl.com
+DHL Utility Servers
 
-### Firewall Jump Servers
+  AAA Gateways
 
-FIREWALL JUMP SERVERS
-──────────────────────────────
-mykulws1922.kul-dc.dhl.com
-usqasws0670.phx-dc.dhl.com
-czchows6715.prg-dc.dhl.com
+       AAA Gateways
+   cbjmgt.apis.dhl.com
+   phxmgt.phx-dc.dhl.com
+   prgmgt.prg-dc.dhl.com
 
-### Ansible / Automation Gateways
+  Firewall Jump Servers
 
-RHEL8 NEW          │         RHEL6 OLD
-─────────────────────────────┼─────────────────────────────
-czcholsint2588             │ czcholstc000594
-czchols5004.prg-dc.dhl.com │ czchols018.prg-dc.dhl.com
-mykulls2337.apis.dhl.com   │ mykulls1494.apis.dhl.com
-usqasls0282.phx-dc.dhl.com │ usqasls0014.phx-dc.dhl.com
+     Firewall Jump Servers
+   mykulws1922.kul-dc.dhl.com
+   usqasws0670.phx-dc.dhl.com
+   czchows6715.prg-dc.dhl.com
 
-### Automic
+  Ansible / Automation Gateways
 
-AUTOMIC
-───────────────
-czchols4538
-czchols4539
+           RHEL8 New                  RHEL6 Old
+   czcholsint2588             czcholstc000594
+   czchols5004.prg-dc.dhl.com czchols018.prg-dc.dhl.com
+   mykulls2337.apis.dhl.com   mykulls1494.apis.dhl.com
+   usqasls0282.phx-dc.dhl.com usqasls0014.phx-dc.dhl.com
 
+  Automic
 
-### Sandbox Servers
+     Automic
+   czchols4538
+   czchols4539
 
-SANDBOX SERVERS
-───────────────────
-czcholsint1543
-czcholstc000549
-czcholstc000878
-usqaslstc000163
+  Sandbox Servers
 
-### Rescue Media
+   Sandbox Servers
+   czcholsint1543
+   czcholstc000549
+   czcholstc000878
+   usqaslstc000163
 
-RESCUE MEDIA:
-HTTP://SERVER/RESCUE
-──────────────────────────────────
-czchols018.prg-dc.dhl.com
-troy1.apis.dhl.com
-usqasls0014.phx-dc.dhl.com
+  Rescue Media
 
-### Operations Bridge Manager & (OpenView)
+   [12]Rescue Media: http://server/rescue
+   czchols018.prg-dc.dhl.com
+   troy1.apis.dhl.com
+   usqasls0014.phx-dc.dhl.com
 
-OPERATIONS BRIDGE MANAGER │           (OPENVIEW)
-────────────────────────────┼─────────────────────────────────
-PRG                       │ https://prgomiprod-users
-CBJ                       │ https://cbjomiprod-user
-QAS                       │ https://phxomiprod-user
-Test                      │ http://omitest-users-dev:9662/
-OvoWeb                    │ [http
+  Operations Bridge Manager & (OpenView)
 
-### Veritas Operations Manager
+   Operations Bridge Manager             (OpenView)
+   PRG                       [13]https://prgomiprod-users
+   CBJ                       [14]https://cbjomiprod-user
+   QAS                       [15]https://phxomiprod-user
+   Test                      [16]http://omitest-users-dev:9662/
+   OvoWeb                    [http
 
-VERITAS OPERATIONS MANAGER
-──────────────────────────────────
-https://vom-prg:14161/
-[//]: # ( vim: set ai noet
-nu sts=4 sw=4 ts=4 tw=78
-filetype=markdown :)
+  Veritas Operations Manager
 
+   Veritas Operations Manager
+   [17]https://vom-prg:14161/

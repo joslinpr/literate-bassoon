@@ -1,18 +1,22 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]PyMark.md
+          • [3]Installing Markdown (python markdown module and tool)
 
-## PyMark.md
+               • [4]Markdown translator, convertor to html
 
-## Installing Markdown (python markdown module and tool)
+                               Book of Knowledge
 
-### Markdown translator, convertor to html
+PyMark.md
 
-As root, use pip to install markdown.  Root is needed since the command line
-interface is in /usr/local/bin.
+Installing Markdown (python markdown module and tool)
 
-sudo su -
-pip3 install markdown
+  Markdown translator, convertor to html
 
-There may be a warning about /usr/local/bin not in PATH.  Ignore it.
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+   As root, use pip to install markdown. Root is needed since the command
+   line interface is in /usr/local/bin.
 
+ sudo su -
+ pip3 install markdown
+
+   There may be a warning about /usr/local/bin not in PATH. Ignore it.

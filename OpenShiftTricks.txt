@@ -1,156 +1,182 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]OpenShiftTricks.md
+          • [3]Miscellaneous OpenShift / Kubernetes Tricks
 
-## OpenShiftTricks.md
+               • [4]Get memory, resource usage for a pod
+               • [5]Get an interactive shell in a pod
+               • [6]Get an interactive shell on a node
+               • [7]Get Various Info via CLI:
 
-## Miscellaneous OpenShift / Kubernetes Tricks
+                    • [8]Get Auth Token:
+                    • [9]Pod:
+                    • [10]Deployment:
+                    • [11]Statefullset:
+                    • [12]DeploymentConfig:
+                    • [13]BuidConfig:
+                    • [14]ImageStream:
 
-• Get memory, resource usage for a pod
-• Get an interactive shell in a pod
-• Get an interactive shell on a node
-• Get Various Info via CLI:
-• Get Auth Token:
-• Pod:
-• Deployment:
-• Statefullset:
-• DeploymentConfig:
-• BuidConfig:
-• ImageStream:
-• Role-Based Access Controls (RBAC)
-• Describe all Role-Based Access Controls
-• Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server
-• Clusterroles (CR) for user/serviceaccount prometheus-server
-• Local Role Binding Operations
-• Cluster role binding operations
-• Converting json to yaml
-• Who's using kafka?
-• Enable/Disable Cronjobs
+               • [15]Role-Based Access Controls (RBAC)
 
-### Get memory, resource usage for a pod
+                    • [16]Describe all Role-Based Access Controls
+                    • [17]Get Clusterrolebindings (CRB) for
+                      user/serviceaccount prometheus-server
+                    • [18]Clusterroles (CR) for user/serviceaccount
+                      prometheus-server
+                    • [19]Local Role Binding Operations
+                    • [20]Cluster role binding operations
+                    • [21]Converting json to yaml
 
-$ oc project ecs-am-ramp-sit-cvg
-$ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
-# For all running pods in a namespace, use PODMetrics
-$ oc get PODMetrics
+               • [22]Who’s using kafka?
+               • [23]Enable/Disable Cronjobs
 
-### Get an interactive shell in a pod
+                               Book of Knowledge
 
-$ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
+OpenShiftTricks.md
 
-• -i: interactive
-• -t: create a TTY
+Miscellaneous OpenShift / Kubernetes Tricks
 
-### Get an interactive shell on a node
+     • [24]Get memory, resource usage for a pod
+     • [25]Get an interactive shell in a pod
+     • [26]Get an interactive shell on a node
+     • [27]Get Various Info via CLI:
+     • [28]Get Auth Token:
+     • [29]Pod:
+     • [30]Deployment:
+     • [31]Statefullset:
+     • [32]DeploymentConfig:
+     • [33]BuidConfig:
+     • [34]ImageStream:
+     • [35]Role-Based Access Controls (RBAC)
+     • [36]Describe all Role-Based Access Controls
+     • [37]Get Clusterrolebindings (CRB) for user/serviceaccount
+       prometheus-server
+     • [38]Clusterroles (CR) for user/serviceaccount prometheus-server
+     • [39]Local Role Binding Operations
+     • [40]Cluster role binding operations
+     • [41]Converting json to yaml
+     • [42]Who’s using kafka?
+     • [43]Enable/Disable Cronjobs
 
-$ oc debug -n default debug/<nodename>
+  Get memory, resource usage for a pod
 
-• Use "chroot /hosts" to access host instead of container
-• You must specify a namespace that does not have a quota.
+ $ oc project ecs-am-ramp-sit-cvg
+ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
+ # For all running pods in a namespace, use PODMetrics
+ $ oc get PODMetrics
 
-### Get Various Info via CLI:
+  Get an interactive shell in a pod
 
-#### Get Auth Token:
+ $ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
 
-You must already be logged in.
+     • -i: interactive
+     • -t: create a TTY
 
-TOKEN=$(oc whomai --show-token)
+  Get an interactive shell on a node
 
-#### Pod:
+ $ oc debug -n default debug/<nodename>
 
-oc get po '-o=jsonpath={range
-.items[*]}{"PROG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.containers[].image}{"\n"}' -A |grep
-redhat
+     • Use “chroot /hosts” to access host instead of container
+     • You must specify a namespace that does not have a quota.
 
-oc get PODMetrics # Resource Usage for all Running Pods in a Namespace
+  Get Various Info via CLI:
 
-#### Deployment:
+    Get Auth Token:
 
-oc get deployment '-o=jsonpath={range
-.items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -
-A|grep redhat
+   You must already be logged in.
 
-#### Statefullset:
+ TOKEN=$(oc whomai --show-token)
 
-oc get sts '-o=jsonpath={range
-.items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -
-A|grep redhat
+    Pod:
 
-#### DeploymentConfig:
+ oc get po '-o=jsonpath={range .items[*]}{"PROG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.containers[].image}{"\n"}' -A |grep redhat
 
-oc get dc '-o=jsonpath={range
-.items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -
-A|grep redhat
+ oc get PODMetrics # Resource Usage for all Running Pods in a Namespace
 
-#### BuidConfig:
+    Deployment:
 
-oc get bc '-o=jsonpath={range
-.items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.triggers[].imageChange.lastTriggeredImageID}{"\n"}{end}' -
-A|grep redhat
+ oc get deployment '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -A|grep redhat
 
-#### ImageStream:
+    Statefullset:
 
-oc get is '-o=jsonpath={range
-.items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.tags[].from.name}{"\n"}{end}' -A|grep
-redhat
+ oc get sts '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -A|grep redhat
 
-### Role-Based Access Controls (RBAC)
+    DeploymentConfig:
 
-RBAC References https://docs.openshift.com/container-platform/4.9/authentication/using-rbac.html
+ oc get dc '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.spec.template.spec.containers[].name}{","}{.spec.template.spec.containers[].image}{"\n"}' -A|grep redhat
 
-#### Describe all Role-Based Access Controls
+    BuidConfig:
 
-`oc describe clusterrole.rbac`
+ oc get bc '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.triggers[].imageChange.lastTriggeredImageID}{"\n"}{end}' -A|grep redhat
 
-#### Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server
+    ImageStream:
 
-`oc get clusterrolebindings -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'`
+ oc get is '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.tags[].from.name}{"\n"}{end}' -A|grep redhat
 
-#### Clusterroles (CR) for user/serviceaccount prometheus-server
+  Role-Based Access Controls (RBAC)
 
-`oc get clusterroles -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'`
+   [44]RBAC References
 
-#### Local Role Binding Operations
+    Describe all Role-Based Access Controls
 
-`$ oc adm policy who-can <verb> <resource>` Indicates which users can perform an action on a resource.
+   oc describe clusterrole.rbac
 
-`$ oc adm policy add-role-to-user <role> <username>` Binds a specified role to specified users in the current project.
+    Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server
 
-`$ oc adm policy remove-role-from-user <role> <username>` Removes a given role from specified users in the current
-project.
+   oc get clusterrolebindings -o json | jq '.items[] |
+   select(.metadata.name=="prometheus-server")'
 
-`$ oc adm policy remove-user <username>` Removes specified users and all of their roles in the current project.
+    Clusterroles (CR) for user/serviceaccount prometheus-server
 
-`$ oc adm policy add-role-to-group <role> <groupname>` Binds a given role to specified groups in the current project.
+   oc get clusterroles -o json | jq '.items[] |
+   select(.metadata.name=="prometheus-server")'
 
-`$ oc adm policy remove-role-from-group <role> <groupname>` Removes a given role from specified groups in the current
-project.
+    Local Role Binding Operations
 
-`$ oc adm policy remove-group <groupname>` Removes specified groups and all of their roles in the current project.
+   $ oc adm policy who-can <verb> <resource> Indicates which users can
+   perform an action on a resource.
 
-#### Cluster role binding operations
+   $ oc adm policy add-role-to-user <role> <username> Binds a specified role
+   to specified users in the current project.
 
-`$ oc adm policy add-cluster-role-to-user <role> <username>` Binds a given role to specified users for all projects in
-the cluster.
+   $ oc adm policy remove-role-from-user <role> <username> Removes a given
+   role from specified users in the current project.
 
-`$ oc adm policy remove-cluster-role-from-user <role> <username>` Removes a given role from specified users for all
-projects in the cluster.
+   $ oc adm policy remove-user <username> Removes specified users and all of
+   their roles in the current project.
 
-`$ oc adm policy add-cluster-role-to-group <role> <groupname>` Binds a given role to specified groups for all projects
-in the cluster.
+   $ oc adm policy add-role-to-group <role> <groupname> Binds a given role to
+   specified groups in the current project.
 
-`$ oc adm policy remove-cluster-role-from-group <role> <groupname>` Removes a given role from specified groups for all
-projects in the cluster.
+   $ oc adm policy remove-role-from-group <role> <groupname> Removes a given
+   role from specified groups in the current project.
 
-#### Converting json to yaml
+   $ oc adm policy remove-group <groupname> Removes specified groups and all
+   of their roles in the current project.
 
-Converting json to yaml /JSON.md
+    Cluster role binding operations
 
-### Who's using kafka?
+   $ oc adm policy add-cluster-role-to-user <role> <username> Binds a given
+   role to specified users for all projects in the cluster.
 
-$ oc get kafka --all-namespaces
+   $ oc adm policy remove-cluster-role-from-user <role> <username> Removes a
+   given role from specified users for all projects in the cluster.
 
-### Enable/Disable Cronjobs
+   $ oc adm policy add-cluster-role-to-group <role> <groupname> Binds a given
+   role to specified groups for all projects in the cluster.
 
-$ oc patch cronjobs <job-name> -p '{"spec" : {"suspend" : true }}' -n <namespace>
-$ oc patch cronjobs <job-name> -p '{"spec" : {"suspend" : false }}' -n <namespace>
+   $ oc adm policy remove-cluster-role-from-group <role> <groupname> Removes
+   a given role from specified groups for all projects in the cluster.
 
+    Converting json to yaml
+
+   [45]Converting json to yaml
+
+  Who’s using kafka?
+
+ $ oc get kafka --all-namespaces
+
+  Enable/Disable Cronjobs
+
+ $ oc patch cronjobs <job-name> -p '{"spec" : {"suspend" : true }}' -n <namespace>
+ $ oc patch cronjobs <job-name> -p '{"spec" : {"suspend" : false }}' -n <namespace>

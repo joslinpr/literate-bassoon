@@ -1,949 +1,1050 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]Example.md
+          • [3]Markdown
 
-## Example.md
+               • [4]Block Elements
 
-## Markdown
+                    • [5]Paragraphs and Line Breaks
 
-A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).
+                         • [6]Paragraphs
+                         • [7]Line Breaks
 
-• Block Elements
-• Paragraphs and Line Breaks
-• Headers
-• Blockquotes
-• Lists
-• Code Blocks
-• Horizontal Rules
-• Table
-• Span Elements
-• Links
-• Emphasis
-• Code
-• Images
-• Strikethrough
-• Miscellaneous
-• Automatic Links
-• Backslash Escapes
-• Inline HTML
+                    • [8]Headers
 
-### Block Elements
+                         • [9]Setext
 
-#### Paragraphs and Line Breaks
+     • [10]This is an H1
 
-##### Paragraphs
+          • [11]This is an H2
 
-HTML Tag: `<p>`
+               • [12]atx
 
-One or more blank lines. (A blank line is a line containing nothing but **spaces** or **tabs** is considered blank.)
+          • [13]This is an H1
 
-Code:
+               • [14]This is an H2
 
-This will be
-inline.
+                    • [15]# This is an H6
 
-This is second paragraph.
+          • [16]This is an H1 # ### This is an H2 ## #### This is an H3
+            ###### ***
 
-Preview:
+               • [17]Blockquotes
 
---------
+          • [18]This is a header.
 
-This will be
-inline.
+               • [19]Lists
 
-This is second paragraph.
+                    • [20]Unordered
+                    • [21]Ordered
+                    • [22]Indented
 
---------
+                         • [23]Blockquote
+                         • [24]Code Block
+                         • [25]Nested List
 
-##### Line Breaks
+               • [26]Code Blocks
 
-HTML Tag: `<br />`
+                    • [27]Fenced Code Blocks
+                    • [28]Syntax Highlighting
 
-End a line with **two or more spaces**.
+               • [29]Horizontal Rules
 
-Code:
+          • [30]- - -
 
-This will be not
-inline.
+               • [31]Table
 
-Preview:
+                    • [32]Inline
+                    • [33]Reference
 
---------
+               • [34]Emphasis
+               • [35]Code
+               • [36]Images
 
-This will be not
-inline.
+                    • [37]Inline
+                    • [38]Reference
 
---------
+               • [39]Strikethrough
+               • [40]Miscellaneous
 
-#### Headers
+                    • [41]Automatic Links
+                    • [42]Backslash Escapes
 
-Markdown supports two styles of headers, Setext and atx.
+               • [43]Inline HTML
 
-##### Setext
+                               Book of Knowledge
 
-HTML Tags: `<h1>`, `<h2>`
+Example.md
 
-“Underlined” using **equal signs (=)** as `<h1>` and **dashes (-)** as `<h2>` in any number.
+Markdown
 
-Code:
+   A markdown example shows how to write a markdown file. This document
+   integrates core syntax and extensions (GMF).
+
+     • [44]Block Elements
+     • [45]Paragraphs and Line Breaks
+     • [46]Headers
+     • [47]Blockquotes
+     • [48]Lists
+     • [49]Code Blocks
+     • [50]Horizontal Rules
+     • [51]Table
+     • [52]Span Elements
+     • [53]Links
+     • [54]Emphasis
+     • [55]Code
+     • [56]Images
+     • [57]Strikethrough
+     • [58]Miscellaneous
+     • [59]Automatic Links
+     • [60]Backslash Escapes
+     • [61]Inline HTML
+
+  Block Elements
+
+    Paragraphs and Line Breaks
+
+      Paragraphs
+
+   HTML Tag: <p>
+
+   One or more blank lines. (A blank line is a line containing nothing but
+   spaces or tabs is considered blank.)
+
+   Code:
+
+ This will be
+ inline.
+
+ This is second paragraph.
+
+   Preview:
+
+   ══════════════════════════════════════════════════════════════════════════
+
+   This will be inline.
+
+   This is second paragraph.
+
+   ══════════════════════════════════════════════════════════════════════════
+
+      Line Breaks
+
+   HTML Tag: <br />
+
+   End a line with two or more spaces.
+
+   Code:
+
+ This will be not
+ inline.
+
+   Preview:
+
+   ══════════════════════════════════════════════════════════════════════════
+
+   This will be not inline.
+
+   ══════════════════════════════════════════════════════════════════════════
+
+    Headers
+
+   Markdown supports two styles of headers, Setext and atx.
+
+      Setext
+
+   HTML Tags: <h1>, <h2>
+
+   “Underlined” using equal signs (=) as <h1> and dashes (-) as <h2> in any
+   number.
+
+   Code:
+
+ This is an H1
+ =============
+ This is an H2
+ -------------
+
+   Preview:
+
+   ══════════════════════════════════════════════════════════════════════════
+
+                                 This is an H1
+
+This is an H2
+
+   ══════════════════════════════════════════════════════════════════════════
+
+      atx
+
+   HTML Tags: <h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+
+   Uses 1-6 hash characters (#) at the start of the line, corresponding to
+   <h1> - <h6>.
+
+   Code:
+
+ #   This is an H1
+ ##  This is an H2
+ ######  This is an H6
+
+   Preview:
+
+   ══════════════════════════════════════════════════════════════════════════
 
 This is an H1
-=============
-This is an H2
--------------
 
-Preview:
+  This is an H2
 
---------
+        # This is an H6
 
-# This is an H1
+   ══════════════════════════════════════════════════════════════════════════
 
-## This is an H2
+   Optionally, you may “close” atx-style headers. The closing hashes don’t
+   need to match the number of hashes used to open the header.
 
---------
+   Code:
 
-##### atx
+ #   This is an H1 #     ##  This is an H2 ##        ### This is an H3 ######    Preview:
 
-HTML Tags: `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`
+   ══════════════════════════════════════════════════════════════════════════
 
-Uses 1-6 **hash characters (#)** at the start of the line, corresponding to `<h1>` - `<h6>`.
+This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
-Code:
+    Blockquotes
 
-#	This is an H1
-##	This is an H2
-######	This is an H6
+   HTML Tag: <blockquote>
 
-Preview:
+   Markdown uses email-style > characters for blockquoting. It looks best if
+   you hard wrap the text and put a > before every line.
 
---------
+   Code:
 
-## This is an H1
+ > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+ > consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+ > Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+ >
+ > Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+ > id sem consectetuer libero luctus adipiscing.
 
-### This is an H2
+   Preview:
 
-#######	This is an H6
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+   > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+   > consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+   > Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
-Optionally, you may “close” atx-style headers. The closing hashes **don’t need to match** the number of hashes used
-to open the header.
+   > Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id
+   > sem consectetuer libero luctus adipiscing.
 
-Code:
+   ══════════════════════════════════════════════════════════════════════════
 
-#	This is an H1 #	    ##	This is an H2 ##	    ###	This is an H3 ######	Preview:
+   Markdown allows you to be lazy and only put the > before the first line of
+   a hard-wrapped paragraph.
 
---------
+   Code:
 
-## This is an H1 #	###	This is an H2 ##	####	This is an H3 ######	***
+ > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+ consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+ Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
-#### Blockquotes
+ > Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+ id sem consectetuer libero luctus adipiscing.
 
-HTML Tag: `<blockquote>`
+   Preview:
 
-Markdown uses email-style **>** characters for blockquoting. It looks best if you hard wrap the text and put a >
-before every line.
+   ══════════════════════════════════════════════════════════════════════════
 
-Code:
+   > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+   > consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+   > Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
->
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
+   > Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id
+   > sem consectetuer libero luctus adipiscing.
 
-Preview:
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+   Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding
+   additional levels of >.
 
-│ This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-│ consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-│ Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.Donec sit amet nisl. Aliquam semper ipsum
-sit
-│ amet velit. Suspendisse
-│ id sem consectetuer libero luctus adipiscing.
+   Code:
 
---------
+ > This is the first level of quoting.
+ >
+ > > This is nested blockquote.
+ >
+ > Back to the first level.
 
-Markdown allows you to be lazy and only put the > before the first line of a hard-wrapped paragraph.
+   Preview:
 
-Code:
+   ══════════════════════════════════════════════════════════════════════════
 
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+   > This is the first level of quoting.
 
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-id sem consectetuer libero luctus adipiscing.
+   >> This is nested blockquote.
 
-Preview:
+   > Back to the first level.
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-│ This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-│ consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-│ Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+   Blockquotes can contain other Markdown elements, including headers, lists,
+   and code blocks.
 
-│ Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-│ id sem consectetuer libero luctus adipiscing.
+   Code:
 
---------
+ > ##    This is a header.
+ >
+ > 1.   This is the first list item.
+ > 2.   This is the second list item.
+ >
+ > Here's some example code:
+ >
+ >     return shell_exec("echo $input | $markdown_script");
 
-Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of >.
+   Preview:
 
-Code:
+   ══════════════════════════════════════════════════════════════════════════
 
-> This is the first level of quoting.
->
-> > This is nested blockquote.
->
-> Back to the first level.
+  This is a header.
 
-Preview:
+   >  1. This is the first list item.
+   >  2. This is the second list item.
 
---------
+   > Here’s some example code:
 
-│ This is the first level of quoting.This is nested blockquote.Back to the first level.
+   return shell_exec("echo $input | $markdown_script");
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-Blockquotes can contain other Markdown elements, including headers, lists, and code blocks.
+    Lists
 
-Code:
+   Markdown supports ordered (numbered) and unordered (bulleted) lists.
 
-> ##	This is a header.
->
-> 1.   This is the first list item.
-> 2.   This is the second list item.
->
-> Here's some example code:
->
->     return shell_exec("echo $input | $markdown_script");
+      Unordered
 
-Preview:
+   HTML Tag: <ul>
 
---------
+   Unordered lists use asterisks (*), pluses (+), and hyphens (-).
 
-│ This is a header.1. This is the first list item.
-│ 2. This is the second list item.Here's some example code:
+   Code:
 
---------
+ *   Red
+ *   Green
+ *   Blue
 
-#### Lists
+   Preview:
 
-Markdown supports ordered (numbered) and unordered (bulleted) lists.
+   ══════════════════════════════════════════════════════════════════════════
 
-##### Unordered
+     • Red
+     • Green
+     • Blue
 
-HTML Tag: `<ul>`
+   ══════════════════════════════════════════════════════════════════════════
 
-Unordered lists use **asterisks (*)**, **pluses (+)**, and **hyphens (-)**.
+   is equivalent to:
 
-Code:
+   Code:
 
-*   Red
-*   Green
-*   Blue
+ +   Red
+ +   Green
+ +   Blue
 
-Preview:
+   and:
 
---------
+   Code:
 
-• Red
-• Green
-• Blue
+ -   Red
+ -   Green
+ -   Blue
 
---------
+      Ordered
 
-is equivalent to:
+   HTML Tag: <ol>
 
-Code:
+   Ordered lists use numbers followed by periods:
 
-+   Red
-+   Green
-+   Blue
+   Code:
 
-and:
+ 1.  Bird
+ 2.  McHale
+ 3.  Parish
 
-Code:
+   Preview:
 
--   Red
--   Green
--   Blue
+   ══════════════════════════════════════════════════════════════════════════
 
-##### Ordered
+    1. Bird
+    2. McHale
+    3. Parish
 
-HTML Tag: `<ol>`
+   ══════════════════════════════════════════════════════════════════════════
 
-Ordered lists use numbers followed by periods:
+   It’s possible to trigger an ordered list by accident, by writing something
+   like this:
 
-Code:
+   Code:
 
-1.  Bird
-2.  McHale
-3.  Parish
+ 1986. What a great season.
 
-Preview:
+   Preview:
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-1. Bird
-2. McHale
-3. Parish
+   1986. What a great season.
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-It’s possible to trigger an ordered list by accident, by writing something like this:
+   You can backslash-escape (\) the period:
 
-Code:
+   Code:
 
-1986. What a great season.
+ 1986\. What a great season.
 
-Preview:
+   Preview:
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-1986. What a great season.
+   1986. What a great season.
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-You can **backslash-escape (\\)** the period:
+      Indented
 
-Code:
+        Blockquote
 
-1986\. What a great season.
+   To put a blockquote within a list item, the blockquote’s > delimiters need
+   to be indented:
 
-Preview:
+   Code:
 
---------
+ *   A list item with a blockquote:
 
-1986\. What a great season.
+     > This is a blockquote
+     > inside a list item.
 
---------
+   Preview:
 
-##### Indented
+   ══════════════════════════════════════════════════════════════════════════
 
-###### Blockquote
+     • A list item with a blockquote:
 
-To put a blockquote within a list item, the blockquote’s > delimiters need to be indented:
+       > This is a blockquote inside a list item.
 
-Code:
+   ══════════════════════════════════════════════════════════════════════════
 
-*   A list item with a blockquote:
+        Code Block
 
-> This is a blockquote
-> inside a list item.
+   To put a code block within a list item, the code block needs to be
+   indented twice — 8 spaces or two tabs:
 
-Preview:
+   Code:
 
---------
+ *   A list item with a code block:
 
-• A list item with a blockquote:
-│ This is a blockquote
-│ inside a list item.
+         <code goes here>
 
+   Preview:
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-###### Code Block
+     • A list item with a code block:
 
-To put a code block within a list item, the code block needs to be indented twice — **8 spaces** or **two tabs**:
+ <code goes here>
 
-Code:
+   ══════════════════════════════════════════════════════════════════════════
 
-*   A list item with a code block:
+        Nested List
 
-<code goes here>
+   Code:
 
-Preview:
+ * A
+   * A1
+   * A2
+ * B
+ * C
 
---------
+   Preview:
 
-• A list item with a code block:
-<code goes here>
+   ══════════════════════════════════════════════════════════════════════════
 
+     • A
+     • A1
+     • A2
+     • B
+     • C
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-###### Nested List
+    Code Blocks
 
-Code:
+   HTML Tag: <pre>
 
-* A
-* A1
-* A2
-* B
-* C
+   Indent every line of the block by at least 4 spaces or 1 tab.
 
-Preview:
+   Code:
 
---------
+ This is a normal paragraph:
 
-• A
-• A1
-• A2
-• B
-• C
+     This is a code block.
 
---------
+   Preview:
 
-#### Code Blocks
+   ══════════════════════════════════════════════════════════════════════════
 
-HTML Tag: `<pre>`
+   This is a normal paragraph:
 
-Indent every line of the block by at least **4 spaces** or **1 tab**.
+ This is a code block.
 
-Code:
+   ══════════════════════════════════════════════════════════════════════════
 
-This is a normal paragraph:
+   A code block continues until it reaches a line that is not indented (or
+   the end of the article).
 
-This is a code block.
+   Within a code block, ampersands (&) and angle brackets (< and >) are
+   automatically converted into HTML entities.
 
-Preview:
+   Code:
 
---------
+     <div class="footer">
+         &copy; 2004 Foo Corporation
+     </div>
 
-This is a normal paragraph:
+   Preview:
 
-This is a code block.
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+ <div class="footer">
+     &copy; 2004 Foo Corporation
+ </div>
 
-A code block continues until it reaches a line that is not indented (or the end of the article).
+   ══════════════════════════════════════════════════════════════════════════
 
-Within a code block, *ampersands (&)* and angle **brackets (< and >)** are automatically converted into HTML
-entities.
+   Following sections Fenced Code Blocks and Syntax Highlighting are
+   extensions, you can use the other way to write the code block.
 
-Code:
+      Fenced Code Blocks
 
-<div class="footer">
-&copy; 2004 Foo Corporation
-</div>
+   Just wrap your code in ``` (as shown below) and you won’t need to indent
+   it by four spaces.
 
-Preview:
+   Code:
 
---------
+ Here's an example:
 
-<div class="footer">
-&copy; 2004 Foo Corporation
-</div>
+ ```
+ function test() {
+   console.log("notice the blank line before this function?");
+ }
+ ```
 
---------
+   Preview:
 
-Following sections Fenced Code Blocks and Syntax Highlighting are extensions, you can use the other way to write the
-code block.
+   ══════════════════════════════════════════════════════════════════════════
 
-##### Fenced Code Blocks
+   Here’s an example:
 
-Just wrap your code in ````` (as shown below) and you won't need to indent it by four spaces.
+ function test() {
+   console.log("notice the blank line before this function?");
+ }
 
-Code:
+   ══════════════════════════════════════════════════════════════════════════
 
-Here's an example:
+      Syntax Highlighting
 
-```
-function test() {
-console.log("notice the blank line before this function?");
-}
-```
+   In your fenced block, add an optional language identifier and we’ll run it
+   through syntax highlighting ([62]Support Languages).
 
-Preview:
+   Code:
 
---------
+ ```ruby
+ require 'redcarpet'
+ markdown = Redcarpet.new("Hello World!")
+ puts markdown.to_html
+ ```
 
-Here's an example:
+   Preview:
 
-function test() {
-console.log("notice the blank line before this function?");
-}
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+ require 'redcarpet'
+ markdown = Redcarpet.new("Hello World!")
+ puts markdown.to_html
 
-##### Syntax Highlighting
+   ══════════════════════════════════════════════════════════════════════════
 
-In your fenced block, add an optional language identifier and we'll run it through syntax highlighting (Support
-Languages https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
+    Horizontal Rules
 
-Code:
+   HTML Tag: <hr /> Places three or more hyphens (-), asterisks (*), or
+   underscores (_) on a line by themselves. You may use spaces between the
+   hyphens or asterisks.
 
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
+   Code:
 
-Preview:
+ * * *
+ ***
+ *****
+ - - -
+ ---------------------------------------
+ ___
 
---------
+   Preview:
 
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-#### Horizontal Rules
+   ══════════════════════════════════════════════════════════════════════════
 
-HTML Tag: `<hr />`
-Places **three or more hyphens (-), asterisks (*), or underscores (_)** on a line by themselves. You may use spaces
-between the hyphens or asterisks.
+   ══════════════════════════════════════════════════════════════════════════
 
-Code:
-
-* * *
-***
-*****
 - - -
----------------------------------------
-___
 
-Preview:
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+    Table
 
---------
+   HTML Tag: <table>
 
---------
+   It’s an extension.
 
---------
+   Separates column by pipe (|) and header by dashes (-), and uses colon (:)
+   for alignment.
 
---------
+   The outer pipes (|) and alignment are optional. There are 3 delimiters
+   each cell at least for separating header.
 
---------
+   Code:
 
---------
+ | Left | Center | Right |
+ |:-----|:------:|------:|
+ |aaa   |bbb     |ccc    |
+ |ddd   |eee     |fff    |
 
-#### Table
+  A | B
+ ---|---
+ 123|456
 
-HTML Tag: `<table>`
 
-It's an extension.
+ A |B
+ --|--
+ 12|45
 
-Separates column by **pipe (|)** and header by **dashes (-)**, and uses **colon (:)** for alignment.
+   Preview:
 
-The outer **pipes (|)** and alignment are optional. There are **3 delimiters** each cell at least for separating
-header.
+   ══════════════════════════════════════════════════════════════════════════
 
-Code:
+   Left Center Right
+   aaa  bbb    ccc
+   ddd  eee    fff
 
-| Left | Center | Right |
-|:-----|:------:|------:|
-|aaa   |bbb     |ccc    |
-|ddd   |eee     |fff    |
+    A   B
+   123 456
 
-A | B
----|---
-123|456
+           A         B
+   12                45
+   ***
+   ### Span Elements
+   #### Links
+   HTML Tag: <a>
 
+   Markdown supports two style of links: inline and reference.
 
-A |B
---|--
-12|45
+      Inline
 
-Preview:
+   Inline link format like this: [Link Text](URL "Title")
 
---------
+   Title is optional.
 
-LEFT │ CENTER │ RIGHT
-───────┼────────┼────────
-aaa  │ bbb    │ ccc
-ddd  │ eee    │ fff
+   Code:
 
-A  │  B
-──────┼──────
-123 │ 456
+ This is [an example](http://example.com/ "Title") inline link.
 
-A  │ B
-─────┼─────
-12 │ 45
+ [This link](http://example.net/) has no title attribute.
 
---------
+   Preview:
 
-### Span Elements
+   ══════════════════════════════════════════════════════════════════════════
 
-#### Links
+   This is [63]an example inline link.
 
-HTML Tag: `<a>`
+   [64]This link has no title attribute.
 
-Markdown supports two style of links: inline and reference.
+   ══════════════════════════════════════════════════════════════════════════
 
-##### Inline
+   If you’re referring to a local resource on the same server, you can use
+   relative paths:
 
-Inline link format like this: `[Link Text](URL "Title")`
+   Code:
 
-Title is optional.
+ See my [About](/about/) page for details.
 
-Code:
+   Preview:
 
-This is [an example](http://example.com/ "Title") inline link.
+   ══════════════════════════════════════════════════════════════════════════
 
-[This link](http://example.net/) has no title attribute.
+   See my [65]About page for details.
 
-Preview:
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+      Reference
 
-This is an example http://example.com/ inline link.
+   You could predefine link references. Format like this: [id]: URL "Title"
 
-This link http://example.net/ has no title attribute.
+   Title is also optional. And the you refer the link, format like this:
+   [Link Text][id]
 
---------
+   Code:
 
-If you’re referring to a local resource on the same server, you can use relative paths:
+ [id]: http://example.com/  "Optional Title Here"
+ This is [an example][id] reference-style link.
 
-Code:
+   Preview:
 
-See my [About](/about/) page for details.
+   ══════════════════════════════════════════════════════════════════════════
 
-Preview:
+   This is [66]an example reference-style link.
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-See my About /about/ page for details.
+   That is:
 
---------
+     • Square brackets containing the link identifier (not case sensitive,
+       optionally indented from the left margin using up to three spaces);
+     • followed by a colon;
+     • followed by one or more spaces (or tabs);
+     • followed by the URL for the link;
+     • The link URL may, optionally, be surrounded by angle brackets.
+     • optionally followed by a title attribute for the link, enclosed in
+       double or single quotes, or enclosed in parentheses.
 
-##### Reference
+   The following three link definitions are equivalent:
 
-You could predefine link references. Format like this: `[id]: URL "Title"`
+   Code:
 
-Title is also optional. And the you refer the link, format like this: `[Link Text][id]`
+ [foo]: http://example.com/  "Optional Title Here"
+ [foo]: http://example.com/  'Optional Title Here'
+ [foo]: http://example.com/  (Optional Title Here)
+ [foo]: <http://example.com/>  "Optional Title Here"
 
-Code:
+   Uses an empty set of square brackets, the link text itself is used as the
+   name.
 
-[id]: http://example.com/  "Optional Title Here"
-This is [an example][id] reference-style link.
+   Code:
 
-Preview:
+ [Google]: http://google.com/
+ [Google][]
 
---------
+   Preview:
 
-This is an example http://example.com/ reference-style link.
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+   [67]Google
 
-That is:
+   ══════════════════════════════════════════════════════════════════════════
 
-• Square brackets containing the link identifier (**not case sensitive**, optionally indented from the left margin
-using up to three spaces);
-• followed by a colon;
-• followed by one or more spaces (or tabs);
-• followed by the URL for the link;
-• The link URL may, optionally, be surrounded by angle brackets.
-• optionally followed by a title attribute for the link, enclosed in double or single quotes, or enclosed in
-parentheses.
+    Emphasis
 
-The following three link definitions are equivalent:
+   HTML Tags: <em>, <strong>
 
-Code:
+   Markdown treats asterisks (*) and underscores (_) as indicators of
+   emphasis. One delimiter will be <em>; *double delimiters will be <strong>.
 
-[foo]: http://example.com/  "Optional Title Here"
-[foo]: http://example.com/  'Optional Title Here'
-[foo]: http://example.com/  (Optional Title Here)
-[foo]: <http://example.com/>  "Optional Title Here"
+   Code:
 
-Uses an empty set of square brackets, the link text itself is used as the name.
+ *single asterisks*
 
-Code:
+ _single underscores_
 
-[Google]: http://google.com/
-[Google][]
+ **double asterisks**
 
-Preview:
+ __double underscores__
 
---------
+   Preview:
 
-Google http://google.com/
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+   single asterisks
 
-#### Emphasis
+   single underscores
 
-HTML Tags: `<em>`, `<strong>`
+   double asterisks
 
-Markdown treats **asterisks (*)** and **underscores (_)** as indicators of emphasis. **One delimiter** will be
-`<em>`; **double delimiters* will be `<strong>`.
+   double underscores
 
-Code:
+   ══════════════════════════════════════════════════════════════════════════
 
-*single asterisks*
+   But if you surround an * or _ with spaces, it’ll be treated as a literal
+   asterisk or underscore.
 
-_single underscores_
+   You can backslash escape it:
 
-**double asterisks**
+   Code:
 
-__double underscores__
+ \*this text is surrounded by literal asterisks\*
 
-Preview:
+   Preview:
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-*single asterisks*
+   *this text is surrounded by literal asterisks*
 
-*single underscores*
+   ══════════════════════════════════════════════════════════════════════════
 
-**double asterisks**
+    Code
 
-**double underscores**
+   HTML Tag: <code>
 
---------
+   Wraps it with backtick quotes (`).
 
-But if you surround an * or _ with spaces, it’ll be treated as a literal asterisk or underscore.
+   Code:
 
-You can backslash escape it:
+ Use the `printf()` function.
 
-Code:
+   Preview:
 
-\*this text is surrounded by literal asterisks\*
+   ══════════════════════════════════════════════════════════════════════════
 
-Preview:
+   Use the printf() function.
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-\*this text is surrounded by literal asterisks\*
+   To include a literal backtick character within a code span, you can use
+   multiple backticks as the opening and closing delimiters:
 
---------
+   Code:
 
-#### Code
+ ``There is a literal backtick (`) here.``
 
-HTML Tag: `<code>`
+   Preview:
 
-Wraps it with **backtick quotes (`)**.
+   ══════════════════════════════════════════════════════════════════════════
 
-Code:
+   There is a literal backtick (`) here.
 
-Use the `printf()` function.
+   ══════════════════════════════════════════════════════════════════════════
 
-Preview:
+   The backtick delimiters surrounding a code span may include spaces — one
+   after the opening, one before the closing. This allows you to place
+   literal backtick characters at the beginning or end of a code span:
 
---------
+   Code:
 
-Use the `printf()` function.
+ A single backtick in a code span: `` ` ``
 
---------
+ A backtick-delimited string in a code span: `` `foo` ``
 
-To include a literal backtick character within a code span, you can use **multiple backticks** as the opening and
-closing delimiters:
+   Preview:
 
-Code:
+   ══════════════════════════════════════════════════════════════════════════
 
-``There is a literal backtick (`) here.``
+   A single backtick in a code span: `
 
-Preview:
+   A backtick-delimited string in a code span: `foo`
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-`There is a literal backtick (`) here.`
+    Images
 
---------
+   HTML Tag: <img />
 
-The backtick delimiters surrounding a code span may include spaces — one after the opening, one before the closing.
-This allows you to place literal backtick characters at the beginning or end of a code span:
+   Markdown uses an image syntax that is intended to resemble the syntax for
+   links, allowing for two styles: inline and reference.
 
-Code:
+      Inline
 
-A single backtick in a code span: `` ` ``
+   Inline image syntax looks like this: ![Alt text](URL "Title")
 
-A backtick-delimited string in a code span: `` `foo` ``
+   Title is optional.
 
-Preview:
+   Code:
 
---------
+ ![Alt text](/path/to/img.jpg)
 
-A single backtick in a code span: ```
+ ![Alt text](/path/to/img.jpg "Optional title")
 
-A backtick-delimited string in a code span: ``foo``
+   Preview:
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-#### Images
+   [68]Alt text
 
-HTML Tag: `<img />`
+   Alt text
 
-Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: inline and
-reference.
+   ══════════════════════════════════════════════════════════════════════════
 
-##### Inline
+   That is:
 
-Inline image syntax looks like this: `![Alt text](URL "Title")`
+     • An exclamation mark: !;
+     • followed by a set of square brackets, containing the alt attribute
+       text for the image;
+     • followed by a set of parentheses, containing the URL or path to the
+       image, and an optional title attribute enclosed in double or single
+       quotes.
 
-Title is optional.
+      Reference
 
-Code:
+   Reference-style image syntax looks like this: ![Alt text][id]
 
-![Alt text](/path/to/img.jpg)
+   Code:
 
-![Alt text](/path/to/img.jpg "Optional title")
+ [img id]: url/to/image  "Optional title attribute"
+ ![Alt text][img id]
 
-Preview:
+   Preview:
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-Image: Alt text → /path/to/img.jpg
+   [69]Alt text
 
-Image: Alt text → /path/to/img.jpg
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+    Strikethrough
 
-That is:
+   HTML Tag: <del>
 
-• An exclamation mark: !;
-• followed by a set of square brackets, containing the alt attribute text for the image;
-• followed by a set of parentheses, containing the URL or path to the image, and an optional title attribute
-enclosed in double or single quotes.
+   It’s an extension.
 
-##### Reference
+   GFM adds syntax to strikethrough text.
 
-Reference-style image syntax looks like this: `![Alt text][id]`
+   Code:
 
-Code:
+ ~~Mistaken text.~~
 
-[img id]: url/to/image  "Optional title attribute"
-![Alt text][img id]
+   Preview:
 
-Preview:
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+   ~~Mistaken text.~~
 
-Image: Alt text → /url/to/image
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+  Miscellaneous
 
-#### Strikethrough
+    Automatic Links
 
-HTML Tag: `<del>`
+   Markdown supports a shortcut style for creating “automatic” links for URLs
+   and email addresses: simply surround the URL or email address with angle
+   brackets.
 
-It's an extension.
+   Code:
 
-GFM adds syntax to strikethrough text.
+ <http://example.com/>
 
-Code:
+ <address@example.com>
 
-~~Mistaken text.~~
+   Preview:
 
-Preview:
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+   [70]http://example.com/
 
-~~Mistaken text.~~
+   [71]address@example.com
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-### Miscellaneous
+   GFM will autolink standard URLs.
 
-#### Automatic Links
+   Code:
 
-Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses: simply surround the
-URL or email address with angle brackets.
+ https://github.com/emn178/markdown
 
-Code:
+   Preview:
 
-<http://example.com/>
+   ══════════════════════════════════════════════════════════════════════════
 
-<address@example.com>
+   https://github.com/emn178/markdown
 
-Preview:
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+    Backslash Escapes
 
-http://example.com/
+   Markdown allows you to use backslash escapes to generate literal
+   characters which would otherwise have special meaning in Markdown’s
+   formatting syntax.
 
-address@example.com mailto:address@example.com
+   Code:
 
---------
+ \*literal asterisks\*
 
-GFM will autolink standard URLs.
+   Preview:
 
-Code:
+   ══════════════════════════════════════════════════════════════════════════
 
-https://github.com/emn178/markdown
+   *literal asterisks*
 
-Preview:
+   ══════════════════════════════════════════════════════════════════════════
 
---------
+   Markdown provides backslash escapes for the following characters:
 
-https://github.com/emn178/markdown
+   Code:
 
---------
+ \   backslash
+ `   backtick
+ *   asterisk
+ _   underscore
+ {}  curly braces
+ []  square brackets
+ ()  parentheses
+ #   hash mark
+ +   plus sign
+ -   minus sign (hyphen)
+ .   dot
+ !   exclamation mark
 
-#### Backslash Escapes
+  Inline HTML
 
-Markdown allows you to use backslash escapes to generate literal characters which would otherwise have special
-meaning in Markdown’s formatting syntax.
+   For any markup that is not covered by Markdown’s syntax, you simply use
+   HTML itself. There’s no need to preface it or delimit it to indicate that
+   you’re switching from Markdown to HTML; you just use the tags.
 
-Code:
+   Code:
 
-\*literal asterisks\*
+ This is a regular paragraph.
 
-Preview:
+ <table>
+     <tr>
+         <td>Foo</td>
+     </tr>
+ </table>
 
---------
+ This is another regular paragraph.
 
-\*literal asterisks\*
+   Preview:
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-Markdown provides backslash escapes for the following characters:
+   This is a regular paragraph.
 
-Code:
+   Foo
 
-\   backslash
-`   backtick
-*   asterisk
-_   underscore
-{}  curly braces
-[]  square brackets
-()  parentheses
-#	hash mark
-+   plus sign
--   minus sign (hyphen)
-.   dot
-!   exclamation mark
+   This is another regular paragraph.
 
-### Inline HTML
+   ══════════════════════════════════════════════════════════════════════════
 
-For any markup that is not covered by Markdown’s syntax, you simply use HTML itself. There’s no need to preface it
-or delimit it to indicate that you’re switching from Markdown to HTML; you just use the tags.
+   Note that Markdown formatting syntax is not processed within block-level
+   HTML tags.
 
-Code:
+   Unlike block-level HTML tags, Markdown syntax is processed within
+   span-level tags.
 
-This is a regular paragraph.
+   Code:
 
-<table>
-<tr>
-<td>Foo</td>
-</tr>
-</table>
+ <span>**Work**</span>
 
-This is another regular paragraph.
+ <div>
+     **No Work**
+ </div>
 
-Preview:
+   Preview:
 
---------
+   ══════════════════════════════════════════════════════════════════════════
 
-This is a regular paragraph.
+   Work
 
-This is another regular paragraph.
+   **No Work**
 
---------
-
-Note that Markdown formatting syntax is **not processed within block-level HTML tags**.
-
-Unlike block-level HTML tags, Markdown syntax is **processed within span-level tags**.
-
-Code:
-
-<span>**Work**</span>
-
-<div>
-**No Work**
-</div>
-
-Preview:
-
---------
-
-**Work**
-
+   ══════════════════════════════════════════════════════════════════════════

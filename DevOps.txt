@@ -1,13 +1,18 @@
+     • [1]Book of Knowledge
 
-# Book of Knowledge
+          • [2]DevOps.md
+          • [3]DevSecOps Tips and Tricks
 
-## DevOps.md
+               • [4]Artifactory & Docker
 
-## DevSecOps Tips and Tricks
+                               Book of Knowledge
 
-### Artifactory & Docker
+DevOps.md
 
-$ docker login dhlecsam-docker-dev-fd.artifactory-us.dhl.com -u USERNAME
-$ docker tag NAME:VERSION dhlecsam-docker-dev-fd.artifactory-us.dhl.com/devops/NAME:VERSION
-$ docker push dhlecsam-docker-dev-fd.artifactory-us.dhl.com/devops/NAME:VERSION
+DevSecOps Tips and Tricks
 
+  Artifactory & Docker
+
+ $ docker login dhlecsam-docker-dev-fd.artifactory-us.dhl.com -u USERNAME
+ $ docker tag NAME:VERSION dhlecsam-docker-dev-fd.artifactory-us.dhl.com/devops/NAME:VERSION
+ $ docker push dhlecsam-docker-dev-fd.artifactory-us.dhl.com/devops/NAME:VERSION
