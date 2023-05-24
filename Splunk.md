@@ -21,7 +21,7 @@ To omit internal indices, remove `index=_*`.
 ```
 if you only need it from one index, use
 ```
-| tstats count WHERE index=ecs-am-webv4 AND sourcetype=* by index,sourcetype |
+| tstats count WHERE index=ecs_am_webv4 AND sourcetype=* by index,sourcetype |
   stats values(sourcetype) AS sourcetypes by index
 ```
 ### Count all pods used by ecs-am

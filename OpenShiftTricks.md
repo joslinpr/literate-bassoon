@@ -1,40 +1,38 @@
-<!-- TOC start -->
-- [Book of Knowledge](#book-of-knowledge)
-  * [OpenShiftTricks.md](#openshifttricksmd)
-  * [Miscellaneous OpenShift / Kubernetes Tricks](#miscellaneous-openshift-kubernetes-tricks)
-    + [Get memory usage for a pod](#get-memory-usage-for-a-pod)
-    + [Get an interactive shell in a pod](#get-an-interactive-shell-in-a-pod)
-    + [Get an interactive shell on a node](#get-an-interactive-shell-on-a-node)
-    + [Get Various Info via CLI:](#get-various-info-via-cli)
-      - [Get Auth Token:](#get-auth-token)
-      - [Pod:](#pod)
-      - [Deployment:](#deployment)
-      - [Statefullset:](#statefullset)
-      - [DeploymentConfig:](#deploymentconfig)
-      - [BuidConfig:](#buidconfig)
-      - [ImageStream:](#imagestream)
-    + [Role-Based Access Controls (RBAC)](#role-based-access-controls-rbac)
-      - [Describe all Role-Based Access Controls](#describe-all-role-based-access-controls)
-      - [Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server](#get-clusterrolebindings-crb-for-userserviceaccount-prometheus-server)
-      - [Clusterroles (CR) for user/serviceaccount prometheus-server](#clusterroles-cr-for-userserviceaccount-prometheus-server)
-      - [Local Role Binding Operations](#local-role-binding-operations)
-      - [Cluster role binding operations](#cluster-role-binding-operations)
-      - [Converting json to yaml](#converting-json-to-yaml)
-    + [Who's using kafka?](#whos-using-kafka)
-    + [Enable/Disable Cronjobs](#enabledisable-cronjobs)
-<!-- TOC end -->
-<!-- TOC --><a name="book-of-knowledge"></a>
 #  Book of Knowledge
 <!-- TOC --><a name="openshifttricksmd"></a>
 ##  OpenShiftTricks.md
 <!-- TOC --><a name="miscellaneous-openshift-kubernetes-tricks"></a>
 ##  Miscellaneous OpenShift / Kubernetes Tricks
+<!-- TOC start -->
+- [Get memory, resource usage for a pod](#get-memory-resource-usage-for-a-pod)
+- [Get an interactive shell in a pod](#get-an-interactive-shell-in-a-pod)
+- [Get an interactive shell on a node](#get-an-interactive-shell-on-a-node)
+- [Get Various Info via CLI:](#get-various-info-via-cli)
+  * [Get Auth Token:](#get-auth-token)
+  * [Pod:](#pod)
+  * [Deployment:](#deployment)
+  * [Statefullset:](#statefullset)
+  * [DeploymentConfig:](#deploymentconfig)
+  * [BuidConfig:](#buidconfig)
+  * [ImageStream:](#imagestream)
+- [Role-Based Access Controls (RBAC)](#role-based-access-controls-rbac)
+  * [Describe all Role-Based Access Controls](#describe-all-role-based-access-controls)
+  * [Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server](#get-clusterrolebindings-crb-for-userserviceaccount-prometheus-server)
+  * [Clusterroles (CR) for user/serviceaccount prometheus-server](#clusterroles-cr-for-userserviceaccount-prometheus-server)
+  * [Local Role Binding Operations](#local-role-binding-operations)
+  * [Cluster role binding operations](#cluster-role-binding-operations)
+  * [Converting json to yaml](#converting-json-to-yaml)
+- [Who's using kafka?](#whos-using-kafka)
+- [Enable/Disable Cronjobs](#enabledisable-cronjobs)
+<!-- TOC end -->
 
-<!-- TOC --><a name="get-memory-usage-for-a-pod"></a>
-###  Get memory usage for a pod
+<!-- TOC --><a name="get-memory-resource-usage-for-a-pod"></a>
+###  Get memory, resource usage for a pod
 ```
 $ oc project ecs-am-ramp-sit-cvg
 $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
+# For all running pods in a namespace, use PODMetrics
+$ oc get PODMetrics
 ```
 
 <!-- TOC --><a name="get-an-interactive-shell-in-a-pod"></a>
@@ -69,6 +67,8 @@ TOKEN=$(oc whomai --show-token)
 ####  Pod:
 ```
 oc get po '-o=jsonpath={range .items[*]}{"PROG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.containers[].image}{"\n"}' -A |grep redhat
+
+oc get PODMetrics # Resource Usage for all Running Pods in a Namespace
 ```
 
 <!-- TOC --><a name="deployment"></a>

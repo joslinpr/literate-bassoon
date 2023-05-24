@@ -44,7 +44,7 @@ ul { color: blue; }
 <li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
 <li><a href="#openshifttricksmd">OpenShiftTricks.md</a></li>
 <li><a href="#miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</a><ul>
-<li><a href="#get-memory-usage-for-a-pod">Get memory usage for a pod</a></li>
+<li><a href="#get-memory-resource-usage-for-a-pod">Get memory, resource usage for a pod</a></li>
 <li><a href="#get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</a></li>
 <li><a href="#get-an-interactive-shell-on-a-node">Get an interactive shell on a node</a></li>
 <li><a href="#get-various-info-via-cli">Get Various Info via CLI:</a><ul>
@@ -74,12 +74,16 @@ ul { color: blue; }
 </li>
 </ul>
 </div>
+<h1 id="book-of-knowledge">Book of Knowledge</h1>
+<!-- TOC -->
+<p><a name="openshifttricksmd"></a></p>
+<h2 id="openshifttricksmd">OpenShiftTricks.md</h2>
+<!-- TOC -->
+<p><a name="miscellaneous-openshift-kubernetes-tricks"></a></p>
+<h2 id="miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</h2>
 <!-- TOC start -->
 <ul>
-<li><a href="#book-of-knowledge">Book of Knowledge</a></li>
-<li><a href="#openshifttricksmd">OpenShiftTricks.md</a></li>
-<li><a href="#miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</a><ul>
-<li><a href="#get-memory-usage-for-a-pod">Get memory usage for a pod</a></li>
+<li><a href="#get-memory-resource-usage-for-a-pod">Get memory, resource usage for a pod</a></li>
 <li><a href="#get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</a></li>
 <li><a href="#get-an-interactive-shell-on-a-node">Get an interactive shell on a node</a></li>
 <li><a href="#get-various-info-via-cli">Get Various Info via CLI:</a></li>
@@ -100,23 +104,15 @@ ul { color: blue; }
 <li><a href="#whos-using-kafka">Who&rsquo;s using kafka?</a></li>
 <li><a href="#enabledisable-cronjobs">Enable/Disable Cronjobs</a></li>
 </ul>
-</li>
-</ul>
 <!-- TOC end -->
+
 <!-- TOC -->
-<p><a name="book-of-knowledge"></a></p>
-<h1 id="book-of-knowledge">Book of Knowledge</h1>
-<!-- TOC -->
-<p><a name="openshifttricksmd"></a></p>
-<h2 id="openshifttricksmd">OpenShiftTricks.md</h2>
-<!-- TOC -->
-<p><a name="miscellaneous-openshift-kubernetes-tricks"></a></p>
-<h2 id="miscellaneous-openshift-kubernetes-tricks">Miscellaneous OpenShift / Kubernetes Tricks</h2>
-<!-- TOC -->
-<p><a name="get-memory-usage-for-a-pod"></a></p>
-<h3 id="get-memory-usage-for-a-pod">Get memory usage for a pod</h3>
+<p><a name="get-memory-resource-usage-for-a-pod"></a></p>
+<h3 id="get-memory-resource-usage-for-a-pod">Get memory, resource usage for a pod</h3>
 <pre><code>$ oc project ecs-am-ramp-sit-cvg
 $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
+# For all running pods in a namespace, use PODMetrics
+$ oc get PODMetrics
 </code></pre>
 <!-- TOC -->
 <p><a name="get-an-interactive-shell-in-a-pod"></a></p>
@@ -149,6 +145,8 @@ $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_byte
 <p><a name="pod"></a></p>
 <h4 id="pod">Pod:</h4>
 <pre><code>oc get po '-o=jsonpath={range .items[*]}{&quot;PROG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.containers[].image}{&quot;\n&quot;}' -A |grep redhat
+
+oc get PODMetrics # Resource Usage for all Running Pods in a Namespace
 </code></pre>
 <!-- TOC -->
 <p><a name="deployment"></a></p>

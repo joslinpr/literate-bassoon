@@ -1,9 +1,11 @@
 
+# Book of Knowledge
 
-• Book of Knowledge
-• OpenShiftTricks.md
-• Miscellaneous OpenShift / Kubernetes Tricks
-• Get memory usage for a pod
+## OpenShiftTricks.md
+
+## Miscellaneous OpenShift / Kubernetes Tricks
+
+• Get memory, resource usage for a pod
 • Get an interactive shell in a pod
 • Get an interactive shell on a node
 • Get Various Info via CLI:
@@ -24,18 +26,12 @@
 • Who's using kafka?
 • Enable/Disable Cronjobs
 
-
-
-# Book of Knowledge
-
-## OpenShiftTricks.md
-
-## Miscellaneous OpenShift / Kubernetes Tricks
-
-### Get memory usage for a pod
+### Get memory, resource usage for a pod
 
 $ oc project ecs-am-ramp-sit-cvg
 $ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
+# For all running pods in a namespace, use PODMetrics
+$ oc get PODMetrics
 
 ### Get an interactive shell in a pod
 
@@ -64,6 +60,8 @@ TOKEN=$(oc whomai --show-token)
 oc get po '-o=jsonpath={range
 .items[*]}{"PROG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.containers[].image}{"\n"}' -A |grep
 redhat
+
+oc get PODMetrics # Resource Usage for all Running Pods in a Namespace
 
 #### Deployment:
 
