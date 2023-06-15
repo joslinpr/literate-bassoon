@@ -1,36 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]StyleTest.md
-
-               • [3]“block_quote”:
-               • [4]“code_block”:
-               • [5]“code”:
-               • [6]“document”:
-               • [7]“emph”:
-               • [8]“enumeration”:
-               • [9]“h1”:
-               • [10]“h2”:
-
-                    • [11]“h3”:
-
-                         • [12]“h4”:
-
-                              • [13]“h5”:
-                              • [14]# “h6”:
-
-               • [15]“heading”:
-               • [16]“hr”:
-               • [17]“image”:
-               • [18]“image_text”:
-               • [19]“item”:
-               • [20]“link”: & “link_text”:
-               • [21]“list”:
-               • [22]“paragraph”:
-               • [23]“strikethrough”:
-               • [24]“strong”:
-               • [25]“table”:
-               • [26]“task”:
-               • [27]“text”:
+Table of Contents
 
                                Book of Knowledge
 
@@ -108,7 +76,7 @@ StyleTest.md
    “image”: { “color”: “123”, “block_prefix”: “[Image: “, “block_suffix”: “]”
    }
 
-   [28]Image.
+   [1]Image.
 
   “image_text”:
 
@@ -130,7 +98,7 @@ StyleTest.md
 
    http://github.com - automatic!
 
-   [29]GitHub
+   [2]GitHub
 
   “list”:
 

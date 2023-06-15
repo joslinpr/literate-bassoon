@@ -1,10 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]OCPMetrics
-          • [3]Resource Usage and Quotas in OpenShift Container Platform
-
-               • [4]Pod - Metrics
-               • [5]Pods Not Running
+Table of Contents
 
                                Book of Knowledge
 

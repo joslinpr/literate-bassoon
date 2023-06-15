@@ -1,12 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]ClusterList.md
-
-               • [3]Clusters
-               • [4]Version 4
-               • [5]Version 3 (Decommissioned)
-               • [6]Example:
-               • [7]Utility Nodes
+Table of Contents
 
                                Book of Knowledge
 
@@ -14,48 +6,48 @@ ClusterList.md
 
   Clusters
 
-  Cluster        Node         Use                       Link
-czchoocp001 czcholspc004404 PRG     [8]https://console.apps.czchoocp001.dhl.com
-                            Prod V4
-czstlocp001 czstllspc005226 PRG DR  [9]https://console.apps.czstlocp001.dhl.com
-                            Prod V4
-mykulocp001 mykullspc005304 CBJ     [10]https://console.apps.mykulocp001.dhl.com
-                            Prod V4
-mytpmocp001 mytpmlspc005204 CBJ DR  [11]https://console.apps.mytpmocp001.dhl.com
-                            V4
-usmegocp001 usmeglspc005204 US Prod [12]https://console.apps.usmegocp001.dhl.com
-                            DR V4
-usqasocp001 usqaslspc005001 US Prod [13]https://console.apps.usqasocp001.dhl.com
-                            V4
-                            PRG
-                            Proof
-czchooct001 czcholstc005204 of      [14]https://console.apps.czchooct001.dhl.com
-                            Concept
-                            V4
-czchooct002 czcholstc005204 PRG     [15]https://console.apps.czchooct002.dhl.com
-                            Test V4
+   Cluster        Node         Use                      Link
+ czchoocp001 czcholspc004404 PRG     [1]https://console.apps.czchoocp001.dhl.com
+                             Prod V4
+ czstlocp001 czstllspc005226 PRG DR  [2]https://console.apps.czstlocp001.dhl.com
+                             Prod V4
+ mykulocp001 mykullspc005304 CBJ     [3]https://console.apps.mykulocp001.dhl.com
+                             Prod V4
+ mytpmocp001 mytpmlspc005204 CBJ DR  [4]https://console.apps.mytpmocp001.dhl.com
+                             V4
+ usmegocp001 usmeglspc005204 US Prod [5]https://console.apps.usmegocp001.dhl.com
+                             DR V4
+ usqasocp001 usqaslspc005001 US Prod [6]https://console.apps.usqasocp001.dhl.com
+                             V4
+                             PRG
+                             Proof
+ czchooct001 czcholstc005204 of      [7]https://console.apps.czchooct001.dhl.com
+                             Concept
+                             V4
+ czchooct002 czcholstc005204 PRG     [8]https://console.apps.czchooct002.dhl.com
+                             Test V4
 
   Version 4
 
          Use                         Link
-   CBJ/DR V4       [16]https://api.mytpmocp001.dhl.com:6443
-   CBJ V4          [17]https://api.mykulocp001.dhl.com:6443
-   Crash & Burn V4 [18]https://api.czchooct999.dhl.com:6443
-   PRG/DR V4       [19]https://api.czstlocp001.dhl.com:6443
-   PRG/PRODV4      [20]https://api.czchoocp001.dhl.com:6443
-   PRG/TEST V4     [21]https://api.czchooct002.dhl.com:6443
-   US/DR V4        [22]https://api.usmegocp001.dhl.com:6443
-   US V4           [23]https://api.usqasocp001.dhl.com:6443
+   CBJ/DR V4       [9]https://api.mytpmocp001.dhl.com:6443
+   CBJ V4          [10]https://api.mykulocp001.dhl.com:6443
+   Crash & Burn V4 [11]https://api.czchooct999.dhl.com:6443
+   PRG/DR V4       [12]https://api.czstlocp001.dhl.com:6443
+   PRG/PRODV4      [13]https://api.czchoocp001.dhl.com:6443
+   PRG/TEST V4     [14]https://api.czchooct002.dhl.com:6443
+   US/DR V4        [15]https://api.usmegocp001.dhl.com:6443
+   US V4           [16]https://api.usqasocp001.dhl.com:6443
 
   Version 3 (Decommissioned)
 
          Use                            Link
-   CBJ/DR          [24]https://proddr2-ocp.kul-dc.dhl.com
-   CBJ/PROD        [25]https://prod2-ocp.kul-dc.dhl.com
-   Crash & Burn V3 [26]https://prod1-ocp-cb.prg-dc.dhl.com/console
-   PRG/DR          [27]https://proddr1-ocp.prg-dc.dhl.com
-   PRG/PROD        [28]https://prod1-ocp.prg-dc.dhl.com
-   US/PROD         [29]https://prod3-ocp.phx-dc.dhl.com
+   CBJ/DR          [17]https://proddr2-ocp.kul-dc.dhl.com
+   CBJ/PROD        [18]https://prod2-ocp.kul-dc.dhl.com
+   Crash & Burn V3 [19]https://prod1-ocp-cb.prg-dc.dhl.com/console
+   PRG/DR          [20]https://proddr1-ocp.prg-dc.dhl.com
+   PRG/PROD        [21]https://prod1-ocp.prg-dc.dhl.com
+   US/PROD         [22]https://prod3-ocp.phx-dc.dhl.com
 
   Example:
 

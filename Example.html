@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US" style="scroll-behavior: auto; "> <head>
-<meta http-equiv="Content-Type" content="text/html;
-charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+           href="https://fonts.googleapis.com/css2?family=Playfair&family=Playfair%20Display&family=Crimson+Pro&family=Literata"
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <style>
 a { color: blue;  background-color: rgb(230 230 240 / 50%); }
 a:visited { color: green;  background-color: rgb(230 230 240 / 50%); }
 blockquote { background-color:  rgb(230 230 240 / 50%); color: blue; }
-body { background-color: #fdfdfd; color: black; }
+body { background-color: #fdfdfd; color: black; font-family: 'Playfair',
+    'Georgia', Serif; font-size: 16px}
 code { background-color:  #f5f5f5; color: black; }
 div { color: blue; }
 em { color: blue; }
-h1 { color: blue; border: 1px solid rgba(0, 0, 0, 0.8); background-color: #e5effb;}
-h2 { color: blue;  background-color: #e5effb;text-decoration: underline;}
-h3 { color: blue;  background-color: #e5effb;text-decoration: underline;}
-h4 { color: blue;  background-color: #e5effb;text-decoration: underline;}
-h5 { color: blue;  background-color: #e5effb;text-decoration: underline;}
-h6 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+h1,h2 { border: 1px solid; font-size: 48px; text-align: center; }
+h3,h4,h5,h6,{border-bottom: 1px solid;}
+h1,h2,h3,h4,h5,h6 { color: blue;  background-color: #e5effb; font-family: "Playfair Display", Playfair, Verdana, Serif;}
 head { color: blue;  background-color: #e5effb;}
 hr { color: blue; }
 img { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
@@ -28,7 +27,7 @@ strong { color: blue; }
 style { color: blue; }
 table { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
 tbody { color: blue; }
-td { color: black; border-right: 1px solid; border-bottom: 1px solid; }
+td { color: blue; border-right: 1px solid; border-bottom: 1px solid; }
 th { color: black;
     border: 1px solid rgba(0, 0, 0, 0.8);
     background-color: #e5effb;}
@@ -39,92 +38,10 @@ ul { color: blue; }
 </style>
 </head>
 <body> <!-- vim: set ai si nu :-->
-<div class="toc">
-<ul>
-<li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
-<li><a href="#examplemd">Example.md</a></li>
-<li><a href="#markdown">Markdown</a><ul>
-<li><a href="#block-elements">Block Elements</a><ul>
-<li><a href="#paragraphs-and-line-breaks">Paragraphs and Line Breaks</a><ul>
-<li><a href="#paragraphs">Paragraphs</a></li>
-<li><a href="#line-breaks">Line Breaks</a></li>
-</ul>
-</li>
-<li><a href="#headers">Headers</a><ul>
-<li><a href="#setext">Setext</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#this-is-an-h1">This is an H1</a><ul>
-<li><a href="#this-is-an-h2">This is an H2</a><ul>
-<li><a href="#atx">atx</a></li>
-</ul>
-</li>
-<li><a href="#this-is-an-h1_1">This is an H1</a><ul>
-<li><a href="#this-is-an-h2_1">This is an H2</a><ul>
-<li><a href="#this-is-an-h6"># This is an H6</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#this-is-an-h1-this-is-an-h2-this-is-an-h3">This is an H1 # ### This is an H2 ##    ####    This is an H3 ######    ***</a><ul>
-<li><a href="#blockquotes">Blockquotes</a></li>
-</ul>
-</li>
-<li><a href="#this-is-a-header">This is a header.</a><ul>
-<li><a href="#lists">Lists</a><ul>
-<li><a href="#unordered">Unordered</a></li>
-<li><a href="#ordered">Ordered</a></li>
-<li><a href="#indented">Indented</a><ul>
-<li><a href="#blockquote">Blockquote</a></li>
-<li><a href="#code-block">Code Block</a></li>
-<li><a href="#nested-list">Nested List</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#code-blocks">Code Blocks</a><ul>
-<li><a href="#fenced-code-blocks">Fenced Code Blocks</a></li>
-<li><a href="#syntax-highlighting">Syntax Highlighting</a></li>
-</ul>
-</li>
-<li><a href="#horizontal-rules">Horizontal Rules</a></li>
-</ul>
-</li>
-<li><a href="#-">- - -</a><ul>
-<li><a href="#table">Table</a><ul>
-<li><a href="#inline">Inline</a></li>
-<li><a href="#reference">Reference</a></li>
-</ul>
-</li>
-<li><a href="#emphasis">Emphasis</a></li>
-<li><a href="#code">Code</a></li>
-<li><a href="#images">Images</a><ul>
-<li><a href="#inline_1">Inline</a></li>
-<li><a href="#reference_1">Reference</a></li>
-</ul>
-</li>
-<li><a href="#strikethrough">Strikethrough</a></li>
-<li><a href="#miscellaneous">Miscellaneous</a><ul>
-<li><a href="#automatic-links">Automatic Links</a></li>
-<li><a href="#backslash-escapes">Backslash Escapes</a></li>
-</ul>
-</li>
-<li><a href="#inline-html">Inline HTML</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<h1 id="book-of-knowledge">Book of Knowledge</h1>
-<h2 id="examplemd">Example.md</h2>
-<h2 id="markdown">Markdown</h2>
+<h2>Table of Contents</h2>
+<h1>Book of Knowledge</h1>
+<h2>Example.md</h2>
+<h2>Markdown Examples - core syntax and extensions.</h2>
 <p>A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).</p>
 <ul>
 <li><a href="#block-elements">Block Elements</a></li>
@@ -146,9 +63,9 @@ ul { color: blue; }
 <li><a href="#backslash-escapes">Backslash Escapes</a></li>
 <li><a href="#inline-html">Inline HTML</a></li>
 </ul>
-<h3 id="block-elements">Block Elements</h3>
-<h4 id="paragraphs-and-line-breaks">Paragraphs and Line Breaks</h4>
-<h5 id="paragraphs">Paragraphs</h5>
+<h3>Block Elements</h3>
+<h4>Paragraphs and Line Breaks</h4>
+<h5>Paragraphs</h5>
 <p>HTML Tag: <code>&lt;p&gt;</code></p>
 <p>One or more blank lines. (A blank line is a line containing nothing but <strong>spaces</strong> or <strong>tabs</strong> is considered blank.)</p>
 <p>Code:</p>
@@ -163,7 +80,7 @@ This is second paragraph.
 inline.</p>
 <p>This is second paragraph.</p>
 <hr />
-<h5 id="line-breaks">Line Breaks</h5>
+<h5>Line Breaks</h5>
 <p>HTML Tag: <code>&lt;br /&gt;</code></p>
 <p>End a line with <strong>two or more spaces</strong>.</p>
 <p>Code:</p>
@@ -175,9 +92,9 @@ inline.
 <p>This will be not
 inline.</p>
 <hr />
-<h4 id="headers">Headers</h4>
+<h4>Headers</h4>
 <p>Markdown supports two styles of headers, Setext and atx.</p>
-<h5 id="setext">Setext</h5>
+<h5>Setext</h5>
 <p>HTML Tags: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code></p>
 <p>“Underlined” using <strong>equal signs (=)</strong> as <code>&lt;h1&gt;</code> and <strong>dashes (-)</strong> as <code>&lt;h2&gt;</code> in any number.</p>
 <p>Code:</p>
@@ -188,10 +105,10 @@ This is an H2
 </code></pre>
 <p>Preview:</p>
 <hr />
-<h1 id="this-is-an-h1">This is an H1</h1>
-<h2 id="this-is-an-h2">This is an H2</h2>
+<h1>This is an H1</h1>
+<h2>This is an H2</h2>
 <hr />
-<h5 id="atx">atx</h5>
+<h5>atx</h5>
 <p>HTML Tags: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code></p>
 <p>Uses 1-6 <strong>hash characters (#)</strong> at the start of the line, corresponding to <code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>.</p>
 <p>Code:</p>
@@ -201,17 +118,17 @@ This is an H2
 </code></pre>
 <p>Preview:</p>
 <hr />
-<h2 id="this-is-an-h1_1">This is an H1</h2>
-<h3 id="this-is-an-h2_1">This is an H2</h3>
-<h6 id="this-is-an-h6"># This is an H6</h6>
+<h2>This is an H1</h2>
+<h3>This is an H2</h3>
+<h6># This is an H6</h6>
 <hr />
 <p>Optionally, you may “close” atx-style headers. The closing hashes <strong>don’t need to match</strong> the number of hashes used to open the header.</p>
 <p>Code:</p>
 <pre><code>#   This is an H1 #     ##  This is an H2 ##        ### This is an H3 ######    Preview:
 </code></pre>
 <hr />
-<h2 id="this-is-an-h1-this-is-an-h2-this-is-an-h3">This is an H1 # ### This is an H2 ##    ####    This is an H3 ######    ***</h2>
-<h4 id="blockquotes">Blockquotes</h4>
+<h1>This is an H1 # ### This is an H2 ##    ####    This is an H3 ######    ***</h1>
+<h4>Blockquotes</h4>
 <p>HTML Tag: <code>&lt;blockquote&gt;</code></p>
 <p>Markdown uses email-style <strong>&gt;</strong> characters for blockquoting. It looks best if you hard wrap the text and put a &gt; before every line.</p>
 <p>Code:</p>
@@ -283,7 +200,7 @@ id sem consectetuer libero luctus adipiscing.</p>
 <p>Preview:</p>
 <hr />
 <blockquote>
-<h2 id="this-is-a-header">This is a header.</h2>
+<h2>This is a header.</h2>
 <ol>
 <li>This is the first list item.</li>
 <li>This is the second list item.</li>
@@ -293,9 +210,9 @@ id sem consectetuer libero luctus adipiscing.</p>
 </code></pre>
 </blockquote>
 <hr />
-<h4 id="lists">Lists</h4>
+<h4>Lists</h4>
 <p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
-<h5 id="unordered">Unordered</h5>
+<h5>Unordered</h5>
 <p>HTML Tag: <code>&lt;ul&gt;</code></p>
 <p>Unordered lists use <strong>asterisks (*)</strong>, <strong>pluses (+)</strong>, and <strong>hyphens (-)</strong>.</p>
 <p>Code:</p>
@@ -323,7 +240,7 @@ id sem consectetuer libero luctus adipiscing.</p>
 -   Green
 -   Blue
 </code></pre>
-<h5 id="ordered">Ordered</h5>
+<h5>Ordered</h5>
 <p>HTML Tag: <code>&lt;ol&gt;</code></p>
 <p>Ordered lists use numbers followed by periods:</p>
 <p>Code:</p>
@@ -357,8 +274,8 @@ id sem consectetuer libero luctus adipiscing.</p>
 <hr />
 <p>1986. What a great season.</p>
 <hr />
-<h5 id="indented">Indented</h5>
-<h6 id="blockquote">Blockquote</h6>
+<h5>Indented</h5>
+<h6>Blockquote</h6>
 <p>To put a blockquote within a list item, the blockquote’s &gt; delimiters need to be indented:</p>
 <p>Code:</p>
 <pre><code>*   A list item with a blockquote:
@@ -378,7 +295,7 @@ inside a list item.</p>
 </li>
 </ul>
 <hr />
-<h6 id="code-block">Code Block</h6>
+<h6>Code Block</h6>
 <p>To put a code block within a list item, the code block needs to be indented twice — <strong>8 spaces</strong> or <strong>two tabs</strong>:</p>
 <p>Code:</p>
 <pre><code>*   A list item with a code block:
@@ -393,7 +310,7 @@ inside a list item.</p>
 </li>
 </ul>
 <hr />
-<h6 id="nested-list">Nested List</h6>
+<h6>Nested List</h6>
 <p>Code:</p>
 <pre><code>* A
   * A1
@@ -411,7 +328,7 @@ inside a list item.</p>
 <li>C</li>
 </ul>
 <hr />
-<h4 id="code-blocks">Code Blocks</h4>
+<h4>Code Blocks</h4>
 <p>HTML Tag: <code>&lt;pre&gt;</code></p>
 <p>Indent every line of the block by at least <strong>4 spaces</strong> or <strong>1 tab</strong>.</p>
 <p>Code:</p>
@@ -440,7 +357,7 @@ inside a list item.</p>
 </code></pre>
 <hr />
 <p>Following sections Fenced Code Blocks and Syntax Highlighting are extensions, you can use the other way to write the code block.</p>
-<h5 id="fenced-code-blocks">Fenced Code Blocks</h5>
+<h5>Fenced Code Blocks</h5>
 <p>Just wrap your code in <code>```</code> (as shown below) and you won&rsquo;t need to indent it by four spaces.</p>
 <p>Code:</p>
 <pre><code>Here's an example:
@@ -459,7 +376,7 @@ function test() {
 }
 </code></pre>
 <hr />
-<h5 id="syntax-highlighting">Syntax Highlighting</h5>
+<h5>Syntax Highlighting</h5>
 <p>In your fenced block, add an optional language identifier and we&rsquo;ll run it through syntax highlighting (<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">Support Languages</a>).</p>
 <p>Code:</p>
 <pre><code>```ruby
@@ -475,7 +392,7 @@ markdown = Redcarpet.new(&quot;Hello World!&quot;)
 puts markdown.to_html
 </code></pre>
 <hr />
-<h4 id="horizontal-rules">Horizontal Rules</h4>
+<h4>Horizontal Rules</h4>
 <p>HTML Tag: <code>&lt;hr /&gt;</code>
 Places <strong>three or more hyphens (-), asterisks (*), or underscores (_)</strong> on a line by themselves. You may use spaces between the hyphens or asterisks.</p>
 <p>Code:</p>
@@ -491,10 +408,10 @@ ___
 <hr />
 <hr />
 <hr />
-<h2 id="-">- - -</h2>
+<h2>- - -</h2>
 <hr />
 <hr />
-<h4 id="table">Table</h4>
+<h4>Table</h4>
 <p>HTML Tag: <code>&lt;table&gt;</code></p>
 <p>It&rsquo;s an extension.</p>
 <p>Separates column by <strong>pipe (|)</strong> and header by <strong>dashes (-)</strong>, and uses <strong>colon (:)</strong> for alignment.</p>
@@ -582,7 +499,7 @@ A |B
 </tbody>
 </table>
 <p>Markdown supports two style of links: inline and reference.</p>
-<h5 id="inline">Inline</h5>
+<h5>Inline</h5>
 <p>Inline link format like this: <code>[Link Text](URL "Title")</code></p>
 <p>Title is optional.</p>
 <p>Code:</p>
@@ -603,7 +520,7 @@ A |B
 <hr />
 <p>See my <a href="/about/">About</a> page for details.</p>
 <hr />
-<h5 id="reference">Reference</h5>
+<h5>Reference</h5>
 <p>You could predefine link references. Format like this: <code>[id]: URL "Title"</code></p>
 <p>Title is also optional. And the you refer the link, format like this: <code>[Link Text][id]</code></p>
 <p>Code:</p>
@@ -639,7 +556,7 @@ This is [an example][id] reference-style link.
 <hr />
 <p><a href="http://google.com/">Google</a></p>
 <hr />
-<h4 id="emphasis">Emphasis</h4>
+<h4>Emphasis</h4>
 <p>HTML Tags: <code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code></p>
 <p>Markdown treats <strong>asterisks (*)</strong> and <strong>underscores (_)</strong> as indicators of emphasis. <strong>One delimiter</strong> will be  <code>&lt;em&gt;</code>; *<em>double delimiters</em> will be <code>&lt;strong&gt;</code>.</p>
 <p>Code:</p>
@@ -667,7 +584,7 @@ __double underscores__
 <hr />
 <p>*this text is surrounded by literal asterisks*</p>
 <hr />
-<h4 id="code">Code</h4>
+<h4>Code</h4>
 <p>HTML Tag: <code>&lt;code&gt;</code></p>
 <p>Wraps it with <strong>backtick quotes (`)</strong>.</p>
 <p>Code:</p>
@@ -696,10 +613,10 @@ A backtick-delimited string in a code span: `` `foo` ``
 <p>A single backtick in a code span: <code>`</code></p>
 <p>A backtick-delimited string in a code span: <code>`foo`</code></p>
 <hr />
-<h4 id="images">Images</h4>
+<h4>Images</h4>
 <p>HTML Tag: <code>&lt;img /&gt;</code></p>
 <p>Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: inline and reference.</p>
-<h5 id="inline_1">Inline</h5>
+<h5>Inline</h5>
 <p>Inline image syntax looks like this: <code>![Alt text](URL "Title")</code></p>
 <p>Title is optional.</p>
 <p>Code:</p>
@@ -718,7 +635,7 @@ A backtick-delimited string in a code span: `` `foo` ``
 <li>followed by a set of square brackets, containing the alt attribute text for the image;</li>
 <li>followed by a set of parentheses, containing the URL or path to the image, and an optional title attribute enclosed in double or single quotes.</li>
 </ul>
-<h5 id="reference_1">Reference</h5>
+<h5>Reference</h5>
 <p>Reference-style image syntax looks like this: <code>![Alt text][id]</code></p>
 <p>Code:</p>
 <pre><code>[img id]: url/to/image  "Optional title attribute"
@@ -728,7 +645,7 @@ A backtick-delimited string in a code span: `` `foo` ``
 <hr />
 <p><img alt="Alt text" src="url/to/image" title="Optional title attribute" /></p>
 <hr />
-<h4 id="strikethrough">Strikethrough</h4>
+<h4>Strikethrough</h4>
 <p>HTML Tag: <code>&lt;del&gt;</code></p>
 <p>It&rsquo;s an extension.</p>
 <p>GFM adds syntax to strikethrough text.</p>
@@ -739,8 +656,8 @@ A backtick-delimited string in a code span: `` `foo` ``
 <hr />
 <p>~~Mistaken text.~~</p>
 <hr />
-<h3 id="miscellaneous">Miscellaneous</h3>
-<h4 id="automatic-links">Automatic Links</h4>
+<h3>Miscellaneous</h3>
+<h4>Automatic Links</h4>
 <p>Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses: simply surround the URL or email address with angle brackets.</p>
 <p>Code:</p>
 <pre><code>&lt;http://example.com/&gt;
@@ -760,7 +677,7 @@ A backtick-delimited string in a code span: `` `foo` ``
 <hr />
 <p>https://github.com/emn178/markdown</p>
 <hr />
-<h4 id="backslash-escapes">Backslash Escapes</h4>
+<h4>Backslash Escapes</h4>
 <p>Markdown allows you to use backslash escapes to generate literal characters which would otherwise have special meaning in Markdown’s formatting syntax.</p>
 <p>Code:</p>
 <pre><code>\*literal asterisks\*
@@ -784,7 +701,7 @@ _   underscore
 .   dot
 !   exclamation mark
 </code></pre>
-<h3 id="inline-html">Inline HTML</h3>
+<h3>Inline HTML</h3>
 <p>For any markup that is not covered by Markdown’s syntax, you simply use HTML itself. There’s no need to preface it or delimit it to indicate that you’re switching from Markdown to HTML; you just use the tags.</p>
 <p>Code:</p>
 <pre><code>This is a regular paragraph.

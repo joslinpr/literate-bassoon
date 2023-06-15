@@ -1,180 +1,90 @@
+Table of Contents
+
      • [1]Using the Red Hat Support Tool (RHST) REST API
      • [2]Pre-Requisites
      • [3]The Commands
+     • [4]1. listproducts - command to list products
 
-          • [4]1. listproducts - command to list products
+          • [5]Example: listproducts
 
-               • [5]Example: listproducts
+     • [6]2. listversions - command to list versions of a product
 
-          • [6]2. listversions - command to list versions of a product
+          • [7]Example: listversions
 
-               • [7]Example: listversions
-
-          • [8]3. listattachments - command to list attachments for the
-            specified support
-
-               • [9]Example: listattachments
-
-          • [10]4. listentitlements - command to list your current
-            entitlements
-
-               • [11]Example: listentitlements
-
-          • [12]5. listcasegroups - command to list case groups
-
-               • [13]Example: listcasegroups
-
-          • [14]6. listcases - command to list your open support cases.
-
-               • [15]Note 1. Filter the Response
-               • [16]Example: Note 1
-               • [17]Note 2. Filter by casegroup
-               • [18]Example: Note 2
-               • [19]Example 1. Default RHST behaviour
-               • [20]Example 2. For filtering by case groupNumber
-               • [21]Example 3. For filtering by multiple case groupNumbers
-
-          • [22]7. getcase - command to find a specific case by number.
-
-               • [23]Example: getcase
-
-          • [24]8. addattachment - command to add an attachment to a case.
-
-               • [25]Example: addattachment
-
-          • [26]9. getattachment - command to find a specific attachment by
-            uuid.
-
-               • [27]Example: getattachment
-
-          • [28]10. modifycase
-
-               • [29]Modify severity
-               • [30]Modify the Case type
-               • [31]Modify Status
-               • [32]Modify alternate id.
-               • [33]Modify product
-               • [34]Modify version
-
-          • [35]11. opencase - command to open a new support case.
-
-               • [36]To see the recommendations before opening the case.
-               • [37]Example: opencase
-
-                    • [38]To open a support case.
-
-               • [39]Example 1. Opening A Case
-               • [40]Example 2. Opening A Case with a Casegroup (Example:
-                 74975)
-
-          • [41]12. addcomment - command to add a comment to a case.
-
-               • [42]Example: addcomment
-
-          • [43]13. kb - command to find a knowledge base solution by ID
-
-               • [44]Check for solutions
-               • [45]Example: Check for solutions
-               • [46]Check for articles
-               • [47]Example - Check for articles
-
-          • [48]14. search - command to search the entire knowledge base for
-            solutions
-
-               • [49]Example: search
-
-          • [50]15. diagnose - command to send text to Red Hat for analysis.
-
-               • [51]Example: diagnose
-               • [52]Using Proxy configuration in the curls
-
-     • [53]General Note
-
-     • [54]Using the Red Hat Support Tool (RHST) REST API
-     • [55]Pre-Requisites
-     • [56]The Commands
-     • [57]1. listproducts - command to list products
-
-          • [58]Example: listproducts
-
-     • [59]2. listversions - command to list versions of a product
-
-          • [60]Example: listversions
-
-     • [61]3. listattachments - command to list attachments for the specified
+     • [8]3. listattachments - command to list attachments for the specified
        support
 
-          • [62]Example: listattachments
+          • [9]Example: listattachments
 
-     • [63]4. listentitlements - command to list your current entitlements
+     • [10]4. listentitlements - command to list your current entitlements
 
-          • [64]Example: listentitlements
+          • [11]Example: listentitlements
 
-     • [65]5. listcasegroups - command to list case groups
+     • [12]5. listcasegroups - command to list case groups
 
-          • [66]Example: listcasegroups
+          • [13]Example: listcasegroups
 
-     • [67]6. listcases - command to list your open support cases.
+     • [14]6. listcases - command to list your open support cases.
 
-          • [68]Note 1. Filter the Response
-          • [69]Example: Note 1
-          • [70]Note 2. Filter by casegroup
-          • [71]Example: Note 2
-          • [72]Example 1. Default RHST behaviour
-          • [73]Example 2. For filtering by case groupNumber
-          • [74]Example 3. For filtering by multiple case groupNumbers
+          • [15]Note 1. Filter the Response
+          • [16]Example: Note 1
+          • [17]Note 2. Filter by casegroup
+          • [18]Example: Note 2
+          • [19]Example 1. Default RHST behaviour
+          • [20]Example 2. For filtering by case groupNumber
+          • [21]Example 3. For filtering by multiple case groupNumbers
 
-     • [75]7. getcase - command to find a specific case by number.
+     • [22]7. getcase - command to find a specific case by number.
 
-          • [76]Example: getcase
+          • [23]Example: getcase
 
-     • [77]8. addattachment - command to add an attachment to a case.
+     • [24]8. addattachment - command to add an attachment to a case.
 
-          • [78]Example: addattachment
+          • [25]Example: addattachment
 
-     • [79]9. getattachment - command to find a specific attachment by uuid.
+     • [26]9. getattachment - command to find a specific attachment by uuid.
 
-          • [80]Example: getattachment
+          • [27]Example: getattachment
 
-     • [81]10. modifycase
+     • [28]10. modifycase
 
-          • [82]Modify severity
-          • [83]Modify the Case type
-          • [84]Modify Status
-          • [85]Modify alternate id.
-          • [86]Modify product
-          • [87]Modify version
+          • [29]Modify severity
+          • [30]Modify the Case type
+          • [31]Modify Status
+          • [32]Modify alternate id.
+          • [33]Modify product
+          • [34]Modify version
 
-     • [88]11. opencase - command to open a new support case.
+     • [35]11. opencase - command to open a new support case.
 
-          • [89]To see the recommendations before opening the case.
-          • [90]Example: opencase
-          • [91]To open a support case.
-          • [92]Example 1. Opening A Case
-          • [93]Example 2. Opening A Case with a Casegroup (Example: 74975)
+          • [36]To see the recommendations before opening the case.
+          • [37]Example: opencase
+          • [38]To open a support case.
+          • [39]Example 1. Opening A Case
+          • [40]Example 2. Opening A Case with a Casegroup (Example: 74975)
 
-     • [94]12. addcomment - command to add a comment to a case.
+     • [41]12. addcomment - command to add a comment to a case.
 
-          • [95]Example: addcomment
+          • [42]Example: addcomment
 
-     • [96]13. kb - command to find a knowledge base solution by ID
+     • [43]13. kb - command to find a knowledge base solution by ID
 
-          • [97]Check for solutions
-          • [98]Example: Check for solutions
-          • [99]Check for articles
-          • [100]Example - Check for articles
+          • [44]Check for solutions
+          • [45]Example: Check for solutions
+          • [46]Check for articles
+          • [47]Example - Check for articles
 
-     • [101]14. search - command to search the entire knowledge base for
+     • [48]14. search - command to search the entire knowledge base for
        solutions
 
-          • [102]Example: search
+          • [49]Example: search
 
-     • [103]15. diagnose - command to send text to Red Hat for analysis.
+     • [50]15. diagnose - command to send text to Red Hat for analysis.
 
-          • [104]Example: diagnose
-          • [105]Using Proxy configuration in the curls
+          • [51]Example: diagnose
+          • [52]Using Proxy configuration in the curls
 
-     • [106]General Note
+     • [53]General Note
 
                  Using the Red Hat Support Tool (RHST) REST API
 

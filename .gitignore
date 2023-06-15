@@ -4,3 +4,6 @@
 # Ignore sentinal file used by Make
 .uptodate
 Up.svg
+.index.md
+MakeIndex
+Xindex.bash

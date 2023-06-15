@@ -1,9 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]JSON.md
-          • [3]Working with JSON
-
-               • [4]Converting json to yaml
+Table of Contents
 
                                Book of Knowledge
 

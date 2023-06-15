@@ -1,9 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]DevOps.md
-          • [3]DevSecOps Tips and Tricks
-
-               • [4]Artifactory & Docker
+Table of Contents
 
                                Book of Knowledge
 

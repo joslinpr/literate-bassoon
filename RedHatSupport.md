@@ -53,7 +53,10 @@
     + [Using Proxy configuration in the curls](#using-proxy-configuration-in-the-curls)
 - [General Note](#general-note)
 <!-- TOC end -->
-# Using the Red Hat Support Tool (RHST) REST API
+
+#	Book of Knowledge
+##  RedHatSupport.md
+## Using the Red Hat Support Tool (RHST) REST API
 The Red Hat Support Tool (RHST) is a command line utility shipped in RHEL
 6, 7 and 8, which allows users to interact with our Case Management APIs.
 One of its primary use-cases is the ability to programmatically upload
@@ -437,3 +440,4 @@ curl -u jane.doe --proxy rstuser:rstpassword@localhost:8080 -F "file=@/home/jane
 jq: error (at <stdin>:0, ): Cannot iterate over null (null) OR q: error (at <stdin>:0): Cannot index array with string)
 ```
 
+[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

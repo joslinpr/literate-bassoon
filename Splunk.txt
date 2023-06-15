@@ -1,15 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Splunk.md
-          • [3]Splunk Tricks
-
-               • [4]Roles
-               • [5]List Indices
-               • [6]List Sourcetype for each Index
-               • [7]Count all pods used by ecs-am
-               • [8]Oldest and Newest Records
-
-                    • [9]Same, for each sourcetype
+Table of Contents
 
                                Book of Knowledge
 
@@ -41,7 +30,7 @@ Splunk Tricks
 
   Count all pods used by ecs-am
 
-   [10]Dev Splunk
+   [1]Dev Splunk
 
  index="ecs_am_viewpoint" OR
  index="ecs_am_webv4" OR
@@ -53,7 +42,7 @@ Splunk Tricks
  rex field=pod_type "s/-[a-z0-9]+[0-9].*$//" mode=sed |
  stats distinct_count(openshift_pod_name) by openshift_namespace,pod_type
 
-   [11]Prod Splunk
+   [2]Prod Splunk
 
  index="gbs_its_openshift_ecs-am-ramp" OR
  index="ecs_am_webv4" OR

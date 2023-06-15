@@ -1,7 +1,7 @@
 #	Book of Knowledge
 ##	Example.md
 
-##	Markdown
+##	Markdown Examples - core syntax and extensions.
 A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).
 
 * [Block Elements](#block-elements)
@@ -101,7 +101,7 @@ Code:
 
     #	This is an H1 #	    ##	This is an H2 ##	    ###	This is an H3 ######	Preview:
 ***
-##	This is an H1 #	###	This is an H2 ##	####	This is an H3 ######	***
+#	This is an H1 #	###	This is an H2 ##	####	This is an H3 ######	***
 
 ####	Blockquotes
 HTML Tag: `<blockquote>`

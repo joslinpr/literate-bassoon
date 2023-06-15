@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US" style="scroll-behavior: auto; "> <head>
-<meta http-equiv="Content-Type" content="text/html;
-charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+           href="https://fonts.googleapis.com/css2?family=Playfair&family=Playfair%20Display&family=Crimson+Pro&family=Literata"
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <style>
 a { color: blue;  background-color: rgb(230 230 240 / 50%); }
 a:visited { color: green;  background-color: rgb(230 230 240 / 50%); }
 blockquote { background-color:  rgb(230 230 240 / 50%); color: blue; }
-body { background-color: #fdfdfd; color: black; }
+body { background-color: #fdfdfd; color: black; font-family: 'Playfair',
+    'Georgia', Serif; font-size: 16px}
 code { background-color:  #f5f5f5; color: black; }
 div { color: blue; }
 em { color: blue; }
-h1 { color: blue; border: 1px solid rgba(0, 0, 0, 0.8); background-color: #e5effb;}
-h2 { color: blue;  background-color: #e5effb;text-decoration: underline;}
-h3 { color: blue;  background-color: #e5effb;text-decoration: underline;}
-h4 { color: blue;  background-color: #e5effb;text-decoration: underline;}
-h5 { color: blue;  background-color: #e5effb;text-decoration: underline;}
-h6 { color: blue;  background-color: #e5effb;text-decoration: underline;}
+h1,h2 { border: 1px solid; font-size: 48px; text-align: center; }
+h3,h4,h5,h6,{border-bottom: 1px solid;}
+h1,h2,h3,h4,h5,h6 { color: blue;  background-color: #e5effb; font-family: "Playfair Display", Playfair, Verdana, Serif;}
 head { color: blue;  background-color: #e5effb;}
 hr { color: blue; }
 img { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
@@ -28,7 +27,7 @@ strong { color: blue; }
 style { color: blue; }
 table { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
 tbody { color: blue; }
-td { color: black; border-right: 1px solid; border-bottom: 1px solid; }
+td { color: blue; border-right: 1px solid; border-bottom: 1px solid; }
 th { color: black;
     border: 1px solid rgba(0, 0, 0, 0.8);
     background-color: #e5effb;}
@@ -39,67 +38,28 @@ ul { color: blue; }
 </style>
 </head>
 <body> <!-- vim: set ai si nu :-->
-<div class="toc">
-<ul>
-<li><a href="#book-of-knowledge">Book of Knowledge</a><ul>
-<li><a href="#styletestmd">StyleTest.md</a><ul>
-<li><a href="#block_quote">&ldquo;block_quote&rdquo;:</a></li>
-<li><a href="#code_block">&ldquo;code_block&rdquo;:</a></li>
-<li><a href="#code">&ldquo;code&rdquo;:</a></li>
-<li><a href="#document">&ldquo;document&rdquo;:</a></li>
-<li><a href="#emph">&ldquo;emph&rdquo;:</a></li>
-<li><a href="#enumeration">&ldquo;enumeration&rdquo;:</a></li>
-<li><a href="#h1">&ldquo;h1&rdquo;:</a></li>
-<li><a href="#h2">&ldquo;h2&rdquo;:</a><ul>
-<li><a href="#h3">&ldquo;h3&rdquo;:</a><ul>
-<li><a href="#h4">&ldquo;h4&rdquo;:</a><ul>
-<li><a href="#h5">&ldquo;h5&rdquo;:</a></li>
-<li><a href="#h6"># &ldquo;h6&rdquo;:</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#heading">&ldquo;heading&rdquo;:</a></li>
-<li><a href="#hr">&ldquo;hr&rdquo;:</a></li>
-<li><a href="#image">&ldquo;image&rdquo;:</a></li>
-<li><a href="#image_text">&ldquo;image_text&rdquo;:</a></li>
-<li><a href="#item">&ldquo;item&rdquo;:</a></li>
-<li><a href="#link-link_text">&ldquo;link&rdquo;: &amp;   &ldquo;link_text&rdquo;:</a></li>
-<li><a href="#list">&ldquo;list&rdquo;:</a></li>
-<li><a href="#paragraph">&ldquo;paragraph&rdquo;:</a></li>
-<li><a href="#strikethrough">&ldquo;strikethrough&rdquo;:</a></li>
-<li><a href="#strong">&ldquo;strong&rdquo;:</a></li>
-<li><a href="#table">&ldquo;table&rdquo;:</a></li>
-<li><a href="#task">&ldquo;task&rdquo;:</a></li>
-<li><a href="#text">&ldquo;text&rdquo;:</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<h1 id="book-of-knowledge">Book of Knowledge</h1>
-<h2 id="styletestmd">StyleTest.md</h2>
-<h3 id="block_quote">&ldquo;block_quote&rdquo;:</h3>
+<h2>Table of Contents</h2>
+<h1>Book of Knowledge</h1>
+<h2>StyleTest.md</h2>
+<h2>StyleTest, a Markdown example file for testing glow .json style files.</h2>
+<h3>&ldquo;block_quote&rdquo;:</h3>
 <blockquote>
 <p>&ldquo;block_quote&rdquo;: { &ldquo;color&rdquo;: &ldquo;200&rdquo;, &ldquo;indent&rdquo;: 2, &ldquo;indent_token&rdquo;: &rdquo; &gt; &rdquo;
   } incididunt ut labore et dolore magna aliqua. Enim praesent elementum
   facilisis leo vel. Orci dapibus ultrices in iaculis nunc sed augue lacus
   viverra. Felis</p>
 </blockquote>
-<h3 id="code_block">&ldquo;code_block&rdquo;:</h3>
+<h3>&ldquo;code_block&rdquo;:</h3>
 <pre><code>&quot;code_block&quot;: { &quot;color&quot;: &quot;10&quot;, &quot;theme&quot;: &quot;solarized-dark&quot;, &quot;margin&quot; : 4 }
 </code></pre>
-<h3 id="code">&ldquo;code&rdquo;:</h3>
+<h3>&ldquo;code&rdquo;:</h3>
 <p>This is inline <code>"code": { "color": "1", "margin": 4 }</code>.  This follows inline
 code.</p>
-<h3 id="document">&ldquo;document&rdquo;:</h3>
+<h3>&ldquo;document&rdquo;:</h3>
 <p>&ldquo;document&rdquo;: { &ldquo;color&rdquo;: &ldquo;2&rdquo;, &ldquo;block_prefix&rdquo;: &ldquo;\n&rdquo;, &ldquo;block_suffix&rdquo;: &ldquo;\n&rdquo; }</p>
-<h3 id="emph">&ldquo;emph&rdquo;:</h3>
+<h3>&ldquo;emph&rdquo;:</h3>
 <p>&ldquo;emph&rdquo;: { &ldquo;color&rdquo;: &ldquo;3&rdquo;, &ldquo;italic&rdquo;: true }</p>
-<h3 id="enumeration">&ldquo;enumeration&rdquo;:</h3>
+<h3>&ldquo;enumeration&rdquo;:</h3>
 <p>&ldquo;enumeration&rdquo;: { &ldquo;block_prefix&rdquo;: &ldquo;. &rdquo; }</p>
 <ol>
 <li>&ldquo;item&rdquo;: { &ldquo;block_prefix&rdquo;: &ldquo;• &rdquo; }</li>
@@ -107,43 +67,43 @@ code.</p>
 <li>&ldquo;item&rdquo;: { &ldquo;block_prefix&rdquo;: &ldquo;• &rdquo; }</li>
 <li>&ldquo;item&rdquo;: { &ldquo;block_prefix&rdquo;: &ldquo;• &rdquo; }</li>
 </ol>
-<h3 id="h1">&ldquo;h1&rdquo;:</h3>
+<h3>&ldquo;h1&rdquo;:</h3>
 <p>&ldquo;h1&rdquo;: { &ldquo;prefix&rdquo;: &ldquo;==&gt; 1 &ldquo;, &ldquo;color&rdquo;: &ldquo;3&rdquo; }</p>
-<h3 id="h2">&ldquo;h2&rdquo;:</h3>
+<h3>&ldquo;h2&rdquo;:</h3>
 <p>&ldquo;h2&rdquo;: { &ldquo;prefix&rdquo;: &ldquo;==&gt; 2 &ldquo;, &ldquo;color&rdquo;: &ldquo;3&rdquo; }</p>
-<h4 id="h3">&ldquo;h3&rdquo;:</h4>
+<h4>&ldquo;h3&rdquo;:</h4>
 <p>&ldquo;h3&rdquo;: { &ldquo;prefix&rdquo;: &ldquo;==&gt; 3 &ldquo;, &ldquo;color&rdquo;: &ldquo;3&rdquo; }</p>
-<h5 id="h4">&ldquo;h4&rdquo;:</h5>
+<h5>&ldquo;h4&rdquo;:</h5>
 <p>&ldquo;h4&rdquo;: { &ldquo;prefix&rdquo;: &ldquo;==&gt; 4 &ldquo;, &ldquo;color&rdquo;: &ldquo;3&rdquo; }</p>
-<h6 id="h5">&ldquo;h5&rdquo;:</h6>
+<h6>&ldquo;h5&rdquo;:</h6>
 <p>&ldquo;h5&rdquo;: { &ldquo;prefix&rdquo;: &ldquo;==&gt; 5 &ldquo;, &ldquo;color&rdquo;: &ldquo;3&rdquo; }</p>
-<h6 id="h6"># &ldquo;h6&rdquo;:</h6>
+<h6># &ldquo;h6&rdquo;:</h6>
 <p>&ldquo;h6&rdquo;: { &ldquo;prefix&rdquo;: &ldquo;==&gt; 6 &ldquo;, &ldquo;color&rdquo;: &ldquo;3&rdquo; }</p>
-<h3 id="heading">&ldquo;heading&rdquo;:</h3>
+<h3>&ldquo;heading&rdquo;:</h3>
 <p>&ldquo;heading&rdquo;: { &ldquo;color&rdquo;: &ldquo;5&rdquo; }</p>
-<h3 id="hr">&ldquo;hr&rdquo;:</h3>
+<h3>&ldquo;hr&rdquo;:</h3>
 <p>&ldquo;hr&rdquo;: { &ldquo;block_prefix&rdquo;: &ldquo;---------&rdquo; }</p>
 <hr />
-<h3 id="image">&ldquo;image&rdquo;:</h3>
+<h3>&ldquo;image&rdquo;:</h3>
 <p>&ldquo;image&rdquo;: { &ldquo;color&rdquo;: &ldquo;123&rdquo;, &ldquo;block_prefix&rdquo;: &ldquo;[Image: &ldquo;, &ldquo;block_suffix&rdquo;: &ldquo;]&rdquo; }</p>
 <p><img alt="Image" src="https://charm.sh/logo.png" />.</p>
-<h3 id="image_text">&ldquo;image_text&rdquo;:</h3>
+<h3>&ldquo;image_text&rdquo;:</h3>
 <p>&ldquo;image_text&rdquo;: { &ldquo;color&rdquo;: &ldquo;8&rdquo; }</p>
-<h3 id="item">&ldquo;item&rdquo;:</h3>
+<h3>&ldquo;item&rdquo;:</h3>
 <ul>
 <li>&ldquo;item&rdquo;: { &ldquo;block_prefix&rdquo;: &ldquo;• &rdquo; }</li>
 <li>&ldquo;item&rdquo;: { &ldquo;block_prefix&rdquo;: &ldquo;• &rdquo; }</li>
 <li>&ldquo;item&rdquo;: { &ldquo;block_prefix&rdquo;: &ldquo;• &rdquo; }</li>
 <li>&ldquo;item&rdquo;: { &ldquo;block_prefix&rdquo;: &ldquo;• &rdquo; }</li>
 </ul>
-<h3 id="link-link_text">&ldquo;link&rdquo;: &amp;   &ldquo;link_text&rdquo;:</h3>
+<h3>&ldquo;link&rdquo;: &amp;   &ldquo;link_text&rdquo;:</h3>
 <p>&ldquo;link&rdquo;: { &ldquo;color&rdquo;: &ldquo;123&rdquo;, &ldquo;underline&rdquo;: true, &ldquo;block_prefix&rdquo;: &ldquo;(&ldquo;, &ldquo;block_suffix&rdquo;: &ldquo;)&rdquo; }</p>
 <p>&ldquo;link_text&rdquo;: { &ldquo;color&rdquo;: &ldquo;123&rdquo;, &ldquo;bold&rdquo;: true }</p>
 <p>http://github.com - automatic!</p>
 <p><a href="http://github.com">GitHub</a></p>
-<h3 id="list">&ldquo;list&rdquo;:</h3>
+<h3>&ldquo;list&rdquo;:</h3>
 <p>&ldquo;list&rdquo;: { &ldquo;color&rdquo;: &ldquo;15&rdquo;,  &ldquo;level_indent&rdquo;: 4 }</p>
-<h3 id="paragraph">&ldquo;paragraph&rdquo;:</h3>
+<h3>&ldquo;paragraph&rdquo;:</h3>
 <p>&ldquo;paragraph&rdquo;: { &ldquo;margin&rdquo;: 4, &ldquo;color&rdquo;: &ldquo;5&rdquo; }
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Enim praesent elementum facilisis
@@ -163,11 +123,11 @@ adipiscing commodo elit at imperdiet. Aliquam faucibus purus in massa. Leo vel
 fringilla est ullamcorper eget nulla. Eros donec ac odio tempor orci dapibus.
 Volutpat sed cras ornare arcu dui vivamus arcu felis. Dolor purus non enim
 praesent elementum facilisis leo vel.</p>
-<h3 id="strikethrough">&ldquo;strikethrough&rdquo;:</h3>
+<h3>&ldquo;strikethrough&rdquo;:</h3>
 <p>~~&rdquo;strikethrough&rdquo;: { &ldquo;crossed_out&rdquo;: true }~~</p>
-<h3 id="strong">&ldquo;strong&rdquo;:</h3>
+<h3>&ldquo;strong&rdquo;:</h3>
 <p><strong>&ldquo;strong&rdquo;: { &ldquo;bold&rdquo;: true }</strong></p>
-<h3 id="table">&ldquo;table&rdquo;:</h3>
+<h3>&ldquo;table&rdquo;:</h3>
 <p>&ldquo;table&rdquo;: { &ldquo;margin&rdquo;: 4 }</p>
 <table>
 <thead>
@@ -187,12 +147,12 @@ praesent elementum facilisis leo vel.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="task">&ldquo;task&rdquo;:</h3>
+<h3>&ldquo;task&rdquo;:</h3>
 <ul>
 <li>[ ] &ldquo;task&rdquo;: { &ldquo;unticked&rdquo;: &ldquo;__ &ldquo;, &ldquo;ticked&rdquo;: &ldquo;✗  &rdquo; }</li>
 <li>[x] &ldquo;task&rdquo;: { &ldquo;unticked&rdquo;: &ldquo;__ &ldquo;, &ldquo;ticked&rdquo;: &ldquo;✗  &rdquo; }</li>
 </ul>
-<h3 id="text">&ldquo;text&rdquo;:</h3>
+<h3>&ldquo;text&rdquo;:</h3>
 <p>&ldquo;text&rdquo;: { &ldquo;color&rdquo;: &ldquo;2&rdquo; }</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Enim praesent elementum facilisis</p></body> </html> <!-- vim: set ai si nu :-->

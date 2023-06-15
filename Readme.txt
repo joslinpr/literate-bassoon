@@ -1,6 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Readme.md
+Table of Contents
 
                                Book of Knowledge
 

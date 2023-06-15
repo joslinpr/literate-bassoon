@@ -1,9 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Oracle.md
-          • [3]Oracle Tips and Tricks
-
-               • [4]Checking CRS
+Table of Contents
 
                                Book of Knowledge
 

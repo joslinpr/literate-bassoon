@@ -1,9 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Glow.md
-          • [3]Installing Glow (charmbracelet/glow)
-
-               • [4]TUI Markdown Reader and Directory Navigator
+Table of Contents
 
                                Book of Knowledge
 
@@ -13,9 +8,9 @@ Installing Glow (charmbracelet/glow)
 
   TUI Markdown Reader and Directory Navigator
 
-   [5]URL
+   [1]URL
 
-   Glow can be downloaded from the [6]Releases page, or built if Go 1.13+ is
+   Glow can be downloaded from the [2]Releases page, or built if Go 1.13+ is
    installed:
 
  git clone https://github.com/charmbracelet/glow.git

@@ -1,15 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Dotfiles.md
-          • [3]LinuxDotfiles - DotFiles For Linux/Unix Accounts
-
-               • [4]Directory Structure
-               • [5]Installing On A New Server
-
-                    • [6]Requires Git, .ssh/id_github
-
-               • [7]How To:
-               • [8]tools to install
+Table of Contents
 
                                Book of Knowledge
 
@@ -68,9 +57,9 @@ LinuxDotfiles - DotFiles For Linux/Unix Accounts
  export tS=$(hostname -s).$TS
  config checkout -b $TS
 
-   [9]Tutorial
+   [1]Tutorial
 
-   [10]Source
+   [2]Source
 
   tools to install
 
@@ -83,4 +72,4 @@ LinuxDotfiles - DotFiles For Linux/Unix Accounts
        work uses.
      • shellCheck - analyze shell scripts.
 
-   [11]Source
+   [3]Source

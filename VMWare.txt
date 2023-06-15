@@ -1,12 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]VMWare.md
-          • [3]VMWare Vsphere Storage
-
-               • [4]Namespaces
-
-                    • [5]vmware-system-csi
-                    • [6]cluster-operations
+Table of Contents
 
                                Book of Knowledge
 

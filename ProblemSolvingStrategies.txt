@@ -1,9 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Strategies.md
-          • [3]Strategies for Solving Problems
-
-               • [4]Book of Knowledge
+Table of Contents
 
                                Book of Knowledge
 
@@ -25,10 +20,10 @@ Strategies for Solving Problems
     3. GSN KB GSN has a knowledge base. It’s not used extensively by the
        Linux/Unix teams, but might have something worthwhile.’
 
-    4. [5]OpsWiki
+    4. [1]OpsWiki
 
     5. Teams Channel Wikis
 
-          • [6]Americas OPS Linux / HP-UX
-          • [7]Global OPS UNIX
-          • [8]GLOBAL-OPS.LINUX Empty at the moment.
+          • [2]Americas OPS Linux / HP-UX
+          • [3]Global OPS UNIX
+          • [4]GLOBAL-OPS.LINUX Empty at the moment.

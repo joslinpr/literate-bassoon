@@ -1,11 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]GitCommitMessage.md
-          • [3]How to Write A Git Commit Message
-
-               • [4]The seven rules of a great Git commit message
-               • [5]Example:
-               • [6]How to Install:
+Table of Contents
 
                                Book of Knowledge
 
@@ -13,7 +6,7 @@ GitCommitMessage.md
 
 How to Write A Git Commit Message
 
-   [7]source
+   [1]source
 
   The seven rules of a great Git commit message
 

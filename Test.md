@@ -1,6 +1,6 @@
 #	Book of Knowledge
-##  Filename of this file
-##	Subject of this file
+##  Filename of this file.md
+##	A Test file and Template
 ###	Sections in this file
 ####	Subsection
 #####	Subsection

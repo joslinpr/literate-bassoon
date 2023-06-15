@@ -1,6 +1,7 @@
 #	Book of Knowledge
 ##	LICENSE.md
-###	Creative Commons License
+##	The license for Paul's Book of Knowledge
+##  The Creative Commons License
 Book Of Knowledge by Paul R. Joslin is licensed under a Creative Commons Attribution 4.0 International License.
 
 Based on a work at https://github.com/joslinpr/literate-bassoon/.

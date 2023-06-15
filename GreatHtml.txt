@@ -1,14 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]GreatHtml.md
-
-               • [3]100 Bytes of CSS to look great everywhere
-               • [4]and 100 more bytes:
-               • [5]Responsive Grid
-               • [6]Responsive Flexbox
-               • [7]Tufte CSS
-
-          • [8]Getting Started
+Table of Contents
 
                                Book of Knowledge
 
@@ -16,7 +6,7 @@ GreatHtml.md
 
   100 Bytes of CSS to look great everywhere
 
-   [9]Source
+   [1]Source
 
  html {
      max-width: 70ch;
@@ -53,7 +43,7 @@ GreatHtml.md
 
   Responsive Flexbox
 
-   [10]Holy Albatross
+   [2]Holy Albatross
 
    When you want a component to be flexible; to grow and shrink. However, You
    only want the items to take up either 33% or 100% of the container/parent
@@ -62,7 +52,7 @@ GreatHtml.md
 
   Tufte CSS
 
-   [11]Tufte-css
+   [3]Tufte-css
 
 Getting Started
 

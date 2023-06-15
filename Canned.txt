@@ -1,17 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Canned.md
-          • [3]Best Canned Response Templates for Customer Support Emails
-
-               • [4]Acknowledge Receipt of Customer Email
-               • [5]Updating the Ticket Progress
-               • [6]Resolving a Ticket
-               • [7]Encouraging Self-service
-               • [8]Asking for More Information
-               • [9]Writing an Apology
-               • [10]Asking for Feedback
-               • [11]Follow-up on Positive Feedback
-               • [12]Follow-up on Negative Feedback
+Table of Contents
 
                                Book of Knowledge
 

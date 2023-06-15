@@ -1,10 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]tmux.md
-          • [3]Tmux Quick Reference
-
-               • [4]Named Session
-               • [5]Attaching
+Table of Contents
 
                                Book of Knowledge
 

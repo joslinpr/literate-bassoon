@@ -1,7 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]FC_Troubleshooting.md
-          • [3]Fibre Channel Troubleshooting
+Table of Contents
 
                                Book of Knowledge
 

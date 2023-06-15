@@ -1,8 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]LICENSE.md
-
-               • [3]Creative Commons License
+Table of Contents
 
                                Book of Knowledge
 

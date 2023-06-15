@@ -1,5 +1,6 @@
 #	Book of Knowledge
 ##	StyleTest.md
+##	StyleTest, a Markdown example file for testing glow .json style files.
 
 ###	"block_quote":
 

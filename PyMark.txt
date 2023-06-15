@@ -1,9 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]PyMark.md
-          • [3]Installing Markdown (python markdown module and tool)
-
-               • [4]Markdown translator, convertor to html
+Table of Contents
 
                                Book of Knowledge
 

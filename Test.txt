@@ -1,15 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Filename of this file
-          • [3]Subject of this file
-
-               • [4]Sections in this file
-
-                    • [5]Subsection
-
-                         • [6]Subsection
-
-                              • [7]Subsection
+Table of Contents
 
                                Book of Knowledge
 

@@ -1,12 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Unicode.md
-          • [3]Tips for Unicode
-          • [4]Composing Unicode
-
-               • [5]iconv: convert between encodings
-               • [6]Bash: convert escaped text to unicode
-               • [7]Convert unicode to escaped text
+Table of Contents
 
                                Book of Knowledge
 
@@ -16,8 +8,8 @@ Tips for Unicode
 
 Composing Unicode
 
-     • [8]The Official Character Code Charts
-     • [9]More Unicode than you knew existed
+     • [1]The Official Character Code Charts
+     • [2]More Unicode than you knew existed
 
   iconv: convert between encodings
 

@@ -1,34 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]OpenShiftTricks.md
-          • [3]Miscellaneous OpenShift / Kubernetes Tricks
-
-               • [4]Get memory, resource usage for a pod
-               • [5]Get an interactive shell in a pod
-               • [6]Get an interactive shell on a node
-               • [7]Get Various Info via CLI:
-
-                    • [8]Get Auth Token:
-                    • [9]Pod:
-                    • [10]Deployment:
-                    • [11]Statefullset:
-                    • [12]DeploymentConfig:
-                    • [13]BuidConfig:
-                    • [14]ImageStream:
-
-               • [15]Role-Based Access Controls (RBAC)
-
-                    • [16]Describe all Role-Based Access Controls
-                    • [17]Get Clusterrolebindings (CRB) for
-                      user/serviceaccount prometheus-server
-                    • [18]Clusterroles (CR) for user/serviceaccount
-                      prometheus-server
-                    • [19]Local Role Binding Operations
-                    • [20]Cluster role binding operations
-                    • [21]Converting json to yaml
-
-               • [22]Who’s using kafka?
-               • [23]Enable/Disable Cronjobs
+Table of Contents
 
                                Book of Knowledge
 
@@ -36,27 +6,27 @@ OpenShiftTricks.md
 
 Miscellaneous OpenShift / Kubernetes Tricks
 
-     • [24]Get memory, resource usage for a pod
-     • [25]Get an interactive shell in a pod
-     • [26]Get an interactive shell on a node
-     • [27]Get Various Info via CLI:
-     • [28]Get Auth Token:
-     • [29]Pod:
-     • [30]Deployment:
-     • [31]Statefullset:
-     • [32]DeploymentConfig:
-     • [33]BuidConfig:
-     • [34]ImageStream:
-     • [35]Role-Based Access Controls (RBAC)
-     • [36]Describe all Role-Based Access Controls
-     • [37]Get Clusterrolebindings (CRB) for user/serviceaccount
+     • [1]Get memory, resource usage for a pod
+     • [2]Get an interactive shell in a pod
+     • [3]Get an interactive shell on a node
+     • [4]Get Various Info via CLI:
+     • [5]Get Auth Token:
+     • [6]Pod:
+     • [7]Deployment:
+     • [8]Statefullset:
+     • [9]DeploymentConfig:
+     • [10]BuidConfig:
+     • [11]ImageStream:
+     • [12]Role-Based Access Controls (RBAC)
+     • [13]Describe all Role-Based Access Controls
+     • [14]Get Clusterrolebindings (CRB) for user/serviceaccount
        prometheus-server
-     • [38]Clusterroles (CR) for user/serviceaccount prometheus-server
-     • [39]Local Role Binding Operations
-     • [40]Cluster role binding operations
-     • [41]Converting json to yaml
-     • [42]Who’s using kafka?
-     • [43]Enable/Disable Cronjobs
+     • [15]Clusterroles (CR) for user/serviceaccount prometheus-server
+     • [16]Local Role Binding Operations
+     • [17]Cluster role binding operations
+     • [18]Converting json to yaml
+     • [19]Who’s using kafka?
+     • [20]Enable/Disable Cronjobs
 
   Get memory, resource usage for a pod
 
@@ -115,7 +85,7 @@ Miscellaneous OpenShift / Kubernetes Tricks
 
   Role-Based Access Controls (RBAC)
 
-   [44]RBAC References
+   [21]RBAC References
 
     Describe all Role-Based Access Controls
 
@@ -170,7 +140,7 @@ Miscellaneous OpenShift / Kubernetes Tricks
 
     Converting json to yaml
 
-   [45]Converting json to yaml
+   [22]Converting json to yaml
 
   Who’s using kafka?
 

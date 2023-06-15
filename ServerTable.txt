@@ -1,16 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]ServerTable.md
-          • [3]DHL Utility Servers
-
-               • [4]AAA Gateways
-               • [5]Firewall Jump Servers
-               • [6]Ansible / Automation Gateways
-               • [7]Automic
-               • [8]Sandbox Servers
-               • [9]Rescue Media
-               • [10]Operations Bridge Manager & (OpenView)
-               • [11]Veritas Operations Manager
+Table of Contents
 
                                Book of Knowledge
 
@@ -56,21 +44,21 @@ DHL Utility Servers
 
   Rescue Media
 
-   [12]Rescue Media: http://server/rescue
+   [1]Rescue Media: http://server/rescue
    czchols018.prg-dc.dhl.com
    troy1.apis.dhl.com
    usqasls0014.phx-dc.dhl.com
 
   Operations Bridge Manager & (OpenView)
 
-   Operations Bridge Manager             (OpenView)
-   PRG                       [13]https://prgomiprod-users
-   CBJ                       [14]https://cbjomiprod-user
-   QAS                       [15]https://phxomiprod-user
-   Test                      [16]http://omitest-users-dev:9662/
+   Operations Bridge Manager            (OpenView)
+   PRG                       [2]https://prgomiprod-users
+   CBJ                       [3]https://cbjomiprod-user
+   QAS                       [4]https://phxomiprod-user
+   Test                      [5]http://omitest-users-dev:9662/
    OvoWeb                    [http
 
   Veritas Operations Manager
 
    Veritas Operations Manager
-   [17]https://vom-prg:14161/
+   [6]https://vom-prg:14161/

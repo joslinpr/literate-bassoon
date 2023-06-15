@@ -1,7 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]ServerTablePersonal.md
-          • [3]Personal Utility Servers
+Table of Contents
 
                                Book of Knowledge
 

@@ -1,11 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]README.md
-
-               • [3]My Book of Knowledge
-               • [4]Viewing
-               • [5]Conversion
-               • [6]Source
+Table of Contents
 
                                Book of Knowledge
 

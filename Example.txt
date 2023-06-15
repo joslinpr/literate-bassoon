@@ -1,76 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Example.md
-          • [3]Markdown
-
-               • [4]Block Elements
-
-                    • [5]Paragraphs and Line Breaks
-
-                         • [6]Paragraphs
-                         • [7]Line Breaks
-
-                    • [8]Headers
-
-                         • [9]Setext
-
-     • [10]This is an H1
-
-          • [11]This is an H2
-
-               • [12]atx
-
-          • [13]This is an H1
-
-               • [14]This is an H2
-
-                    • [15]# This is an H6
-
-          • [16]This is an H1 # ### This is an H2 ## #### This is an H3
-            ###### ***
-
-               • [17]Blockquotes
-
-          • [18]This is a header.
-
-               • [19]Lists
-
-                    • [20]Unordered
-                    • [21]Ordered
-                    • [22]Indented
-
-                         • [23]Blockquote
-                         • [24]Code Block
-                         • [25]Nested List
-
-               • [26]Code Blocks
-
-                    • [27]Fenced Code Blocks
-                    • [28]Syntax Highlighting
-
-               • [29]Horizontal Rules
-
-          • [30]- - -
-
-               • [31]Table
-
-                    • [32]Inline
-                    • [33]Reference
-
-               • [34]Emphasis
-               • [35]Code
-               • [36]Images
-
-                    • [37]Inline
-                    • [38]Reference
-
-               • [39]Strikethrough
-               • [40]Miscellaneous
-
-                    • [41]Automatic Links
-                    • [42]Backslash Escapes
-
-               • [43]Inline HTML
+Table of Contents
 
                                Book of Knowledge
 
@@ -81,24 +9,24 @@ Markdown
    A markdown example shows how to write a markdown file. This document
    integrates core syntax and extensions (GMF).
 
-     • [44]Block Elements
-     • [45]Paragraphs and Line Breaks
-     • [46]Headers
-     • [47]Blockquotes
-     • [48]Lists
-     • [49]Code Blocks
-     • [50]Horizontal Rules
-     • [51]Table
-     • [52]Span Elements
-     • [53]Links
-     • [54]Emphasis
-     • [55]Code
-     • [56]Images
-     • [57]Strikethrough
-     • [58]Miscellaneous
-     • [59]Automatic Links
-     • [60]Backslash Escapes
-     • [61]Inline HTML
+     • [1]Block Elements
+     • [2]Paragraphs and Line Breaks
+     • [3]Headers
+     • [4]Blockquotes
+     • [5]Lists
+     • [6]Code Blocks
+     • [7]Horizontal Rules
+     • [8]Table
+     • [9]Span Elements
+     • [10]Links
+     • [11]Emphasis
+     • [12]Code
+     • [13]Images
+     • [14]Strikethrough
+     • [15]Miscellaneous
+     • [16]Automatic Links
+     • [17]Backslash Escapes
+     • [18]Inline HTML
 
   Block Elements
 
@@ -554,7 +482,7 @@ This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
       Syntax Highlighting
 
    In your fenced block, add an optional language identifier and we’ll run it
-   through syntax highlighting ([62]Support Languages).
+   through syntax highlighting ([19]Support Languages).
 
    Code:
 
@@ -669,9 +597,9 @@ This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
    ══════════════════════════════════════════════════════════════════════════
 
-   This is [63]an example inline link.
+   This is [20]an example inline link.
 
-   [64]This link has no title attribute.
+   [21]This link has no title attribute.
 
    ══════════════════════════════════════════════════════════════════════════
 
@@ -686,7 +614,7 @@ This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
    ══════════════════════════════════════════════════════════════════════════
 
-   See my [65]About page for details.
+   See my [22]About page for details.
 
    ══════════════════════════════════════════════════════════════════════════
 
@@ -706,7 +634,7 @@ This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
    ══════════════════════════════════════════════════════════════════════════
 
-   This is [66]an example reference-style link.
+   This is [23]an example reference-style link.
 
    ══════════════════════════════════════════════════════════════════════════
 
@@ -742,7 +670,7 @@ This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
    ══════════════════════════════════════════════════════════════════════════
 
-   [67]Google
+   [24]Google
 
    ══════════════════════════════════════════════════════════════════════════
 
@@ -870,7 +798,7 @@ This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
    ══════════════════════════════════════════════════════════════════════════
 
-   [68]Alt text
+   [25]Alt text
 
    Alt text
 
@@ -898,7 +826,7 @@ This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
    ══════════════════════════════════════════════════════════════════════════
 
-   [69]Alt text
+   [26]Alt text
 
    ══════════════════════════════════════════════════════════════════════════
 
@@ -940,9 +868,9 @@ This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
    ══════════════════════════════════════════════════════════════════════════
 
-   [70]http://example.com/
+   [27]http://example.com/
 
-   [71]address@example.com
+   [28]address@example.com
 
    ══════════════════════════════════════════════════════════════════════════
 

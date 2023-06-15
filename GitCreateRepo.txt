@@ -1,7 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]GitCreateRepo.md
-          • [3]How to Create a Repo from a Directory
+Table of Contents
 
                                Book of Knowledge
 

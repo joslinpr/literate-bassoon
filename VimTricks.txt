@@ -1,23 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]VimTricks.md
-          • [3]Vim Tips and Tricks
-
-               • [4]Using Vim as a Pipe:
-               • [5]Simple Math
-               • [6]Bouncing
-               • [7]Checking Variables
-               • [8]Changing Case
-
-                    • [9]Examples
-
-               • [10]Non-breaking Space
-               • [11]Spelling
-
-                    • [12]Highlighting
-                    • [13]Searching for Misspellings
-                    • [14]To add words to your own word list:
-                    • [15]Finding suggestions for bad words:
+Table of Contents
 
                                Book of Knowledge
 

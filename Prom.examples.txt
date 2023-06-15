@@ -1,16 +1,4 @@
-     • [1]Book of Knowledge
-
-          • [2]Prom.examples.md
-          • [3]Prometheus Query Examples
-
-               • [4]Infra Nodes
-               • [5]Number of containers by cluster and namespace without CPU
-                 limits
-               • [6]Count of pods per cluster and namespace
-               • [7]CPU USage per namespace
-               • [8]CPU overcommit
-               • [9]Kafka Disk Space Available
-               • [10]Network by workload: pod, namespace, interface
+Table of Contents
 
                                Book of Knowledge
 

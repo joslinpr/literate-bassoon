@@ -16,7 +16,8 @@ EARGS := -dump -dump-charset UTF-8 --no-references
 RSYNC := /usr/bin/rsync
 SHELL := /usr/bin/bash
 MD := /usr/local/bin/markdown_py
-MDOPTS := -x extra -x smarty -x sane_lists -x toc
+MDOPTS := -x extra -x smarty -x sane_lists
+# MDOPTS := -x extra -x smarty -x sane_lists -x toc
 .SHELLFLAGS := -euc
 
 #################### Targets
@@ -42,16 +43,6 @@ $(ELINKS) $(EARGS) < $< > $@
 chmod 744 $@ $<
 endef
 %.txt : %.html Makefile
-	$(MD2TXT)
-
-## OLD
-#define MD2TXT =
-#@printf "\t$< --> $@\n"
-#$(GLOW) $(GLOWARGS) < $< > $@
-#chmod 744 $@ $<
-#endef
-#%.txt : %.md Makefile
-#	$(MD2TXT)
 
 #################### MD2HTML
 define MD2HTML =
@@ -89,7 +80,7 @@ Makefile :
 	@chmod 744 $@ $?
 	make clean all
 
-$(SENTINAL) : $(FILES) Makefile
+$(SENTINAL) : $(FILES) Makefile index.html
 	touch $(SENTINAL)
 	@chmod 600 $(SENTINAL)
 
@@ -105,4 +96,13 @@ aaaphx: all
 toc:
 	@printf "Use bitdowntoc_linux --max-level -1 -o Outfile.md  Infile.md\n"
 
+piway: all
+	$(RSYNC) $(FILES) $(SRCS) $(AUXFILES) PiWay:~/BoK/
+	$(RSYNC) -avc --delete $(HTMLFILES) MakeIndex index.html PiWay:~/Projects/DockerHTTPD/public-html/
+
+.index.md: $(SRCS) $(FILES)
+	./MakeIndex
+
+index.html:  .index.md
+	$(MD2HTML)
 #  vim: set ai noet nu cindent sts=0 sw=8 tabstop=8 textwidth=78 filetype=make :
