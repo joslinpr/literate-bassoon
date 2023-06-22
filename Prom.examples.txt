@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-Prom.examples.md
+                                Prom.examples.md
 
-Prometheus Query Examples
+                           Prometheus Query Examples
 
   Infra Nodes
 

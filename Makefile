@@ -1,10 +1,10 @@
 #################### Misc variables and flags
 # SENTINAL depends on everything
 .DEFAULT_GOAL : all
-MAKEFLAGS += "-j 4"
-# remove targets if build fails
+	MAKEFLAGS += "-j 4"
+	# remove targets if build fails
 .DELETE_ON_ERROR:
-# run recipes in a single shell
+	# run recipes in a single shell
 .ONESHELL:
 .PHONY : all clean installclean install testmake
 
@@ -39,10 +39,11 @@ all : $(SENTINAL)
 #################### MD2TXT
 define MD2TXT =
 @printf "\t$< --> $@\n"
-$(ELINKS) $(EARGS) < $< > $@
-chmod 744 $@ $<
+@$(ELINKS) $(EARGS) < $< > $@
+@chmod 744 $@ $<
 endef
 %.txt : %.html Makefile
+	$(MD2TXT)
 
 #################### MD2HTML
 define MD2HTML =
@@ -105,4 +106,5 @@ piway: all
 
 index.html:  .index.md
 	$(MD2HTML)
+
 #  vim: set ai noet nu cindent sts=0 sw=8 tabstop=8 textwidth=78 filetype=make :

@@ -1,8 +1,8 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-Readme.md
+                                   Readme.md
 
    This is the Book of Knowledge, an unstructed store of miscellaneous things
    I need to remember.

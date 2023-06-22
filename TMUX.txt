@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-tmux.md
+                                    tmux.md
 
-Tmux Quick Reference
+                              Tmux Quick Reference
 
   Named Session
 

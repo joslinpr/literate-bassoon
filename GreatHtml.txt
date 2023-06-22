@@ -1,8 +1,8 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-GreatHtml.md
+                                  GreatHtml.md
 
   100 Bytes of CSS to look great everywhere
 
@@ -54,7 +54,7 @@ GreatHtml.md
 
    [3]Tufte-css
 
-Getting Started
+                                Getting Started
 
    To use Tufte CSS, copy tufte.css and the et-book directory of font files
    to your project directory, then add the following to your HTML document’s

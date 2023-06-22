@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-VimTricks.md
+                                  VimTricks.md
 
-Vim Tips and Tricks
+                              Vim Tips and Tricks
 
   Using Vim as a Pipe:
 

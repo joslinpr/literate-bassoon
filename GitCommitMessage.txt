@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-GitCommitMessage.md
+                              GitCommitMessage.md
 
-How to Write A Git Commit Message
+                       How to Write A Git Commit Message
 
    [1]source
 

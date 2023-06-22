@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-DevOps.md
+                                   DevOps.md
 
-DevSecOps Tips and Tricks
+                           DevSecOps Tips and Tricks
 
   Artifactory & Docker
 

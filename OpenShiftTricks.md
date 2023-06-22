@@ -15,6 +15,11 @@
   * [DeploymentConfig:](#deploymentconfig)
   * [BuidConfig:](#buidconfig)
   * [ImageStream:](#imagestream)
+  * [Listing Users](#listing-users)
+  * [Listing Groups](#listing-groups)
+  * [Specific Action/resource Permissions For a Specific User](#specific-actionresource-permissions-for-a-specific-user)
+  * [To List All Permissions For a Specific User](#to-list-all-permissions-for-a-specific-user)
+  * [Same For A Groups Ex.:](#same-for-a-groups-ex)
 - [Role-Based Access Controls (RBAC)](#role-based-access-controls-rbac)
   * [Describe all Role-Based Access Controls](#describe-all-role-based-access-controls)
   * [Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server](#get-clusterrolebindings-crb-for-userserviceaccount-prometheus-server)
@@ -101,6 +106,38 @@ oc get bc '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{
 oc get is '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.tags[].from.name}{"\n"}{end}' -A|grep redhat
 ```
 
+<!-- TOC --><a name="listing-users"></a>
+#### Listing Users
+```
+$ oc get users
+```
+
+<!-- TOC --><a name="listing-groups"></a>
+#### Listing Groups
+```
+$ oc get groups
+```
+
+<!-- TOC --><a name="specific-actionresource-permissions-for-a-specific-user"></a>
+#### Specific Action/resource Permissions For a Specific User
+```
+$ oc auth can-i create configmap --as=<user>
+```
+
+<!-- TOC --><a name="to-list-all-permissions-for-a-specific-user"></a>
+#### To List All Permissions For a Specific User
+```
+$ oc auth can-i --as=<user> --list
+# As Yourself
+$ oc auth can-i --list
+```
+
+<!-- TOC --><a name="same-for-a-groups-ex"></a>
+#### Same For A Groups Ex.:
+```
+$ oc get groups
+$ oc auth can-i --as-group=<group> --list
+```
 <!-- TOC --><a name="role-based-access-controls-rbac"></a>
 ###  Role-Based Access Controls (RBAC)
 [RBAC References](https://docs.openshift.com/container-platform/4.9/authentication/using-rbac.html)

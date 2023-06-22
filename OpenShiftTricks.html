@@ -59,6 +59,11 @@ ul { color: blue; }
 <li><a href="#deploymentconfig">DeploymentConfig:</a></li>
 <li><a href="#buidconfig">BuidConfig:</a></li>
 <li><a href="#imagestream">ImageStream:</a></li>
+<li><a href="#listing-users">Listing Users</a></li>
+<li><a href="#listing-groups">Listing Groups</a></li>
+<li><a href="#specific-actionresource-permissions-for-a-specific-user">Specific Action/resource Permissions For a Specific User</a></li>
+<li><a href="#to-list-all-permissions-for-a-specific-user">To List All Permissions For a Specific User</a></li>
+<li><a href="#same-for-a-groups-ex">Same For A Groups Ex.:</a></li>
 <li><a href="#role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</a></li>
 <li><a href="#describe-all-role-based-access-controls">Describe all Role-Based Access Controls</a></li>
 <li><a href="#get-clusterrolebindings-crb-for-userserviceaccount-prometheus-server">Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server</a></li>
@@ -137,6 +142,34 @@ oc get PODMetrics # Resource Usage for all Running Pods in a Namespace
 <p><a name="imagestream"></a></p>
 <h4>ImageStream:</h4>
 <pre><code>oc get is '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.tags[].from.name}{&quot;\n&quot;}{end}' -A|grep redhat
+</code></pre>
+<!-- TOC -->
+<p><a name="listing-users"></a></p>
+<h4>Listing Users</h4>
+<pre><code>$ oc get users
+</code></pre>
+<!-- TOC -->
+<p><a name="listing-groups"></a></p>
+<h4>Listing Groups</h4>
+<pre><code>$ oc get groups
+</code></pre>
+<!-- TOC -->
+<p><a name="specific-actionresource-permissions-for-a-specific-user"></a></p>
+<h4>Specific Action/resource Permissions For a Specific User</h4>
+<pre><code>$ oc auth can-i create configmap --as=&lt;user&gt;
+</code></pre>
+<!-- TOC -->
+<p><a name="to-list-all-permissions-for-a-specific-user"></a></p>
+<h4>To List All Permissions For a Specific User</h4>
+<pre><code>$ oc auth can-i --as=&lt;user&gt; --list
+# As Yourself
+$ oc auth can-i --list
+</code></pre>
+<!-- TOC -->
+<p><a name="same-for-a-groups-ex"></a></p>
+<h4>Same For A Groups Ex.:</h4>
+<pre><code>$ oc get groups
+$ oc auth can-i --as-group=&lt;group&gt; --list
 </code></pre>
 <!-- TOC -->
 <p><a name="role-based-access-controls-rbac"></a></p>

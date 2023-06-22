@@ -14,4 +14,13 @@ git push --set-upstream origin master
 git push
 ```
 
+## Proxy and Certificates
+If you're using a proxy and get an SSL warning, try:
+```
+ env GIT_SSL_NO_VERIFY=true git ...
+```
+
+Git uses the standard environment variables, and proxies can be defined in
+config or .gitconfig files.
+'
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)

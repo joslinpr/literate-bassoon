@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-ServerTablePersonal.md
+                             ServerTablePersonal.md
 
-Personal Utility Servers
+                            Personal Utility Servers
 
             Name              Address
    computeone.pjoslin.com 193.122.144.194

@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-Filename of this file
+                            Filename of this file.md
 
-Subject of this file
+                            A Test file and Template
 
   Sections in this file
 

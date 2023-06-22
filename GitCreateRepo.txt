@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-GitCreateRepo.md
+                                GitCreateRepo.md
 
-How to Create a Repo from a Directory
+                     How to Create a Repo from a Directory
 
      • Create Repository in github.com
      • Go into the directory containing the project.
@@ -16,3 +16,12 @@ How to Create a Repo from a Directory
  git config --global push.default simple
  git push --set-upstream origin master
  git push
+
+                             Proxy and Certificates
+
+   If you’re using a proxy and get an SSL warning, try:
+
+  env GIT_SSL_NO_VERIFY=true git ...
+
+   Git uses the standard environment variables, and proxies can be defined in
+   config or .gitconfig files. ‘

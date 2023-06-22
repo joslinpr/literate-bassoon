@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-OpenShiftTricks.md
+                               OpenShiftTricks.md
 
-Miscellaneous OpenShift / Kubernetes Tricks
+                  Miscellaneous OpenShift / Kubernetes Tricks
 
      • [1]Get memory, resource usage for a pod
      • [2]Get an interactive shell in a pod
@@ -17,16 +17,21 @@ Miscellaneous OpenShift / Kubernetes Tricks
      • [9]DeploymentConfig:
      • [10]BuidConfig:
      • [11]ImageStream:
-     • [12]Role-Based Access Controls (RBAC)
-     • [13]Describe all Role-Based Access Controls
-     • [14]Get Clusterrolebindings (CRB) for user/serviceaccount
+     • [12]Listing Users
+     • [13]Listing Groups
+     • [14]Specific Action/resource Permissions For a Specific User
+     • [15]To List All Permissions For a Specific User
+     • [16]Same For A Groups Ex.:
+     • [17]Role-Based Access Controls (RBAC)
+     • [18]Describe all Role-Based Access Controls
+     • [19]Get Clusterrolebindings (CRB) for user/serviceaccount
        prometheus-server
-     • [15]Clusterroles (CR) for user/serviceaccount prometheus-server
-     • [16]Local Role Binding Operations
-     • [17]Cluster role binding operations
-     • [18]Converting json to yaml
-     • [19]Who’s using kafka?
-     • [20]Enable/Disable Cronjobs
+     • [20]Clusterroles (CR) for user/serviceaccount prometheus-server
+     • [21]Local Role Binding Operations
+     • [22]Cluster role binding operations
+     • [23]Converting json to yaml
+     • [24]Who’s using kafka?
+     • [25]Enable/Disable Cronjobs
 
   Get memory, resource usage for a pod
 
@@ -83,9 +88,32 @@ Miscellaneous OpenShift / Kubernetes Tricks
 
  oc get is '-o=jsonpath={range .items[*]}{"PRG_TEST"},{.metadata.namespace}{","}{.metadata.name}{","}{.spec.tags[].from.name}{"\n"}{end}' -A|grep redhat
 
+    Listing Users
+
+ $ oc get users
+
+    Listing Groups
+
+ $ oc get groups
+
+    Specific Action/resource Permissions For a Specific User
+
+ $ oc auth can-i create configmap --as=<user>
+
+    To List All Permissions For a Specific User
+
+ $ oc auth can-i --as=<user> --list
+ # As Yourself
+ $ oc auth can-i --list
+
+    Same For A Groups Ex.:
+
+ $ oc get groups
+ $ oc auth can-i --as-group=<group> --list
+
   Role-Based Access Controls (RBAC)
 
-   [21]RBAC References
+   [26]RBAC References
 
     Describe all Role-Based Access Controls
 
@@ -140,7 +168,7 @@ Miscellaneous OpenShift / Kubernetes Tricks
 
     Converting json to yaml
 
-   [22]Converting json to yaml
+   [27]Converting json to yaml
 
   Who’s using kafka?
 

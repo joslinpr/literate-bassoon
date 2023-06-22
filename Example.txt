@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-Example.md
+                                   Example.md
 
-Markdown
+                Markdown Examples - core syntax and extensions.
 
    A markdown example shows how to write a markdown file. This document
    integrates core syntax and extensions (GMF).
@@ -99,7 +99,7 @@ Markdown
 
                                  This is an H1
 
-This is an H2
+                                 This is an H2
 
    ══════════════════════════════════════════════════════════════════════════
 
@@ -120,7 +120,7 @@ This is an H2
 
    ══════════════════════════════════════════════════════════════════════════
 
-This is an H1
+                                 This is an H1
 
   This is an H2
 
@@ -137,7 +137,7 @@ This is an H1
 
    ══════════════════════════════════════════════════════════════════════════
 
-This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
+       This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
     Blockquotes
 
@@ -234,7 +234,7 @@ This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
    ══════════════════════════════════════════════════════════════════════════
 
-  This is a header.
+                                This is a header.
 
    >  1. This is the first list item.
    >  2. This is the second list item.
@@ -527,7 +527,7 @@ This is an H1 # ### This is an H2 ## #### This is an H3 ###### ***
 
    ══════════════════════════════════════════════════════════════════════════
 
-- - -
+                                     - - -
 
    ══════════════════════════════════════════════════════════════════════════
 

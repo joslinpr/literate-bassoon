@@ -1,4 +1,4 @@
-Table of Contents
+                               Table of Contents
 
      • [1]Using the Red Hat Support Tool (RHST) REST API
      • [2]Pre-Requisites
@@ -86,6 +86,10 @@ Table of Contents
 
      • [53]General Note
 
+                               Book of Knowledge
+
+                                RedHatSupport.md
+
                  Using the Red Hat Support Tool (RHST) REST API
 
    The Red Hat Support Tool (RHST) is a command line utility shipped in RHEL
@@ -106,7 +110,7 @@ Table of Contents
 
                                   The Commands
 
-1. listproducts - command to list products
+                   1. listproducts - command to list products
 
  curl -u <customer_portal_id> -X GET 'https://api.access.redhat.com/support/v2/products' | jq ".[].name"
 
@@ -114,7 +118,7 @@ Table of Contents
 
  curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v2/products' | jq ".[].name"
 
-2. listversions - command to list versions of a product
+            2. listversions - command to list versions of a product
 
  curl -u <customer_portal_id> -X GET 'https://api.access.redhat.com/support/v2/products/<urlencoded_product_name>/versions' | jq ".[].name"
 
@@ -123,7 +127,7 @@ Table of Contents
  Product: Red Hat Enterprise Linux
  curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v2/products/Red%20Hat%20Enterprise%20Linux/versions' | jq ".[].name"
 
-3. listattachments - command to list attachments for the specified support
+   3. listattachments - command to list attachments for the specified support
 
    case
 
@@ -133,7 +137,7 @@ Table of Contents
 
  curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/cases/02290113/attachments' | jq '. | [.| map(.) | .[] | {fileName: .fileName, uuid: .uuid, description: .description, size_in_bytes: .size}]'
 
-4. listentitlements - command to list your current entitlements
+        4. listentitlements - command to list your current entitlements
 
  curl -u <customer_portal_id> -X GET 'https://api.access.redhat.com/support/v1/entitlements?showAll=False'  | jq '. | [.| map(.) | .[] | {Name: .name, ServiceLevel: .serviceLevel, SLA: .slaProcessId, SupportLevel: .supportLevel, StartDate: .startDate, EndDate: .endDate}]'
 
@@ -141,7 +145,7 @@ Table of Contents
 
  curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/entitlements?showAll=False'  | jq '. | [.| map(.) | .[] | {Name: .name, ServiceLevel: .serviceLevel, SLA: .slaProcessId, SupportLevel: .supportLevel, StartDate: .startDate, EndDate: .endDate}]'
 
-5. listcasegroups - command to list case groups
+                5. listcasegroups - command to list case groups
 
  curl -u <customer_portal_id> -X GET 'https://api.access.redhat.com/support/v1/accounts/casegroups' | jq ".[].name"
 
@@ -154,7 +158,7 @@ Table of Contents
  curl -u <customer_portal_id> -X GET 'https://api.access.redhat.com/support/v1/accounts/casegroups/<case_group>'
  curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/accounts/casegroups/74975'
 
-6. listcases - command to list your open support cases.
+            6. listcases - command to list your open support cases.
 
    The listcases command comes with various sub-options, which are available
    as the POST data to be sent in the request. They are as below - *
@@ -200,7 +204,7 @@ Table of Contents
 
  curl -u jane.doe -X POST https://api.access.redhat.com/support/v1/cases/filter -H 'accept: application/json' -H 'content-type: application/json' -d '{"includeClosed": false, "maxResults": 50, "offset": 0, "sortField": "caseNumber", "sortOrder": "DESC", "groupNumbers": ["74973", "74975"], "onlyUngrouped": false}'
 
-7. getcase - command to find a specific case by number.
+            7. getcase - command to find a specific case by number.
 
  * To get all case details.
 
@@ -221,7 +225,7 @@ Table of Contents
  curl -u <customer_portal_id> -X GET 'https://api.access.redhat.com/support/v1/cases/<case_number>' | jq '.comments | [.| map(.) | .[] | {comment: .commentBody, Author: .lastModifiedById, Date: .lastModifiedDate}]'
  curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/cases/02290113' | jq '.comments | [.| map(.) | .[] | {comment: .commentBody, Author: .lastModifiedById, Date: .lastModifiedDate}]'
 
-8. addattachment - command to add an attachment to a case.
+           8. addattachment - command to add an attachment to a case.
 
  * Refer to the Red Hat Secure FTP - User Guide . There is no upload size limit for SFTP.
  * For https uploads, refer to the following. Please note this has a size limit of 1GB.
@@ -232,7 +236,7 @@ Table of Contents
 
  curl -u jane.doe -F "file=@/tmp/my_sosreport" -F "description=Sosreport for case" -X POST https://api.access.redhat.com/support/v1/cases/02290113/attachments/ -D -
 
-9. getattachment - command to find a specific attachment by uuid.
+       9. getattachment - command to find a specific attachment by uuid.
 
    For downloading an attachment, there are two steps involved :- * Fetch the
    download link
@@ -267,7 +271,7 @@ Table of Contents
  curl --fail -L -u jane.doe -X GET https://attachments.access.redhat.com/hydra/rest/cases/02290113/attachments/6ec52168-f043-47d7-853a-65cf38d5bdc1 -o /tmp/downloaded_file
  wget --content-disposition --user jane.doe --ask-password  https://attachments.access.redhat.com/hydra/rest/cases/02290113/attachments/6ec52168-f043-47d7-853a-65cf38d5bdc1
 
-10. modifycase
+                                 10. modifycase
 
    For modifying a case, we have the following options in RHST.
 
@@ -354,7 +358,7 @@ Table of Contents
 
  curl -u jane.doe -X PUT https://api.access.redhat.com/support/v1/cases/02290113 -d '{"product":"Red Hat Enterprise Linux","version":"8.0"}'
 
-11. opencase - command to open a new support case.
+               11. opencase - command to open a new support case.
 
     To see the recommendations before opening the case.
 
@@ -376,7 +380,7 @@ Table of Contents
 
  curl -u jane.doe -X POST https://api.access.redhat.com/support/v1/cases -H 'accept: application/json' -H 'content-type: application/json' -d '{"summary": "Test Summary", "description": "This is test description for new case created", "product": "Red Hat Enterprise Linux","version": "7.9","caseType": "Defect / Bug","severity": "3 (Normal)", "groupNumber": "74975"}'
 
-12. addcomment - command to add a comment to a case.
+              12. addcomment - command to add a comment to a case.
 
  curl -u <customer_portal_id> -X POST https://api.access.redhat.com/support/v1/cases/<case_number>/comments -H 'accept: application/json' -H 'content-type: application/json'  -d '{"caseNumber": "<case_number>", "commentBody": "<Comment_text>"}'
 
@@ -384,7 +388,7 @@ Table of Contents
 
  curl -u jane.doe -X POST https://api.access.redhat.com/support/v1/cases/02290113/comments -H 'accept: application/json' -H 'content-type: application/json'  -d '{"caseNumber": "02290113", "commentBody": "This is my comment text"}'
 
-13. kb - command to find a knowledge base solution by ID
+            13. kb - command to find a knowledge base solution by ID
 
    Please first check the /solutions endpoint. If the response from this is
    404, then check the /articles endpoint. Hence, both curls are given below.
@@ -405,7 +409,7 @@ Table of Contents
 
  curl -u jane.doe -X GET 'https://api.access.redhat.com/support/v1/articles/3724231' | jq '{Title: .title, URL: .viewURI, Created_at: .createdDate, Last_Modified_Date: .lastModifiedDate, Body: .body.text}'
 
-14. search - command to search the entire knowledge base for solutions
+     14. search - command to search the entire knowledge base for solutions
 
  curl -u <customer_portal_id> -X POST --header 'Content-Type: application/json' --header 'Accept: application/json'  -d '{ "start":0, "rows":50, "q":"<text_to_be_searched>", "expression":"fq=documentKind%3A%22Solution%22"}' 'https://api.access.redhat.com/support/search/v2/kcs' | jq '.response.docs | [.| map(.) | .[] | {url: .view_uri, Title: .allTitle, Abstract: .abstract}]'
 
@@ -416,7 +420,7 @@ Table of Contents
 
  curl -u jane.doe -X POST --header 'Content-Type: application/json' --header 'Accept: application/json'  -d '{ "start":0, "rows":50, "q":"libvirt error code: 1, message: internal error HTTP response code 404", "expression":"fq=documentKind%3A%22Solution%22"}' 'https://api.access.redhat.com/support/search/v2/kcs' | jq '.response.docs | [.| map(.) | .[] | {url: .view_uri, Title: .allTitle, Abstract: .abstract}]'
 
-15. diagnose - command to send text to Red Hat for analysis.
+          15. diagnose - command to send text to Red Hat for analysis.
 
  curl -u <customer_portal_id> -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ "summary": "<plain_text_for_analysis>"}' https://api.access.redhat.com/support/search/recommendations | jq '.response.docs | [.| map(.) | .[] | {url: .view_uri, Title: .allTitle}]'
 

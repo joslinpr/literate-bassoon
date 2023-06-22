@@ -1,12 +1,12 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-Unicode.md
+                                   Unicode.md
 
-Tips for Unicode
+                                Tips for Unicode
 
-Composing Unicode
+                               Composing Unicode
 
      • [1]The Official Character Code Charts
      • [2]More Unicode than you knew existed

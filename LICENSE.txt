@@ -1,10 +1,12 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-LICENSE.md
+                                   LICENSE.md
 
-  Creative Commons License
+                    The license for Paul’s Book of Knowledge
+
+                          The Creative Commons License
 
    Book Of Knowledge by Paul R. Joslin is licensed under a Creative Commons
    Attribution 4.0 International License.

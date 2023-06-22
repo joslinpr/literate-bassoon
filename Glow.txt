@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-Glow.md
+                                    Glow.md
 
-Installing Glow (charmbracelet/glow)
+                      Installing Glow (charmbracelet/glow)
 
   TUI Markdown Reader and Directory Navigator
 

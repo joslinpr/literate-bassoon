@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-Dotfiles.md
+                                  Dotfiles.md
 
-LinuxDotfiles - DotFiles For Linux/Unix Accounts
+                LinuxDotfiles - DotFiles For Linux/Unix Accounts
 
   Directory Structure
 

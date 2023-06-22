@@ -53,4 +53,11 @@ git remote add origin git@git.dhl.com:pjoslin/&lt;repo-name&gt;
 git config --global push.default simple
 git push --set-upstream origin master
 git push
-</code></pre></body> </html> <!-- vim: set ai si nu :-->
+</code></pre>
+<h2>Proxy and Certificates</h2>
+<p>If you&rsquo;re using a proxy and get an SSL warning, try:</p>
+<pre><code> env GIT_SSL_NO_VERIFY=true git ...
+</code></pre>
+<p>Git uses the standard environment variables, and proxies can be defined in
+config or .gitconfig files.
+&lsquo;</p></body> </html> <!-- vim: set ai si nu :-->

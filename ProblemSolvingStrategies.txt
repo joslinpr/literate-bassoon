@@ -1,10 +1,10 @@
-Table of Contents
+                               Table of Contents
 
                                Book of Knowledge
 
-Strategies.md
+                                 Strategies.md
 
-Strategies for Solving Problems
+                        Strategies for Solving Problems
 
   Book of Knowledge
 
