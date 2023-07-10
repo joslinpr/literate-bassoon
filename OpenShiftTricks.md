@@ -122,6 +122,8 @@ $ oc get groups
 #### Specific Action/resource Permissions For a Specific User
 ```
 $ oc auth can-i create configmap --as=<user>
+# Note this differs from --user, which tells the oc command which
+# kubeconfig entry to use.
 ```
 
 <!-- TOC --><a name="to-list-all-permissions-for-a-specific-user"></a>
