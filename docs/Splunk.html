@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US" style="scroll-behavior: auto; "> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+           href="https://fonts.googleapis.com/css2?family=Playfair&family=Playfair%20Display&family=Crimson+Pro&family=Literata"
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<style>
+a { color: blue;  background-color: rgb(230 230 240 / 50%); }
+a:visited { color: green;  background-color: rgb(230 230 240 / 50%); }
+blockquote { background-color:  rgb(230 230 240 / 50%); color: blue; }
+body { background-color: #fdfdfd; color: black; font-family: 'Playfair',
+    'Georgia', Serif; font-size: 16px}
+code { background-color:  #f5f5f5; color: black; }
+div { color: blue; }
+em { color: blue; }
+h1,h2 { border: 1px solid; font-size: 48px; text-align: center; }
+h3,h4,h5,h6,{border-bottom: 1px solid;}
+h1,h2,h3,h4,h5,h6 { color: blue;  background-color: #e5effb; font-family: "Playfair Display", Playfair, Verdana, Serif;}
+head { color: blue;  background-color: #e5effb;}
+hr { color: blue; }
+img { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
+li { color: blue; }
+ol { color: blue; }
+pre { background-color:  #f5f5f5; color: black; }
+span { color: blue; }
+strong { color: blue; }
+style { color: blue; }
+table { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
+tbody { color: blue; }
+td { color: blue; border-right: 1px solid; border-bottom: 1px solid; }
+th { color: black;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: #e5effb;}
+thead { color: blue; }
+tr { color: blue; }
+ul { color: blue; }
+.toc { background-color: wheat; border: brown 1px solid;}
+</style>
+</head>
+<body> <!-- vim: set ai si nu :-->
+<h2>Table of Contents</h2>
+<h2>Splunk.md</h2>
+<h2>Splunk Tricks</h2>
+<h3>Roles</h3>
+<p>What roles do I have?</p>
+<pre><code>| rest /services/authentication/current-context splunk_server=local | table title roles
+</code></pre>
+<h3>List Indices</h3>
+<p>To omit internal indices, remove <code>index=_*</code>.</p>
+<pre><code>| eventcount summarize=false index=* index=_* | dedup index | fields index
+</code></pre>
+<h3>List Sourcetype for each Index</h3>
+<pre><code>| tstats count WHERE index=* OR sourcetype=* by index,sourcetype |
+  stats values(sourcetype) AS sourcetypes by index
+</code></pre>
+<p>if you only need it from one index, use</p>
+<pre><code>| tstats count WHERE index=ecs_am_webv4 AND sourcetype=* by index,sourcetype |
+  stats values(sourcetype) AS sourcetypes by index
+</code></pre>
+<h3>Count all pods used by ecs-am</h3>
+<p><a href="https://ocp-dev.splunk.dhl.com:8000/">Dev Splunk</a></p>
+<pre><code>index=&quot;ecs_am_viewpoint&quot; OR
+index=&quot;ecs_am_webv4&quot; OR
+index=&quot;gbs_its_openshift_ecs-am-ramp&quot; OR
+index=&quot;gbs_its_openshift_ecs_am_viewpoint&quot;
+(sourcetype=*) (openshift_cluster=usqasocp001.dhl.com) (openshift_namespace = ecs-am-*) |
+fields openshift_namespace, openshift_pod_name, sourcetype, _time |
+eval pod_type=openshift_pod_name |
+rex field=pod_type &quot;s/-[a-z0-9]+[0-9].*$//&quot; mode=sed |
+stats distinct_count(openshift_pod_name) by openshift_namespace,pod_type
+</code></pre>
+<p><a href="https://splunk.dhl.com/">Prod Splunk</a></p>
+<pre><code>index=&quot;gbs_its_openshift_ecs-am-ramp&quot; OR
+index=&quot;ecs_am_webv4&quot; OR
+index=&quot;gbs_its_openshift_ecs_am_viewpoint&quot;
+(sourcetype=*) (openshift_cluster=usqasocp001.dhl.com) (openshift_namespace = ecs-am-*) |
+fields openshift_namespace, openshift_pod_name, sourcetype, _time |
+eval pod_type=openshift_pod_name |
+rex field=pod_type &quot;s/-[a-z0-9]+[0-9].*$//&quot; mode=sed |
+stats distinct_count(openshift_pod_name) by openshift_namespace,pod_type
+</code></pre>
+<h3>Oldest and Newest Records</h3>
+<pre><code>index=&quot;gbs_its_pds_infra_openshift_outcold&quot;
+(sourcetype=openshift_stats_v2_cgroup) |
+stats earliest(_time) AS first, latest(_time) as last |
+eval myfirst=strftime(first,&quot;%Y-%m-%dT%H:%M:%S.%Q&quot;) |
+eval mylast=strftime(last,&quot;%m-%dT%H:%M:%S.%Q&quot;)
+</code></pre>
+<h4>Same, for each sourcetype</h4>
+<pre><code>index=gbs_its_openshift_ecs_am_viewpoint
+(sourcetype=*) |
+stats earliest(_time) AS first, latest(_time) as last by sourcetype |
+eval myfirst=strftime(first,&quot;%Y-%m-%dT%H:%M:%S.%Q&quot;), mylast=strftime(last,&quot;%m-%dT%H:%M:%S.%Q&quot;)`
+</code></pre></body> </html> <!-- vim: set ai si nu :-->

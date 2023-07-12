@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US" style="scroll-behavior: auto; "> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+           href="https://fonts.googleapis.com/css2?family=Playfair&family=Playfair%20Display&family=Crimson+Pro&family=Literata"
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<style>
+a { color: blue;  background-color: rgb(230 230 240 / 50%); }
+a:visited { color: green;  background-color: rgb(230 230 240 / 50%); }
+blockquote { background-color:  rgb(230 230 240 / 50%); color: blue; }
+body { background-color: #fdfdfd; color: black; font-family: 'Playfair',
+    'Georgia', Serif; font-size: 16px}
+code { background-color:  #f5f5f5; color: black; }
+div { color: blue; }
+em { color: blue; }
+h1,h2 { border: 1px solid; font-size: 48px; text-align: center; }
+h3,h4,h5,h6,{border-bottom: 1px solid;}
+h1,h2,h3,h4,h5,h6 { color: blue;  background-color: #e5effb; font-family: "Playfair Display", Playfair, Verdana, Serif;}
+head { color: blue;  background-color: #e5effb;}
+hr { color: blue; }
+img { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
+li { color: blue; }
+ol { color: blue; }
+pre { background-color:  #f5f5f5; color: black; }
+span { color: blue; }
+strong { color: blue; }
+style { color: blue; }
+table { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
+tbody { color: blue; }
+td { color: blue; border-right: 1px solid; border-bottom: 1px solid; }
+th { color: black;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: #e5effb;}
+thead { color: blue; }
+tr { color: blue; }
+ul { color: blue; }
+.toc { background-color: wheat; border: brown 1px solid;}
+</style>
+</head>
+<body> <!-- vim: set ai si nu :-->
+<h2>Table of Contents</h2>
+<!-- TOC -->
+<p><a name="openshifttricksmd"></a></p>
+<h2>OpenShiftTricks.md</h2>
+<!-- TOC -->
+<p><a name="miscellaneous-openshift-kubernetes-tricks"></a></p>
+<h2>Miscellaneous OpenShift / Kubernetes Tricks</h2>
+<!-- TOC start -->
+<ul>
+<li><a href="#get-memory-resource-usage-for-a-pod">Get memory, resource usage for a pod</a></li>
+<li><a href="#get-an-interactive-shell-in-a-pod">Get an interactive shell in a pod</a></li>
+<li><a href="#get-an-interactive-shell-on-a-node">Get an interactive shell on a node</a></li>
+<li><a href="#get-various-info-via-cli">Get Various Info via CLI:</a></li>
+<li><a href="#get-auth-token">Get Auth Token:</a></li>
+<li><a href="#pod">Pod:</a></li>
+<li><a href="#deployment">Deployment:</a></li>
+<li><a href="#statefullset">Statefullset:</a></li>
+<li><a href="#deploymentconfig">DeploymentConfig:</a></li>
+<li><a href="#buidconfig">BuidConfig:</a></li>
+<li><a href="#imagestream">ImageStream:</a></li>
+<li><a href="#listing-users">Listing Users</a></li>
+<li><a href="#listing-groups">Listing Groups</a></li>
+<li><a href="#specific-actionresource-permissions-for-a-specific-user">Specific Action/resource Permissions For a Specific User</a></li>
+<li><a href="#to-list-all-permissions-for-a-specific-user">To List All Permissions For a Specific User</a></li>
+<li><a href="#same-for-a-groups-ex">Same For A Groups Ex.:</a></li>
+<li><a href="#role-based-access-controls-rbac">Role-Based Access Controls (RBAC)</a></li>
+<li><a href="#describe-all-role-based-access-controls">Describe all Role-Based Access Controls</a></li>
+<li><a href="#get-clusterrolebindings-crb-for-userserviceaccount-prometheus-server">Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server</a></li>
+<li><a href="#clusterroles-cr-for-userserviceaccount-prometheus-server">Clusterroles (CR) for user/serviceaccount prometheus-server</a></li>
+<li><a href="#local-role-binding-operations">Local Role Binding Operations</a></li>
+<li><a href="#cluster-role-binding-operations">Cluster role binding operations</a></li>
+<li><a href="#converting-json-to-yaml">Converting json to yaml</a></li>
+<li><a href="#whos-using-kafka">Who&rsquo;s using kafka?</a></li>
+<li><a href="#enabledisable-cronjobs">Enable/Disable Cronjobs</a></li>
+</ul>
+<!-- TOC end -->
+
+<!-- TOC -->
+<p><a name="get-memory-resource-usage-for-a-pod"></a></p>
+<h3>Get memory, resource usage for a pod</h3>
+<pre><code>$ oc project ecs-am-ramp-sit-cvg
+$ oc exec sit-cvg-amp-38-hqscx -- cat /sys/fs/cgroup/memory/memory.usage_in_bytes
+# For all running pods in a namespace, use PODMetrics
+$ oc get PODMetrics
+</code></pre>
+<!-- TOC -->
+<p><a name="get-an-interactive-shell-in-a-pod"></a></p>
+<h3>Get an interactive shell in a pod</h3>
+<pre><code>$ oc exec -it sit-cvg-amp-38-hqscx -- /bin/bash
+</code></pre>
+<ul>
+<li>-i: interactive</li>
+<li>-t: create a TTY</li>
+</ul>
+<!-- TOC -->
+<p><a name="get-an-interactive-shell-on-a-node"></a></p>
+<h3>Get an interactive shell on a node</h3>
+<pre><code>$ oc debug -n default debug/&lt;nodename&gt;
+</code></pre>
+<ul>
+<li>Use &ldquo;chroot /hosts&rdquo; to access host instead of container</li>
+<li>You must specify a namespace that does not have a quota.</li>
+</ul>
+<!-- TOC -->
+<p><a name="get-various-info-via-cli"></a></p>
+<h3>Get Various Info via CLI:</h3>
+<!-- TOC -->
+<p><a name="get-auth-token"></a></p>
+<h4>Get Auth Token:</h4>
+<p>You must already be logged in.</p>
+<pre><code>TOKEN=$(oc whomai --show-token)
+</code></pre>
+<!-- TOC -->
+<p><a name="pod"></a></p>
+<h4>Pod:</h4>
+<pre><code>oc get po '-o=jsonpath={range .items[*]}{&quot;PROG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.containers[].image}{&quot;\n&quot;}' -A |grep redhat
+
+oc get PODMetrics # Resource Usage for all Running Pods in a Namespace
+</code></pre>
+<!-- TOC -->
+<p><a name="deployment"></a></p>
+<h4>Deployment:</h4>
+<pre><code>oc get deployment '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.spec.template.spec.containers[].name}{&quot;,&quot;}{.spec.template.spec.containers[].image}{&quot;\n&quot;}' -A|grep redhat
+</code></pre>
+<!-- TOC -->
+<p><a name="statefullset"></a></p>
+<h4>Statefullset:</h4>
+<pre><code>oc get sts '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.spec.template.spec.containers[].name}{&quot;,&quot;}{.spec.template.spec.containers[].image}{&quot;\n&quot;}' -A|grep redhat
+</code></pre>
+<!-- TOC -->
+<p><a name="deploymentconfig"></a></p>
+<h4>DeploymentConfig:</h4>
+<pre><code>oc get dc '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.spec.template.spec.containers[].name}{&quot;,&quot;}{.spec.template.spec.containers[].image}{&quot;\n&quot;}' -A|grep redhat
+</code></pre>
+<!-- TOC -->
+<p><a name="buidconfig"></a></p>
+<h4>BuidConfig:</h4>
+<pre><code>oc get bc '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.triggers[].imageChange.lastTriggeredImageID}{&quot;\n&quot;}{end}' -A|grep redhat
+</code></pre>
+<!-- TOC -->
+<p><a name="imagestream"></a></p>
+<h4>ImageStream:</h4>
+<pre><code>oc get is '-o=jsonpath={range .items[*]}{&quot;PRG_TEST&quot;},{.metadata.namespace}{&quot;,&quot;}{.metadata.name}{&quot;,&quot;}{.spec.tags[].from.name}{&quot;\n&quot;}{end}' -A|grep redhat
+</code></pre>
+<!-- TOC -->
+<p><a name="listing-users"></a></p>
+<h4>Listing Users</h4>
+<pre><code>$ oc get users
+</code></pre>
+<!-- TOC -->
+<p><a name="listing-groups"></a></p>
+<h4>Listing Groups</h4>
+<pre><code>$ oc get groups
+</code></pre>
+<!-- TOC -->
+<p><a name="specific-actionresource-permissions-for-a-specific-user"></a></p>
+<h4>Specific Action/resource Permissions For a Specific User</h4>
+<pre><code>$ oc auth can-i create configmap --as=&lt;user&gt;
+# Note this differs from --user, which tells the oc command which
+# kubeconfig entry to use.
+</code></pre>
+<!-- TOC -->
+<p><a name="to-list-all-permissions-for-a-specific-user"></a></p>
+<h4>To List All Permissions For a Specific User</h4>
+<pre><code>$ oc auth can-i --as=&lt;user&gt; --list
+# As Yourself
+$ oc auth can-i --list
+</code></pre>
+<!-- TOC -->
+<p><a name="same-for-a-groups-ex"></a></p>
+<h4>Same For A Groups Ex.:</h4>
+<pre><code>$ oc get groups
+$ oc auth can-i --as-group=&lt;group&gt; --list
+</code></pre>
+<!-- TOC -->
+<p><a name="role-based-access-controls-rbac"></a></p>
+<h3>Role-Based Access Controls (RBAC)</h3>
+<p><a href="https://docs.openshift.com/container-platform/4.9/authentication/using-rbac.html">RBAC References</a></p>
+<!-- TOC -->
+<p><a name="describe-all-role-based-access-controls"></a></p>
+<h4>Describe all Role-Based Access Controls</h4>
+<p><code>oc describe clusterrole.rbac</code></p>
+<!-- TOC -->
+<p><a name="get-clusterrolebindings-crb-for-userserviceaccount-prometheus-server"></a></p>
+<h4>Get Clusterrolebindings (CRB) for user/serviceaccount prometheus-server</h4>
+<p><code>oc get clusterrolebindings -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'</code></p>
+<!-- TOC -->
+<p><a name="clusterroles-cr-for-userserviceaccount-prometheus-server"></a></p>
+<h4>Clusterroles (CR) for user/serviceaccount prometheus-server</h4>
+<p><code>oc get clusterroles -o json | jq '.items[] | select(.metadata.name=="prometheus-server")'</code></p>
+<!-- TOC -->
+<p><a name="local-role-binding-operations"></a></p>
+<h4>Local Role Binding Operations</h4>
+<p><code>$ oc adm policy who-can &lt;verb&gt; &lt;resource&gt;</code> Indicates which users can perform an action on a resource.</p>
+<p><code>$ oc adm policy add-role-to-user &lt;role&gt; &lt;username&gt;</code> Binds a specified role to specified users in the current project.</p>
+<p><code>$ oc adm policy remove-role-from-user &lt;role&gt; &lt;username&gt;</code> Removes a given role from specified users in the current project.</p>
+<p><code>$ oc adm policy remove-user &lt;username&gt;</code> Removes specified users and all of their roles in the current project.</p>
+<p><code>$ oc adm policy add-role-to-group &lt;role&gt; &lt;groupname&gt;</code> Binds a given role to specified groups in the current project.</p>
+<p><code>$ oc adm policy remove-role-from-group &lt;role&gt; &lt;groupname&gt;</code> Removes a given role from specified groups in the current project.</p>
+<p><code>$ oc adm policy remove-group &lt;groupname&gt;</code> Removes specified groups and all of their roles in the current project.</p>
+<!-- TOC -->
+<p><a name="cluster-role-binding-operations"></a></p>
+<h4>Cluster role binding operations</h4>
+<p><code>$ oc adm policy add-cluster-role-to-user &lt;role&gt; &lt;username&gt;</code> Binds a given role to specified users for all projects in the cluster.</p>
+<p><code>$ oc adm policy remove-cluster-role-from-user &lt;role&gt; &lt;username&gt;</code> Removes a given role from specified users for all projects in the cluster.</p>
+<p><code>$ oc adm policy add-cluster-role-to-group &lt;role&gt; &lt;groupname&gt;</code> Binds a given role to specified groups for all projects in the cluster.</p>
+<p><code>$ oc adm policy remove-cluster-role-from-group &lt;role&gt; &lt;groupname&gt;</code> Removes a given role from specified groups for all projects in the cluster.</p>
+<!-- TOC -->
+<p><a name="converting-json-to-yaml"></a></p>
+<h4>Converting json to yaml</h4>
+<p><a href="./JSON.md">Converting json to yaml</a></p>
+<!-- TOC -->
+<p><a name="whos-using-kafka"></a></p>
+<h3>Who&rsquo;s using kafka?</h3>
+<pre><code>$ oc get kafka --all-namespaces
+</code></pre>
+<!-- TOC -->
+<p><a name="enabledisable-cronjobs"></a></p>
+<h3>Enable/Disable Cronjobs</h3>
+<pre><code>$ oc patch cronjobs &lt;job-name&gt; -p '{&quot;spec&quot; : {&quot;suspend&quot; : true }}' -n &lt;namespace&gt;
+$ oc patch cronjobs &lt;job-name&gt; -p '{&quot;spec&quot; : {&quot;suspend&quot; : false }}' -n &lt;namespace&gt;
+</code></pre></body> </html> <!-- vim: set ai si nu :-->

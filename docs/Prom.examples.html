@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US" style="scroll-behavior: auto; "> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+           href="https://fonts.googleapis.com/css2?family=Playfair&family=Playfair%20Display&family=Crimson+Pro&family=Literata"
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<style>
+a { color: blue;  background-color: rgb(230 230 240 / 50%); }
+a:visited { color: green;  background-color: rgb(230 230 240 / 50%); }
+blockquote { background-color:  rgb(230 230 240 / 50%); color: blue; }
+body { background-color: #fdfdfd; color: black; font-family: 'Playfair',
+    'Georgia', Serif; font-size: 16px}
+code { background-color:  #f5f5f5; color: black; }
+div { color: blue; }
+em { color: blue; }
+h1,h2 { border: 1px solid; font-size: 48px; text-align: center; }
+h3,h4,h5,h6,{border-bottom: 1px solid;}
+h1,h2,h3,h4,h5,h6 { color: blue;  background-color: #e5effb; font-family: "Playfair Display", Playfair, Verdana, Serif;}
+head { color: blue;  background-color: #e5effb;}
+hr { color: blue; }
+img { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
+li { color: blue; }
+ol { color: blue; }
+pre { background-color:  #f5f5f5; color: black; }
+span { color: blue; }
+strong { color: blue; }
+style { color: blue; }
+table { color: blue; border: 1px solid rgba(0, 0, 0, 0.8);}
+tbody { color: blue; }
+td { color: blue; border-right: 1px solid; border-bottom: 1px solid; }
+th { color: black;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: #e5effb;}
+thead { color: blue; }
+tr { color: blue; }
+ul { color: blue; }
+.toc { background-color: wheat; border: brown 1px solid;}
+</style>
+</head>
+<body> <!-- vim: set ai si nu :-->
+<h2>Table of Contents</h2>
+<h2>Prom.examples.md</h2>
+<h2>Prometheus Query Examples</h2>
+<h3>Infra Nodes</h3>
+<pre><code>sort_desc(sum by (cpu,id,pod_name,container_name) (rate(container_cpu_usage_seconds_total{type=&quot;infra&quot;}[5m])))
+</code></pre>
+<h3>Number of containers by cluster and namespace without CPU limits</h3>
+<pre><code>count by (namespace)(sum by (namespace,pod,container)(kube_pod_container_info{container!=&quot;&quot;}) unless sum by (namespace,pod,container)(kube_pod_container_resource_limits{resource=&quot;cpu&quot;})
+</code></pre>
+<h3>Count of pods per cluster and namespace</h3>
+<pre><code>sum by (namespace) (kube_pod_info)))
+</code></pre>
+<h3>CPU USage per namespace</h3>
+<pre><code>sort_desc(sum by (namespace) (rate(container_cpu_usage_seconds_total[5m])))
+</code></pre>
+<h3>CPU overcommit</h3>
+<p>CPU limits over the capacity of the cluster is a scenario you need to avoid. Otherwise, you’ll end up with CPU throttling issues. You can detect CPU overcommit with the following query.</p>
+<pre><code>sum(kube_pod_container_resource_limits{resource=&quot;cpu&quot;}) - sum(kube_node_status_capacity_cpu_cores)
+</code></pre>
+<h3>Kafka Disk Space Available</h3>
+<pre><code># data-kafka-copy-kafka-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-copy-k.*&quot;}
+# data-kafka-copy-zookeeper-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-copy-z.*&quot;}
+# data-kafka-kafka-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-k.*&quot;}
+# data-kafka-zookeeper-*
+kubelet_volume_stats_available_bytes{persistentvolumeclaim=~&quot;data-kafka-z.*&quot;}
+</code></pre>
+<h3>Network by workload: pod, namespace, interface</h3>
+<pre><code>(sum(irate(container_network_receive_bytes_total{namespace='ecs-am-ramp-webapps-prd',pod=~'api-label.+'}[1m])) by (pod, namespace, interface)) + on(namespace,pod,interface) group_left(network_name) ( pod_network_name_info )
+</code></pre></body> </html> <!-- vim: set ai si nu :-->

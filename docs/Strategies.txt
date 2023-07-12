@@ -1,0 +1,27 @@
+                               Table of Contents
+
+                        Strategies for Solving Problems
+
+    1. Google It Search for the error message on Google.
+
+          • Learn quality sources for answers (StackOverFlow,
+            sort.veritas.com, redhat.com, etc).
+
+    2. GSN Closed Incidents Search for the error message or other indications
+       in Global Service Now. Search for the host to see if the problem has
+       occurred before, and what the solution was.
+
+    3. GSN KB GSN has a knowledge base. It’s not used extensively by the
+       Linux/Unix teams, but might have something worthwhile.’
+
+    4. [1]OpsWiki
+
+    5. Teams Channel Wikis
+
+          • [2]Americas OPS Linux / HP-UX
+          • [3]Global OPS UNIX
+          • [4]GLOBAL-OPS.LINUX Empty at the moment.
+
+    6. Howdoi
+
+          • [5]howdoi Instant coding answers via the command line

@@ -1,0 +1,16 @@
+                               Table of Contents
+
+                                    Glow.md
+
+                      Installing Glow (charmbracelet/glow)
+
+  TUI Markdown Reader and Directory Navigator
+
+   [1]URL
+
+   Glow can be downloaded from the [2]Releases page, or built if Go 1.13+ is
+   installed:
+
+ git clone https://github.com/charmbracelet/glow.git
+ cd glow
+ go build

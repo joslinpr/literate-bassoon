@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+HUGOHOME=/home/pjoslin/Projects/quickstart
+HUGODOCS=/home/pjoslin/Projects/quickstart/content/docs
+
+if [ ! -d $HUGODOCS ]
+then
+	printf "Please specify where hugo is installed.\n"
+	exit 1
+fi
+shopt -s extglob
+DEBUG=0
+J=0
+for FILE in *.md;
+do
+	TITLE=${FILE%.md}
+	DATE=$( date -Iseconds)
+	OFILE=$HUGODOCS/$FILE
+	((J+=10))
+	cat > $OFILE <<-HERE
+	---
+	title: "$FILE"
+	date: $DATE
+	draft: false
+	TableOfContents: true
+	weight: $J
+	---
+HERE
+cat $FILE >> $OFILE
+echo $FILE
+# BLURB=$(grep '^##[^#]' "${j}.md" | grep -v "\.md" | head -1)
+#     BLURB=${BLURB##*([#[:blank:]])}
+#     BLURB="${BLURB:=No Description Available}"
+#     ((DEBUG > 0)) && printf "\t%s B->\t<%s>\n" "$i" "$BLURB" >&2
+#     printf -- "- [%s](./%s)\t%s\n" "$j" "$i" "${BLURB:=No Description Available}";
+done
+# vim: set ai noet nu cin sts=4 sw=4 ts=4 tw=78 filetype=sh :
