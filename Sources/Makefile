@@ -95,7 +95,7 @@ Makefile :
 	@chmod 744 $@ $?
 	make clean all
 
-$(SENTINAL) : $(FILES) Makefile
+$(SENTINAL) : $(FILES) Makefile index.html
 	touch $(SENTINAL)
 	@chmod 600 $(SENTINAL)
 
@@ -139,10 +139,13 @@ hugo: $(HUGOFILES)
 toc:
 	@printf "Use bitdowntoc_linux --max-level -1 -o Outfile.md  Infile.md\n"
 
-.index.md: $(FILES)
+$(STAGEDIR)/.index.md: $(FILES)
 	./MakeIndex
 	cp $(STAGEDIR)/.index.md .
-	cp $(STAGEDIR)/.index.md $(SRCDIR)/index.md
+	# cp $(STAGEDIR)/.index.md $(SRCDIR)/index.md
+
+.index.md: $(STAGEDIR)/.index.md
+	cp $(STAGEDIR)/.index.md .
 
 index.html:  .index.md
 	$(MD2HTML)

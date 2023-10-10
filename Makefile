@@ -14,24 +14,35 @@ ELINKS := /usr/bin/elinks
 GLOWARGS := -w 120
 EARGS := -dump -dump-charset UTF-8 --no-references
 RSYNC := /usr/bin/rsync
+RSYNCARGS := -avc
 SHELL := /usr/bin/bash
 MD := /usr/local/bin/markdown_py
 MDOPTS := -x extra -x smarty -x sane_lists
 # MDOPTS := -x extra -x smarty -x sane_lists -x toc
 .SHELLFLAGS := -euc
 
+#################### Directories
+INSTALLDIR=$(HOME)/BoK
+INSTALLHUGO=$(HOME)/Projects/quickstart/content/docs
+SRCDIR=./Sources
+HUGODIR=$(PWD)/Hugo
+STAGEDIR=./Staging
+TESTDIR=$(HOME)/Downloads
+VPATH=.:$(SRCDIR)
+
 #################### Targets
 SENTINAL  := .uptodate
-SRCS      = $(sort $(wildcard *.md))
-TXTFILES  = $(patsubst %.md,%.txt,$(SRCS))
-HTMLFILES = $(patsubst %.md,%.html,$(SRCS))
-FILES     = $(sort $(TXTFILES) $(HTMLFILES))
+# SRCS      = $(sort $(wildcard *.md))
+SRCS      = $(sort $(wildcard $(SRCDIR)/*.md))
+MDFILES  = $(subst $(SRCDIR),$(STAGEDIR),$(SRCS))
+TXTFILES  = $(patsubst %.md,%.txt,$(MDFILES))
+HTMLFILES = $(patsubst %.md,%.html,$(MDFILES))
+FILES     = $(sort $(MDFILES) $(TXTFILES) $(HTMLFILES))
+HUGOFILES  = $(subst $(SRCDIR),$(HUGODIR),$(SRCS))
 TOC       = .TOC.header
 HEADER    = .header.html
 FOOTER    = .footer.html
 AUXFILES  = $(TOC) $(HEADER) $(FOOTER) Makefile
-installdir=$(HOME)/BoK
-testdir=$(HOME)/Downloads
 AAAPHX=aaaphx.goc.dhl.com:~/BoK
 
 all : $(SENTINAL)
@@ -42,39 +53,42 @@ define MD2TXT =
 @$(ELINKS) $(EARGS) < $< > $@
 @chmod 744 $@ $<
 endef
-%.txt : %.html Makefile
+%.txt : %.html
+#	@printf  "Changed Deps: (%s)\n" "$?"
 	$(MD2TXT)
 
 #################### MD2HTML
 define MD2HTML =
 @printf "\t$< --> $@\n"
-@cat $(TOC) $< | $(MD) $(MDOPTS) -f tmp-$@
-@cat $(HEADER) tmp-$@ $(FOOTER) > $@
-@rm -f tmp-$@
+@cat $(TOC) $< | $(MD) $(MDOPTS) -f $@.tmp
+@printf "<P>Last Update: " > .LastUpdate
+@date -R >> .LastUpdate
+@printf "</P>\n" >> .LastUpdate
+@cat $(HEADER) $@.tmp .LastUpdate $(FOOTER) > $@
+@rm -f $@.tmp
 @chmod 744 $@ $<
 endef
-%.html : %.md Makefile $(HEADER) $(TOC) $(FOOTER)
+%.html : %.md $(HEADER) $(TOC) $(FOOTER)
+#	@printf  "Changed Deps: (%s)\n" "$?"
 	$(MD2HTML)
 
 clean :
 	rm -f $(FILES)
 
-installclean :
-	@printf "Removing $(wildcard $(installdir)/*.md) $(wildcard $(installdir)/*.html) $(wildcard $(installdir)/*.txt)\n" \
-		| fmt
-	@rm -f "$(wildcard $(installdir)/*.md) $(wildcard $(installdir)/*.html) $(wildcard $(installdir)/*.txt)"
-
 testmake :
-	@printf  "Changed Deps: (%s)\n" "$?"
-	@printf  "SRCS=$(SRCS)\n"
-	@printf  "FILES=$(FILES)\n"
-	@printf  "SENTINAL=$(SENTINAL)\n"
-	@printf  "installdir=$(installdir)\n"
-	@printf  "\n"
-	@printf  "Testing 'clean'\n"
-	make -n clean
-	@printf  "Testing 'all'\n"
-	make -n
+	@printf "SRCS=$(SRCS)\n\n"
+	@printf "FILES=$(FILES)\n\n"
+	@printf "HTMLFILES=$(HTMLFILES)\n\n"
+	@printf "HUGOFILES=$(HUGOFILES)\n\n"
+	@printf "MDFILES=$(MDFILES)\n\n"
+	@printf "TXTFILES=$(TXTFILES)\n\n"
+	@printf "PATH=$(PATH)\n\n"
+	@printf "INSTALLDIR=$(INSTALLDIR)\n\n"
+	@printf "SENTINAL=$(SENTINAL)\n\n"
+#	@printf  "Testing 'clean'\n"
+#	make -n clean
+#	@printf  "Testing 'all'\n"
+#	make -n
 
 Makefile :
 	@printf "\t$? --> $@\n"
@@ -85,24 +99,53 @@ $(SENTINAL) : $(FILES) Makefile index.html
 	touch $(SENTINAL)
 	@chmod 600 $(SENTINAL)
 
+#################### Staging Dir
+$(STAGEDIR)/%.md : $(SRCDIR)/%.md
+#	@printf  "Changed Deps: (%s)\n" "$?"
+	@printf "\t$< --> $@\n"
+	cp $? $(STAGEDIR)/
+
+#################### Hugo Dir
+$(HUGODIR)/%.md : $(STAGEDIR)/%.md
+#	@printf  "Changed Deps: (%s)\n" "$?"
+	@printf "\t$< --> $@\n"
+	@./MakeHugo -v $(HUGODIR)
+
+#################### Installs
 install: all
-	$(RSYNC) $(FILES) $(SRCS) $(AUXFILES) $(installdir)
+	$(RSYNC) $(RSYNCARGS) $(STAGEDIR)/ $(INSTALLDIR)/
 
 testinstall: all
-	$(RSYNC) $(FILES) $(SRCS) $(AUXFILES) $(testdir)
+	$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) $(TESTDIR)
+
+installhugo: $(HUGOFILES)
+	$(RSYNC) $(RSYNCARGS) $(HUGODIR)/ $(INSTALLHUGO)/
 
 aaaphx: all
-	$(RSYNC) -ac $(FILES) $(SRCS) $(AUXFILES) $(AAAPHX)
+	$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) $(AAAPHX)
+
+piway: all
+	$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) PiWay:~/BoK/
+	$(RSYNC) $(RSYNCARGS) --delete $(HTMLFILES) MakeIndex index.html PiWay:~/Projects/DockerHTTPD/public-html/
+
+installclean : all
+	@printf "Removing $(wildcard $(INSTALLDIR)/*.md) $(wildcard $(INSTALLDIR)/*.html) $(wildcard $(INSTALLDIR)/*.txt)\n" \
+		| fmt
+	@rm -f "$(wildcard $(INSTALLDIR)/*.md) $(wildcard $(INSTALLDIR)/*.html) $(wildcard $(INSTALLDIR)/*.txt)"
+
+#################### Misc
+hugo: $(HUGOFILES)
 
 toc:
 	@printf "Use bitdowntoc_linux --max-level -1 -o Outfile.md  Infile.md\n"
 
-piway: all
-	$(RSYNC) $(FILES) $(SRCS) $(AUXFILES) PiWay:~/BoK/
-	$(RSYNC) -avc --delete $(HTMLFILES) MakeIndex index.html PiWay:~/Projects/DockerHTTPD/public-html/
+$(STAGEDIR)/.index.md: $(FILES)
+	./MakeIndex
+	cp $(STAGEDIR)/.index.md .
+	# cp $(STAGEDIR)/.index.md $(SRCDIR)/index.md
 
-.index.md: $(SRCS) $(FILES)
-	../MakeIndex
+.index.md: $(STAGEDIR)/.index.md
+	cp $(STAGEDIR)/.index.md .
 
 index.html:  .index.md
 	$(MD2HTML)
