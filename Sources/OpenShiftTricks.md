@@ -4,6 +4,7 @@
 <!-- TOC --><a name="miscellaneous-openshift-kubernetes-tricks"></a>
 ##  Miscellaneous OpenShift / Kubernetes Tricks
 <!-- TOC start -->
+- [Login as Installer](#login-as-installer)
 - [Get memory, resource usage for a pod](#get-memory-resource-usage-for-a-pod)
 - [Get an interactive shell in a pod](#get-an-interactive-shell-in-a-pod)
 - [Get an interactive shell on a node](#get-an-interactive-shell-on-a-node)
@@ -32,6 +33,11 @@
 - [Enable/Disable Cronjobs](#enabledisable-cronjobs)
 - [Request a login token](#request-a-login-token)
 <!-- TOC end -->
+
+<!-- TOC --><a name="login-as-installer"></a>
+### Login as Installer
+Login to the bastion host, then `export KUBECONFIG=~/installation_directory/auth/kubeconfig`.
+Test by running `oc whoami`, which should return `system:admin`.
 
 <!-- TOC --><a name="get-memory-resource-usage-for-a-pod"></a>
 ###  Get memory, resource usage for a pod
