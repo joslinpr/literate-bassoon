@@ -2,4 +2,11 @@
 # Ignore vim undo files
 .*.un~
 # Ignore sentinal file used by Make
+Hugo/
+.index.md
+MakeIndex
+Staging/
+Up.svg
 .uptodate
+Xindex.bash
+.LastUpdate

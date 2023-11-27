@@ -1,0 +1,178 @@
+#!/usr/bin/env bash
+function SetupTerm(){
+	if [ -t 2 ]
+	then
+		printf -v MSG -- "SetupTerm: STDERR is a tty\n"
+		_R=$(tput setaf 1) # Red
+		_G=$(tput setaf 2) # Green
+		_Y=$(tput setaf 3) # Yellow
+		_B=$(tput setaf 4) # Blue
+		_N=$(tput rmso; tput sgr0) # Color Off
+	else
+		printf -v MSG -- "SetupTerm: STDERR is not a tty\n"
+		_R=""
+		_G=""
+		_Y=""
+		_B=""
+		_N=""
+	fi
+	((DEBUG>0)) && ErrMsg "$MSG"
+}
+
+function ErrMsg(){
+	if ((DEBUG>0))
+	then
+		printf "%bDEBUG: " "$_R"  >&2 ;
+	elif ((VERBOSE>0))
+	then
+		printf "%b" "$_G"  >&2 ;
+	fi
+	printf "%b" "$@" >&2 ;
+	printf "%b" "$_N" >&2 ;
+}
+
+
+function usage(){
+	ME=$(basename "$0")
+	printf -v USAGE "Usage: %s [-vds]\n" "$ME"
+	USAGE+="\t-h: Print this Message.\n"
+	USAGE+="\t-v: Be Verbose.\n"
+	USAGE+="\t-d: Print Debug Info.\n"
+	USAGE+="Transform markdown BoK for Hugo.\n"
+	ErrMsg "$USAGE"
+}
+
+function RunTests(){
+	ME=$0
+	for i in "-x" "-h" "-ds" "-d"
+	do
+		printf -v TST "Testing %s\n" "$i"
+		ErrMsg "\n$TST\n"
+		$ME $i
+	done
+}
+
+function MakeHugoIndex(){
+	ErrMsg "Creating index.\n"
+	TFILE=$(mktemp -p /tmp -t HUGO-index-XXX)
+	cat > "$TFILE" <<-HERE
+---
+title: "The Book of Knowledge"
+date: 2023-07-12T09:01:44-04:00
+draft: false
+TableOfContents: true
+weight: 0
+---
+HERE
+for SECTION in {A..Z};
+do
+	FILES=$(ls ${SECTION}*.md 2>/dev/null)
+	if [ -n "$FILES" ]
+	then
+		printf "## %s\n" "$SECTION"
+
+		for i in $FILES
+		do
+			j=${i%%.md};
+			TARGET=${j,,};
+			BLURB=$(grep '^##[^#]' "${j}.md" | grep -v "\.md" | head -1)
+			BLURB=${BLURB##*([#[:blank:]])}
+			BLURB="${BLURB:=No Description Available}"
+			if ((DEBUG > 0))
+			then
+				printf -v MSG "\t%s ->\t<%s>\n" "$i" "$BLURB"
+				ErrMsg "\t$MSG\n"
+			elif ((VERBOSE>0))
+			then
+				ErrMsg "\t$i\n"
+			fi
+			printf -- "- [%s](./%s)\t%s\n" "$j" "$TARGET" "${BLURB:=No Description Available}";
+		done
+	fi
+done >> "$TFILE"
+install "$TFILE" "$HUGODOCS/_index.md" && rm -f "$TFILE"
+#mv "$TFILE" HUGO.idx
+((DEBUG>0 || VERBOSE>0)) && ErrMsg "Installed index.\n"
+}
+
+function DoFiles(){
+	ErrMsg "Processing files.\n"
+	J=0
+	FILES=$(ls *.md 2>/dev/null)
+	if [ -n "$FILES" ]
+	then
+		for FILE in $FILES;
+		do
+			TITLE=${FILE%.md}
+			OFILE=$HUGODOCS/$FILE
+			((J+=10))
+			cat > "$OFILE" <<-HERE
+			---
+			title: "$TITLE"
+			date: 2023-07-12T09:01:44-04:00
+			draft: false
+			TableOfContents: true
+			weight: $J
+			---
+			HERE
+			cat "$FILE" >> "$OFILE"
+			((DEBUG>0 || VERBOSE>0)) && ErrMsg "\t$FILE\n"
+		done
+	else
+		ErrMsg "Cannot find *.md files in $PWD.\n"
+	fi
+}
+
+################################################################################
+# Main #
+########
+shopt -s extglob
+DEBUG=0 	# Default is no debug output
+VERBOSE=0 	# Default is less chatty
+
+SetupTerm
+while getopts ":dhvt" opt; do
+	case $opt in
+		d) DEBUG=1 ;;
+		h) usage; exit 0; ;;
+		s) SAVE=0 ;;
+		t) RunTests; exit 0; ;;
+		v) VERBOSE=1 ;;
+		\?)
+			usage;
+			ErrMsg "\nInvalid option: -$OPTARG\n"
+			exit 1;
+			;;
+	esac
+done
+shift $((OPTIND-1))
+if ((DEBUG>0))
+then
+	ErrMsg "DEBUG: $DEBUG\n"
+	ErrMsg "VERBOSE: $VERBOSE\n"
+	ErrMsg "SAVE: $SAVE\n"
+fi
+
+#HUGOHOME=/home/pjoslin/Projects/quickstart
+#HUGODOCS=$HUGOHOME/content/docs
+HUGOSRCS="$PWD/Staging"
+HUGODOCS="${1:-$PWD/Hugo}"
+if [ ! -d "$HUGODOCS" ]
+then
+	printf -v MSG "%s does not exist. Please specify destination directory.\n" "$HUGODOCS"
+	ErrMsg "$MSG"
+	exit 1
+fi
+if [ -d "$HUGOSRCS" ]
+then
+	cd "$HUGOSRCS"
+fi
+FILES="*.md"
+if [ -z "$FILES" ]
+then
+	printf "Please run this from the source directory.\n"
+	exit 1
+fi
+DoFiles
+MakeHugoIndex
+# vim: set ai noet nu cin sts=4 sw=4 ts=4 tw=78 filetype=sh :

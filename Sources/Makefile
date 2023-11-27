@@ -73,10 +73,7 @@ endef
 	$(MD2HTML)
 
 clean :
-	@printf "Removing\n"
-	@printf "$(FILES)\n" | sed -e 's@./Staging/@\n@g'
-#	@printf "$(FILES)\n" | sed -e 's@./Staging/@\n@g' | sort | pr -at  -3
-	@rm -f $(FILES)
+	rm -f $(FILES)
 
 testmake :
 	@printf "SRCS=$(SRCS)\n\n"
