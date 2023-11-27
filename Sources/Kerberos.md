@@ -25,4 +25,10 @@ Use nmap to check for port access.
 ```
 $ nmap -v -A --version-all -p88 kdc.domain.tld
 ```
+
+## Debugging logins
+KRB5_TRACE=/dev/stdout kinit -kt <_user_>.keytab <_user_>
+```
+KRB5_TRACE=/dev/stdout kinit -kt <user>.keytab <user>
+```
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
