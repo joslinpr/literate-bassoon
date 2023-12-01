@@ -1,3 +1,5 @@
+# The Book of Knowledge
+
 ---
 title: "Oracle"
 date: 2023-07-12T16:11:05-04:00
@@ -6,16 +8,21 @@ TableOfContents: true
 weight: 150
 ---
 
-##	Oracle Tips and Tricks
+## Oracle Tips and Tricks
 
-###	Checking CRS
+### Checking CRS
+
 You must run the commands as user oracle.
+
 ``` bash
-$ su - oracle              #	choose any DB
-$ ps -fu oracle            #	Check for DBs
-$ crsctl check crs         #	CRS daemons
+
+$ su - oracle              #    choose any DB
+$ ps -fu oracle            #    Check for DBs
+$ crsctl check crs         #    CRS daemons
 $ crsctl check cluster
-$ crsctl check css         #	cluster sync status
-$ crsctl check evm         #	event manager
+$ crsctl check css         #    cluster sync status
+$ crsctl check evm         #    event manager
+
 ```
+
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
