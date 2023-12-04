@@ -1,5 +1,17 @@
 # The Book of Knowledge
 
+- [Prom.examples.md](#promexamplesmd)
+- [Prometheus Query Examples](#prometheus-query-examples)
+  - [Infra Nodes](#infra-nodes)
+  - [Number of containers by cluster and namespace without CPU limits](#number-of-containers-by-cluster-and-namespace-without-cpu-limits)
+  - [Count of pods per cluster and namespace](#count-of-pods-per-cluster-and-namespace)
+  - [CPU USage per namespace](#cpu-usage-per-namespace)
+  - [CPU overcommit](#cpu-overcommit)
+  - [Kafka Disk Space Available](#kafka-disk-space-available)
+  - [Network by workload: pod, namespace, interface](#network-by-workload-pod-namespace-interface)
+  - [CPU Usage in OpenShift](#cpu-usage-in-openshift)
+  - [Find Pods killed by OOM](#find-pods-killed-by-oom)
+
 ## Prom.examples.md
 
 ## Prometheus Query Examples
@@ -130,5 +142,4 @@ The **container!=""** filter removes superfluous metrics related to cgroups hier
 
 ```
 
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

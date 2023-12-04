@@ -1,6 +1,19 @@
 
 # The Book of Knowledge
 
+- [Production Egress Internal](#production-egress-internal)
+  - [Egress Routers Prod Internal](#egress-routers-prod-internal)
+  - [Egress IPs Prod Internal](#egress-ips-prod-internal)
+- [Production Egress DMZ](#production-egress-dmz)
+  - [Egress Routers Prod DMZ](#egress-routers-prod-dmz)
+  - [Egress IPs Prod DMZ](#egress-ips-prod-dmz)
+- [Test Egress Internal](#test-egress-internal)
+  - [Egress Routers Test Internal](#egress-routers-test-internal)
+  - [Egress IPs Test Internal](#egress-ips-test-internal)
+- [Test Egress DMZ](#test-egress-dmz)
+  - [Egress Routers Test DMZ](#egress-routers-test-dmz)
+  - [Egress IPs Test DMZ](#egress-ips-test-dmz)
+
 ## Production Egress Internal
 
 Subnet 7.244.168.128/25
@@ -133,4 +146,4 @@ Subnet 156.137.124.128/25
 | 156.137.124.162    | exp-cra-dmz-build |
 | -                 |                    |
 | 156.137.124.254    | __LAST IP__         |
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=100 filetype=markdown :)

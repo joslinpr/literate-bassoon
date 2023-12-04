@@ -11,10 +11,11 @@ else
     do
         ((DEBUG>0)) && printf "Processing %s\n" "$i"
         bitdowntoc_linux \
-            --profile GITHUB \
+            --indent-chars '---' \
+            --max-level -1 \
             --no-trim-toc \
             --oneshot   \
-            --max-level -1 \
+            --profile GITHUB \
             --output-file "$TFILE" "$i"
 
         mv "$i" "${i}.old"

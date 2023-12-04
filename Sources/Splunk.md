@@ -1,6 +1,15 @@
 
 # The Book of Knowledge
 
+* [Splunk.md](#splunkmd)
+* [Splunk Tricks](#splunk-tricks)
+  * [Roles](#roles)
+  * [List Indices](#list-indices)
+  * [List Sourcetype for each Index](#list-sourcetype-for-each-index)
+  * [Count all pods used by ecs-am](#count-all-pods-used-by-ecs-am)
+  * [Oldest and Newest Records](#oldest-and-newest-records)
+    * [Same, for each sourcetype](#same-for-each-sourcetype)
+
 ## Splunk.md
 
 ## Splunk Tricks
