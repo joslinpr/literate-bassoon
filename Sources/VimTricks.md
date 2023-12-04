@@ -1,5 +1,26 @@
 # The Book of Knowledge
 
+   * [VimTricks.md](#vimtricksmd)
+   * [Vim Tips and Tricks](#vim-tips-and-tricks)
+      + [Using Vim as a Pipe](#using-vim-as-a-pipe)
+      + [Simple Math](#simple-math)
+      + [Bouncing](#bouncing)
+      + [Checking Variables](#checking-variables)
+      + [Formatting](#formatting)
+      + [Changing Case](#changing-case)
+         - [Examples](#examples)
+      + [Non-breaking Space](#non-breaking-space)
+      + [Spelling](#spelling)
+         - [Highlighting](#highlighting)
+         - [Searching for Misspellings](#searching-for-misspellings)
+         - [To add words to your own word list](#to-add-words-to-your-own-word-list)
+         - [Finding suggestions for bad words](#finding-suggestions-for-bad-words)
+      + [Renumbering Lists](#renumbering-lists)
+         - [Renumbering using Visual Mode](#renumbering-using-visual-mode)
+         - [Renumbering using Macros](#renumbering-using-macros)
+         - [Renumbering using External Programs](#renumbering-using-external-programs)
+      + [Perl](#perl)
+
 ## VimTricks.md
 
 ## Vim Tips and Tricks
@@ -120,15 +141,54 @@ appears in 'spellfile' it is turned into a comment line.
 
 #### Finding suggestions for bad words
 
-* *z=* For the word under/after the cursor suggest correctly spelled
+- *z=* For the word under/after the cursor suggest correctly spelled
    words.  This also works to find alternatives for a word that is
    not highlighted as a bad word, e.g., when the word after it is
    bad. In Visual mode the highlighted text is taken as the word to
    be replaced. The results are sorted on similarity to the word being
    replaced. This may take a long time.  Hit CTRL-C when you get bored.
-* *CTRL-Xs* In Insert mode, when the cursor is after a badly spelled word,
+- *CTRL-Xs* In Insert mode, when the cursor is after a badly spelled word,
    you can use CTRL-X s to find suggestions.  This works like Insert mode
    completion.  Use CTRL-N to use the next suggestion, CTRL-P to go back.
+
+### Renumbering Lists
+
+   There are at least three ways to number or renumber lists:
+
+#### Renumbering using Visual Mode
+
+Make a blockwise, visual selection on the first character of each list
+   item: `^<C-V>2j` for 2 lines, etc. Insert a *0.* at the beginning
+   of these lines: `I0. <Esc>` Re-select the visual selection (which is
+   now all of the 0s) with *gv* `gvg<C-A>` and increment them as a sequence
+   *g\<C-A\>*: The entire sequence: `^<C-V>2jI0. <Esc>gvg<C-A>`.
+
+#### Renumbering using Macros
+
+Use *\<C-A\>* to increment the line number.
+
+``` vim
+i                         # insert mode
+<ctrl-Y><ctrl-Y><ctrl-Y>  # copy the first few characters from the line above
+<ESC>                     # back to normal mode
+|                         # go back to the start of the line
+<ctrl-A>                  # increment the number
+j                         # down to the next line
+q                         # stop recording
+
+or
+k                         # Previous line
+^yWjP                     # yank word, next line, Put
+^<ctrl-a>j                # begining of line, increment, next line
+```
+
+Now you can play back the recording with @a (the first time; for subsequent times, you can do @@ to repeat the last-executed macro) and it will add a new incremented number to the start of each line.
+
+#### Renumbering using External Programs
+
+Use `:<RANGE>!nl -ba` or `:%!cat -n` commands which will add line numbers
+   to all the lines in *RANGE*. This is not as useful if *RANGE* is
+   already numbered
 
 ### Perl
 
