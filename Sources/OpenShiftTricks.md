@@ -255,4 +255,4 @@ $ OAUTH=$(oc get route oauth-openshift -n openshift-authentication -o json | jq 
 
 ```
 
-[//]: # ( vim: set ai et nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

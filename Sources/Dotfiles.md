@@ -1,4 +1,13 @@
+
 # The Book of Knowledge
+
+- [Dotfiles.md](#dotfilesmd)
+- [LinuxDotfiles - DotFiles For Linux/Unix Accounts](#linuxdotfiles---dotfiles-for-linuxunix-accounts)
+  - [Directory Structure](#directory-structure)
+  - [Installing On A New Server](#installing-on-a-new-server)
+    - [Requires Git, .ssh/id_github](#requires-git-sshid_github)
+  - [How To](#how-to)
+  - [tools to install](#tools-to-install)
 
 ## Dotfiles.md
 
@@ -6,14 +15,14 @@
 
 ### Directory Structure
 
-* Bin/ - Tools
-* PerfBin/ - Performance Tools
-* PersonalTools/ - Notes To Self, Non-work Tools
-* Projects/ - Stuff I'm Working On. Edit .gitignore If You Want Projects
+- Bin/ - Tools
+- PerfBin/ - Performance Tools
+- PersonalTools/ - Notes To Self, Non-work Tools
+- Projects/ - Stuff I'm Working On. Edit .gitignore If You Want Projects
  added To Repo.
-* TextBin/ - Tools To Modify Files, Often Using Vim
-* .ssh - SSH Public Keys
-* .vim - Vim Customization
+- TextBin/ - Tools To Modify Files, Often Using Vim
+- .ssh - SSH Public Keys
+- .vim - Vim Customization
 
 ### Installing On A New Server
 
@@ -80,12 +89,12 @@ config checkout -b $TS
 
 ### tools to install
 
-* fdupes - remove duplicate files
-* git - configuration control
-* glow - terminal markdown viewer
-* python markdown - markdown (pip install markdown)
-* imagemagick - image processing
-* screen - multiplex terminal.  Yes, there are better, but this is what work uses.
-* shellCheck - analyze shell scripts.
+- fdupes - remove duplicate files
+- git - configuration control
+- glow - terminal markdown viewer
+- python markdown - markdown (pip install markdown)
+- imagemagick - image processing
+- screen - multiplex terminal.  Yes, there are better, but this is what work uses.
+- shellCheck - analyze shell scripts.
 [Source](PersonalTools/Tools.md)
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

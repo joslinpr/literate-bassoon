@@ -70,4 +70,4 @@
 | Veritas Operations Manager
 |--------------
 | [https://vom-prg:14161/](https://vom-prg.prg-dc.dhl.com:14161/vom/login)
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

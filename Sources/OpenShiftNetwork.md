@@ -54,9 +54,9 @@ done
 wait
 printf "Files in %s\n" "$OFILES"
 
-# vim: set ai et nu cin sts=4 sw=4 ts=4 tw=0 filetype=sh :
+# vim: set ai et nu cin sts=2 sw=2 ts=2 tw=0 filetype=sh :
 
 ```
 
 <!-- vim: set ai et nu cin sts=2 sw=2 ts=2 tw=100 filetype=markdown :-->
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

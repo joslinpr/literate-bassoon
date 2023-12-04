@@ -44,4 +44,4 @@ $:     echo ãçé |
 >        done
 \u00e3\u00e7\u00e9
 ```
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

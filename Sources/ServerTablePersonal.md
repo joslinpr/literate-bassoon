@@ -9,4 +9,4 @@
 |--|--
 | computeone.pjoslin.com  |  193.122.144.194
 | computetwo.pjoslin.com  |  158.101.113.14
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

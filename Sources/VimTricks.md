@@ -210,4 +210,4 @@ whole file: "1,$".  Here are some things you can try:
 :perl $line = $curbuf->Get(42)
 ```
 
-[//]: #( vim: set ai et nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+[//]: #( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

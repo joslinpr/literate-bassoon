@@ -85,4 +85,4 @@ document’s head block:
 Now you just have to use the provided CSS rules, and the Tufte CSS
 conventions described in this document. For best results, View Source
 and Inspect Element frequently.
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
