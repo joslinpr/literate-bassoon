@@ -1,5 +1,13 @@
 # The Book of Knowledge
 
+   * [GreatHtml.md](#greathtmlmd)
+      + [100 Bytes of CSS to look great everywhere](#100-bytes-of-css-to-look-great-everywhere)
+      + [and 100 more bytes](#and-100-more-bytes)
+      + [Responsive Grid](#responsive-grid)
+      + [Responsive Flexbox](#responsive-flexbox)
+   * [Tufte CSS](#tufte-css)
+      + [Getting Started](#getting-started)
+
 ## GreatHtml.md
 
 ### 100 Bytes of CSS to look great everywhere
@@ -58,11 +66,11 @@ However, You only want the items to take up either 33% or 100% of
 the container/parent element's width. The easy part is ensuring the
 elements never take up less than 33% or more than 100%.
 
-### Tufte CSS
+## Tufte CSS
 
 [Tufte-css](https://edwardtufte.github.io/tufte-css/)
 
-## Getting Started
+### Getting Started
 
 To use Tufte CSS, copy tufte.css and the et-book directory of font
 files to your project directory, then add the following to your HTML
@@ -77,5 +85,4 @@ document’s head block:
 Now you just have to use the provided CSS rules, and the Tufte CSS
 conventions described in this document. For best results, View Source
 and Inspect Element frequently.
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
 [//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
