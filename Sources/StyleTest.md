@@ -1,31 +1,32 @@
+
 # The Book of Knowledge
 
-   - [StyleTest.md](#styletestmd)
-   - [StyleTest, a Markdown example file for testing glow .json style files](#styletest-a-markdown-example-file-for-testing-glow-json-style-files)
-      - ["block_quote"](#block_quote)
-      - ["code_block"](#code_block)
-      - ["code"](#code)
-      - ["document"](#document)
-      - ["emph"](#emph)
-      - ["enumeration"](#enumeration)
-      - ["h1"](#h1)
-      - ["h2"](#h2)
-         - ["h3"](#h3)
-            - ["h4"](#h4)
-               - ["h5"](#h5)
-      - ["heading"](#heading)
-      - ["hr"](#hr)
-      - ["image"](#image)
-      - ["image_text"](#image_text)
-      - ["item"](#item)
-      - ["link": &   "link_text"](#link----link_text)
-      - ["list"](#list)
-      - ["paragraph"](#paragraph)
-      - ["strikethrough"](#strikethrough)
-      - ["strong"](#strong)
-      - ["table"](#table)
-      - ["task"](#task)
-      - ["text"](#text)
+- [StyleTest.md](#styletestmd)
+- [StyleTest, a Markdown example file for testing glow .json style files](#styletest-a-markdown-example-file-for-testing-glow-json-style-files)
+  - ["block_quote"](#block_quote)
+  - ["code_block"](#code_block)
+  - ["code"](#code)
+  - ["document"](#document)
+  - ["emph"](#emph)
+  - ["enumeration"](#enumeration)
+  - ["h1"](#h1)
+  - ["h2"](#h2)
+  - ["h3"](#h3)
+  - ["h4"](#h4)
+  - ["h5"](#h5)
+  - ["heading"](#heading)
+  - ["hr"](#hr)
+  - ["image"](#image)
+  - ["image_text"](#image_text)
+  - ["item"](#item)
+  - ["link": &   "link_text"](#link----link_text)
+  - ["list"](#list)
+  - ["paragraph"](#paragraph)
+  - ["strikethrough"](#strikethrough)
+  - ["strong"](#strong)
+  - ["table"](#table)
+  - ["task"](#task)
+  - ["text"](#text)
 
 ## StyleTest.md
 
@@ -62,11 +63,10 @@ code.
 ### "enumeration"
 
 "enumeration": { "block_prefix": ". " }
-
 1. "item": { "block_prefix": "• " }
-- "item": { "block_prefix": "• " }
+  - "item": { "block_prefix": "• " }
 1. "item": { "block_prefix": "• " }
-- "item": { "block_prefix": "• " }
+  - "item": { "block_prefix": "• " }
 
 ### "h1"
 
@@ -157,8 +157,9 @@ praesent elementum facilisis leo vel.
 ### "table"
 
 "table": { "margin": 4 }
+
 Col1 | Col2
-----|----
+--------|----
 One | Two
 Three | Four
 
@@ -169,7 +170,10 @@ Three | Four
 
 ### "text"
 
-"text": { "color": "2" }
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Enim praesent elementum facilisis
+- "text": { "color": "2" }
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Enim praesent
+elementum facilisis
+
 [//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=100 filetype=markdown :)

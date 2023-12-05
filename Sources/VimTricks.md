@@ -1,25 +1,26 @@
 # The Book of Knowledge
 
-   * [VimTricks.md](#vimtricksmd)
-   * [Vim Tips and Tricks](#vim-tips-and-tricks)
-      + [Using Vim as a Pipe](#using-vim-as-a-pipe)
-      + [Simple Math](#simple-math)
-      + [Bouncing](#bouncing)
-      + [Checking Variables](#checking-variables)
-      + [Formatting](#formatting)
-      + [Changing Case](#changing-case)
-         - [Examples](#examples)
-      + [Non-breaking Space](#non-breaking-space)
-      + [Spelling](#spelling)
-         - [Highlighting](#highlighting)
-         - [Searching for Misspellings](#searching-for-misspellings)
-         - [To add words to your own word list](#to-add-words-to-your-own-word-list)
-         - [Finding suggestions for bad words](#finding-suggestions-for-bad-words)
-      + [Renumbering Lists](#renumbering-lists)
-         - [Renumbering using Visual Mode](#renumbering-using-visual-mode)
-         - [Renumbering using Macros](#renumbering-using-macros)
-         - [Renumbering using External Programs](#renumbering-using-external-programs)
-      + [Perl](#perl)
+- [VimTricks.md](#vimtricksmd)
+- [Vim Tips and Tricks](#vim-tips-and-tricks)
+  - [Using Vim as a Pipe](#using-vim-as-a-pipe)
+  - [Simple Math](#simple-math)
+  - [Bouncing](#bouncing)
+  - [Checking Variables](#checking-variables)
+  - [Formatting](#formatting)
+  - [Changing Case](#changing-case)
+    - [Examples](#examples)
+      - [Non-breaking Space](#non-breaking-space)
+      - [Spelling](#spelling)
+      - [Highlighting](#highlighting)
+      - [Searching for Misspellings](#searching-for-misspellings)
+      - [To add words to your own word list](#to-add-words-to-your-own-word-list)
+      - [Finding suggestions for bad words](#finding-suggestions-for-bad-words)
+    - [Renumbering Lists](#renumbering-lists)
+      - [Renumbering using perl](#renumbering-using-perl)
+      - [Renumbering using Visual Mode](#renumbering-using-visual-mode)
+      - [Renumbering using Macros](#renumbering-using-macros)
+      - [Renumbering using External Programs](#renumbering-using-external-programs)
+    - [Perl](#perl)
 
 ## VimTricks.md
 
@@ -28,30 +29,38 @@
 ### Using Vim as a Pipe
 
 ``` vim
+
 vim - -es +'g/foo/p' +'qa!' --not-a-term
 vim < /dev/tty <(cat)
+
 ```
 
 ### Simple Math
 
 ``` vim
+
 CTRL-A - increment number under cursor
 CTRL-X - decrement number under cursor
+
 ```
 
 ### Bouncing
 
 ``` vim
+
 Matchit - use g% to find next/previous match
           use % to find match to construct under cursor (if, (, ), {, } etc.
+
 ```
 
 ### Checking Variables
 
 ``` vim
+
 :verbose set variable?
 OR
 :echo "Variable:" &variable
+
 ```
 
 ### Formatting
@@ -63,11 +72,13 @@ indenting, and -p *prefix* to add a prefix.
 ### Changing Case
 
 ``` vim
+
 g<change><motion>
  g = go
  *change* = U Upper, u Lower, ~ Invert
  Doubled *change* means "entire line"
  *motion* = G end of Document, j Line Above, w Word
+
 ```
 
 #### Examples
@@ -98,7 +109,9 @@ representation is 00a0, then you could execute the following command to
 do the substitution:
 
 ``` vim
+
     :%s/\%u00a0/\~/g
+
 ```
 
 ### Spelling
@@ -108,7 +121,10 @@ To turn on spelling:  `:setlocal spell spelllang=en_us`
 #### Highlighting
 
  Name | Description | Highlight
----|---|---
+
+---
+
+|---|---
  SpellBad |     word not recognized        | hl-SpellBad
  SpellCap |     word not capitalised    | hl-SpellCap
  SpellRare |  rare word                | hl-SpellRare
@@ -142,10 +158,6 @@ appears in 'spellfile' it is turned into a comment line.
 #### Finding suggestions for bad words
 
 - *z=* For the word under/after the cursor suggest correctly spelled
-   words.  This also works to find alternatives for a word that is
-   not highlighted as a bad word, e.g., when the word after it is
-   bad. In Visual mode the highlighted text is taken as the word to
-   be replaced. The results are sorted on similarity to the word being
    replaced. This may take a long time.  Hit CTRL-C when you get bored.
 - *CTRL-Xs* In Insert mode, when the cursor is after a badly spelled word,
    you can use CTRL-X s to find suggestions.  This works like Insert mode
@@ -153,7 +165,16 @@ appears in 'spellfile' it is turned into a comment line.
 
 ### Renumbering Lists
 
-   There are at least three ways to number or renumber lists:
+   There are at least four ways to number or renumber lists:
+
+#### Renumbering using perl
+
+``` vim
+
+  :perl $a=0
+  :40,44 perldo s/^\d/++$a/e
+
+```
 
 #### Renumbering using Visual Mode
 
@@ -168,6 +189,7 @@ Make a blockwise, visual selection on the first character of each list
 Use *\<C-A\>* to increment the line number.
 
 ``` vim
+
 i                         # insert mode
 <ctrl-Y><ctrl-Y><ctrl-Y>  # copy the first few characters from the line above
 <ESC>                     # back to normal mode
@@ -175,11 +197,11 @@ i                         # insert mode
 <ctrl-A>                  # increment the number
 j                         # down to the next line
 q                         # stop recording
-
 or
 k                         # Previous line
 ^yWjP                     # yank word, next line, Put
 ^<ctrl-a>j                # begining of line, increment, next line
+
 ```
 
 Now you can play back the recording with @a (the first time; for subsequent times, you can do @@ to repeat the last-executed macro) and it will add a new incremented number to the start of each line.
@@ -195,7 +217,6 @@ Use `:<RANGE>!nl -ba` or `:%!cat -n` commands which will add line numbers
 If `vim` is compiled with perl support, you can run perl commands at the ex
 command prompt! To see what version of Perl you have: `:perl print $^V` or
 `vim --version | grep -i perl`.
-
 Execute Perl command {cmd} for each line in the [range], with \$\_
 being set to the text of each line in turn, without a trailing \<EOL\>.
 Setting $_ will change the text, but note that it is not possible to
@@ -203,11 +224,13 @@ add or delete lines using this command. The default for [range] is the
 whole file: "1,$".  Here are some things you can try:
 
 ``` vim
+
 :[range]perld[o] {cmd}
 :perl $a=1
 :perldo $_ = reverse($_);1
 :perl VIM::Msg("hello")
 :perl $line = $curbuf->Get(42)
+
 ```
 
 [//]: #( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
