@@ -176,4 +176,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Enim praesent
 elementum facilisis
 
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=100 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=100 filetype=markdown :)

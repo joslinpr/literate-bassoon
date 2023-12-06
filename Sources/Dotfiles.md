@@ -97,4 +97,4 @@ config checkout -b $TS
 - screen - multiplex terminal.  Yes, there are better, but this is what work uses.
 - shellCheck - analyze shell scripts.
 [Source](PersonalTools/Tools.md)
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

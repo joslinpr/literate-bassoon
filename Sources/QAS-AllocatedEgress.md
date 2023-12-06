@@ -146,4 +146,4 @@ Subnet 156.137.124.128/25
 | 156.137.124.162    | exp-cra-dmz-build |
 | -                 |                    |
 | 156.137.124.254    | __LAST IP__         |
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=100 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=100 filetype=markdown :)

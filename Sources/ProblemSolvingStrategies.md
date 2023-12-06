@@ -32,4 +32,4 @@ Search for the error message on Google.
 
 - [howdoi](https://github.com/gleitz/howdoi)
   Instant coding answers via the command line
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

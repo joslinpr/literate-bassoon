@@ -36,4 +36,4 @@ If you're using a proxy and get an SSL warning, try:
 Git uses the standard environment variables, and proxies can be defined in
 config or .gitconfig files.
 
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

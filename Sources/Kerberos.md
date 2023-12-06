@@ -49,4 +49,4 @@ KRB5_TRACE=/dev/stdout kinit -kt <user>.keytab <user>
 
 ```
 
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

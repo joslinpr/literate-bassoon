@@ -14,4 +14,4 @@ Prod-dmz | usqaslspc005440 usqaslspc005441 | usmeglspc005283 usmeglspc005284
 ---------|---------------------------------|-----------------------------------
 Test-dmz | usqaslspc005740 usqaslspc005741 |
 ---------|---------------------------------|-----------------------------------
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

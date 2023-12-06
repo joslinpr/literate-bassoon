@@ -630,4 +630,4 @@ jq: error (at <stdin>:0, ): Cannot iterate over null (null) OR q: error (at <std
 
 ```
 
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=100 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=100 filetype=markdown :)

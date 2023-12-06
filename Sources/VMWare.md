@@ -103,4 +103,4 @@ NUM_OF_PVC_LIMIT=50
 --------------------------------------------------------------------------------
 ```
 
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

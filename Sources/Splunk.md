@@ -108,4 +108,4 @@ eval myfirst=strftime(first,"%Y-%m-%dT%H:%M:%S.%Q"), mylast=strftime(last,"%m-%d
 
 ```
 
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

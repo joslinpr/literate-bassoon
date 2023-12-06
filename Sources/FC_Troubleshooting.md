@@ -86,4 +86,4 @@ install qla2xxx { /sbin/modprobe hpsa; } ; /sbin/modprobe --first-time --ignore-
 
 ```
 
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

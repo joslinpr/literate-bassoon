@@ -37,4 +37,4 @@ Saved at literate-bassoon:
 * [https://github.com/joslinpr/literate-bassoon](https://github.com/joslinpr/literate-bassoon)
 * [https://git.dhl.com/pjoslin/literate-bassoon](https://git.dhl.com/pjoslin/literate-bassoon)
 
-[//]: # ( vim: set ai noet nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
