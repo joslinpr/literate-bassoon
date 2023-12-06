@@ -99,6 +99,7 @@ function DoFiles(){
 	ErrMsg "Processing files.\n"
 	J=0
 	FILES=$(ls *.md 2>/dev/null)
+	local _TS=$( date +"%Y-%m-%dT%T%::z")
 	if [ -n "$FILES" ]
 	then
 		for FILE in $FILES;
@@ -109,7 +110,7 @@ function DoFiles(){
 			cat > "$OFILE" <<-HERE
 			---
 			title: "$TITLE"
-			date: 2023-07-12T09:01:44-04:00
+			date: "$_TS"
 			draft: false
 			TableOfContents: true
 			weight: $J
