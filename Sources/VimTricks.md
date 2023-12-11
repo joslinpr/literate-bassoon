@@ -69,6 +69,11 @@ OR
 can also pipe to `fmt` using *range*!}fmt.  Add the -tu or -c to control
 indenting, and -p *prefix* to add a prefix.
 
+### Unicode
+
+`Ctrl-Vu HEX` will input the unicode characer HEX.  For Example, insert
+a ✓ checkmark when in Insert Mode using `Ctrl-Vu2713`.
+
 ### Changing Case
 
 ``` vim
