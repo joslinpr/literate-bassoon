@@ -48,6 +48,12 @@ sort_desc(sum by (namespace) (rate(container_cpu_usage_seconds_total[5m])))
 
 ```
 
+### CPU Usage per selected pod by Namespace
+
+```
+sum by (pod) (rate (container_cpu_usage_seconds_total{container!="",pod=~"service-label-generator.+",namespace=~"ecs-am-ramp-webapps-prd"}[1m]))
+```
+
 ### CPU overcommit
 
 CPU limits over the capacity of the cluster is a scenario you need to avoid. Otherwise, you’ll end up with CPU throttling issues. You can detect CPU overcommit with the following query.
