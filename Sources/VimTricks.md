@@ -1,30 +1,40 @@
-# The Book of Knowledge
 
-- [VimTricks.md](#vimtricksmd)
-- [Vim Tips and Tricks](#vim-tips-and-tricks)
-  - [Using Vim as a Pipe](#using-vim-as-a-pipe)
-  - [Simple Math](#simple-math)
-  - [Bouncing](#bouncing)
-  - [Checking Variables](#checking-variables)
-  - [Formatting](#formatting)
-  - [Changing Case](#changing-case)
-    - [Examples](#examples)
-      - [Non-breaking Space](#non-breaking-space)
-      - [Spelling](#spelling)
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [The Book of Knowledge](#the-book-of-knowledge)
+  * [VimTricks.md](#vimtricksmd)
+  * [Vim Tips and Tricks](#vim-tips-and-tricks)
+    + [Using Vim as a Pipe](#using-vim-as-a-pipe)
+    + [Simple Math](#simple-math)
+    + [Bouncing](#bouncing)
+    + [Checking Variables](#checking-variables)
+    + [Formatting](#formatting)
+    + [Unicode](#unicode)
+    + [Changing Case](#changing-case)
+    + [Coalesce Blank Lines](#coalesce-blank-lines)
+      - [Examples](#examples)
+    + [Non-breaking Space](#non-breaking-space)
+    + [Spelling](#spelling)
       - [Highlighting](#highlighting)
       - [Searching for Misspellings](#searching-for-misspellings)
       - [To add words to your own word list](#to-add-words-to-your-own-word-list)
       - [Finding suggestions for bad words](#finding-suggestions-for-bad-words)
-    - [Renumbering Lists](#renumbering-lists)
+    + [Renumbering Lists](#renumbering-lists)
       - [Renumbering using perl](#renumbering-using-perl)
       - [Renumbering using Visual Mode](#renumbering-using-visual-mode)
       - [Renumbering using Macros](#renumbering-using-macros)
       - [Renumbering using External Programs](#renumbering-using-external-programs)
-    - [Perl](#perl)
+    + [Perl](#perl)
+
+<!-- TOC end -->
 
 ## VimTricks.md
 
+<!-- TOC --><a name="vim-tips-and-tricks"></a>
+
 ## Vim Tips and Tricks
+
+<!-- TOC --><a name="using-vim-as-a-pipe"></a>
 
 ### Using Vim as a Pipe
 
@@ -35,6 +45,8 @@ vim < /dev/tty <(cat)
 
 ```
 
+<!-- TOC --><a name="simple-math"></a>
+
 ### Simple Math
 
 ``` vim
@@ -44,6 +56,8 @@ CTRL-X - decrement number under cursor
 
 ```
 
+<!-- TOC --><a name="bouncing"></a>
+
 ### Bouncing
 
 ``` vim
@@ -52,6 +66,8 @@ Matchit - use g% to find next/previous match
           use % to find match to construct under cursor (if, (, ), {, } etc.
 
 ```
+
+<!-- TOC --><a name="checking-variables"></a>
 
 ### Checking Variables
 
@@ -63,16 +79,22 @@ OR
 
 ```
 
+<!-- TOC --><a name="formatting"></a>
+
 ### Formatting
 
 `gq*direction*` will format a line, paragraph, etc. based on *direction*.  You
 can also pipe to `fmt` using *range*!}fmt.  Add the -tu or -c to control
 indenting, and -p *prefix* to add a prefix.
 
+<!-- TOC --><a name="unicode"></a>
+
 ### Unicode
 
 `Ctrl-Vu HEX` will input the unicode characer HEX.  For Example, insert
 a ✓ checkmark when in Insert Mode using `Ctrl-Vu2713`.
+
+<!-- TOC --><a name="changing-case"></a>
 
 ### Changing Case
 
@@ -83,8 +105,18 @@ g<change><motion>
  *change* = U Upper, u Lower, ~ Invert
  Doubled *change* means "entire line"
  *motion* = G end of Document, j Line Above, w Word
+To turn one line into title caps (title case), make every first letter of a word uppercase:
+   :s/\v<(.)(\w*)/\u\1\L\2/g
 
 ```
+
+<!-- TOC --><a name="coalesce-blank-lines"></a>
+
+### Coalesce Blank Lines
+
+Allow only 1 blank line between regions with non-blank lines: `:v/\S/,/\S/-j`
+
+<!-- TOC --><a name="examples"></a>
 
 #### Examples
 
@@ -105,6 +137,8 @@ g<change><motion>
  gU5j  | Change 5 lines below to upper case
  gu3k  | Change 3 lines above to lower case
 
+<!-- TOC --><a name="non-breaking-space"></a>
+
 ### Non-breaking Space
 
 To find out the character code of the non-breaking space, place the
@@ -119,21 +153,24 @@ do the substitution:
 
 ```
 
+<!-- TOC --><a name="spelling"></a>
+
 ### Spelling
 
 To turn on spelling:  `:setlocal spell spelllang=en_us`
 
+<!-- TOC --><a name="highlighting"></a>
+
 #### Highlighting
 
  Name | Description | Highlight
-
----
-
 |---|---
  SpellBad |     word not recognized        | hl-SpellBad
  SpellCap |     word not capitalised    | hl-SpellCap
  SpellRare |  rare word                | hl-SpellRare
  SpellLocal    | wrong spelling for selected region    | hl-SpellLocal
+
+<!-- TOC --><a name="searching-for-misspellings"></a>
 
 #### Searching for Misspellings
 
@@ -149,6 +186,8 @@ at the start of a line.
 another region.
 *[S* | Like *]S* but search backwards.
 
+<!-- TOC --><a name="to-add-words-to-your-own-word-list"></a>
+
 #### To add words to your own word list
 
  Command | Effect
@@ -160,6 +199,8 @@ another region.
 appears in 'spellfile' it is turned into a comment line.
 *zug* *zuw* | Undo *zw* and *zg*, remove the word from the entry in 'spellfile'.
 
+<!-- TOC --><a name="finding-suggestions-for-bad-words"></a>
+
 #### Finding suggestions for bad words
 
 - *z=* For the word under/after the cursor suggest correctly spelled
@@ -168,9 +209,13 @@ appears in 'spellfile' it is turned into a comment line.
    you can use CTRL-X s to find suggestions.  This works like Insert mode
    completion.  Use CTRL-N to use the next suggestion, CTRL-P to go back.
 
+<!-- TOC --><a name="renumbering-lists"></a>
+
 ### Renumbering Lists
 
    There are at least four ways to number or renumber lists:
+
+<!-- TOC --><a name="renumbering-using-perl"></a>
 
 #### Renumbering using perl
 
@@ -181,6 +226,8 @@ appears in 'spellfile' it is turned into a comment line.
 
 ```
 
+<!-- TOC --><a name="renumbering-using-visual-mode"></a>
+
 #### Renumbering using Visual Mode
 
 Make a blockwise, visual selection on the first character of each list
@@ -189,15 +236,19 @@ Make a blockwise, visual selection on the first character of each list
    now all of the 0s) with *gv* `gvg<C-A>` and increment them as a sequence
    *g\<C-A\>*: The entire sequence: `^<C-V>2jI0. <Esc>gvg<C-A>`.
 
+<!-- TOC --><a name="renumbering-using-macros"></a>
+
 #### Renumbering using Macros
 
 Use *\<C-A\>* to increment the line number.
+Use *\<C-x\>* to decrement the line number.
 
 ``` vim
 
 i                         # insert mode
 <ctrl-Y><ctrl-Y><ctrl-Y>  # copy the first few characters from the line above
 <ESC>                     # back to normal mode
+
 |                         # go back to the start of the line
 <ctrl-A>                  # increment the number
 j                         # down to the next line
@@ -211,11 +262,15 @@ k                         # Previous line
 
 Now you can play back the recording with @a (the first time; for subsequent times, you can do @@ to repeat the last-executed macro) and it will add a new incremented number to the start of each line.
 
+<!-- TOC --><a name="renumbering-using-external-programs"></a>
+
 #### Renumbering using External Programs
 
 Use `:<RANGE>!nl -ba` or `:%!cat -n` commands which will add line numbers
    to all the lines in *RANGE*. This is not as useful if *RANGE* is
    already numbered
+
+<!-- TOC --><a name="perl"></a>
 
 ### Perl
 

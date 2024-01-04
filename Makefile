@@ -115,7 +115,7 @@ $(HUGODIR)/%.md : $(STAGEDIR)/%.md
 	@./MakeHugo -v $(HUGODIR)
 
 #################### Installs
-install: all
+install: all aaaphx installhugo
 	$(RSYNC) $(RSYNCARGS) $(STAGEDIR)/ $(INSTALLDIR)/
 
 testinstall: all
@@ -140,7 +140,7 @@ installclean : all
 hugo: $(HUGOFILES)
 
 toc:
-	@printf "Use bitdowntoc_linux -p GITHUB --no-oneshot--max-level -1 -o Outfile.md  Infile.md\n"
+	@printf "Use bitdowntoc_linux -p GITHUB --no-oneshot --max-level -1 -o Outfile.md  Infile.md\n"
 
 $(STAGEDIR)/.index.md: $(FILES)
 	./MakeIndex
