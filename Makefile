@@ -6,7 +6,7 @@
 .DELETE_ON_ERROR:
 	# run recipes in a single shell
 .ONESHELL:
-.PHONY : all clean installclean install testmake
+.PHONY : all clean installclean install testmake list
 
 # Programs and their Options
 GLOW := /usr/local/bin/glow
@@ -152,5 +152,8 @@ $(STAGEDIR)/.index.md: $(FILES)
 
 index.html:  .index.md
 	$(MD2HTML)
+
+list:
+	@LC_ALL=C $(MAKE) -pRrq -f $(firstword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/(^|\n)# Files(\n|$$)/,/(^|\n)# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | grep -E -v -e '^[^[:alnum:]]' -e '^$@$$'
 
 #  vim: set ai noet nu cindent sts=0 sw=8 tabstop=8 textwidth=78 filetype=make :

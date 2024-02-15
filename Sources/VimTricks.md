@@ -110,6 +110,17 @@ To turn one line into title caps (title case), make every first letter of a word
 
 ```
 
+<!-- TOC --><a name="patterns-with-line-feeds"></a>
+
+### Patterns with Line Feeds
+
+The regex construct "\_" adds the newline character to the character class.
+So if `[\s\d]` matches any whitespace or digit, `\_[\s\d]` matches any
+whitespace, digit, or linefeed.  You can also literally add `\n` to a class.
+
+<!-- TOC --><a name="examples"></a>
+
+
 <!-- TOC --><a name="coalesce-blank-lines"></a>
 
 ### Coalesce Blank Lines
