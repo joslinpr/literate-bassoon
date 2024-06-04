@@ -14,7 +14,7 @@ ELINKS := /usr/bin/elinks
 GLOWARGS := -w 120
 EARGS := -dump -dump-charset UTF-8 --no-references
 RSYNC := /usr/bin/rsync
-RSYNCARGS := -avc
+RSYNCARGS := -ac --info=PROGRESS2
 SHELL := /usr/bin/bash
 MD := /usr/local/bin/markdown_py
 MDOPTS := -x extra -x smarty -x sane_lists
@@ -106,13 +106,13 @@ $(SENTINAL) : $(FILES) Makefile index.html
 $(STAGEDIR)/%.md : $(SRCDIR)/%.md
 #	@printf  "Changed Deps: (%s)\n" "$?"
 	@printf "\t$< --> $@\n"
-	cp $? $(STAGEDIR)/
+	@cp $? $(STAGEDIR)/
 
 #################### Hugo Dir
 $(HUGODIR)/%.md : $(STAGEDIR)/%.md
 #	@printf  "Changed Deps: (%s)\n" "$?"
 	@printf "\t$< --> $@\n"
-	@./MakeHugo -v $(HUGODIR)
+	@./MakeHugo $(HUGODIR)
 
 #################### Installs
 install: all aaaphx installhugo
@@ -122,10 +122,14 @@ testinstall: all
 	$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) $(TESTDIR)
 
 installhugo: $(HUGOFILES)
-	$(RSYNC) $(RSYNCARGS) $(HUGODIR)/ $(INSTALLHUGO)/
+	@echo Rsync Hugo Files
+	@$(RSYNC) $(RSYNCARGS) $(HUGODIR)/ $(INSTALLHUGO)/
+	#@echo Linking Master Index
+	#@ln $(INSTALLHUGO)/_index.md $(INSTALLHUGO)/../
 
 aaaphx: all
-	$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) $(AAAPHX)
+	@echo Rsync AAAPHX Files
+	@$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) $(AAAPHX)
 
 piway: all
 	$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) PiWay:~/BoK/
@@ -140,7 +144,7 @@ installclean : all
 hugo: $(HUGOFILES)
 
 toc:
-	@printf "Use bitdowntoc_linux -p GITHUB --no-oneshot --max-level -1 -o Outfile.md  Infile.md\n"
+	@printf "Use bitdowntoc_linux -p GITHUB --oneshot --max-level -1 -o Outfile.md  Infile.md\n"
 
 $(STAGEDIR)/.index.md: $(FILES)
 	./MakeIndex
