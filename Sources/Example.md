@@ -5,24 +5,48 @@
 ## Markdown Examples - core syntax and extensions.
 
 A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).
-* [Block Elements](#block-elements)
-  * [Paragraphs and Line Breaks](#paragraphs-and-line-breaks)
-  * [Headers](#headers)
-  * [Blockquotes](#blockquotes)
-  * [Lists](#lists)
-  * [Code Blocks](#code-blocks)
-  * [Horizontal Rules](#horizontal-rules)
-  * [Table](#table)
-* [Span Elements](#span-elements)
-  * [Links](#links)
-  * [Emphasis](#emphasis)
-  * [Code](#code)
-  * [Images](#images)
-  * [Strikethrough](#strikethrough)
-* [Miscellaneous](#miscellaneous)
-  * [Automatic Links](#automatic-links)
-  * [Backslash Escapes](#backslash-escapes)
-* [Inline HTML](#inline-html)
+- [The Book of Knowledge](#the-book-of-knowledge)
+  - [Example.md](#examplemd)
+  - [Markdown Examples - core syntax and extensions.](#markdown-examples---core-syntax-and-extensions)
+    - [Block Elements](#block-elements)
+      - [Paragraphs and Line Breaks](#paragraphs-and-line-breaks)
+        - [Paragraphs](#paragraphs)
+        - [Line Breaks](#line-breaks)
+      - [Headers](#headers)
+        - [Setext](#setext)
+- [This is an H1](#this-is-an-h1)
+  - [This is an H2](#this-is-an-h2)
+        - [atx](#atx)
+  - [This is an H1](#this-is-an-h1-1)
+    - [This is an H2](#this-is-an-h2-1)
+- [This is an H1 #    ###    This is an H2 ##    ####    This is an H3 ######    \*\*\*](#this-is-an-h1---------this-is-an-h2---------this-is-an-h3-----)
+      - [Blockquotes](#blockquotes)
+      - [Lists](#lists)
+        - [Unordered](#unordered)
+        - [Ordered](#ordered)
+        - [Indented](#indented)
+          - [Blockquote](#blockquote)
+          - [Code Block](#code-block)
+          - [Nested List](#nested-list)
+      - [Code Blocks](#code-blocks)
+        - [Fenced Code Blocks](#fenced-code-blocks)
+        - [Syntax Highlighting](#syntax-highlighting)
+      - [Horizontal Rules](#horizontal-rules)
+      - [Table](#table)
+    - [Span Elements](#span-elements)
+      - [Links](#links)
+        - [Inline](#inline)
+        - [Reference](#reference)
+      - [Emphasis](#emphasis)
+      - [Code](#code)
+      - [Images](#images)
+        - [Inline](#inline-1)
+        - [Reference](#reference-1)
+      - [Strikethrough](#strikethrough)
+    - [Miscellaneous](#miscellaneous)
+      - [Automatic Links](#automatic-links)
+      - [Backslash Escapes](#backslash-escapes)
+    - [Inline HTML](#inline-html)
 
 ### Block Elements
 
@@ -339,7 +363,7 @@ Code:
 Preview:
 ***
 
-```ruby
+``` ruby
 
 require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")

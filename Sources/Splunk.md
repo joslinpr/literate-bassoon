@@ -31,7 +31,8 @@ To omit internal indices, remove `index=_*`.
 ``` bash
 
 | eventcount summarize=false index=* index=_* | dedup index | fields index
-
+# To limit the output to a pattern:
+| eventcount summarize=false index=* index=_* | dedup index | fields index | where like(index,"%ecs%")
 ```
 
 ### List Sourcetype for each Index

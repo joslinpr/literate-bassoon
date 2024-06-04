@@ -1,34 +1,36 @@
+# The Book of Knowledge
+
+## VimTricks.md
 
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
 - [The Book of Knowledge](#the-book-of-knowledge)
-  * [VimTricks.md](#vimtricksmd)
-  * [Vim Tips and Tricks](#vim-tips-and-tricks)
-    + [Using Vim as a Pipe](#using-vim-as-a-pipe)
-    + [Simple Math](#simple-math)
-    + [Bouncing](#bouncing)
-    + [Checking Variables](#checking-variables)
-    + [Formatting](#formatting)
-    + [Unicode](#unicode)
-    + [Changing Case](#changing-case)
-    + [Coalesce Blank Lines](#coalesce-blank-lines)
-      - [Examples](#examples)
-    + [Non-breaking Space](#non-breaking-space)
-    + [Spelling](#spelling)
+  - [VimTricks.md](#vimtricksmd)
+  - [Vim Tips and Tricks](#vim-tips-and-tricks)
+    - [Using Vim as a Pipe](#using-vim-as-a-pipe)
+    - [Simple Math](#simple-math)
+    - [Bouncing](#bouncing)
+    - [Checking Variables](#checking-variables)
+    - [Formatting](#formatting)
+    - [Unicode](#unicode)
+    - [Changing Case](#changing-case)
+      - [Case Change Examples](#case-change-examples)
+    - [Patterns with Line Feeds](#patterns-with-line-feeds)
+    - [Coalesce Blank Lines](#coalesce-blank-lines)
+    - [Non-breaking Space](#non-breaking-space)
+    - [Spelling](#spelling)
       - [Highlighting](#highlighting)
       - [Searching for Misspellings](#searching-for-misspellings)
       - [To add words to your own word list](#to-add-words-to-your-own-word-list)
       - [Finding suggestions for bad words](#finding-suggestions-for-bad-words)
-    + [Renumbering Lists](#renumbering-lists)
+    - [Renumbering Lists](#renumbering-lists)
       - [Renumbering using perl](#renumbering-using-perl)
       - [Renumbering using Visual Mode](#renumbering-using-visual-mode)
       - [Renumbering using Macros](#renumbering-using-macros)
       - [Renumbering using External Programs](#renumbering-using-external-programs)
-    + [Perl](#perl)
+    - [Perl](#perl)
 
 <!-- TOC end -->
-
-## VimTricks.md
 
 <!-- TOC --><a name="vim-tips-and-tricks"></a>
 
@@ -110,26 +112,9 @@ To turn one line into title caps (title case), make every first letter of a word
 
 ```
 
-<!-- TOC --><a name="patterns-with-line-feeds"></a>
-
-### Patterns with Line Feeds
-
-The regex construct "\_" adds the newline character to the character class.
-So if `[\s\d]` matches any whitespace or digit, `\_[\s\d]` matches any
-whitespace, digit, or linefeed.  You can also literally add `\n` to a class.
-
 <!-- TOC --><a name="examples"></a>
 
-
-<!-- TOC --><a name="coalesce-blank-lines"></a>
-
-### Coalesce Blank Lines
-
-Allow only 1 blank line between regions with non-blank lines: `:v/\S/,/\S/-j`
-
-<!-- TOC --><a name="examples"></a>
-
-#### Examples
+#### Case Change Examples
 
  Command | Effect
  ----------------|----------------
@@ -147,6 +132,20 @@ Allow only 1 blank line between regions with non-blank lines: `:v/\S/,/\S/-j`
  gu}   | Change to end of paragraph to lower case
  gU5j  | Change 5 lines below to upper case
  gu3k  | Change 3 lines above to lower case
+
+<!-- TOC --><a name="patterns-with-line-feeds"></a>
+
+### Patterns with Line Feeds
+
+The regex construct "\_" adds the newline character to the character class.
+So if `[\s\d]` matches any whitespace or digit, `\_[\s\d]` matches any
+whitespace, digit, or linefeed.  You can also literally add `\n` to a class.
+
+<!-- TOC --><a name="coalesce-blank-lines"></a>
+
+### Coalesce Blank Lines
+
+Allow only 1 blank line between regions with non-blank lines: `:v/\S/,/\S/-j`
 
 <!-- TOC --><a name="non-breaking-space"></a>
 

@@ -4,40 +4,33 @@
 
 ### Clusters
 
-|Cluster | Node | Use | Link |
-|---|---|---|---|
-| czchoocp001 |  czcholspc004404 | PRG Prod V4    | [https://console.apps.czchoocp001.dhl.com](https://console.apps.czchoocp001.dhl.com) |
-| czstlocp001 |  czstllspc005226 | PRG DR Prod V4 | [https://console.apps.czstlocp001.dhl.com](https://console.apps.czstlocp001.dhl.com) |
-| mykulocp001 |  mykullspc005304 | CBJ Prod V4    | [https://console.apps.mykulocp001.dhl.com](https://console.apps.mykulocp001.dhl.com) |
-| mytpmocp001 |  mytpmlspc005204 | CBJ DR V4      | [https://console.apps.mytpmocp001.dhl.com](https://console.apps.mytpmocp001.dhl.com) |
-| usmegocp001 |  usmeglspc005204 | US Prod DR V4  | [https://console.apps.usmegocp001.dhl.com](https://console.apps.usmegocp001.dhl.com) |
-| usqasocp001 |  usqaslspc005001 | US Prod V4     | [https://console.apps.usqasocp001.dhl.com](https://console.apps.usqasocp001.dhl.com) |
-| czchooct001 |  czcholstc005204 | PRG Proof of Concept V4 | [https://console.apps.czchooct001.dhl.com](https://console.apps.czchooct001.dhl.com) |
-| czchooct002 |  czcholstc005204 | PRG Test V4    | [https://console.apps.czchooct002.dhl.com](https://console.apps.czchooct002.dhl.com) |
-
 ### Version 4
 
-| Use  | Link |
-|:--|:--|
-| CBJ/DR V4   | [https://api.mytpmocp001.dhl.com:6443](https://api.mytpmocp001.dhl.com:6443 ) |
-| CBJ V4      | [https://api.mykulocp001.dhl.com:6443](https://api.mykulocp001.dhl.com:6443 ) |
-| Crash & Burn V4 | [https://api.czchooct999.dhl.com:6443](https://api.czchooct999.dhl.com:6443 ) |
-| PRG/DR V4   | [https://api.czstlocp001.dhl.com:6443](https://api.czstlocp001.dhl.com:6443 ) |
-| PRG/PRODV4 | [https://api.czchoocp001.dhl.com:6443](https://api.czchoocp001.dhl.com:6443 ) |
-| PRG/TEST V4 | [https://api.czchooct002.dhl.com:6443](https://api.czchooct002.dhl.com:6443 ) |
-| US/DR V4    | [https://api.usmegocp001.dhl.com:6443](https://api.usmegocp001.dhl.com:6443 ) |
-| US V4       | [https://api.usqasocp001.dhl.com:6443](https://api.usqasocp001.dhl.com:6443 ) |
-
-### Version 3 (Decommissioned)
-
-| Use  | Link |
-|:--|:--|
-| CBJ/DR      | [https://proddr2-ocp.kul-dc.dhl.com](https://proddr2-ocp.kul-dc.dhl.com ) |
-| CBJ/PROD    | [https://prod2-ocp.kul-dc.dhl.com](https://prod2-ocp.kul-dc.dhl.com ) |
-| Crash & Burn V3 | [https://prod1-ocp-cb.prg-dc.dhl.com/console](https://prod1-ocp-cb.prg-dc.dhl.com/console ) |
-| PRG/DR      | [https://proddr1-ocp.prg-dc.dhl.com](https://proddr1-ocp.prg-dc.dhl.com ) |
-| PRG/PROD    | [https://prod1-ocp.prg-dc.dhl.com](https://prod1-ocp.prg-dc.dhl.com ) |
-| US/PROD     | [https://prod3-ocp.phx-dc.dhl.com](https://prod3-ocp.phx-dc.dhl.com ) |
+|Name          | URL                                  | Use                    |
+|--------------|--------------------------------------|------------------------|
+| CBJ_DR       | [https://api.mytpmocp001.dhl.com:6443](https://api.mytpmocp001.dhl.com:6443) | CBJ Disaster Recovery  |
+| CBJ_PROD     | [https://api.mykulocp001.dhl.com:6443](https://api.mykulocp001.dhl.com:6443) | CBJ Production         |
+|              |                                      |POC                     |
+| PRG_APG_CBJ  | [https://api.mykulocp002.dhl.com:6443](https://api.mykulocp002.dhl.com:6443) | Apigee Express CBJ Prod |
+| PRG_APG_PROD | [https://api.czchoocp002.dhl.com:6443](https://api.czchoocp002.dhl.com:6443) | Apigee - Express PRG Production |
+| PRG_APG_TEST | [https://api.czchooct004.dhl.com:6443](https://api.czchooct004.dhl.com:6443) | Apigee - Express PRG Test|
+| PRG_API_PROD | [https://api.czchoocp003.dhl.com:6443](https://api.czchoocp003.dhl.com:6443) | ITS Api PRG Production |
+| PRG_BMC      | [https://api.czchooct201.dhl.com:6443](https://api.czchooct201.dhl.com:6443) | PRG Bare Metal POC     |
+| PRG_CNB      | [https://api.czchooct999.dhl.com:6443](https://api.czchooct999.dhl.com:6443) | PRG Crash and Burn     |
+| PRG_DED_POC  | [https://api.czchooct888.dhl.com:6443](https://api.czchooct888.dhl.com:6443) | PRG Dedicated Clusters |
+| PRG_DR       | [https://api.czstlocp001.dhl.com:6443](https://api.czstlocp001.dhl.com:6443) | PRG Disaster Recovery  |
+| PRG_MQ_DR    | [https://api.czstlocp002.dhl.com:6443](https://api.czstlocp002.dhl.com:6443) | PRG DR ITS IBM MQ      |
+| PRG_MQ_PROD  | [https://api.czchoocp004.dhl.com:6443](https://api.czchoocp004.dhl.com:6443) | ITS IBM MQ PRG Production|
+| PRG_MQ_TEST  | [https://api.czchooct005.dhl.com:6443](https://api.czchooct005.dhl.com:6443) | ITS IBM MQ PRG Test    |
+| PRG_POC      | [https://api.czchooct001.dhl.com:6443](https://api.czchooct001.dhl.com:6443) | PRG Proof of Concept   |
+| PRG_PROD     | [https://api.czchoocp001.dhl.com:6443](https://api.czchoocp001.dhl.com:6443) | PRG Production         |
+| PRG_REPO_DR  | [https://api.czstlocp001.dhl.com:6443](https://api.czstlocp001.dhl.com:6443) | PRG DR Repository      |
+| PRG_TEST     | [https://api.czchooct002.dhl.com:6443](https://api.czchooct002.dhl.com:6443) | PRG Test               |
+| US_DR        | [https://api.usmegocp001.dhl.com:6443](https://api.usmegocp001.dhl.com:6443) | US Disaster Recovery   |
+| US_EDM_PROD  | [https://api.usqasocp002.dhl.com:6443](https://api.usqasocp002.dhl.com:6443) | US EDM Dedicated Production |
+| US_EDM_TEST  | [https://api.usqasoct003.dhl.com:6443](https://api.usqasoct003.dhl.com:6443) | US EDM Dedicated Test  |
+| US_PROD      | [https://api.usqasocp001.dhl.com:6443](https://api.usqasocp001.dhl.com:6443) | US Production          |
+| US_TEST      | [https://api.usqasoct002.dhl.com:6443](https://api.usqasoct002.dhl.com:6443) | US Test                |
 
 ### Example
 
@@ -55,16 +48,20 @@ oc whoami
 
 ### Utility Nodes
 
-| Cluster | Name | Use |
-|:--|:--|:--|
-| None | czcholspc002815 | Kafka Support, podman |
-| czchoocp001 |  czcholspc004404 | PRG Prod V4    |
-| czstlocp001 |  czstllspc005226 | PRG DR Prod V4 |
-| mykulocp001 |  mykullspc005304 | CBJ Prod V4    |
-| mytpmocp001 |  mytpmlspc005204 | CBJ DR V4      |
-| usmegocp001 |  usmeglspc005204 | US Prod DR V4  |
-| usqasocp001 |  usqaslspc005001 | US Prod V4     |
-| czchooct001 |  czcholstc005204 | PRG Proof of Concept V4 |
-| czchooct002 |  czcholstc005204 | PRG Test V4    |
+| Cluster     | User | Host                           |
+|-------------|------|--------------------------------|
+| CBJ_DR      | ans  | mytpmlspc005204.apis.dhl.com   |
+| CBJ_PROD    | ans  | mykullspc005304.apis.dhl.com   |
+| PRG_CNB     | ans  | czcholstc005504.prg-dc.dhl.com |
+| PRG_DR      | ans  | czstllspc005204.prg-dc.dhl.com |
+| PRG_POC     | ans  | czcholstc005041.prg-dc.dhl.com |
+| PRG_PROD    | ans  | czcholspc004404.prg-dc.dhl.com |
+| PRG_TEST    | ans  | czcholstc005204.prg-dc.dhl.com |
+| US_DR       | ans  | usmeglspc005204.phx-dc.dhl.com |
+| US_EDM_PROD | ans  | usqaslspc005871.phx-dc.dhl.com |
+| US_EDM_TEST | ans  | usqaslspc005871.phx-dc.dhl.com |
+| US_PROD     | ans  | usqaslspc005304.phx-dc.dhl.com |
+| US_TEST     | ans  | usqaslspc005304.phx-dc.dhl.com |
+| None        | None | czcholspc002815 Kafka Support  |
 
 [//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
