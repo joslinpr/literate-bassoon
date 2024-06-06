@@ -111,7 +111,8 @@ $(STAGEDIR)/%.md : $(SRCDIR)/%.md
 #################### Hugo Dir
 $(HUGODIR)/%.md : $(STAGEDIR)/%.md
 #	@printf  "Changed Deps: (%s)\n" "$?"
-	@printf "\t$< --> $@\n"
+	@printf "\tCopying $< --> $@\n"
+	cp $? $(HUGODIR)/
 	@./MakeHugo $(HUGODIR)
 
 #################### Installs
@@ -124,8 +125,6 @@ testinstall: all
 installhugo: $(HUGOFILES)
 	@echo Rsync Hugo Files
 	@$(RSYNC) $(RSYNCARGS) $(HUGODIR)/ $(INSTALLHUGO)/
-	#@echo Linking Master Index
-	#@ln $(INSTALLHUGO)/_index.md $(INSTALLHUGO)/../
 
 aaaphx: all
 	@echo Rsync AAAPHX Files
