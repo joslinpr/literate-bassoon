@@ -1,12 +1,23 @@
+# The Book of Knowledge
 
-##	VMWare.md
-##	VMWare Vsphere Storage
+* [VMWare.md](#vmwaremd)
+* [VMWare Vsphere Storage](#vmware-vsphere-storage)
+  * [Namespaces](#namespaces)
+  * [vmware-system-csi](#vmware-system-csi)
+  * [cluster-operations](#cluster-operations)
+
+## VMWare.md
+
+## VMWare Vsphere Storage
 
 ### Namespaces
+
 #### vmware-system-csi
-1.  Controller pods on each Master: vsphere-csi-controller-7f667699db-8z9vt
-1.  node pods on each Worker: vsphere-csi-node-2jv2s
-```
+
+1. Controller pods on each Master: vsphere-csi-controller-7f667699db-8z9vt
+1. node pods on each Worker: vsphere-csi-node-2jv2s
+
+``` bash
 $ oc project vmware-system-csi
 $ oc get pods -o wide --show-labels
 NAME                                      READY   STATUS    RESTARTS       AGE    IP                NODE                             NOMINATED NODE   READINESS GATES   LABELS
@@ -16,14 +27,18 @@ vsphere-csi-controller-7f667699db-zqbx8   7/7     Running   7 (5d1h ago)   11d  
 vsphere-csi-node-25vtl                    3/3     Running   0              17d    7.244.169.17      usqaslspc005306.phx-dc.dhl.com   <none>           <none>            app=vsphere-csi-node,controller-revision-hash=5dcc566fc,pod-template-generation=2,role=vsphere-csi
 vsphere-csi-node-26lc6                    3/3     Running   3              17d    7.244.169.14      usqasap0153.phx-dc.dhl.com       <none>           <none>            app=vsphere-csi-node,controller-revision-hash=5dcc566fc,pod-template-generation=2,role=vsphere-csi
 
+
 # To check logs, you need to specify the vsphere-csi-node container
+
 $ oc logs vsphere-csi-node-6s28l -c vsphere-csi-node
 ```
+
 #### cluster-operations
+
 Used to run the Cronjobs and routine jobs for cluster operations and
 accounting.
 
-```
+``` bash
 $  oc project cluster-operations
 Now using project "cluster-operations" on server "https://api.usqasocp001.dhl.com:6443".
 $  oc get cronjobs
@@ -44,7 +59,9 @@ twistlock-user-sync                 02 10 * * *     False     0        4h20m    
 vsphere-csi-datastore               07,37 * * * *   False     0        15m             177d
 zone-utilization                    00 * * * *      False     1        22m             239d
 
+
 # The vsphere-csi-datastore cronjob runs a sanity check every half hour.  To check the results, view the logs for a pod created by a Job.
+
 Cronjob --> Job --> Pod
 $ oc get pods -o wide | grep -E "NAME|vsphere"
 NAME                                            READY   STATUS      RESTARTS AGE     IP              NODE                             NOMINATED NODE READINESS GATES
@@ -85,4 +102,5 @@ NUM_OF_PVC=78
 NUM_OF_PVC_LIMIT=50
 --------------------------------------------------------------------------------
 ```
-[//]: # ( vim: set ai noet nu sts=4 sw=4 ts=4 tw=78 filetype=markdown :)
+
+[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

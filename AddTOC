@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+shopt -s extglob
+DEBUG=0
+TFILE=$(mktemp -p /tmp -t TOC-XXX)
+if [ -z "$1" ]
+then
+    printf "You must supply a markdown file to process.\n"
+    exit 1
+else
+    for i in "$@"
+    do
+        ((DEBUG>0)) && printf "Processing %s\n" "$i"
+        bitdowntoc_linux \
+            --indent-chars '---' \
+            --max-level -1 \
+            --no-trim-toc \
+            --oneshot   \
+            --profile GITHUB \
+            --output-file "$TFILE" "$i"
+
+        mv "$i" "${i}.old"
+        mv "$TFILE" "$i"
+    done
+fi
+# vim: set ai et nu cin sts=4 sw=4 ts=4 tw=78 filetype=sh :

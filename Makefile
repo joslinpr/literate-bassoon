@@ -6,7 +6,7 @@
 .DELETE_ON_ERROR:
 	# run recipes in a single shell
 .ONESHELL:
-.PHONY : all clean installclean install testmake
+.PHONY : all clean installclean install testmake list
 
 # Programs and their Options
 GLOW := /usr/local/bin/glow
@@ -14,7 +14,7 @@ ELINKS := /usr/bin/elinks
 GLOWARGS := -w 120
 EARGS := -dump -dump-charset UTF-8 --no-references
 RSYNC := /usr/bin/rsync
-RSYNCARGS := -avc
+RSYNCARGS := -ac --info=PROGRESS2
 SHELL := /usr/bin/bash
 MD := /usr/local/bin/markdown_py
 MDOPTS := -x extra -x smarty -x sane_lists
@@ -106,26 +106,29 @@ $(SENTINAL) : $(FILES) Makefile index.html
 $(STAGEDIR)/%.md : $(SRCDIR)/%.md
 #	@printf  "Changed Deps: (%s)\n" "$?"
 	@printf "\t$< --> $@\n"
-	cp $? $(STAGEDIR)/
+	@cp $? $(STAGEDIR)/
 
 #################### Hugo Dir
 $(HUGODIR)/%.md : $(STAGEDIR)/%.md
 #	@printf  "Changed Deps: (%s)\n" "$?"
-	@printf "\t$< --> $@\n"
-	@./MakeHugo -v $(HUGODIR)
+	@printf "\tCopying $< --> $@\n"
+	cp $? $(HUGODIR)/
+	@./MakeHugo $(HUGODIR)
 
 #################### Installs
-install: all
+install: all aaaphx installhugo
 	$(RSYNC) $(RSYNCARGS) $(STAGEDIR)/ $(INSTALLDIR)/
 
 testinstall: all
 	$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) $(TESTDIR)
 
 installhugo: $(HUGOFILES)
-	$(RSYNC) $(RSYNCARGS) $(HUGODIR)/ $(INSTALLHUGO)/
+	@echo Rsync Hugo Files
+	@$(RSYNC) $(RSYNCARGS) $(HUGODIR)/ $(INSTALLHUGO)/
 
 aaaphx: all
-	$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) $(AAAPHX)
+	@echo Rsync AAAPHX Files
+	@$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) $(AAAPHX)
 
 piway: all
 	$(RSYNC) $(RSYNCARGS) $(FILES) $(AUXFILES) PiWay:~/BoK/
@@ -140,7 +143,7 @@ installclean : all
 hugo: $(HUGOFILES)
 
 toc:
-	@printf "Use bitdowntoc_linux --max-level -1 -o Outfile.md  Infile.md\n"
+	@printf "Use bitdowntoc_linux -p GITHUB --oneshot --max-level -1 -o Outfile.md  Infile.md\n"
 
 $(STAGEDIR)/.index.md: $(FILES)
 	./MakeIndex
@@ -152,5 +155,8 @@ $(STAGEDIR)/.index.md: $(FILES)
 
 index.html:  .index.md
 	$(MD2HTML)
+
+list:
+	@LC_ALL=C $(MAKE) -pRrq -f $(firstword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/(^|\n)# Files(\n|$$)/,/(^|\n)# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | grep -E -v -e '^[^[:alnum:]]' -e '^$@$$'
 
 #  vim: set ai noet nu cindent sts=0 sw=8 tabstop=8 textwidth=78 filetype=make :
