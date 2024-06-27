@@ -9,41 +9,42 @@
 .PHONY : all clean installclean install testmake list
 
 # Programs and their Options
-GLOW := /usr/local/bin/glow
-ELINKS := /usr/bin/elinks
-GLOWARGS := -w 120
-EARGS := -dump -dump-charset UTF-8 --no-references
-RSYNC := /usr/bin/rsync
-RSYNCARGS := -ac --info=PROGRESS2
-SHELL := /usr/bin/bash
-MD := /usr/local/bin/markdown_py
-MDOPTS := -x extra -x smarty -x sane_lists
-# MDOPTS := -x extra -x smarty -x sane_lists -x toc
+GLOW        := /usr/local/bin/glow
+ELINKS      := /usr/bin/elinks
+GLOWARGS    := -w 120
+EARGS       := -dump -dump-charset UTF-8 --no-references
+RSYNC       := /usr/bin/rsync
+RSYNCARGS   := -ac --info=PROGRESS2
+SHELL       := /usr/bin/bash
+MD          := /usr/local/bin/markdown_py
+MDOPTS      := -x extra -x smarty -x sane_lists
 .SHELLFLAGS := -euc
 
 #################### Directories
-INSTALLDIR=$(HOME)/BoK
-INSTALLHUGO=$(HOME)/Projects/quickstart/content/docs
-SRCDIR=./Sources
-HUGODIR=$(PWD)/Hugo
-STAGEDIR=./Staging
-TESTDIR=$(HOME)/Downloads
-VPATH=.:$(SRCDIR)
+INSTALLDIR  = $(HOME)/BoK
+INSTALLHUGO = $(HOME)/Projects/quickstart/content/docs
+SRCDIR      = ./Sources
+HUGODIR     = $(PWD)/Hugo
+DOCSDIR     = $(PWD)/docs
+STAGEDIR    = ./Staging
+TESTDIR     = $(HOME)/Downloads
+VPATH       = .:$(SRCDIR)
 
 #################### Targets
 SENTINAL  := .uptodate
-# SRCS      = $(sort $(wildcard *.md))
-SRCS      = $(sort $(wildcard $(SRCDIR)/*.md))
-MDFILES  = $(subst $(SRCDIR),$(STAGEDIR),$(SRCS))
-TXTFILES  = $(patsubst %.md,%.txt,$(MDFILES))
-HTMLFILES = $(patsubst %.md,%.html,$(MDFILES))
-FILES     = $(sort $(MDFILES) $(TXTFILES) $(HTMLFILES))
+# SRCS     = $(sort $(wildcard *.md))
+SRCS       = $(sort $(wildcard $(SRCDIR)/*.md))
+MDFILES    = $(subst $(SRCDIR),$(STAGEDIR),$(SRCS))
+TXTFILES   = $(patsubst %.md,%.txt,$(MDFILES))
+HTMLFILES  = $(patsubst %.md,%.html,$(MDFILES))
+FILES      = $(sort $(MDFILES) $(TXTFILES) $(HTMLFILES))
 HUGOFILES  = $(subst $(SRCDIR),$(HUGODIR),$(SRCS))
-TOC       = .TOC.header
-HEADER    = .header.html
-FOOTER    = .footer.html
-AUXFILES  = $(TOC) $(HEADER) $(FOOTER) Makefile
-AAAPHX=aaaphx.goc.dhl.com:~/BoK
+DOCSFILES  = $(MDFILES)
+TOC        = .TOC.header
+HEADER     = .header.html
+FOOTER     = .footer.html
+AUXFILES   = $(TOC) $(HEADER) $(FOOTER) Makefile
+AAAPHX     = aaaphx.goc.dhl.com:~/BoK
 
 all : $(SENTINAL)
 
@@ -125,6 +126,10 @@ testinstall: all
 installhugo: $(HUGOFILES)
 	@echo Rsync Hugo Files
 	@$(RSYNC) $(RSYNCARGS) $(HUGODIR)/ $(INSTALLHUGO)/
+
+installdocs: $(DOCSFILES)
+	@echo Rsync DOCS Files
+	@$(RSYNC) $(RSYNCARGS) $(DOCSFILES) $(DOCSDIR)/
 
 aaaphx: all
 	@echo Rsync AAAPHX Files
