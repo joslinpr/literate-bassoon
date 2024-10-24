@@ -116,7 +116,9 @@ $(HUGODIR)/%.md : $(STAGEDIR)/%.md
 	@./MakeHugo $(HUGODIR)
 
 #################### Installs
-install: all aaaphx installhugo
+installall: all aaaphx installhugo
+
+install: all
 	$(RSYNC) $(RSYNCARGS) $(STAGEDIR)/ $(INSTALLDIR)/
 
 testinstall: all
