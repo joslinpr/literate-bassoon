@@ -66,6 +66,30 @@ However, You only want the items to take up either 33% or 100% of
 the container/parent element's width. The easy part is ensuring the
 elements never take up less than 33% or more than 100%.
 
+### Responsive Flexbox (2)
+Try the generator at [Loading.io](https://loading.io/flexbox/#editor)*
+
+```css
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: auto;
+  align-content: start
+}
+.container:after {
+  display: block;
+  content: " placeholder ";
+  margin: 10px;
+  flex: 999 999 auto;
+}
+.item {
+  flex: 0 0 auto;
+  margin: 10px;
+}
+```
+
 ## Tufte CSS
 
 [Tufte-css](https://edwardtufte.github.io/tufte-css/)
