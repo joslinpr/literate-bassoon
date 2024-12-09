@@ -1,12 +1,14 @@
+
 # The Book of Knowledge
 
-   * [GreatHtml.md](#greathtmlmd)
-      + [100 Bytes of CSS to look great everywhere](#100-bytes-of-css-to-look-great-everywhere)
-      + [and 100 more bytes](#and-100-more-bytes)
-      + [Responsive Grid](#responsive-grid)
-      + [Responsive Flexbox](#responsive-flexbox)
-   * [Tufte CSS](#tufte-css)
-      + [Getting Started](#getting-started)
+* [GreatHtml.md](#greathtmlmd)
+  + [100 Bytes of CSS to look great everywhere](#100-bytes-of-css-to-look-great-everywhere)
+  + [and 100 more bytes](#and-100-more-bytes)
+  + [Responsive Grid](#responsive-grid)
+  + [Responsive Flexbox](#responsive-flexbox)
+  + [Responsive Flexbox (2)](#responsive-flexbox-2)
+* [Tufte CSS](#tufte-css)
+  + [Getting Started](#getting-started)
 
 ## GreatHtml.md
 
@@ -67,9 +69,11 @@ the container/parent element's width. The easy part is ensuring the
 elements never take up less than 33% or more than 100%.
 
 ### Responsive Flexbox (2)
+
 Try the generator at [Loading.io](https://loading.io/flexbox/#editor)*
 
 ```css
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -88,6 +92,7 @@ Try the generator at [Loading.io](https://loading.io/flexbox/#editor)*
   flex: 0 0 auto;
   margin: 10px;
 }
+
 ```
 
 ## Tufte CSS
