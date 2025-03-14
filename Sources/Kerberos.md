@@ -49,4 +49,8 @@ KRB5_TRACE=/dev/stdout kinit -kt <user>.keytab <user>
 
 ```
 
+If you get the error message "kinit: clients credentials have been revoked while getting initial
+credentials", try `kinit -V PRINCIPAL`.  If you still get the error, try
+'kdestroy; kinit -V PRINCIPAL'.
+
 [//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
