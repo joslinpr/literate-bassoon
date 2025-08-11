@@ -1,12 +1,14 @@
+
 # The Book of Knowledge
 
 <!-- TOC start -->
 
 - [OpenShiftNetwork.md](#openshiftnetworkmd)
 - [Miscellaneous OpenShift / Kubernetes Network Tricks](#miscellaneous-openshift-kubernetes-network-tricks)
-* [Get Ingress Router Logs](#get-ingress-router-logs)
+  * [Get Ingress Router Logs](#get-ingress-router-logs)
 
 <!-- TOC end -->
+
 <!-- TOC --><a name="openshiftnetworkmd"></a>
 
 ## OpenShiftNetwork.md
@@ -57,6 +59,29 @@ printf "Files in %s\n" "$OFILES"
 # vim: set ai et nu cin sts=2 sw=2 ts=2 tw=0 filetype=sh :
 
 ```
+
+### Finding IP addresses
+
+You may be able to find an external IP from a DMZ pod with either:
+
+``` bash
+
+# -x uses the specified proxy, which must have an ELR
+
+$ curl -v https://webhook-ws-gwe.requestcatcher.com/ -x http://b2b-http.dhl.com:8080
+$ curl -v https://whatismyip.com/ -x http://b2b-http.dhl.com:8080
+
+```
+
+On internal networks,
+
+``` bash
+
+$ curl -v https://whatismyip.dhl.com/
+
+```
+
+In either case, adding -L will follow redirects and -k will ignore certificate errors.
 
 <!-- vim: set ai et nu cin sts=2 sw=2 ts=2 tw=100 filetype=markdown :-->
 [//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

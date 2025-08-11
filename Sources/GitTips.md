@@ -36,4 +36,17 @@ If you're using a proxy and get an SSL warning, try:
 Git uses the standard environment variables, and proxies can be defined in
 config or .gitconfig files.
 
+
+### Unrelated Histories
+``` bash
+$ git push origin master
+fatal: refusing to merge unrelated histories
+
+#Use this command:
+
+$ git pull origin master --allow-unrelated-histories
+$ git merge origin origin/master
+```
+
 [//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+

@@ -256,4 +256,17 @@ $ OAUTH=$(oc get route oauth-openshift -n openshift-authentication -o json | jq 
 
 ```
 
+### Silence Alerting temporarily
+
+``` bash
+oc  -n openshift-monitoring exec -ti alertmanager-main-0 \
+   -c alertmanager -- amtool silence add
+   'alertname=~KubeNode.*|KubeDaemon.*|CollectorNodeDown|NTOPodsNotReady|SDNPodNotReady' \
+     --alertmanager.url="http://localhost:9093" \
+     --duration="2h" --comment="temporary vm resize" -a
+     "admin-aahmadt@dhl.com"
+
+```
+
+
 [//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)

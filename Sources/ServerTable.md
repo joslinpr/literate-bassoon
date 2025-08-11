@@ -7,67 +7,49 @@
 
 ### AAA Gateways
 
-| AAA Gateways
-|---------------
-| cbjmgt.apis.dhl.com
-| phxmgt.phx-dc.dhl.com
-| prgmgt.prg-dc.dhl.com
+| AAA Gateways          |
+|-----------------------|
+| prgmgt.prg-dc.dhl.com |
+| phxmgt.phx-dc.dhl.com |
+| cbjmgt.apis.dhl.com   |
+
+### Platform As A Service
+
+| Windows Utility Server         |
+|--------------------------------|
+| czchowspc001313.prg-dc.dhl.com |
 
 ### Firewall Jump Servers
 
-| Firewall Jump Servers
-|---------------
-| mykulws1922.kul-dc.dhl.com
-| usqasws0670.phx-dc.dhl.com
-| czchows6715.prg-dc.dhl.com
+| Firewall Jump Servers      |
+|----------------------------|
+| usqasws0670.phx-dc.dhl.com |
+| mykulws1922.kul-dc.dhl.com |
+| czchows6715.prg-dc.dhl.com |
 
 ### Ansible / Automation Gateways
 
- RHEL8 New | RHEL6 Old
------- | --------
- czcholsint2588 | czcholstc000594
- czchols5004.prg-dc.dhl.com   | czchols018.prg-dc.dhl.com
- mykulls2337.apis.dhl.com     | mykulls1494.apis.dhl.com
- usqasls0282.phx-dc.dhl.com   | usqasls0014.phx-dc.dhl.com
-
-### Automic
-
-| Automic
-|---------------
-| czchols4538
-| czchols4539
-|
+| RHEL8 New                  | RHEL6 Old                  |
+|----------------------------|----------------------------|
+| usqasls0282.phx-dc.dhl.com | usqasls0014.phx-dc.dhl.com |
+| mykulls2337.apis.dhl.com   | mykulls1494.apis.dhl.com   |
+| czcholsint2588             | czcholstc000594            |
+| czchols5004.prg-dc.dhl.com | czchols018.prg-dc.dhl.com  |
 
 ### Sandbox Servers
 
-|Sandbox Servers
-|---------------
-| czcholsint1543
-| czcholstc000549
-| czcholstc000878
-| usqaslstc000163
+|Sandbox Servers  |
+|-----------------|
+| usqaslstc000163 |
+| czcholstc000878 |
+| czcholstc000549 |
+| czcholsint1543  |
 
 ### Rescue Media
 
-|  [Rescue Media: http://server/rescue](http://server/rescue)
-|---------------
-|  czchols018.prg-dc.dhl.com
-|  troy1.apis.dhl.com
-|  usqasls0014.phx-dc.dhl.com
+| [Rescue Media: http://server/rescue](http://server/rescue) |
+|------------------------------------------------------------|
+| usqasls0014.phx-dc.dhl.com                                 |
+| troy1.apis.dhl.com                                         |
+| czchols018.prg-dc.dhl.com                                  |
 
-### Operations Bridge Manager & (OpenView)
-
-|Operations Bridge Manager | (OpenView)
-|--------|------
-| PRG  |  [https://prgomiprod-users](https://prgomiprod-users.dhl.com)
-| CBJ  |  [https://cbjomiprod-user](https://cbjomiprod-user.dhl.com)
-| QAS  |  [https://phxomiprod-user](https://phxomiprod-user.dhl.com)
-| Test |  [http://omitest-users-dev:9662/](http://omitest-users-dev.dhl.com:9662/)
-| OvoWeb | [http | //ovoweb.prg-dc.dhl.com/index.php](http://ovoweb.prg-dc.dhl.com/index.php)
-
-### Veritas Operations Manager
-
-| Veritas Operations Manager
-|--------------
-| [https://vom-prg:14161/](https://vom-prg.prg-dc.dhl.com:14161/vom/login)
-[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
