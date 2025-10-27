@@ -15,9 +15,10 @@
 
 ### Platform As A Service
 
-| Windows Utility Server         |
-|--------------------------------|
-| czchowspc001313.prg-dc.dhl.com |
+| Windows Utility Server             |
+|------------------------------------|
+| czchowspc001313.prg-dc.dhl.com OLD |
+| czchowspc000077.prg-dc.dhl.com NEW |
 
 ### Firewall Jump Servers
 

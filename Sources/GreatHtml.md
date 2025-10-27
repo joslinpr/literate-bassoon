@@ -1,12 +1,14 @@
 # The Book of Knowledge
 
-   * [GreatHtml.md](#greathtmlmd)
-      + [100 Bytes of CSS to look great everywhere](#100-bytes-of-css-to-look-great-everywhere)
-      + [and 100 more bytes](#and-100-more-bytes)
-      + [Responsive Grid](#responsive-grid)
-      + [Responsive Flexbox](#responsive-flexbox)
-   * [Tufte CSS](#tufte-css)
-      + [Getting Started](#getting-started)
+- [The Book of Knowledge](#the-book-of-knowledge)
+  - [GreatHtml.md](#greathtmlmd)
+    - [100 Bytes of CSS to look great everywhere](#100-bytes-of-css-to-look-great-everywhere)
+    - [and 100 more bytes](#and-100-more-bytes)
+    - [Incantations To Make HTML Work Correctly](#incantations-to-make-html-work-correctly)
+    - [Responsive Grid](#responsive-grid)
+    - [Responsive Flexbox](#responsive-flexbox)
+  - [Tufte CSS](#tufte-css)
+    - [Getting Started](#getting-started)
 
 ## GreatHtml.md
 
@@ -40,6 +42,18 @@ p,ul,ol {
     font-family: sans-serif;
 }
 
+```
+
+### Incantations To Make HTML Work Correctly
+
+[Source](https://blog.jim-nielsen.com/2025/dont-forget-these-html-tags/)
+
+``` bash
+
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 ```
 
 ### Responsive Grid
@@ -85,4 +99,5 @@ document’s head block:
 Now you just have to use the provided CSS rules, and the Tufte CSS
 conventions described in this document. For best results, View Source
 and Inspect Element frequently.
-[//]: # ( vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown :)
+
+<!--  vim: set ai et nu sts=2 sw=2 ts=2 tw=78 filetype=markdown : -->
