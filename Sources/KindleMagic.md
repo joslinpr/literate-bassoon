@@ -11,60 +11,90 @@
 ## Other Codes
 
 1. Reading Progress Calculation Displayed In The Lower Left Corner:
-  ;ReadingTimeOff - switches off the reading time display
-  ;ReadingTimeOn - switches on the reading time display
-  ;ReadingTimeReset - resets the reading time computation
+
+    | Code              | Result                                |
+    |-------------------|---------------------------------------|
+    | ;ReadingTimeOff   | switches off the reading time display |
+    | ;ReadingTimeOn    | switches on the reading time display  |
+    | ;ReadingTimeReset | resets the reading time computation   |
+
 2. Dumps
-  ;dm - Dump messages to /documents
-  ;dh - Dump cvm heap
-  ;dt - Dump cvm stack
+
+    | Code | Result                      |
+    |------|-----------------------------|
+    | ;dm  | Dump messages to /documents |
+    | ;dh  | Dump cvm heap               |
+    | ;dt  | Dump cvm stack              |
+
 3. Reset
-  ;shpm - set device to shipping mode
-  ;urst - Reset user partition, deletes content of hidden System folder, Audible folder, Documents and tts folder. Before using do a complete backup of your device
+
+    | Code   | Result                                                         |
+    |--------|----------------------------------------------------------------|
+    | ;urst  | Reset user partition, deletes content of hidden System folder, |
+    | &nbsp; | Audible folder, Documents and tts folder.                      |
+    | &nbsp; | Before using do a complete backup of your device               |
+    | ;shpm  | set device to shipping mode                                    |
+
 4. Logging
-  ;debugOn - verbose logging
-  ;debugPaint - log painting functions
-  ;debugOff - non-verbose logging
-  ;debugPref - pref level logging
-  ;dP - alias of ;debugPref
+
+    | Code        | Result                 |
+    |-------------|------------------------|
+    | ;debugOff   | non-verbose logging    |
+    | ;debugOn    | verbose logging        |
+    | ;debugPaint | log painting functions |
+    | ;debugPref  | pref level logging     |
+    | ;dP         | alias of ;debugPref    |
+
 5. Settings and Info
-  ;311 - change carrier settings
-  ;411 - server information
-  ;611 - wan information
-  ;711 - wifi in
+
+    | Code | Result                  |
+    |------|-------------------------|
+    | ;311 | change carrier settings |
+    | ;411 | server information      |
+    | ;611 | wan information         |
+    | ;711 | wifi in                 |
+
 6. Reading Progress
-Code              | Result
--------------------|---------------------------------------
-;ReadingTimeOff   | Switches Off The Reading Time Display
-;ReadingTimeOn    | Switches On The Reading Time Display
-;ReadingTimeReset | Resets The Reading Time Computation
+
+    | Code              | Result                                |
+    |-------------------|---------------------------------------|
+    | ;ReadingTimeReset | Resets The Reading Time Computation   |
+    | ;ReadingTimeOn    | Switches On The Reading Time Display  |
+    | ;ReadingTimeOff   | Switches Off The Reading Time Display |
+
 7. Dumps
-Code   | Result
---------|------------------------------
-;dm    | Dump messages to /documents
-;dh    | Dump cvm Heap
-;dt    | Dump cvm Stack
+
+    | Code | Result                      |
+    |------|-----------------------------|
+    | ;dm  | Dump messages to /documents |
+    | ;dh  | Dump cvm Heap               |
+    | ;dt  | Dump cvm Stack              |
+
 8. Reset
-Code    | Result
----------|--------------------------------------------------
-;shpm   | Set Device To Shipping Mode
-;urst   | Reset User Partition^1
+
+    | Code  | Result                      |
+    |-------|-----------------------------|
+    | ;urst | Reset User Partition^1      |
+    | ;shpm | Set Device To Shipping Mode |
 
 9. Logging
- Code         | Result
---------------|------------------------------------------
- ;debugOn     | verbose logging
- ;debugPaint  | log painting functions
- ;debugOff    | non-verbose logging
- ;debugPref   | pref level logging
- ;dP          | alias of ;debugPref
+
+    | Code        | Result                 |
+    |-------------|------------------------|
+    | ;dP         | alias of ;debugPref    |
+    | ;debugPref  | pref level logging     |
+    | ;debugPaint | log painting functions |
+    | ;debugOn    | verbose logging        |
+    | ;debugOff   | non-verbose logging    |
+
 10. Settings and Info
-Code              | Result
--------------------|-------------------------
-;311              | change carrier settings
-;411              | server information
-;611              | wan information
-;711              | wifi in
+
+    | Code | Result                  |
+    |------|-------------------------|
+    | ;311 | change carrier settings |
+    | ;411 | server information      |
+    | ;611 | wan information         |
+    | ;711 | wifi in                 |
 
 ---
 ^1

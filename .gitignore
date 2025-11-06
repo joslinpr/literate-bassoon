@@ -2,12 +2,16 @@
 # Ignore vim undo files
 .*.un~
 # Ignore sentinal file used by Make
-Hugo/
+.uptodate
+#
 .index.md
 MakeIndex
-Staging/
 Up.svg
-.uptodate
 Xindex.bash
 .LastUpdate
 literate-bassoon.code-workspace
+
+# Dirs
+Hugo/
+Staging/
+.vscode/
